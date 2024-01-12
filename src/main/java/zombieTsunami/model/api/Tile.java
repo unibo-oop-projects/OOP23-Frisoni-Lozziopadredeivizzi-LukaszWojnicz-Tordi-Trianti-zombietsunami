@@ -2,7 +2,7 @@ package main.java.zombieTsunami.model.api;
 
 import java.awt.image.BufferedImage;
 
-public interface Title {
+public interface Tile {
 
     void setImage(String string);
 
