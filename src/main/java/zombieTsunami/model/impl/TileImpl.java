@@ -5,9 +5,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.model.api.Title;
+import main.java.zombieTsunami.model.api.Tile;
 
-public class TitleImpl implements Title{
+public class TileImpl implements Tile{
 
     private BufferedImage image;
     private boolean collision = false;
