@@ -25,7 +25,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     private Thread gameThread;
 
-    public MapImpl(){
+    public MapImpl() {
         this.setPreferredSize(new DimensionUIResource(this.screenWidth, this.screenHigh));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -60,10 +60,9 @@ public class MapImpl extends JPanel implements Map, Runnable {
         }
     }
 
-
     @Override
     public void update() {
-        
+
     }
 
     public void paintComponent(final Graphics g) {
@@ -72,13 +71,13 @@ public class MapImpl extends JPanel implements Map, Runnable {
         g2.fillRect(100, 100, 45, 56);
         g2.setColor(Color.WHITE);
     }
-    
+
     @Override
     public void run() {
         gameLoop();
     }
 
-    public void startGameThread(){
+    public void startGameThread() {
         this.gameThread = new Thread(this);
         this.gameThread.start();
     }
@@ -87,8 +86,5 @@ public class MapImpl extends JPanel implements Map, Runnable {
     public int getTitleSize() {
         return this.titleSize;
     }
-
-
-   
 
 }

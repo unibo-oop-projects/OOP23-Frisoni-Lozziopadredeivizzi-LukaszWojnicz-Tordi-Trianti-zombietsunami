@@ -2,6 +2,8 @@ package main.java.zombieTsunami.view;
 
 import javax.swing.JFrame;
 
+import main.java.zombieTsunami.view.mapView.impl.MapImpl;
+
 public class View {
     
     public static void start(){
@@ -9,7 +11,7 @@ public class View {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
 
-        final GamePanel panel = new GamePanel();
+        final MapImpl panel = new MapImpl();
         window.add(panel);
         window.pack();
 
