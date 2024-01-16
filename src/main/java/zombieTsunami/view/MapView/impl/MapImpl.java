@@ -77,14 +77,11 @@ public class MapImpl extends JPanel implements Map, Runnable {
         gameLoop();
     }
 
+    @Override
     public void startGameThread() {
         this.gameThread = new Thread(this);
         this.gameThread.start();
     }
 
-    @Override
-    public int getTitleSize() {
-        return this.titleSize;
-    }
 
 }
