@@ -8,6 +8,6 @@ public interface TileManager {
 
     void drow(Graphics2D g2);
     
-    void loadMap();
+    void loadMap(String filePath);
     
 }

@@ -1,6 +1,9 @@
 package main.java.zombieTsunami.model.mapModel.impl;
 
 import java.awt.Graphics2D;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +18,11 @@ public class TileManagerImpl implements TileManager {
 
     private final Contoller gameController = new ControllerImpl();
 
+    private final String FILE_PATH = "";
+
     public TileManagerImpl() {
         setTitleImage();
-        loadMap();
+        loadMap(FILE_PATH);
     }
 
     @Override
@@ -50,9 +55,28 @@ public class TileManagerImpl implements TileManager {
     }
 
     @Override
-    public void loadMap() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'loadMap'");
+    public void loadMap(final String filePath) {
+        try {
+            InputStream is = getClass().getResourceAsStream(filePath);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+            for (int row = 0; row < this.gameController.getMaxScreenRow(); row++) {
+                final String line = br.readLine();
+                final List<Integer> list = new ArrayList<>();
+
+                for (int col = 0; col < this.gameController.getMaxScreenCol(); col++) {
+                    final List<String> numbers = List.of(line.split(" "));
+                    list.add(Integer.parseInt(numbers.get(col)));               
+                }
+
+                this.mapTileNum.add(row, list);
+            }
+
+            br.close();
+
+        } catch (Exception e) {
+            e.getMessage();
+        }
     }
 
 }
