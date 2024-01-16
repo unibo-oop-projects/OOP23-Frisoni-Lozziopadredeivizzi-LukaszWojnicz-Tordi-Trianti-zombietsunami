@@ -83,5 +83,18 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.gameThread.start();
     }
 
+    @Override
+    public int getMaxScCol(){
+        return this.maxScreenCol;
+    }
 
+    @Override
+    public int getMaxScRow(){
+        return this.maxScreenRow;
+    }
+
+    @Override
+    public int getTitSize(){
+        return this.titleSize;
+    }
 }

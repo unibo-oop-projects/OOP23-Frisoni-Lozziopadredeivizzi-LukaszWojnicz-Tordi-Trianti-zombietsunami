@@ -7,4 +7,10 @@ public interface Map {
     void gameLoop();
 
     void startGameThread();
+
+    int getMaxScCol();
+
+    int getMaxScRow();
+
+    int getTitSize();
 }
