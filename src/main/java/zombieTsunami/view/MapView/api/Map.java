@@ -6,5 +6,5 @@ public interface Map {
 
     void gameLoop();
 
-    int getTitleSize();
+    void startGameThread();
 }
