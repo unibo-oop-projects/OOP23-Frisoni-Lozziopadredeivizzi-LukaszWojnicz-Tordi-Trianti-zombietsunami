@@ -1,13 +1,15 @@
 package main.java.zombieTsunami.view.mapView.impl;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.*;
+import javax.swing.plaf.DimensionUIResource;
 
 import main.java.zombieTsunami.view.mapView.api.Map;
 
-public class MapImpl extends JPanel implements Map {
+public class MapImpl extends JPanel implements Map, Runnable {
 
     private final int originalTitleSize = 16;
     private final int scale = 3;
@@ -16,7 +18,18 @@ public class MapImpl extends JPanel implements Map {
     private final int FPS = 60;
     private final static double NANOSEC = 1000000000;
 
+    private final int maxScreenCol = 16;
+    private final int maxScreenRow = 12;
+    private final int screenWidth = titleSize * maxScreenCol;
+    private final int screenHigh = titleSize * maxScreenRow;
+
     private Thread gameThread;
+
+    public MapImpl(){
+        this.setPreferredSize(new DimensionUIResource(this.screenWidth, this.screenHigh));
+        this.setBackground(Color.BLACK);
+        this.setDoubleBuffered(true);
+    }
 
     @Override
     public void gameLoop() {
@@ -50,20 +63,32 @@ public class MapImpl extends JPanel implements Map {
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        
     }
 
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
         g2.fillRect(100, 100, 45, 56);
+        g2.setColor(Color.WHITE);
+    }
+    
+    @Override
+    public void run() {
+        gameLoop();
     }
 
+    public void startGameThread(){
+        this.gameThread = new Thread(this);
+        this.gameThread.start();
+    }
 
     @Override
     public int getTitleSize() {
         return this.titleSize;
     }
+
+
+   
 
 }
