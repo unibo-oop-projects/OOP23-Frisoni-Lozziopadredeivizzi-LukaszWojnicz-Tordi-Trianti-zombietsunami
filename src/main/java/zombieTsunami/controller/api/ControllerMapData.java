@@ -1,6 +1,6 @@
-package main.java.zombieTsunami.controller;
+package main.java.zombieTsunami.controller.api;
 
-public interface Contoller {
+public interface ControllerMapData {
     
     int getMaxScreenCol();
 
