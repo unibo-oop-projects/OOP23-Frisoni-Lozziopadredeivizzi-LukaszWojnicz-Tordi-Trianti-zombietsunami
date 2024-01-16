@@ -1,9 +1,9 @@
-package main.java.zombieTsunami.model.MapModel.impl;
+package main.java.zombieTsunami.model.mapModel.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.zombieTsunami.model.MapModel.api.TileManager;
+import main.java.zombieTsunami.model.mapModel.api.TileManager;
 
 public class TileManagerImpl implements TileManager{
 

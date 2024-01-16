@@ -1,11 +1,11 @@
-package main.java.zombieTsunami.view.MapView.impl;
+package main.java.zombieTsunami.view.mapView.impl;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.*;
 
-import main.java.zombieTsunami.view.MapView.api.Map;
+import main.java.zombieTsunami.view.mapView.api.Map;
 
 public class MapImpl extends JPanel implements Map {
 

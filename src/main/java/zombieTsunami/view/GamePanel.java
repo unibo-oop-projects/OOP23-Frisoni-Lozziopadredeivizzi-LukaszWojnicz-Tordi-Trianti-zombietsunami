@@ -4,8 +4,8 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
-import main.java.zombieTsunami.view.MapView.api.Map;
-import main.java.zombieTsunami.view.MapView.impl.MapImpl;
+import main.java.zombieTsunami.view.mapView.api.Map;
+import main.java.zombieTsunami.view.mapView.impl.MapImpl;
 
 public class GamePanel extends JPanel implements Runnable{
 
