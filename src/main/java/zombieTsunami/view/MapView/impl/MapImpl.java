@@ -7,33 +7,26 @@ import java.awt.Graphics2D;
 import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
+import main.java.zombieTsunami.controller.api.ControllerTile;
+import main.java.zombieTsunami.controller.impl.ControllerTileImpl;
 import main.java.zombieTsunami.view.mapView.api.Map;
+import main.java.zombieTsunami.view.mapView.api.MapData;
 
 public class MapImpl extends JPanel implements Map, Runnable {
 
-    private final int originalTitleSize = 16;
-    private final int scale = 3;
-    private final int titleSize = originalTitleSize * scale;
-
-    private final int FPS = 60;
-    private final static double NANOSEC = 1000000000;
-
-    private final int maxScreenCol = 16;
-    private final int maxScreenRow = 12;
-    private final int screenWidth = titleSize * maxScreenCol;
-    private final int screenHigh = titleSize * maxScreenRow;
-
     private Thread gameThread;
+    private final MapData data = new MapDataImpl();
+    private final ControllerTile tileControll = new ControllerTileImpl();
 
     public MapImpl() {
-        this.setPreferredSize(new DimensionUIResource(this.screenWidth, this.screenHigh));
+        this.setPreferredSize(new DimensionUIResource(this.data.getScreenW(), this.data.getScreenH()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
     }
 
     @Override
     public void gameLoop() {
-        final double drowIntervall = NANOSEC / this.FPS;
+        final double drowIntervall = MapDataImpl.NANOSEC / this.data.getFPS();
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -52,7 +45,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
                 drowCount++;
             }
 
-            if (timer >= NANOSEC) {
+            if (timer >= MapDataImpl.NANOSEC) {
                 System.out.println("FPS: " + drowCount);
                 drowCount = 0;
                 timer = 0;
@@ -68,8 +61,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
-        g2.fillRect(100, 100, 45, 56);
-        g2.setColor(Color.WHITE);
+        this.tileControll.drowMap(g2);
     }
 
     @Override
@@ -81,20 +73,5 @@ public class MapImpl extends JPanel implements Map, Runnable {
     public void startGameThread() {
         this.gameThread = new Thread(this);
         this.gameThread.start();
-    }
-
-    @Override
-    public int getMaxScCol(){
-        return this.maxScreenCol;
-    }
-
-    @Override
-    public int getMaxScRow(){
-        return this.maxScreenRow;
-    }
-
-    @Override
-    public int getTitSize(){
-        return this.titleSize;
     }
 }
