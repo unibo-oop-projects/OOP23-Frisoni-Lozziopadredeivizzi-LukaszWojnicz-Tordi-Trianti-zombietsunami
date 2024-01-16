@@ -1,11 +1,11 @@
-package main.java.zombieTsunami.model.MapModel.impl;
+package main.java.zombieTsunami.model.mapModel.impl;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.model.MapModel.api.Tile;
+import main.java.zombieTsunami.model.mapModel.api.Tile;
 
 public class TileImpl implements Tile{
 
