@@ -18,7 +18,14 @@ public class TileManagerImpl implements TileManager {
 
     private final ControllerMapData gameController = new ControllerMapDataImpl();
 
-    private final String FILE_PATH = "../../../../../resources/zombieTsunami/maps/map01.txt";
+    private final String ROOT = "../../../../../";
+    private final String RESOURCES = "resources/zombieTsunami/";
+    private final String MAP1 = "maps/map01.txt";
+    private final String DIRT = "dirt.png";
+    private final String SKY = "sky.png";
+    private final String STREET = "street.png";
+
+    private final String FILE_PATH = ROOT + RESOURCES + MAP1;
 
     public TileManagerImpl() {
         setTitleImage();
@@ -28,13 +35,13 @@ public class TileManagerImpl implements TileManager {
     @Override
     public void setTitleImage() {
         this.itemMap.add(new TileImpl());
-        this.itemMap.get(0).setImage("../../../../../resources/zombieTsunami/terra.png");
+        this.itemMap.get(0).setImage(ROOT + RESOURCES + DIRT);
 
         this.itemMap.add(new TileImpl());
-        this.itemMap.get(1).setImage("../../../../../resources/zombieTsunami/starda.png");
+        this.itemMap.get(1).setImage(ROOT + RESOURCES + STREET);
 
         this.itemMap.add(new TileImpl());
-        this.itemMap.get(2).setImage("../../../../../resources/zombieTsunami/cielo.png");
+        this.itemMap.get(2).setImage(ROOT + RESOURCES + SKY);
     }
 
     @Override
