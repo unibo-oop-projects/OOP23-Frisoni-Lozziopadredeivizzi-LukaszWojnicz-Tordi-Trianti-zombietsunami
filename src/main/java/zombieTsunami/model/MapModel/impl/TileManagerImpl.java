@@ -24,6 +24,13 @@ public class TileManagerImpl implements TileManager {
     private final String DIRT = "dirt.png";
     private final String SKY = "sky.png";
     private final String STREET = "street.png";
+    private final String BULDING_LEFT = "buldingLeft.png";
+    private final String BULDING_NORTH_LEFT = "buldingNorthLeft.png";
+    private final String BULDING_NORTH = "buldingNorth.png";
+    private final String BULDING_NORTH_RIGHT = "buldingNorthRight.png";
+    private final String BULDING_RIGHT = "buldingRight.png";
+    private final String BULDING_DOOR = "buldingDoor.png";
+    private final String BULDING_WINDOW = "buldingWindow.png";
 
     private final String FILE_PATH = ROOT + RESOURCES + MAP1;
 
@@ -42,6 +49,27 @@ public class TileManagerImpl implements TileManager {
 
         this.itemMap.add(new TileImpl());
         this.itemMap.get(2).setImage(ROOT + RESOURCES + SKY);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(3).setImage(ROOT + RESOURCES + BULDING_LEFT);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(4).setImage(ROOT + RESOURCES + BULDING_NORTH_LEFT);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(5).setImage(ROOT + RESOURCES + BULDING_NORTH);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(6).setImage(ROOT + RESOURCES + BULDING_NORTH_RIGHT);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(7).setImage(ROOT + RESOURCES + BULDING_RIGHT);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(8).setImage(ROOT + RESOURCES + BULDING_DOOR);
+
+        this.itemMap.add(new TileImpl());
+        this.itemMap.get(9).setImage(ROOT + RESOURCES + BULDING_WINDOW);
     }
 
     @Override
@@ -73,7 +101,7 @@ public class TileManagerImpl implements TileManager {
 
                 for (int col = 0; col < this.gameController.getMaxScreenCol(); col++) {
                     final List<String> numbers = List.of(line.split(" "));
-                    list.add(Integer.parseInt(numbers.get(col)));               
+                    list.add(Integer.parseInt(numbers.get(col)));
                 }
 
                 this.mapTileNum.add(row, list);
