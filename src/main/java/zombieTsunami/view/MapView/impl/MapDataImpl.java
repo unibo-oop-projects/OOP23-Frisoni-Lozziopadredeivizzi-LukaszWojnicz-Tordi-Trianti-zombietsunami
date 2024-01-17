@@ -12,7 +12,7 @@ public class MapDataImpl implements MapData{
     public final static double NANOSEC = 1000000000;
 
     private final int maxScreenCol = 16;
-    private final int maxScreenRow = 12;
+    private final int maxScreenRow = 9;
     private final int screenWidth = titleSize * maxScreenCol;
     private final int screenHigh = titleSize * maxScreenRow;
 
