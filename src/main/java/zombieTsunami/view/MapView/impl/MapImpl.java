@@ -55,7 +55,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-
+        
     }
 
     public void paintComponent(final Graphics g) {
