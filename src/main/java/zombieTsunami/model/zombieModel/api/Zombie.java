@@ -1,7 +1,10 @@
 package main.java.zombieTsunami.model.zombieModel.api;
 
-import main.java.zombieTsunami.model.zombieModel.impl.Pair;
+import java.awt.Graphics2D;
+
 
 public interface Zombie {
-    Pair<Integer, Integer> getPosition();
+    void jump();
+    void drawZombie(Graphics2D g2);
+    void update();
 }
