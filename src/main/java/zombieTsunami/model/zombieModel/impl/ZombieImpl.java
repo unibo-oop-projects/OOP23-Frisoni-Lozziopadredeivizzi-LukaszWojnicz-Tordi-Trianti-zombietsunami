@@ -1,13 +1,40 @@
 package main.java.zombieTsunami.model.zombieModel.impl;
 
+
+import java.awt.Graphics2D;
+
+import main.java.zombieTsunami.controller.api.ControllerMapData;
+import main.java.zombieTsunami.controller.impl.ControllerMapDataImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 
-public class ZombieImpl implements Zombie{
+
+public class ZombieImpl  extends Entity implements Zombie{
+    private ControllerMapData data= new ControllerMapDataImpl();
+    private Entity entity = new Entity();
+    public ZombieImpl() {
+        setDefaultValue();
+    }
+    private void setDefaultValue() {
+        entity.setX(350);
+        entity.setY(250);
+        entity.setSpeed(4);
+    }
+    @Override
+    public void jump() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'jump'");
+    }
 
     @Override
-    public Pair<Integer, Integer> getPosition() {
+    public void update() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPosition'");
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
+    @Override
+    public void drawZombie(Graphics2D g2) {
+        g2.drawImage(entity.getZombie(), entity.getX(), entity.getY(), data.getTitleSize(), data.getTitleSize(), null);
+       
+    }
+   
     
 }
