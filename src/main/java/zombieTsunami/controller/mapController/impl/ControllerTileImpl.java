@@ -3,8 +3,8 @@ package main.java.zombieTsunami.controller.mapController.impl;
 import java.awt.Graphics2D;
 
 import main.java.zombieTsunami.controller.mapController.api.ControllerTile;
-import main.java.zombieTsunami.model.api.TileManager;
-import main.java.zombieTsunami.model.impl.TileManagerImpl;
+import main.java.zombieTsunami.model.mapModel.api.TileManager;
+import main.java.zombieTsunami.model.mapModel.impl.TileManagerImpl;
 
 public class ControllerTileImpl implements ControllerTile{
 
