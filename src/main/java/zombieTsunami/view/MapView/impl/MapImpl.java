@@ -8,8 +8,8 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
-import main.java.zombieTsunami.controller.api.ControllerTile;
-import main.java.zombieTsunami.controller.impl.ControllerTileImpl;
+import main.java.zombieTsunami.controller.mapController.api.ControllerTile;
+import main.java.zombieTsunami.controller.mapController.impl.ControllerTileImpl;
 import main.java.zombieTsunami.view.mapView.api.Map;
 import main.java.zombieTsunami.view.mapView.api.MapData;
 import main.java.zombieTsunami.view.zombieView.impl.KeyHandlerImpl;

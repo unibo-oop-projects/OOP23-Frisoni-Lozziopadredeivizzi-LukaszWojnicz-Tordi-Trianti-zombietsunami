@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.controller.api;
+package main.java.zombieTsunami.controller.mapController.api;
 
 import java.awt.Graphics2D;
 

@@ -1,8 +1,8 @@
-package main.java.zombieTsunami.controller.impl;
+package main.java.zombieTsunami.controller.mapController.impl;
 
 import java.awt.Graphics2D;
 
-import main.java.zombieTsunami.controller.api.ControllerTile;
+import main.java.zombieTsunami.controller.mapController.api.ControllerTile;
 import main.java.zombieTsunami.model.mapModel.api.TileManager;
 import main.java.zombieTsunami.model.mapModel.impl.TileManagerImpl;
 
