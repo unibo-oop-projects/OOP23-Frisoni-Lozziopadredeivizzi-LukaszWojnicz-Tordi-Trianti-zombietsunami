@@ -27,13 +27,12 @@ public class ZombieImpl  extends Entity implements Zombie{
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        entity.setX(entity.getX()+entity.getSpeed());
     }
     @Override
     public void drawZombie(Graphics2D g2) {
         g2.drawImage(entity.getZombie(), entity.getX(), entity.getY(), data.getTitleSize(), data.getTitleSize(), null);
-       
+        g2.dispose();
     }
    
     
