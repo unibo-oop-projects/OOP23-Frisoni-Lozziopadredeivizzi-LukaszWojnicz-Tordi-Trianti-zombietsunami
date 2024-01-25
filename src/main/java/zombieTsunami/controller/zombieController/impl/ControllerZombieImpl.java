@@ -17,12 +17,11 @@ public class ControllerZombieImpl implements ControllerZombie {
     }
     public void handleKeyPress() {
         if (keyHandler.isPressed()) {
-            // Chiamata al modello per gestire il salto
-            zombie.jump(); // Assumendo che Zombie abbia un metodo jump()
+            zombie.jump();
+        }else {
+            zombie.update();
         }
-        // Puoi aggiungere altre logiche di gestione dei tasti qui
     }
-
    
     @Override
     public void update() {

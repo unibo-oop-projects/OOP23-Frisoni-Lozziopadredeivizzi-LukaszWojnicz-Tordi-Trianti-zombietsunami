@@ -15,7 +15,7 @@ public class ZombieImpl  extends Entity implements Zombie{
         setDefaultValue();
     }
     private void setDefaultValue() {
-        entity.setX(350);
+        entity.setX(100);
         entity.setY(250);
         entity.setSpeed(4);
     }
