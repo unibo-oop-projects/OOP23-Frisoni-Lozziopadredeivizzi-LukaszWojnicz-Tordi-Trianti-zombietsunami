@@ -64,10 +64,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        if (keyH.isPressed()) {
-           zombie.update();//da implementare
-        }
-        
+        zombie.handleKeyPress();
     }
 
     public void paintComponent(final Graphics g) {
@@ -76,7 +73,6 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.tileControll.drowMap(g2);
         zombie= new ControllerZombieImpl(keyH,g2);
         zombie.drawZombie(g2);;
-        
     }
 
     @Override
