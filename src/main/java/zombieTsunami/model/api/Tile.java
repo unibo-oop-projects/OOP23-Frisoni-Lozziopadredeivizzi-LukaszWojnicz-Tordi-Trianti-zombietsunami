@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.mapModel.api;
+package main.java.zombieTsunami.model.api;
 
 import java.awt.image.BufferedImage;
 
