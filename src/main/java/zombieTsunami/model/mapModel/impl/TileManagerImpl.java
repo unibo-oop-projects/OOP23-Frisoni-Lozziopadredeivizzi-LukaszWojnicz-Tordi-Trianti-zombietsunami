@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.zombieTsunami.controller.api.ControllerMapData;
-import main.java.zombieTsunami.controller.impl.ControllerMapDataImpl;
+import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
+import main.java.zombieTsunami.controller.mapController.impl.ControllerMapDataImpl;
 import main.java.zombieTsunami.model.mapModel.api.TileManager;
 
 public class TileManagerImpl implements TileManager {
