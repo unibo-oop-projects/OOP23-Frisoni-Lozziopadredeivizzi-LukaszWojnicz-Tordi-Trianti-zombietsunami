@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.mapModel.impl;
+package main.java.zombieTsunami.model.impl;
 
 import java.awt.Graphics2D;
 import java.io.BufferedReader;
@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.zombieTsunami.controller.api.ControllerMapData;
-import main.java.zombieTsunami.controller.impl.ControllerMapDataImpl;
-import main.java.zombieTsunami.model.mapModel.api.TileManager;
+import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
+import main.java.zombieTsunami.controller.mapController.impl.ControllerMapDataImpl;
+import main.java.zombieTsunami.model.api.TileManager;
 
 public class TileManagerImpl implements TileManager {
 

@@ -3,8 +3,8 @@ package main.java.zombieTsunami.model.zombieModel.impl;
 
 import java.awt.Graphics2D;
 
-import main.java.zombieTsunami.controller.api.ControllerMapData;
-import main.java.zombieTsunami.controller.impl.ControllerMapDataImpl;
+import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
+import main.java.zombieTsunami.controller.mapController.impl.ControllerMapDataImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 
 
