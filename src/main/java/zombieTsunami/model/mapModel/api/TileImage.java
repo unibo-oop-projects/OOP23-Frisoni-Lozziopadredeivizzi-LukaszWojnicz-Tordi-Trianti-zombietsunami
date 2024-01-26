@@ -1,9 +1,13 @@
 package main.java.zombieTsunami.model.mapModel.api;
 
+import java.util.Map;
+
+import main.java.zombieTsunami.model.mapModel.impl.TileImpl;
+
 public interface TileImage {
-    
+   
     /**
-     * Sets all the tiles of the game map
+     * @return a Map where each String (the element of the Tile) has their associated Tile 
      */
-    public void setTileImage();
+    public Map<String, TileImpl> setTileImage();
 }
