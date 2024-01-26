@@ -6,14 +6,22 @@ import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.ModelImpl;
+import main.java.zombieTsunami.view.VControllerImpl;
+import main.java.zombieTsunami.view.api.VController;
 
 public class ControllerImpl implements Controller{
     
     private Model model;
+    private VController viewController;
 
     public void setModel(){
         this.model=new ModelImpl();
         this.model.setController(this);
+    }
+
+    public void setVController(){
+        this.viewController=new VControllerImpl();
+        this.viewController.set(this);
     }
 
     public int getScreenCol(){
@@ -28,7 +36,7 @@ public class ControllerImpl implements Controller{
         return MapData.getTitSize();
     }
 
-    public long getFPS(){
+    public int getFPS(){
         return MapData.getFPS(); 
     }
 

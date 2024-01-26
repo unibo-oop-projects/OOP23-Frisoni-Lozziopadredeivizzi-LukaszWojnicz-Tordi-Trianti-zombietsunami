@@ -1,5 +1,7 @@
 package main.java.zombieTsunami.view;
 
+import java.awt.Graphics2D;
+
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.view.api.VController;
 
@@ -20,5 +22,20 @@ public class VControllerImpl implements VController{
     @Override
     public int getScreenHC(){
         return this.control.getScreenHigh();
+    }
+
+    @Override
+    public void updateZombieC() {
+        this.control.updateZombie();
+    }
+
+    @Override
+    public void drowMapC(final Graphics2D g2) {
+        this.control.drowMap(g2);
+    }
+
+    @Override
+    public int getFPSC() {
+        return this.control.getFPS();
     }
 }

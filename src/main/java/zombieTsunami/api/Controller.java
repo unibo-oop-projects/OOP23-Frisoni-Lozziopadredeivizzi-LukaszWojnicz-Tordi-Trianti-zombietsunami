@@ -12,7 +12,7 @@ public interface Controller {
 
     int getTitleSize();
 
-    long getFPS();
+    int getFPS();
 
     int getScreenWidth();
 
