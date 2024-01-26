@@ -6,6 +6,8 @@ import main.java.zombieTsunami.view.mapView.impl.MapImpl;
 
 public class View {
 
+    private 
+
     public static void start() {
         final JFrame window = new JFrame("Zombie Tsunami");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
