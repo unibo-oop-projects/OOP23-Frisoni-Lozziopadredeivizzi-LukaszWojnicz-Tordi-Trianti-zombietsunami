@@ -73,7 +73,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         final Graphics2D g2 = (Graphics2D) g;
         this.tileControll.drowMap(g2);
         zombie= new ControllerZombieImpl(keyH,g2);
-        zombie.drawZombie(g2);;
+        zombie.drawZombie(g2);
     }
 
     @Override
