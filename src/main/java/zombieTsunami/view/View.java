@@ -2,7 +2,7 @@ package main.java.zombieTsunami.view;
 
 import javax.swing.JFrame;
 
-import main.java.zombieTsunami.view.MapView.impl.MapImpl;
+import main.java.zombieTsunami.view.mapView.impl.MapImpl;
 
 public class View {
 

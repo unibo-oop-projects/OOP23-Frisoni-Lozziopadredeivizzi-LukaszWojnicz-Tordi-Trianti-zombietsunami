@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.MapView.api;
+package main.java.zombieTsunami.view.mapView.api;
 
 public interface MapData {
     

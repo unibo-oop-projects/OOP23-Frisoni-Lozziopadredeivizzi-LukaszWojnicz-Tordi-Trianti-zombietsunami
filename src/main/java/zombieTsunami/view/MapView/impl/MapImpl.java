@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.MapView.impl;
+package main.java.zombieTsunami.view.mapView.impl;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,9 +10,9 @@ import javax.swing.plaf.DimensionUIResource;
 
 import main.java.zombieTsunami.controller.mapController.api.ControllerTile;
 import main.java.zombieTsunami.controller.mapController.impl.ControllerTileImpl;
-import main.java.zombieTsunami.view.MapView.api.Map;
-import main.java.zombieTsunami.view.MapView.api.MapData;
 import main.java.zombieTsunami.view.zombieView.impl.KeyHandlerImpl;
+import main.java.zombieTsunami.view.mapView.api.Map;
+import main.java.zombieTsunami.view.mapView.api.MapData;
 import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
 import main.java.zombieTsunami.controller.zombieController.api.ControllerZombie;
 import main.java.zombieTsunami.controller.zombieController.impl.ControllerZombieImpl;
