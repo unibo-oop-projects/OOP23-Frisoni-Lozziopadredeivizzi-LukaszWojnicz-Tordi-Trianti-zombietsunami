@@ -3,7 +3,6 @@ package main.java.zombieTsunami.model;
 import java.awt.Graphics2D;
 
 import main.java.zombieTsunami.api.Controller;
-import main.java.zombieTsunami.api.MapData;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.model.mapModel.api.TileManager;
 import main.java.zombieTsunami.model.mapModel.impl.TileManagerImpl;
@@ -14,13 +13,11 @@ public class ModelImpl implements Model{
 
     private final TileManager tileman;
     private final Zombie zombie;
-    private final MapData data;
     private Controller control;
 
     public ModelImpl(){
         this.tileman=new TileManagerImpl();
         this.zombie=new ZombieImpl();
-        this.data=new MapDataImpl();
     }
 
     public void setController(final Controller c){
@@ -32,18 +29,6 @@ public class ModelImpl implements Model{
     }
     
     public void drowMap(final Graphics2D g2){
-        this.tileman.drow(g2, getMaxScreenRow(), getMaxScreenRow(), getTitleSize());
-    }
-
-    public int getMaxScreenCol(){
-        return data.getMaxScCol();
-    }
-
-    public int getMaxScreenRow(){
-        return data.getMaxScRow();
-    }
-
-    public int getTitleSize(){
-        return data.getTitSize();
+        this.tileman.drow(g2, MapData.getMaxScCol(), MapData.getMaxScRow(), MapData.getTitSize());
     }
 }

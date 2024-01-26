@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
 import main.java.zombieTsunami.api.MapData;
-import main.java.zombieTsunami.model.MapDataImpl;
+import main.java.zombieTsunami.model.MapData;
 
 public class StartMenu extends JPanel {
 
@@ -21,7 +21,7 @@ public class StartMenu extends JPanel {
     private final JButton rulesButton = new JButton("RULES");
     private final JLabel label = new JLabel("Zombie Tsunami");
 
-    private final MapData data = new MapDataImpl();
+    private final MapData data = new MapData();
 
     public StartMenu() {
         this.setBackground(Color.lightGray);

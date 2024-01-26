@@ -16,12 +16,12 @@ import main.java.zombieTsunami.view.mapView.api.Map;
 import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
 import main.java.zombieTsunami.controller.zombieController.api.ControllerZombie;
 import main.java.zombieTsunami.controller.zombieController.impl.ControllerZombieImpl;
-import main.java.zombieTsunami.model.MapDataImpl;
+import main.java.zombieTsunami.model.MapData;
 
 public class MapImpl extends JPanel implements Map, Runnable {
 
     private Thread gameThread;
-    private final MapData data = new MapDataImpl();
+    private final MapData data = new MapData();
     private final ControllerTile tileControll = new ControllerTileImpl();
     KeyHandler keyH = new KeyHandlerImpl();
     //set zombie position
@@ -36,7 +36,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void gameLoop() {
-        final double drowIntervall = MapDataImpl.NANOSEC / this.data.getFPS();
+        final double drowIntervall = MapData.NANOSEC / this.data.getFPS();
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -55,7 +55,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
                 drowCount++;
             }
 
-            if (timer >= MapDataImpl.NANOSEC) {
+            if (timer >= MapData.NANOSEC) {
                 System.out.println("FPS: " + drowCount);
                 drowCount = 0;
                 timer = 0;
