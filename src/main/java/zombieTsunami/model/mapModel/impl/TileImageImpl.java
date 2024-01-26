@@ -14,6 +14,7 @@ public class TileImageImpl implements TileImage {
 
     private final String ROOT = "../../../../../";
     private final String RESOURCES = "resources/zombieTsunami/";
+    
     private final String DIRT = "dirt.png";
     private final String SKY = "sky.png";
     private final String STREET = "street.png";
