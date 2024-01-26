@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
-import main.java.zombieTsunami.view.mapView.api.MapData;
-import main.java.zombieTsunami.view.mapView.impl.MapDataImpl;
+import main.java.zombieTsunami.view.MapView.api.MapData;
+import main.java.zombieTsunami.view.MapView.impl.MapDataImpl;
 
 public class StartMenu extends JPanel {
 
