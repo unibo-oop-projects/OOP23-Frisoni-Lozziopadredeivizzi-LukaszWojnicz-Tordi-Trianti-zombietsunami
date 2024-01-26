@@ -1,6 +1,6 @@
-package main.java.zombieTsunami.view.mapView.impl;
+package main.java.zombieTsunami.view.MapView.impl;
 
-import main.java.zombieTsunami.view.mapView.api.MapData;
+import main.java.zombieTsunami.view.MapView.api.MapData;
 
 public class MapDataImpl implements MapData{
     
