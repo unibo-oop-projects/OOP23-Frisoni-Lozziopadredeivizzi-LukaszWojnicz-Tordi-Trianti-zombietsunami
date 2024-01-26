@@ -10,7 +10,11 @@ public class VController {
         this.control=c;
     }
 
-    public void getScreenWC(){
-        return this.control.
+    public int getScreenWC(){
+        return this.control.getScreenWidth();
+    }
+
+    public int getScreenHC(){
+        return this.control.getScreenHigh();
     }
 }
