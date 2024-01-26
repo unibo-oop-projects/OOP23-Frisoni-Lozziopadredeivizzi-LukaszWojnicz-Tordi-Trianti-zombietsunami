@@ -2,6 +2,7 @@ package main.java.zombieTsunami.model;
 
 import java.awt.Graphics2D;
 
+import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.MapData;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.model.mapModel.api.TileManager;
@@ -14,11 +15,16 @@ public class ModelImpl implements Model{
     private final TileManager tileman;
     private final Zombie zombie;
     private final MapData data;
+    private Controller control;
 
     public ModelImpl(){
         this.tileman=new TileManagerImpl();
         this.zombie=new ZombieImpl();
         this.data=new MapDataImpl();
+    }
+
+    public void setController(final Controller c){
+        this.control=c;
     }
 
     public void updateZombie(){
