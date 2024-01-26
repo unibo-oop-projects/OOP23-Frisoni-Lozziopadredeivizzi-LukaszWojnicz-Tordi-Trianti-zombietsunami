@@ -9,7 +9,7 @@ import main.java.zombieTsunami.model.mapModel.api.TileImage;
 
 public class TileImageImpl implements TileImage {
 
-    private final Map<String, TileImpl> itemMap = new HashMap<>();
+    private final List<TileImpl> itemMap = new ArrayList<>();
     private final List<String> element;
     
     private final String DIRT = "dirt.png";
@@ -29,18 +29,19 @@ public class TileImageImpl implements TileImage {
     }
 
     @Override
-    public Map<String, TileImpl> setTileImage() {
+    public List<TileImpl> setTileImage() {
 
         this.element.forEach(x -> {
-            setSingleTile(x);
+            int i = 0;
+            setSingleTile(i++, x);
         });
         return itemMap;
 
     }
 
-    private final void setSingleTile(final String source) {
-        this.itemMap.put(source, new TileImpl());
-        this.itemMap.get(source).setImage(TileImpl.ROOT + TileImpl.RESOURCES + source);
+    private final void setSingleTile(final int index, final String source) {
+        this.itemMap.add(index, new TileImpl());
+        this.itemMap.get(index).setImage(TileImpl.ROOT + TileImpl.RESOURCES + source);
     }
 
 }
