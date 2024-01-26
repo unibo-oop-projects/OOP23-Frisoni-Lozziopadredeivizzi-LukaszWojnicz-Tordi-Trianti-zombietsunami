@@ -7,4 +7,6 @@ public interface Model {
     void updateZombie();
 
     void drowMap(Graphics2D g2);
+
+    void setController(Controller c);
 }
