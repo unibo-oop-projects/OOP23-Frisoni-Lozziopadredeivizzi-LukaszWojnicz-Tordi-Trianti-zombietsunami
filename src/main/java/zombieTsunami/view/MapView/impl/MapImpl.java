@@ -15,14 +15,12 @@ import main.java.zombieTsunami.view.mapView.api.Map;
 import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
 import main.java.zombieTsunami.controller.zombieController.api.ControllerZombie;
 import main.java.zombieTsunami.controller.zombieController.impl.ControllerZombieImpl;
-import main.java.zombieTsunami.model.MapData;
 
 public class MapImpl extends JPanel implements Map, Runnable {
 
     private final static long NANOSEC = 100000000;
 
     private Thread gameThread;
-    private final MapData data = new MapData();
     private final VController controller = new VControllerImpl();
     KeyHandler keyH = new KeyHandlerImpl();
     //set zombie position
