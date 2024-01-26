@@ -1,5 +1,7 @@
 package main.java.zombieTsunami.controller;
 
+import java.awt.Graphics2D;
+
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.model.MapData;
@@ -36,5 +38,13 @@ public class ControllerImpl implements Controller{
 
     public int getScreenHigh(){
         return MapData.getScreenH();
+    }
+
+    public void drowMap(final Graphics2D g2){
+        this.model.drowMap(g2);
+    }
+
+    public void updateZombie(){
+        this.model.updateZombie();
     }
 }
