@@ -16,7 +16,7 @@ public class TileManagerImpl implements TileManager {
     private final MapData data = new MapDataImpl();
 
     @Override
-    public void drow(final Graphics2D g2) {
+    public void drow(final Graphics2D g2, final int screenCol, final int screenRow, final int titleSize) {
         final List<List<Integer>> mapNum = gameMap.loadMap();
         final var item = tileImg.setTileImage();
         int x = 0;
