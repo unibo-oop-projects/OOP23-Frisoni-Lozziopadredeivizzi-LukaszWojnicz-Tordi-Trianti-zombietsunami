@@ -1,8 +1,9 @@
 package main.java.zombieTsunami.view;
 
 import main.java.zombieTsunami.api.Controller;
+import main.java.zombieTsunami.view.api.VController;
 
-public class VController {
+public class VControllerImpl implements VController{
     
     private Controller control;
 
