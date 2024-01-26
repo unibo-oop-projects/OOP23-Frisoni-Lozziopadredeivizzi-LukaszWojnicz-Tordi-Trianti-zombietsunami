@@ -29,11 +29,12 @@ public class TileImageImpl implements TileImage {
     }
 
     @Override
-    public void setTileImage() {
+    public Map<String, TileImpl> setTileImage() {
 
         this.element.forEach(x -> {
             setSingleTile(x);
         });
+        return itemMap;
 
     }
 
