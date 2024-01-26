@@ -1,8 +1,8 @@
 package main.java.zombieTsunami.controller.mapController.impl;
 
 import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
-import main.java.zombieTsunami.view.MapView.api.MapData;
-import main.java.zombieTsunami.view.MapView.impl.MapDataImpl;
+import main.java.zombieTsunami.view.mapView.api.MapData;
+import main.java.zombieTsunami.view.mapView.impl.MapDataImpl;
 
 public class ControllerMapDataImpl implements ControllerMapData{
 
