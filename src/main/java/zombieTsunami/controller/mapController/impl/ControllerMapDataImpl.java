@@ -22,7 +22,4 @@ public class ControllerMapDataImpl implements ControllerMapData{
     public int getTitleSize() {
         return this.mapData.getTitSize();
     }
-
-    
-    
 }
