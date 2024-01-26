@@ -12,6 +12,9 @@ public class TileImpl implements Tile{
     private BufferedImage image;
     private boolean collision = false;
 
+    public static final String ROOT = "../../../../../";
+    public static final String RESOURCES = "resources/zombieTsunami/";
+
     @Override
     public void setImage(String string) {
         try {

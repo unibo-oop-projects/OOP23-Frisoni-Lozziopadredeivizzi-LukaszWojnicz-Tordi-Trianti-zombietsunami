@@ -11,9 +11,6 @@ public class TileImageImpl implements TileImage {
 
     private final Map<String, TileImpl> itemMap = new HashMap<>();
     private final List<String> element;
-
-    private final String ROOT = "../../../../../";
-    private final String RESOURCES = "resources/zombieTsunami/";
     
     private final String DIRT = "dirt.png";
     private final String SKY = "sky.png";
@@ -42,7 +39,7 @@ public class TileImageImpl implements TileImage {
 
     private final void setSingleTile(final String source) {
         this.itemMap.put(source, new TileImpl());
-        this.itemMap.get(source).setImage(ROOT + RESOURCES + source);
+        this.itemMap.get(source).setImage(TileImpl.ROOT + TileImpl.RESOURCES + source);
     }
 
 }
