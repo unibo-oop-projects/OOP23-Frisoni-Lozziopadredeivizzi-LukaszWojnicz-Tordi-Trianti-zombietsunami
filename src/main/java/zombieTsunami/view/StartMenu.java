@@ -12,20 +12,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
-import main.java.zombieTsunami.api.MapData;
-import main.java.zombieTsunami.model.MapData;
-
 public class StartMenu extends JPanel {
 
     private final JButton startButtonGame = new JButton("START PLAY");
     private final JButton rulesButton = new JButton("RULES");
     private final JLabel label = new JLabel("Zombie Tsunami");
 
-    private final MapData data = new MapData();
-
-    public StartMenu() {
+    public StartMenu(final int screenW, final int screenH) {
         this.setBackground(Color.lightGray);
-        this.setPreferredSize(new DimensionUIResource(this.data.getScreenW(), this.data.getScreenH()));
+        this.setPreferredSize(new DimensionUIResource(screenW, screenH));
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     }
 
