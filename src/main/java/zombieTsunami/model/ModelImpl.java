@@ -1,17 +1,19 @@
 package main.java.zombieTsunami.model;
 
 import java.awt.Graphics2D;
+
+import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.model.mapModel.api.TileManager;
 import main.java.zombieTsunami.model.mapModel.impl.TileManagerImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
 
-public class Model {
+public class ModelImpl implements Model{
 
     private final TileManager tileman;
     private final Zombie zombie;
 
-    public Model(){
+    public ModelImpl(){
         this.tileman=new TileManagerImpl();
         this.zombie=new ZombieImpl();
     }
