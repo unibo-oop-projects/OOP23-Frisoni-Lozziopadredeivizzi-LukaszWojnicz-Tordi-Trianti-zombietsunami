@@ -1,6 +1,7 @@
 package main.java.zombieTsunami.model.mapModel.impl;
 
 import java.awt.Graphics2D;
+import java.util.List;
 
 import main.java.zombieTsunami.api.MapData;
 import main.java.zombieTsunami.model.MapDataImpl;
@@ -16,13 +17,15 @@ public class TileManagerImpl implements TileManager {
 
     @Override
     public void drow(final Graphics2D g2) {
+        final List<List<Integer>> mapNum = gameMap.loadMap();
+        final var item = tileImg.setTileImage();
         int x = 0;
         int y = 0;
 
         for (int row = 0; row < this.data.getMaxScRow(); row++) {
             for (int col = 0; col < this.data.getMaxScCol(); col++) {
-                int tileNum = gameMap.loadMap().get(row).get(col);
-                g2.drawImage(tileImg.setTileImage().get(tileNum).getImage(), x, y, this.data.getTitSize(),
+                int tileNum = mapNum.get(row).get(col);
+                g2.drawImage(item.get(tileNum).getImage(), x, y, this.data.getTitSize(),
                         this.data.getTitSize(), null);
                 x += this.data.getTitSize();
             }
