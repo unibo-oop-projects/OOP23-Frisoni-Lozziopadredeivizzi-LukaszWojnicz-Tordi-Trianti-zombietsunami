@@ -40,4 +40,9 @@ public class VControllerImpl implements VController{
     public int getFPSC() {
         return this.control.getFPS();
     }
+
+    @Override
+    public void drawZombieC(final Graphics2D g2) {
+        this.control.drawZombie(g2);
+    }
 }

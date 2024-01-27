@@ -65,4 +65,9 @@ public class ControllerImpl implements Controller{
     public void updateZombie(){
         this.model.updateZombie();
     }
+
+    @Override
+    public void drawZombie(Graphics2D g2){
+        this.model.drawZombie(g2);
+    }
 }

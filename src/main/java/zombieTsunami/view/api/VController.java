@@ -17,5 +17,6 @@ public interface VController {
     void updateZombieC();
 
     void drowMapC(Graphics2D g2);
-    
+
+    void drawZombieC(Graphics2D g2);
 }

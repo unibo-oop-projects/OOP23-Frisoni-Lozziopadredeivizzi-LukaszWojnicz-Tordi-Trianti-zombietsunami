@@ -9,4 +9,6 @@ public interface Model {
     void drowMap(Graphics2D g2);
 
     void setController(Controller c);
+
+    void drawZombie(Graphics2D g2);
 }
