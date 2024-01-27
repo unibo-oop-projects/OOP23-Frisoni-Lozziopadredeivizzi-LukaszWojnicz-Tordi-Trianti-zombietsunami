@@ -7,14 +7,12 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
-import main.java.zombieTsunami.controller.mapController.impl.ControllerMapDataImpl;
+import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.obstacleModel.api.*;
 
 public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     private ObstacleEntity entity = new ObstacleEntity();
-    private ControllerMapData data= new ControllerMapDataImpl();
 
     public BombImpl(){
         setDefaultValue();
@@ -27,7 +25,7 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     @Override
     public void drawObstacle(Graphics2D g2) {
-        g2.drawImage(getBomb(), entity.getX(), entity.getY(), data.getTitleSize(), data.getTitleSize(), null);
+        g2.drawImage(getBomb(), entity.getX(), entity.getY(), MapData.getTitSize(), MapData.getTitSize(), null);
         g2.dispose();
     }
 
