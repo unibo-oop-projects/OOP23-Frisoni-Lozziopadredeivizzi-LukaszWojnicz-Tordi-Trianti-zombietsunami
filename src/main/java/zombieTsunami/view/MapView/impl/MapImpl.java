@@ -9,12 +9,9 @@ import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
 import main.java.zombieTsunami.view.zombieView.impl.KeyHandlerImpl;
-import main.java.zombieTsunami.view.VControllerImpl;
 import main.java.zombieTsunami.view.api.VController;
 import main.java.zombieTsunami.view.mapView.api.Map;
 import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
-import main.java.zombieTsunami.controller.zombieController.api.ControllerZombie;
-import main.java.zombieTsunami.controller.zombieController.impl.ControllerZombieImpl;
 
 public class MapImpl extends JPanel implements Map, Runnable {
 
@@ -24,7 +21,6 @@ public class MapImpl extends JPanel implements Map, Runnable {
     private VController controller;
     KeyHandler keyH = new KeyHandlerImpl();
     //set zombie position
-    private ControllerZombie zombie;
     public MapImpl(final VController c) {
         this.controller=c;
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
@@ -65,15 +61,14 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        zombie.handleKeyPress();
+        this.controller.updateZombieC();//handleKeyPress();
     }
 
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
         this.controller.drowMapC(g2);
-        zombie= new ControllerZombieImpl(keyH,g2);
-        zombie.drawZombie(g2);
+        this.controller.drawZombieC(g2);
     }
 
     @Override

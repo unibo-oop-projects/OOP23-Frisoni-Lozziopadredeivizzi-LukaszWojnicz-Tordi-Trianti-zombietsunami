@@ -24,4 +24,5 @@ public interface Controller {
 
     void updateZombie();
     
+    void drawZombie(Graphics2D g2);
 }

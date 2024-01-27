@@ -27,7 +27,11 @@ public class ModelImpl implements Model{
     public void updateZombie(){
         this.zombie.update();
     }
-    
+
+    public void drawZombie(final Graphics2D g2){
+        this.zombie.drawZombie(g2);
+    }
+
     public void drowMap(final Graphics2D g2){
         this.tileman.drow(g2, MapData.getMaxScCol(), MapData.getMaxScRow(), MapData.getTitSize());
     }
