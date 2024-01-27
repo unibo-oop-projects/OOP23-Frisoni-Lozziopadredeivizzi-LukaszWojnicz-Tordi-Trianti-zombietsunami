@@ -6,7 +6,9 @@ import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
 
 public class KeyHandlerImpl implements KeyListener, KeyHandler{
 
-    public boolean jump;
+    private boolean jump;
+    private boolean onPause = false;
+
     @Override
     public void keyTyped(KeyEvent e) {
     }
@@ -16,6 +18,13 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler{
         int code= e.getKeyCode();
         if (code== KeyEvent.VK_SPACE) {
             jump=true;
+        }
+
+        if(code == KeyEvent.VK_ESCAPE && !this.onPause){
+            this.onPause = true;
+        }
+        else if (code == KeyEvent.VK_ESCAPE && this.onPause){
+            this.onPause = false;
         }
     }
 
