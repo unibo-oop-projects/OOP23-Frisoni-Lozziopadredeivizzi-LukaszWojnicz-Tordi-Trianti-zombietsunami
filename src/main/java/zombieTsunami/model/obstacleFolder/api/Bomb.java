@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.obstacleModel.api;
+package main.java.zombieTsunami.model.obstacleFolder.api;
 
 import java.awt.image.BufferedImage;
 

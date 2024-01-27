@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.obstacleModel.impl;
+package main.java.zombieTsunami.model.obstacleFolder.impl;
 
 public class ObstacleEntity{
 
