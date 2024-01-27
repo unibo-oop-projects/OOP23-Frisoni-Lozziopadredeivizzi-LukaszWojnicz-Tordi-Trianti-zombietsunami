@@ -3,13 +3,11 @@ package main.java.zombieTsunami.model.zombieModel.impl;
 
 import java.awt.Graphics2D;
 
-import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
-import main.java.zombieTsunami.controller.mapController.impl.ControllerMapDataImpl;
+import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 
 
 public class ZombieImpl  extends Entity implements Zombie{
-    private ControllerMapData data= new ControllerMapDataImpl();
     private Entity entity = new Entity();
     public ZombieImpl() {
         setDefaultValue();
@@ -31,7 +29,7 @@ public class ZombieImpl  extends Entity implements Zombie{
     }
     @Override
     public void drawZombie(Graphics2D g2) {
-        g2.drawImage(entity.getZombie(), entity.getX(), entity.getY(), data.getTitleSize(), data.getTitleSize(), null);
+        g2.drawImage(entity.getZombie(), entity.getX(), entity.getY(), MapData.getTitSize(),MapData.getTitSize(), null);
         g2.dispose();
     }
    
