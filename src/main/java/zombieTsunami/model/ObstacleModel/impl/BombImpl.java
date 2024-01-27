@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.ObstacleModel.impl;
+package main.java.zombieTsunami.model.obstacleModel.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 import main.java.zombieTsunami.controller.mapController.api.ControllerMapData;
 import main.java.zombieTsunami.controller.mapController.impl.ControllerMapDataImpl;
-import main.java.zombieTsunami.model.ObstacleModel.api.*;
+import main.java.zombieTsunami.model.obstacleModel.api.*;
 
 public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
