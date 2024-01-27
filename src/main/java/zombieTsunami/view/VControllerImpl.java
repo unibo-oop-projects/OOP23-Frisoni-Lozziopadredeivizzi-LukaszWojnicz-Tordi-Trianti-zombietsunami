@@ -12,6 +12,8 @@ public class VControllerImpl implements VController{
     @Override
     public void set(final Controller c){
         this.control=c;
+
+        View.start(this, getScreenWC(), getScreenHC());
     }
 
     @Override

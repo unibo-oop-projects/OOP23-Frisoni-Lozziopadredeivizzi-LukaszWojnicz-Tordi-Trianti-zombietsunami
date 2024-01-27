@@ -21,11 +21,12 @@ public class MapImpl extends JPanel implements Map, Runnable {
     private final static long NANOSEC = 100000000;
 
     private Thread gameThread;
-    private final VController controller = new VControllerImpl();
+    private VController controller;
     KeyHandler keyH = new KeyHandlerImpl();
     //set zombie position
     private ControllerZombie zombie;
-    public MapImpl() {
+    public MapImpl(final VController c) {
+        this.controller=c;
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
