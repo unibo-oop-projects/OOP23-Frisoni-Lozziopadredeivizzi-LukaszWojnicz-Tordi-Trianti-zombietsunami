@@ -6,6 +6,8 @@ public interface Controller {
 
     void setModel();
 
+    void setView();
+
     int getScreenCol();
 
     int getScreenRow();

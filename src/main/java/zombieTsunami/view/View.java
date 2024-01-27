@@ -7,15 +7,14 @@ import main.java.zombieTsunami.view.mapView.impl.MapImpl;
 
 public class View {
 
-    private static VController controller = new VControllerImpl();
 
-    public static void start() {
+    public static void start(final VController c, int width, int high) {
         final JFrame window = new JFrame("Zombie Tsunami");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
 
-        final StartMenu startMenu = new StartMenu(controller.getScreenWC(), controller.getScreenHC());
-        final MapImpl gamePanel = new MapImpl();
+        final StartMenu startMenu = new StartMenu(width, high);
+        final MapImpl gamePanel = new MapImpl(c);
 
         startMenu.enable();
         window.add(startMenu);
