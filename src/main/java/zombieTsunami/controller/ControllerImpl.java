@@ -5,6 +5,7 @@ import java.util.List;
 
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
+import main.java.zombieTsunami.api.Pair;
 import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.ModelImpl;
 import main.java.zombieTsunami.view.VControllerImpl;
@@ -75,5 +76,15 @@ public class ControllerImpl implements Controller{
     @Override
     public List<String> tileElements() {
         return this.model.getTileElem();
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> tilePos() {
+        return this.model.getTilePos();
+    }
+
+    @Override
+    public List<Integer> mapIndexList() {
+        return this.model.getMapIndexList();
     }
 }

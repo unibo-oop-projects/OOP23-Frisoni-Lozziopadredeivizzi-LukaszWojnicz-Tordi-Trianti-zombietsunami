@@ -10,7 +10,7 @@ import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
 public class MapIndexListImpl implements MapIndexList {
 
     @Override
-    public List<Integer> getMapDataList(List<List<Integer>> mapMatrix) {
+    public List<Integer> getMapIndexList(List<List<Integer>> mapMatrix) {
         return mapMatrix.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
