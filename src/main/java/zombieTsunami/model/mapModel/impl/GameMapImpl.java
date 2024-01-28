@@ -12,7 +12,10 @@ import main.java.zombieTsunami.model.mapModel.api.GameMap;
 public class GameMapImpl implements GameMap {
 
     private final String MAP1 = "maps/map01.txt";
-    private final String filePath = TileImpl.ROOT + TileImpl.RESOURCES + MAP1;
+    private final String ROOT = "../../../../../";
+    private final String RESOURCES = "resources/zombieTsunami/";
+
+    private final String filePath = ROOT + RESOURCES + MAP1;
     
     private final List<List<Integer>> mapTileNum = new ArrayList<>();
 
