@@ -12,37 +12,37 @@ import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
 
 public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
-    private int spriteCounter = 0;
-    
+    private int spriteCounter;
+    private final int FRAMESCHANGE = 15;
+
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
-        System.out.println("x:" + controller.getMapX() + " y:" + controller.getMapY());
-        g2.drawImage(getZombie(), controller.getMapX(),controller.getMapY(), MapData.getTitSize(),MapData.getTitSize(), null);
+        g2.drawImage(getZombie(), controller.getMapX()/controller.getNumX(),controller.getMapY(), MapData.getTitSize(),MapData.getTitSize(), null);
         g2.dispose();
+    }
+    private int getCounter(){
+        return spriteCounter;
+    }
+    private int increaseCounter(){
+        return spriteCounter++;
     }
     @Override
     public BufferedImage getZombie() {
         BufferedImage image=null;
         try {
-            if (sprite) {
-                image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie.png"));
-                sprite = false;
-            } else {
-                image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie2.png"));
-                sprite = true;
-            }
-            spriteCounter++;
-                if (spriteCounter>60) {
-                    if (sprite) {
-                        sprite = false;
-                    }else {
-                        sprite = true;
-                    }
+                if (sprite) {
+                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie.png"));
+                } else {
+                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie2.png"));
+                }
+                increaseCounter();
+                if (getCounter()>FRAMESCHANGE) {//se il contatore è maggiore del numero di frame per il cambio sprite
+                    sprite = !sprite;  // Inverto il valore di sprite
                     spriteCounter = 0;
                 }        
             } catch (Exception e) {
-            e.printStackTrace();
-        }
+                e.printStackTrace();
+            }
         return image;
         
     }
