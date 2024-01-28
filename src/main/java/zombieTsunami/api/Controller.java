@@ -1,6 +1,7 @@
 package main.java.zombieTsunami.api;
 
 import java.awt.Graphics2D;
+import java.util.List;
 
 public interface Controller {
 
@@ -20,9 +21,11 @@ public interface Controller {
 
     int getScreenHigh();
 
-    void drowMap(Graphics2D g2);
-
     void updateZombie();
     
     void drawZombie(Graphics2D g2);
+
+    List<List<Integer>> mapList();
+
+    List<String> tileElements();
 }

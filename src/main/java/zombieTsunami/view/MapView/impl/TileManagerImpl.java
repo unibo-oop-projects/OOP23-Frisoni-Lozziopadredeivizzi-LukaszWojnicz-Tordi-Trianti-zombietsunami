@@ -1,11 +1,12 @@
-package main.java.zombieTsunami.model.mapModel.impl;
+package main.java.zombieTsunami.view.mapView.impl;
 
 import java.awt.Graphics2D;
 import java.util.List;
 
 import main.java.zombieTsunami.model.mapModel.api.GameMap;
-import main.java.zombieTsunami.model.mapModel.api.TileImage;
-import main.java.zombieTsunami.model.mapModel.api.TileManager;
+import main.java.zombieTsunami.model.mapModel.impl.GameMapImpl;
+import main.java.zombieTsunami.view.mapView.api.TileImage;
+import main.java.zombieTsunami.view.mapView.api.TileManager;
 
 public class TileManagerImpl implements TileManager {
 
@@ -13,9 +14,9 @@ public class TileManagerImpl implements TileManager {
     private final TileImage tileImg = new TileImageImpl();
 
     @Override
-    public void drow(final Graphics2D g2, final int screenCol, final int screenRow, final int titleSize) {
+    public void drow(final Graphics2D g2, final int screenCol, final int screenRow, final int titleSize, List<String> element) {
         final List<List<Integer>> mapNum = gameMap.loadMap();
-        final var item = tileImg.setTileImage();
+        final var item = tileImg.setTileImage(element);
         int x = 0;
         int y = 0;
 

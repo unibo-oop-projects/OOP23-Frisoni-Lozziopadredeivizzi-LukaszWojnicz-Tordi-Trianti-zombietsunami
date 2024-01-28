@@ -1,6 +1,7 @@
-package main.java.zombieTsunami.model.mapModel.api;
+package main.java.zombieTsunami.view.mapView.api;
 
 import java.awt.Graphics2D;
+import java.util.List;
 
 public interface TileManager {
 
@@ -12,6 +13,6 @@ public interface TileManager {
      * @param screenRow screen rows
      * @param titleSize title's size for the game
      */
-    void drow(Graphics2D g2, int screenCol, int screenRow, int titleSize);
+    void drow(Graphics2D g2, int screenCol, int screenRow, int titleSize, List<String> element);
     
 }

@@ -3,13 +3,12 @@ package main.java.zombieTsunami.model.mapModel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.zombieTsunami.model.mapModel.api.TileImage;
+import main.java.zombieTsunami.model.mapModel.api.TileElement;
 
-public class TileImageImpl implements TileImage {
+public class TileElementImpl implements TileElement{
 
-    private final List<TileImpl> itemMap = new ArrayList<>();
     private final List<String> element = new ArrayList<>();
-    
+
     private final String DIRT = "dirt.png";
     private final String SKY = "sky.png";
     private final String STREET = "street.png";
@@ -21,7 +20,8 @@ public class TileImageImpl implements TileImage {
     private final String BULDING_DOOR = "buldingDoor.png";
     private final String BULDING_WINDOW = "buldingWindow.png";
 
-    public TileImageImpl() {
+    @Override
+    public List<String> getTileElement() {
         this.element.add(0, DIRT);
         this.element.add(1, STREET);
         this.element.add(2, SKY);
@@ -32,20 +32,7 @@ public class TileImageImpl implements TileImage {
         this.element.add(7, BULDING_RIGHT);
         this.element.add(8, BULDING_DOOR);
         this.element.add(9, BULDING_WINDOW);
+        return this.element;
     }
-
-    @Override
-    public List<TileImpl> setTileImage() {
-        for(int i = 0; i<element.size(); i++){
-            setSingleTile(i, element.get(i));
-        }
-        return itemMap;
-
-    }
-
-    private final void setSingleTile(final int index, final String source) {
-        this.itemMap.add(index, new TileImpl());
-        this.itemMap.get(index).setImage(TileImpl.ROOT + TileImpl.RESOURCES + source);
-    }
-
+    
 }
