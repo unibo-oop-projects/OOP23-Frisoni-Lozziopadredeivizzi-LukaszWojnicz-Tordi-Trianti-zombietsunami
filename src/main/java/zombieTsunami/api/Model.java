@@ -14,4 +14,6 @@ public interface Model {
     List<List<Integer>> getMapList();
 
     List<String> getTileElem();
+
+    List<Pair<Integer, Integer>> getTilePos();
 }

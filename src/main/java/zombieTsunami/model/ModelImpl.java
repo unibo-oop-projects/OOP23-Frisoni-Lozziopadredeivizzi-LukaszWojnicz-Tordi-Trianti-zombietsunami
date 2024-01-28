@@ -5,9 +5,12 @@ import java.util.List;
 
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
+import main.java.zombieTsunami.api.Pair;
 import main.java.zombieTsunami.model.mapModel.api.GameMap;
+import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
 import main.java.zombieTsunami.model.mapModel.api.TileElement;
 import main.java.zombieTsunami.model.mapModel.impl.GameMapImpl;
+import main.java.zombieTsunami.model.mapModel.impl.MapIndexListImpl;
 import main.java.zombieTsunami.model.mapModel.impl.TileElementImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
@@ -16,12 +19,14 @@ public class ModelImpl implements Model{
 
     private final GameMap gameMap;
     private final TileElement tileElem;
+    private final MapIndexList mapData;
     private final Zombie zombie;
     private Controller control;
 
     public ModelImpl(){
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
+        this.mapData = new MapIndexListImpl();
         this.zombie=new ZombieImpl();
     }
 
@@ -45,5 +50,11 @@ public class ModelImpl implements Model{
     @Override
     public List<String> getTileElem() {
         return this.tileElem.getTileElement();
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getTilePos() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTilePos'");
     }
 }

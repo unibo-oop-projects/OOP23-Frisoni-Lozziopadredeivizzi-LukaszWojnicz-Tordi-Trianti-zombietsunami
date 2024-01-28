@@ -4,7 +4,7 @@ import java.util.List;
 
 import main.java.zombieTsunami.api.Pair;
 
-public interface MapDataList {
+public interface MapIndexList {
     
     /**
      * @param mapMatrix

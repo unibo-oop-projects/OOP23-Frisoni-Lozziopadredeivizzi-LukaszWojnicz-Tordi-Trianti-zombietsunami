@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import main.java.zombieTsunami.api.Pair;
-import main.java.zombieTsunami.model.mapModel.api.MapDataList;
+import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
 
-public class MapDataListImpl implements MapDataList {
+public class MapIndexListImpl implements MapIndexList {
 
     @Override
     public List<Integer> getMapDataList(List<List<Integer>> mapMatrix) {
