@@ -25,11 +25,18 @@ public interface VController {
     void updateZombieC();
 
     void drawZombieC(Graphics2D g2);
-
     List<String> tileElementsC();
 
     List<Pair<Integer, Integer>> tilePosC();
 
     List<Integer> mapIndexListC();
     
+    int getMapX();
+
+    int getMapY();
+
+    int getSpeed();
+
+    int getNumX();
+
 }
