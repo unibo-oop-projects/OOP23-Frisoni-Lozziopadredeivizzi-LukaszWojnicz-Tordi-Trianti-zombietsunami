@@ -24,5 +24,11 @@ public interface Controller {
 
     void updateZombie();
     
-    void drawZombie(Graphics2D g2);
+    int getMapX();
+
+    int getMapY();
+
+    int getSpeed();
+
+    int getNumX();
 }

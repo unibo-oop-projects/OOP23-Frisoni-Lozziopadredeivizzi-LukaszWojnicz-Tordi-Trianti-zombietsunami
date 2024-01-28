@@ -1,10 +1,12 @@
 package main.java.zombieTsunami.model.zombieModel.api;
 
-public interface Zombie {
-    void jump();
-    void update();
+public interface Entity {
+    
     int getX();
+
     int getY();
+
     int getSpeed();
+    
     int getNumX();
 }

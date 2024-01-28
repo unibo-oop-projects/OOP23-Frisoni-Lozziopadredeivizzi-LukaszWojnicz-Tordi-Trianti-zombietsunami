@@ -1,8 +1,8 @@
-package main.java.zombieTsunami.view.zombieView.impl;
+package main.java.zombieTsunami.view;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
+import main.java.zombieTsunami.view.api.KeyHandler;
 
 public class KeyHandlerImpl implements KeyListener, KeyHandler{
 
