@@ -11,6 +11,7 @@ import javax.swing.plaf.DimensionUIResource;
 import main.java.zombieTsunami.view.zombieView.impl.KeyHandlerImpl;
 import main.java.zombieTsunami.view.api.VController;
 import main.java.zombieTsunami.view.mapView.api.Map;
+import main.java.zombieTsunami.view.mapView.api.TileManager;
 import main.java.zombieTsunami.view.zombieView.api.KeyHandler;
 
 public class MapImpl extends JPanel implements Map, Runnable {
@@ -19,10 +20,14 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     private Thread gameThread;
     private VController controller;
+
+    private final TileManager drowMap;
     KeyHandler keyH = new KeyHandlerImpl();
-    //set zombie position
+
+    // set zombie position
     public MapImpl(final VController c) {
-        this.controller=c;
+        this.controller = c;
+        this.drowMap = new TileManagerImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -61,13 +66,14 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        this.controller.updateZombieC();//handleKeyPress();
+        this.controller.updateZombieC();// handleKeyPress();
     }
 
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
-        this.controller.drowMapC(g2);
+        this.drowMap.drow(g2, controller.screenColC(), controller.screenRowC(), controller.titleSizeC(),
+                controller.tileElementsC());
         this.controller.drawZombieC(g2);
     }
 

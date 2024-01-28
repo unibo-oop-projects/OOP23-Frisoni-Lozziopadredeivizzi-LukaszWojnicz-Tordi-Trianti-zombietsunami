@@ -1,6 +1,7 @@
 package main.java.zombieTsunami.controller;
 
 import java.awt.Graphics2D;
+import java.util.List;
 
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
@@ -57,11 +58,6 @@ public class ControllerImpl implements Controller{
     }
 
     @Override
-    public void drowMap(final Graphics2D g2){
-        this.model.drowMap(g2);
-    }
-
-    @Override
     public void updateZombie(){
         this.model.updateZombie();
     }
@@ -69,5 +65,15 @@ public class ControllerImpl implements Controller{
     @Override
     public void drawZombie(Graphics2D g2){
         this.model.drawZombie(g2);
+    }
+
+    @Override
+    public List<List<Integer>> mapList() {
+        return this.model.getMapList();
+    }
+
+    @Override
+    public List<String> tileElements() {
+        return this.model.getTileElem();
     }
 }
