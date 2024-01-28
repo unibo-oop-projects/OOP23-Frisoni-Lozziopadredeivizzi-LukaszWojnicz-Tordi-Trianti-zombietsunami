@@ -19,14 +19,14 @@ public class ModelImpl implements Model{
 
     private final GameMap gameMap;
     private final TileElement tileElem;
-    private final MapIndexList mapData;
+    private final MapIndexList mapIndex;
     private final Zombie zombie;
     private Controller control;
 
     public ModelImpl(){
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
-        this.mapData = new MapIndexListImpl();
+        this.mapIndex = new MapIndexListImpl();
         this.zombie=new ZombieImpl();
     }
 
@@ -54,7 +54,6 @@ public class ModelImpl implements Model{
 
     @Override
     public List<Pair<Integer, Integer>> getTilePos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTilePos'");
+        return this.mapIndex.getTilePosition(MapData.getMaxScRow(), MapData.getMaxScCol(), MapData.getTitSize());
     }
 }
