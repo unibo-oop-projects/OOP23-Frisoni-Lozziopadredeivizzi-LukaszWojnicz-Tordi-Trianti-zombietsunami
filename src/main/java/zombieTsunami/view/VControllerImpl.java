@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.util.List;
 
 import main.java.zombieTsunami.api.Controller;
+import main.java.zombieTsunami.api.Pair;
 import main.java.zombieTsunami.view.api.VController;
 
 public class VControllerImpl implements VController{
@@ -60,5 +61,15 @@ public class VControllerImpl implements VController{
     @Override
     public int titleSizeC() {
         return this.control.getTitleSize();
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> tilePosC() {
+        return this.control.tilePos();
+    }
+
+    @Override
+    public List<Integer> mapIndexListC() {
+        return this.control.mapIndexList();
     }
 }
