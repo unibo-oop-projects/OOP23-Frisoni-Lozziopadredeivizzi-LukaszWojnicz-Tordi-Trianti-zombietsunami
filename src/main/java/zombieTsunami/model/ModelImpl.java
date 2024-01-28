@@ -1,22 +1,32 @@
 package main.java.zombieTsunami.model;
 
 import java.awt.Graphics2D;
+import java.util.List;
 
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
-import main.java.zombieTsunami.model.mapModel.api.TileManager;
-import main.java.zombieTsunami.model.mapModel.impl.TileManagerImpl;
+import main.java.zombieTsunami.api.Pair;
+import main.java.zombieTsunami.model.mapModel.api.GameMap;
+import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
+import main.java.zombieTsunami.model.mapModel.api.TileElement;
+import main.java.zombieTsunami.model.mapModel.impl.GameMapImpl;
+import main.java.zombieTsunami.model.mapModel.impl.MapIndexListImpl;
+import main.java.zombieTsunami.model.mapModel.impl.TileElementImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
 
 public class ModelImpl implements Model{
 
-    private final TileManager tileman;
+    private final GameMap gameMap;
+    private final TileElement tileElem;
+    private final MapIndexList mapIndex;
     private final Zombie zombie;
     private Controller control;
 
     public ModelImpl(){
-        this.tileman=new TileManagerImpl();
+        this.gameMap = new GameMapImpl();
+        this.tileElem = new TileElementImpl();
+        this.mapIndex = new MapIndexListImpl();
         this.zombie=new ZombieImpl();
     }
 
@@ -32,7 +42,18 @@ public class ModelImpl implements Model{
         this.zombie.drawZombie(g2);
     }
 
-    public void drowMap(final Graphics2D g2){
-        this.tileman.drow(g2, MapData.getMaxScCol(), MapData.getMaxScRow(), MapData.getTitSize());
+    @Override
+    public List<List<Integer>> getMapList() {
+        return this.gameMap.loadMap();
+    }
+
+    @Override
+    public List<String> getTileElem() {
+        return this.tileElem.getTileElement();
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getTilePos() {
+        return this.mapIndex.getTilePosition(MapData.getMaxScRow(), MapData.getMaxScCol(), MapData.getTitSize());
     }
 }
