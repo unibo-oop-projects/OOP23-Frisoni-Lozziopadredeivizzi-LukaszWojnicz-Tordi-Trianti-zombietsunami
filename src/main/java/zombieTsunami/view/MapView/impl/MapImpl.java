@@ -8,7 +8,6 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
-import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 import main.java.zombieTsunami.view.KeyHandlerImpl;
 import main.java.zombieTsunami.view.api.KeyHandler;
 import main.java.zombieTsunami.view.api.VController;
@@ -25,7 +24,6 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     KeyHandler keyH = new KeyHandlerImpl();
-    private DrawZombieImpl drawZombie = new DrawZombieImpl();
     //set zombie position
     public MapImpl(final VController c) {
         this.controller = c;

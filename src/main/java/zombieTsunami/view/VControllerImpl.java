@@ -12,7 +12,7 @@ import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 public class VControllerImpl implements VController{
     
     private Controller control;
-
+    private DrawZombie drawZombie=new DrawZombieImpl();
     @Override
     public void set(final Controller c){
         this.control=c;
@@ -42,8 +42,7 @@ public class VControllerImpl implements VController{
 
     @Override
     public void drawZombieC(final Graphics2D g2) {
-        DrawZombie zombie = new DrawZombieImpl();
-        zombie.drawZombieV(g2,this);
+        drawZombie.drawZombieV(g2,this);
     }
     @Override
     public int getMapX() {
