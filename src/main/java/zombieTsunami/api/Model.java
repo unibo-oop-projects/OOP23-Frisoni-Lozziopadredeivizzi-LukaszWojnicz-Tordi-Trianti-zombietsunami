@@ -10,5 +10,11 @@ public interface Model {
 
     void setController(Controller c);
 
-    void drawZombie(Graphics2D g2);
+    int getX();
+
+    int getY();
+
+    int getSpeed();
+
+    int getNumX();
 }

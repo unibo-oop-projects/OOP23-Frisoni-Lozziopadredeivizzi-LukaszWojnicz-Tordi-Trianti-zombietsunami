@@ -19,4 +19,14 @@ public interface VController {
     void drowMapC(Graphics2D g2);
 
     void drawZombieC(Graphics2D g2);
+
+    int getMapX();
+
+    int getMapY();
+
+    int getSpeed();
+
+    int getNumX();
+
+
 }

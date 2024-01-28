@@ -1,14 +1,10 @@
 package main.java.zombieTsunami.model.zombieModel.impl;
 
-
-import java.awt.Graphics2D;
-
-import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 
 
-public class ZombieImpl  extends Entity implements Zombie{
-    private Entity entity = new Entity();
+public class ZombieImpl implements Zombie{
+    private EntityImpl entity = new EntityImpl();
     private final int NUM=4;
     public ZombieImpl() {
         setDefaultValue();
@@ -29,9 +25,22 @@ public class ZombieImpl  extends Entity implements Zombie{
         entity.setX(entity.getX()+entity.getSpeed());
     }
     @Override
-    public void drawZombie(Graphics2D g2) {
-        g2.drawImage(entity.getZombie(), entity.getX()/NUM, entity.getY(), MapData.getTitSize(),MapData.getTitSize(), null);
-        g2.dispose();
+    public int getX() {
+        return entity.getX();
+    }
+
+    @Override
+    public int getY() {
+        return entity.getY();
+    
+    }
+    @Override
+    public int getSpeed() {
+        return entity.getSpeed();
+    }
+    @Override
+    public int getNumX() {
+        return NUM;
     }
    
     
