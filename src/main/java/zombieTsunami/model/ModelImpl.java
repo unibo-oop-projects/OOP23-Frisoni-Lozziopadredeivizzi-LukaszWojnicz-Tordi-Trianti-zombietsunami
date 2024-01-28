@@ -1,7 +1,7 @@
 package main.java.zombieTsunami.model;
 
-import java.awt.Graphics2D;
 import java.util.List;
+
 
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
@@ -37,11 +37,7 @@ public class ModelImpl implements Model{
     public void updateZombie(){
         this.zombie.update();
     }
-
-    public void drawZombie(final Graphics2D g2){
-        this.zombie.drawZombie(g2);
-    }
-
+    
     @Override
     public List<List<Integer>> getMapList() {
         return this.gameMap.loadMap();
@@ -61,4 +57,26 @@ public class ModelImpl implements Model{
     public List<Integer> getMapIndexList() {
         return this.mapIndex.getMapIndexList(getMapList());
     }
+    
+    @Override
+    public int getX() {
+        return this.zombie.getX();
+    }
+
+    @Override
+    public int getY() {
+        return this.zombie.getY();
+    }
+
+    @Override
+    public int getSpeed() {
+        return this.zombie.getSpeed();
+    }
+
+    @Override
+    public int getNumX() {
+        return this.zombie.getNumX();
+    }
+
+   
 }
