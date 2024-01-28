@@ -56,4 +56,9 @@ public class ModelImpl implements Model{
     public List<Pair<Integer, Integer>> getTilePos() {
         return this.mapIndex.getTilePosition(MapData.getMaxScRow(), MapData.getMaxScCol(), MapData.getTitSize());
     }
+
+    @Override
+    public List<Integer> getMapIndexList() {
+        return this.mapIndex.getMapIndexList(getMapList());
+    }
 }

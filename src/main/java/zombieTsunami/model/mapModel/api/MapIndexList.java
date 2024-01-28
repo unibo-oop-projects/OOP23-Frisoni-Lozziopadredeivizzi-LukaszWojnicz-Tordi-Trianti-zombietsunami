@@ -10,7 +10,7 @@ public interface MapIndexList {
      * @param mapMatrix
      * @return a List of Integer from the @param mapMatrix 
      */
-    List<Integer> getMapDataList(List<List<Integer>> mapMatrix);
+    List<Integer> getMapIndexList(List<List<Integer>> mapMatrix);
 
     List<Pair<Integer, Integer>> getTilePosition(int screenRow, int screenCol, int titleSize);
 }

@@ -28,4 +28,8 @@ public interface Controller {
     List<List<Integer>> mapList();
 
     List<String> tileElements();
+
+    List<Pair<Integer, Integer>> tilePos();
+
+    List<Integer> mapIndexList();
 }
