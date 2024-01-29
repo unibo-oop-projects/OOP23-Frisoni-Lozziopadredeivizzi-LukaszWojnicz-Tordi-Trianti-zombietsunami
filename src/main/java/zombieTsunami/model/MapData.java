@@ -16,7 +16,7 @@ public class MapData {
 
     //WORLD SETTINGS
     private final static int maxWorldCol = 50;
-    private final static int maxWorldRow = 9;
+    private final static int maxWorldRow = 12;
     private final static int worldWidth = titleSize * maxWorldCol;
     private final static int worldHight = titleSize * maxWorldRow;
 
