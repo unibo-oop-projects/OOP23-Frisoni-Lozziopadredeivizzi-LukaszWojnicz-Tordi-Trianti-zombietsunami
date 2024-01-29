@@ -38,4 +38,12 @@ public interface Controller {
     void jumpZombie();
 
     void updateZombie();
+
+    int getWorldCol();
+
+    int getWorldRow();
+
+    int getWorldWidth();
+
+    int getWorldHight();
 }
