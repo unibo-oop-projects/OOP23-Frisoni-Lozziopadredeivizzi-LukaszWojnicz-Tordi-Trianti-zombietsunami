@@ -24,12 +24,6 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
     }
 
     @Override
-    public void drawObstacle(Graphics2D g2) {
-        g2.drawImage(getBomb(), entity.getX(), entity.getY(), MapData.getTitSize(), MapData.getTitSize(), null);
-        g2.dispose();
-    }
-
-    @Override
     public void update() {
         //Se collide con lo zombie, chiama hit();
     }
@@ -38,16 +32,4 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
     public void hit() {
         //Qui dovrebbe esserci il decremento della vita dello zombie.
     }
-
-    @Override
-    public BufferedImage getBomb() {
-        BufferedImage image=null;
-        try {
-            return  image = ImageIO.read(new File("src/main/resources/ZombieTsunami/bomb/Bomb.png"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return image;
-    }
-    
 }
