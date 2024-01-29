@@ -68,7 +68,7 @@ public class ControllerImpl implements Controller{
     }
 
     @Override
-    public List<List<Integer>> mapList() {
+    public List<Integer> mapList() {
         return this.model.getMapList();
     }
 
@@ -82,10 +82,6 @@ public class ControllerImpl implements Controller{
         return this.model.getTilePos();
     }
 
-    @Override
-    public List<Integer> mapIndexList() {
-        return this.model.getMapIndexList();
-    }
     public int getMapY() {
         return this.model.getY();
     }

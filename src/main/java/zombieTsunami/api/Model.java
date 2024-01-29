@@ -8,13 +8,12 @@ public interface Model {
 
     void setController(Controller c);
 
-    List<List<Integer>> getMapList();
+    List<Integer> getMapList();
 
     List<String> getTileElem();
 
     List<Pair<Integer, Integer>> getTilePos();
 
-    List<Integer> getMapIndexList();
     int getX();
 
     int getY();

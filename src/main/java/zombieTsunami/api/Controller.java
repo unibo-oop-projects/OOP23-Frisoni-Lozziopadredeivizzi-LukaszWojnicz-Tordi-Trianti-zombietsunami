@@ -2,8 +2,6 @@ package main.java.zombieTsunami.api;
 
 import java.util.List;
 
-import main.java.zombieTsunami.view.VControllerImpl;
-
 public interface Controller {
 
     void setModel();
@@ -23,13 +21,12 @@ public interface Controller {
     int getScreenHigh();
 
     
-    List<List<Integer>> mapList();
+    List<Integer> mapList();
 
     List<String> tileElements();
 
     List<Pair<Integer, Integer>> tilePos();
 
-    List<Integer> mapIndexList();
     int getMapX();
 
     int getMapY();
