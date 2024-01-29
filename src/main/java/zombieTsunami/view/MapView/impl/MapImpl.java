@@ -19,7 +19,7 @@ import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
 public class MapImpl extends JPanel implements Map, Runnable {
 
-    private final static long NANOSEC = 100000000;
+    private final static long NANOSEC = 1000000000;
 
     private Thread gameThread;
     private VController controller;
