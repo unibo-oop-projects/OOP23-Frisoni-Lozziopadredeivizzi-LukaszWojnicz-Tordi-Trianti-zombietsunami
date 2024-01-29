@@ -3,7 +3,6 @@ package main.java.zombieTsunami.view.obstacleView.impl;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.view.api.VController;
 import main.java.zombieTsunami.view.obstacleView.api.DrawBomb;
 
