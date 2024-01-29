@@ -9,6 +9,6 @@ public interface DrawZombie {
 
     void drawZombieV(final Graphics2D g2, final VController controller);
     BufferedImage getZombie();
-    void update();
+    void updateZombie(final VController controller);
     void jump();
 } 

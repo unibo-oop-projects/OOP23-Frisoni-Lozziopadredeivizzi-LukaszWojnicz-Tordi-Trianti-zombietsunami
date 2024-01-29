@@ -21,7 +21,6 @@ public interface VController {
 
     int getFPSC();
 
-    void updateZombieC();
 
     List<String> tileElementsC();
 
@@ -40,4 +39,5 @@ public interface VController {
     void jumpZombie();
 
     void updateZombie();
+
 }

@@ -26,10 +26,7 @@ public class VControllerImpl implements VController{
         return this.control.getScreenHigh();
     }
 
-    @Override
-    public void updateZombieC() {
-        this.control.updateZombie();
-    }
+   
 
     @Override
     public int getFPSC() {
@@ -88,12 +85,12 @@ public class VControllerImpl implements VController{
     }
     
     @Override
-    public void updateZombie() {
-        this.control.updateZombie();
+    public void jumpZombie() {
+        this.control.jumpZombie();
     }
 
     @Override
-    public void jumpZombie() {
-         this.control.jumpZombie();
+    public void updateZombie() {
+        this.control.updateZombie();
     }
 }
