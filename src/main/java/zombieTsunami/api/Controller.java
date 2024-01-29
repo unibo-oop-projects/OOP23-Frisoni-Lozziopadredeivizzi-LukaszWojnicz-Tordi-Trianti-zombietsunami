@@ -25,7 +25,7 @@ public interface Controller {
 
     List<String> tileElements();
 
-    List<Pair<Integer, Integer>> tilePos();
+    List<Pair<Integer, Integer>> screenTilePos();
 
     int getMapX();
 

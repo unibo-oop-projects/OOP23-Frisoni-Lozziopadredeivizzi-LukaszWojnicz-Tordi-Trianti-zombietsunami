@@ -27,6 +27,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
     private final TileManager drowMap;
     KeyHandler keyH = new KeyHandlerImpl();
     private final DrawZombie drawZombie;
+
     public MapImpl(final VController c) {
         this.controller = c;
         this.drowMap = new TileManagerImpl();
@@ -76,7 +77,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
-                controller.tilePosC());
+                controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
     }
 

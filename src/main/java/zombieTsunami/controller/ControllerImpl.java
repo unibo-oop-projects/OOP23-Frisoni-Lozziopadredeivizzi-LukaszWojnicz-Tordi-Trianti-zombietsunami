@@ -78,8 +78,8 @@ public class ControllerImpl implements Controller{
     }
 
     @Override
-    public List<Pair<Integer, Integer>> tilePos() {
-        return this.model.getTilePos();
+    public List<Pair<Integer, Integer>> screenTilePos() {
+        return this.model.getScreenTilePos();
     }
 
     public int getMapY() {
