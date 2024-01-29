@@ -105,4 +105,24 @@ public class ControllerImpl implements Controller{
     public void updateZombie() {
         this.model.updateZombie();
     }
+
+    @Override
+    public int getWorldCol() {
+        return MapData.getMaxWorldCol();
+    }
+
+    @Override
+    public int getWorldRow() {
+        return MapData.getMaxWorldRow();
+    }
+
+    @Override
+    public int getWorldWidth() {
+        return MapData.getWorldWidth();
+    }
+
+    @Override
+    public int getWorldHight() {
+        return MapData.getWorldHight();
+    }
 }
