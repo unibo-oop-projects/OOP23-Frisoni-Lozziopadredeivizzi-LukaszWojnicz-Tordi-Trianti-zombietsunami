@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model;
+package zombieTsunami.model;
 
 public class MapData {
 

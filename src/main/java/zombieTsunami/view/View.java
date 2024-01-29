@@ -1,9 +1,9 @@
-package main.java.zombieTsunami.view;
+package zombieTsunami.view;
 
 import javax.swing.JFrame;
 
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.mapView.impl.MapImpl;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.mapView.impl.MapImpl;
 
 public class View {
 

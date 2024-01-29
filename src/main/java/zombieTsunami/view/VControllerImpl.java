@@ -1,10 +1,10 @@
-package main.java.zombieTsunami.view;
+package zombieTsunami.view;
 
 import java.util.List;
 
-import main.java.zombieTsunami.api.Controller;
-import main.java.zombieTsunami.api.Pair;
-import main.java.zombieTsunami.view.api.VController;
+import zombieTsunami.api.Controller;
+import zombieTsunami.api.Pair;
+import zombieTsunami.view.api.VController;
 
 public class VControllerImpl implements VController{
     

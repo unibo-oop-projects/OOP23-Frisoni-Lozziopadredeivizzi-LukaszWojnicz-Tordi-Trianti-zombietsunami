@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.obstacleModel.api;
+package zombieTsunami.model.obstacleModel.api;
 
 import java.awt.Graphics2D;
 
