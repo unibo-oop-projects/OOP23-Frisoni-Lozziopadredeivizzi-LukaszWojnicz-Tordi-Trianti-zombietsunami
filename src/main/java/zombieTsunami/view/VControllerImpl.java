@@ -75,8 +75,8 @@ public class VControllerImpl implements VController{
     }
 
     @Override
-    public List<Pair<Integer, Integer>> tilePosC() {
-        return this.control.tilePos();
+    public List<Pair<Integer, Integer>> screenTilePosC() {
+        return this.control.screenTilePos();
     }
 
     @Override

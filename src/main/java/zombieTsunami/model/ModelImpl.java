@@ -2,7 +2,6 @@ package main.java.zombieTsunami.model;
 
 import java.util.List;
 
-
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.api.Pair;
@@ -15,29 +14,29 @@ import main.java.zombieTsunami.model.mapModel.impl.TileElementImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
 
-public class ModelImpl implements Model{
+public class ModelImpl implements Model {
 
     private final GameMap gameMap;
     private final TileElement tileElem;
-    private final MapPosList mapIndex;
+    private final MapPosList mapPos;
     private final Zombie zombie;
     private Controller control;
 
-    public ModelImpl(){
+    public ModelImpl() {
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
-        this.mapIndex = new MapPosListImpl();
-        this.zombie=new ZombieImpl();
+        this.mapPos = new MapPosListImpl();
+        this.zombie = new ZombieImpl();
     }
 
-    public void setController(final Controller c){
-        this.control=c;
+    public void setController(final Controller c) {
+        this.control = c;
     }
 
-    public void updateZombie(){
+    public void updateZombie() {
         this.zombie.update();
     }
-    
+
     @Override
     public List<Integer> getMapList() {
         return this.gameMap.loadMap();
@@ -49,10 +48,11 @@ public class ModelImpl implements Model{
     }
 
     @Override
-    public List<Pair<Integer, Integer>> getTilePos() {
-        return this.mapIndex.getTilePosition(MapData.getMaxScRow(), MapData.getMaxScCol(), MapData.getTitSize());
+    public List<Pair<Integer, Integer>> getScreenTilePos() {
+        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
+                MapData.getTitSize(), getX(), getY(), this.zombie.getScreenX(), this.zombie.getScreenY());
     }
-    
+
     @Override
     public int getX() {
         return this.zombie.getX();
@@ -74,9 +74,8 @@ public class ModelImpl implements Model{
     }
 
     @Override
-    public void jump(){
+    public void jump() {
         this.zombie.jump();
     }
 
-   
 }

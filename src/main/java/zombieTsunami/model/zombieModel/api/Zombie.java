@@ -7,4 +7,6 @@ public interface Zombie {
     int getY();
     int getSpeed();
     int getNumX();
+    int getScreenX();
+    int getScreenY();
 }

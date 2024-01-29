@@ -26,11 +26,11 @@ public class GameMapImpl implements GameMap {
             InputStream is = getClass().getResourceAsStream(filePath);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
-            for (int row = 0; row < MapData.getMaxScRow(); row++) {
+            for (int row = 0; row < MapData.getMaxWorldRow(); row++) {
                 final String line = br.readLine();
                 final List<Integer> list = new ArrayList<>();
 
-                for (int col = 0; col < MapData.getMaxScCol(); col++) {
+                for (int col = 0; col < MapData.getMaxWorldCol(); col++) {
                     final List<String> numbers = List.of(line.split(" "));
                     list.add(Integer.parseInt(numbers.get(col)));
                 }

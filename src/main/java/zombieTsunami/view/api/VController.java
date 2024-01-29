@@ -24,7 +24,7 @@ public interface VController {
 
     List<String> tileElementsC();
 
-    List<Pair<Integer, Integer>> tilePosC();
+    List<Pair<Integer, Integer>> screenTilePosC();
 
     List<Integer> mapIndexListC();
     
