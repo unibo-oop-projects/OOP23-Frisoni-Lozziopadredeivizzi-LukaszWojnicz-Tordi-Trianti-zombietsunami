@@ -1,6 +1,5 @@
 package main.java.zombieTsunami.view;
 
-import java.awt.Graphics2D;
 import java.util.List;
 
 import main.java.zombieTsunami.api.Controller;
