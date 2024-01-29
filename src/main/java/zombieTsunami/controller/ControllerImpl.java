@@ -99,4 +99,9 @@ public class ControllerImpl implements Controller{
     public int getNumX() {
         return this.model.getNumX();
     }
+
+    @Override
+    public void jumpZombie() {
+        this.model.jump();
+    }
 }

@@ -41,6 +41,15 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler{
         return jump;
     }
 
+    @Override
+    public void handleKeyPressed(KeyEvent e) {
+        if (isPressed()) {
+            //zombie.jump();
+        }else {
+            //zombie.update();
+        }
+    }
+
    
     
 }

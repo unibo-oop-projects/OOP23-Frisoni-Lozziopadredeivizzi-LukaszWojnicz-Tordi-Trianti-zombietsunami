@@ -46,4 +46,14 @@ public class DrawZombieImpl implements DrawZombie{
         return image;
         
     }
+    @Override
+    public void update() {
+        //this.controller
+        
+    }
+    @Override
+    public void jump() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'jump'");
+    }
 }

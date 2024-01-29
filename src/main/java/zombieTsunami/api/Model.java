@@ -22,4 +22,5 @@ public interface Model {
     int getSpeed();
 
     int getNumX();
+    void jump();
 }
