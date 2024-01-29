@@ -6,13 +6,10 @@ import java.util.List;
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Pair;
 import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
-import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
 public class VControllerImpl implements VController{
     
     private Controller control;
-    private DrawZombie drawZombie=new DrawZombieImpl();
     @Override
     public void set(final Controller c){
         this.control=c;
@@ -40,10 +37,7 @@ public class VControllerImpl implements VController{
         return this.control.getFPS();
     }
 
-    @Override
-    public void drawZombieC(final Graphics2D g2) {
-        drawZombie.drawZombieV(g2,this);
-    }
+    
     @Override
     public int getMapX() {
         return this.control.getMapX();
