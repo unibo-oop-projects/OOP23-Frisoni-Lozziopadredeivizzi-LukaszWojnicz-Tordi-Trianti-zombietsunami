@@ -1,12 +1,19 @@
 package main.java.zombieTsunami.model.zombieModel.impl;
 
+import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 
 
 public class ZombieImpl implements Zombie{
     private EntityImpl entity = new EntityImpl();
     private final int NUM=4;
+
+    private final int screenX;
+    private final int screenY;
+
     public ZombieImpl() {
+        this.screenX =MapData.getScreenW() / 2 - (MapData.getTitSize() / 2);
+        this.screenY = MapData.getScreenH() / 2 - (MapData.getTitSize() / 2);
         setDefaultValue();
     }
     private void setDefaultValue() {
@@ -41,6 +48,13 @@ public class ZombieImpl implements Zombie{
     @Override
     public int getNumX() {
         return NUM;
+    }
+    public int getScreenX(){
+        return this.screenX;
+    }
+
+    public int getScreenY(){
+        return this.screenY;
     }
    
     

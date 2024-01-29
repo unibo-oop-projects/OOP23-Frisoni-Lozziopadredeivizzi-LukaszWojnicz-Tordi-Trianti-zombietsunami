@@ -37,4 +37,7 @@ public interface VController {
 
     int getNumX();
 
+    void jumpZombie();
+
+    void updateZombie();
 }

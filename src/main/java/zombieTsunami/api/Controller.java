@@ -36,4 +36,6 @@ public interface Controller {
     int getSpeed();
 
     int getNumX();
+    
+    void jumpZombie();
 }

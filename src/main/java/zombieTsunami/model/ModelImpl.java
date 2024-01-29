@@ -78,5 +78,10 @@ public class ModelImpl implements Model{
         return this.zombie.getNumX();
     }
 
+    @Override
+    public void jump(){
+        this.zombie.jump();
+    }
+
    
 }

@@ -86,4 +86,14 @@ public class VControllerImpl implements VController{
     public List<Integer> mapIndexListC() {
         return this.control.mapIndexList();
     }
+    
+    @Override
+    public void updateZombie() {
+        this.control.updateZombie();
+    }
+
+    @Override
+    public void jumpZombie() {
+         this.control.jumpZombie();
+    }
 }
