@@ -7,10 +7,10 @@ import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.api.Pair;
 import main.java.zombieTsunami.model.mapModel.api.GameMap;
-import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
+import main.java.zombieTsunami.model.mapModel.api.MapPosList;
 import main.java.zombieTsunami.model.mapModel.api.TileElement;
 import main.java.zombieTsunami.model.mapModel.impl.GameMapImpl;
-import main.java.zombieTsunami.model.mapModel.impl.MapIndexListImpl;
+import main.java.zombieTsunami.model.mapModel.impl.MapPosListImpl;
 import main.java.zombieTsunami.model.mapModel.impl.TileElementImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
@@ -19,14 +19,14 @@ public class ModelImpl implements Model{
 
     private final GameMap gameMap;
     private final TileElement tileElem;
-    private final MapIndexList mapIndex;
+    private final MapPosList mapIndex;
     private final Zombie zombie;
     private Controller control;
 
     public ModelImpl(){
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
-        this.mapIndex = new MapIndexListImpl();
+        this.mapIndex = new MapPosListImpl();
         this.zombie=new ZombieImpl();
     }
 
@@ -39,7 +39,7 @@ public class ModelImpl implements Model{
     }
     
     @Override
-    public List<List<Integer>> getMapList() {
+    public List<Integer> getMapList() {
         return this.gameMap.loadMap();
     }
 
@@ -51,11 +51,6 @@ public class ModelImpl implements Model{
     @Override
     public List<Pair<Integer, Integer>> getTilePos() {
         return this.mapIndex.getTilePosition(MapData.getMaxScRow(), MapData.getMaxScCol(), MapData.getTitSize());
-    }
-
-    @Override
-    public List<Integer> getMapIndexList() {
-        return this.mapIndex.getMapIndexList(getMapList());
     }
     
     @Override

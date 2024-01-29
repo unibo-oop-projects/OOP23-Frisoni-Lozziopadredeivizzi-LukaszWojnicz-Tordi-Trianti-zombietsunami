@@ -5,14 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import main.java.zombieTsunami.api.Pair;
-import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
+import main.java.zombieTsunami.model.mapModel.api.MapPosList;
 
-public class MapIndexListImpl implements MapIndexList {
-
-    @Override
-    public List<Integer> getMapIndexList(List<List<Integer>> mapMatrix) {
-        return mapMatrix.stream().flatMap(List::stream).collect(Collectors.toList());
-    }
+public class MapPosListImpl implements MapPosList {
 
     @Override
     public List<Pair<Integer, Integer>> getTilePosition(final int screenRow, final int screenCol, final int titleSize) {

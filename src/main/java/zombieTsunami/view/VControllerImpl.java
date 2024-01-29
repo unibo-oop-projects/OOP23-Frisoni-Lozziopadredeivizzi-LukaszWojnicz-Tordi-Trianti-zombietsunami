@@ -81,7 +81,7 @@ public class VControllerImpl implements VController{
 
     @Override
     public List<Integer> mapIndexListC() {
-        return this.control.mapIndexList();
+        return this.control.mapList();
     }
     
     @Override
