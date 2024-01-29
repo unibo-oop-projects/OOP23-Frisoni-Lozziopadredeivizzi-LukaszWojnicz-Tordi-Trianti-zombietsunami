@@ -75,7 +75,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
-        this.drowMap.drow(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
+        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.tilePosC());
         this.drawZombie.drawZombieV(g2, controller);
     }
