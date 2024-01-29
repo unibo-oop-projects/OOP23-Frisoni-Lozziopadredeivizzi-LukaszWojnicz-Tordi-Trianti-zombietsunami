@@ -12,16 +12,15 @@ import zombieTsunami.model.mapModel.api.GameMap;
 
 public class GameMapImpl implements GameMap {
 
+    private final String SEP = "/";
     private final String MAP1 = "maps/map01.txt";
-    private final String ROOT = "../../../../../";
-    private final String RESOURCES = "resources/zombieTsunami/";
+    private final String ROOT = SEP + "zombieTsunami" + SEP;
 
-    private final String filePath = ROOT + RESOURCES + MAP1;
-    
-    private final List<List<Integer>> mapTileNum = new ArrayList<>();
+    private final String filePath = ROOT + MAP1;
 
     @Override
     public List<Integer> loadMap() {
+        final List<List<Integer>> mapTileNum = new ArrayList<>();
         try {
             InputStream is = getClass().getResourceAsStream(filePath);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -35,7 +34,7 @@ public class GameMapImpl implements GameMap {
                     list.add(Integer.parseInt(numbers.get(col)));
                 }
 
-                this.mapTileNum.add(row, list);
+                mapTileNum.add(row, list);
             }
 
             br.close();
