@@ -7,6 +7,11 @@ import main.java.zombieTsunami.view.mapView.api.TileImage;
 
 public class TileImageImpl implements TileImage {
 
+    private static final String DOT = "..";
+    private static final String SEP = "/";
+    private static final String ROOT = DOT + SEP + DOT + SEP + DOT + SEP + DOT + SEP + DOT + SEP;
+    private static final String RESOURCES = "resources/zombieTsunami/tile/";
+
     private final List<TileImpl> itemMap = new ArrayList<>();
 
     @Override
@@ -20,7 +25,7 @@ public class TileImageImpl implements TileImage {
 
     private final void setSingleTile(final int index, final String source) {
         this.itemMap.add(index, new TileImpl());
-        this.itemMap.get(index).setImage(TileImpl.ROOT + TileImpl.RESOURCES + source);
+        this.itemMap.get(index).setImage(ROOT + RESOURCES + source);
     }
 
 }
