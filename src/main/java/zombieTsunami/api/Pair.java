@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.api;
+package zombieTsunami.api;
 /*
  * A standard generic Pair<X,Y>, with getters, hashCode, equals, and toString well implemented. 
  */

@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.mapView.impl;
+package zombieTsunami.view.mapView.impl;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -8,13 +8,13 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
-import main.java.zombieTsunami.view.KeyHandlerImpl;
-import main.java.zombieTsunami.view.api.KeyHandler;
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.mapView.api.Map;
-import main.java.zombieTsunami.view.mapView.api.TileManager;
-import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
-import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
+import zombieTsunami.view.KeyHandlerImpl;
+import zombieTsunami.view.api.KeyHandler;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.mapView.api.Map;
+import zombieTsunami.view.mapView.api.TileManager;
+import zombieTsunami.view.zombieView.api.DrawZombie;
+import zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
 
 public class MapImpl extends JPanel implements Map, Runnable {

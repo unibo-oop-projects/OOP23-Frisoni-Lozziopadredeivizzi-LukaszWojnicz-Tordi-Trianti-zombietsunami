@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.api;
+package zombieTsunami.view.api;
 
 import java.awt.event.KeyEvent;
 

@@ -1,9 +1,9 @@
-package main.java.zombieTsunami.view.mapView.impl;
+package zombieTsunami.view.mapView.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.zombieTsunami.view.mapView.api.TileImage;
+import zombieTsunami.view.mapView.api.TileImage;
 
 public class TileImageImpl implements TileImage {
 

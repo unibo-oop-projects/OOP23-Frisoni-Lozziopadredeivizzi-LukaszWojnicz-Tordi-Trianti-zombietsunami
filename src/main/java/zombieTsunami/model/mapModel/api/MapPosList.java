@@ -1,8 +1,8 @@
-package main.java.zombieTsunami.model.mapModel.api;
+package zombieTsunami.model.mapModel.api;
 
 import java.util.List;
 
-import main.java.zombieTsunami.api.Pair;
+import zombieTsunami.api.Pair;
 
 public interface MapPosList {
 

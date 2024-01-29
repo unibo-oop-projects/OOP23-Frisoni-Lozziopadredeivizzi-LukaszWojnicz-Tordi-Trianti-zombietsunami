@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.zombieView.impl;
+package zombieTsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -6,9 +6,9 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.model.MapData;
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
+import zombieTsunami.model.MapData;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.zombieView.api.DrawZombie;
 
 public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;

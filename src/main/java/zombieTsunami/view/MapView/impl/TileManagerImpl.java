@@ -1,11 +1,11 @@
-package main.java.zombieTsunami.view.mapView.impl;
+package zombieTsunami.view.mapView.impl;
 
 import java.awt.Graphics2D;
 import java.util.List;
 
-import main.java.zombieTsunami.api.Pair;
-import main.java.zombieTsunami.view.mapView.api.TileImage;
-import main.java.zombieTsunami.view.mapView.api.TileManager;
+import zombieTsunami.api.Pair;
+import zombieTsunami.view.mapView.api.TileImage;
+import zombieTsunami.view.mapView.api.TileManager;
 
 public class TileManagerImpl implements TileManager {
 
