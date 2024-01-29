@@ -40,4 +40,12 @@ public interface VController {
 
     void updateZombie();
 
+    int getWorldColC();
+
+    int getWorldRowC();
+
+    int getWorldWidthC();
+
+    int getWorldHightC();
+
 }

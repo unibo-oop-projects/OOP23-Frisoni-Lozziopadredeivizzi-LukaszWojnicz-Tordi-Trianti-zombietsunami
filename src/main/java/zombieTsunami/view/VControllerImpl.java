@@ -93,4 +93,24 @@ public class VControllerImpl implements VController{
     public void updateZombie() {
         this.control.updateZombie();
     }
+
+    @Override
+    public int getWorldColC() {
+        return this.control.getWorldCol();
+    }
+
+    @Override
+    public int getWorldRowC() {
+        return this.control.getWorldRow();
+    }
+
+    @Override
+    public int getWorldWidthC() {
+        return this.control.getWorldWidth();
+    }
+
+    @Override
+    public int getWorldHightC() {
+        return this.control.getWorldHight();
+    }
 }
