@@ -13,6 +13,8 @@ import main.java.zombieTsunami.view.api.KeyHandler;
 import main.java.zombieTsunami.view.api.VController;
 import main.java.zombieTsunami.view.mapView.api.Map;
 import main.java.zombieTsunami.view.mapView.api.TileManager;
+import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
+import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
 
 public class MapImpl extends JPanel implements Map, Runnable {
@@ -24,10 +26,11 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     KeyHandler keyH = new KeyHandlerImpl();
-    //set zombie position
+    private final DrawZombie drawZombie;
     public MapImpl(final VController c) {
         this.controller = c;
         this.drowMap = new TileManagerImpl();
+        this.drawZombie= new DrawZombieImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -66,7 +69,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        this.controller.updateZombieC();// handleKeyPress();
+        this.drawZombie.updateZombie(controller);// handleKeyPress();
     }
 
     public void paintComponent(final Graphics g) {
@@ -74,7 +77,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         final Graphics2D g2 = (Graphics2D) g;
         this.drowMap.drow(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.tilePosC());
-        this.controller.drawZombieC(g2);
+        this.drawZombie.drawZombieV(g2, controller);
     }
 
     @Override

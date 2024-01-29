@@ -2,6 +2,8 @@ package main.java.zombieTsunami.api;
 
 import java.util.List;
 
+import main.java.zombieTsunami.view.VControllerImpl;
+
 public interface Controller {
 
     void setModel();
@@ -20,7 +22,6 @@ public interface Controller {
 
     int getScreenHigh();
 
-    void updateZombie();
     
     List<List<Integer>> mapList();
 
@@ -36,4 +37,8 @@ public interface Controller {
     int getSpeed();
 
     int getNumX();
+    
+    void jumpZombie();
+
+    void updateZombie();
 }

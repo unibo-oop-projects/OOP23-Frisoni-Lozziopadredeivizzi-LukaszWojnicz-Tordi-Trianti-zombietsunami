@@ -7,4 +7,5 @@ public interface KeyHandler {
     void keyReleased(KeyEvent e);
     void keyTyped(KeyEvent e);
     boolean isPressed();
+    void handleKeyPressed(KeyEvent e);
 }
