@@ -57,11 +57,11 @@ public class ControllerImpl implements Controller{
         return MapData.getScreenH();
     }
 
-    @Override
+    /*@Override
     public void updateZombie(){
         this.model.updateZombie();
     }
-
+*/
     @Override
     public int getMapX() {
         return this.model.getX();
@@ -103,5 +103,10 @@ public class ControllerImpl implements Controller{
     @Override
     public void jumpZombie() {
         this.model.jump();
+    }
+
+    @Override
+    public void updateZombie() {
+        this.model.updateZombie();
     }
 }
