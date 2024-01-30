@@ -16,7 +16,7 @@ public class DrawZombieImpl implements DrawZombie{
 
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
-        g2.drawImage(getZombie(), controller.getMapX()/controller.getNumX(),controller.getMapY(),controller.titleSizeC(),controller.titleSizeC(), null);
+        g2.drawImage(getZombie(), controller.getZombieMapX()/controller.getNumX(),controller.getZombieMapY(),controller.titleSizeC(),controller.titleSizeC(), null);
         g2.dispose();
     }
     private int getCounter(){

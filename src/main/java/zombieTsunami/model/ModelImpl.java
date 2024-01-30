@@ -50,16 +50,16 @@ public class ModelImpl implements Model {
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePos() {
         return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
-                MapData.getTitSize(), getX(), getY(), this.zombie.getScreenX(), this.zombie.getScreenY());
+                MapData.getTitSize(), getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
     }
 
     @Override
-    public int getX() {
+    public int getZombieMapX() {
         return this.zombie.getX();
     }
 
     @Override
-    public int getY() {
+    public int getZombieMapY() {
         return this.zombie.getY();
     }
 
