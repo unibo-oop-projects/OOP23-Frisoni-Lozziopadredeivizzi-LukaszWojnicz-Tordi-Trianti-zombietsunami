@@ -7,10 +7,8 @@ import zombieTsunami.view.mapView.api.TileImage;
 
 public class TileImageImpl implements TileImage {
 
-    private static final String DOT = "..";
     private static final String SEP = "/";
-    private static final String ROOT = DOT + SEP + DOT + SEP + DOT + SEP + DOT + SEP + DOT + SEP;
-    private static final String RESOURCES = "resources/zombieTsunami/tile/";
+    private static final String ROOT = SEP + "zombieTsunami" + SEP + "tile" + SEP;
 
     private final List<TileImpl> itemMap = new ArrayList<>();
 
@@ -25,8 +23,7 @@ public class TileImageImpl implements TileImage {
 
     private final void setSingleTile(final int index, final String source) {
         this.itemMap.add(index, new TileImpl());
-        this.itemMap.get(index).setImage(ROOT + RESOURCES + source);
-        
+        this.itemMap.get(index).setImage(ROOT + source);
     }
 
 }
