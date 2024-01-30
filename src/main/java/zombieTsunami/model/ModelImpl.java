@@ -1,18 +1,18 @@
-package main.java.zombieTsunami.model;
+package zombieTsunami.model;
 
 import java.util.List;
 
-import main.java.zombieTsunami.api.Controller;
-import main.java.zombieTsunami.api.Model;
-import main.java.zombieTsunami.api.Pair;
-import main.java.zombieTsunami.model.mapModel.api.GameMap;
-import main.java.zombieTsunami.model.mapModel.api.MapPosList;
-import main.java.zombieTsunami.model.mapModel.api.TileElement;
-import main.java.zombieTsunami.model.mapModel.impl.GameMapImpl;
-import main.java.zombieTsunami.model.mapModel.impl.MapPosListImpl;
-import main.java.zombieTsunami.model.mapModel.impl.TileElementImpl;
-import main.java.zombieTsunami.model.zombieModel.api.Zombie;
-import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
+import zombieTsunami.api.Controller;
+import zombieTsunami.api.Model;
+import zombieTsunami.api.Pair;
+import zombieTsunami.model.mapModel.api.GameMap;
+import zombieTsunami.model.mapModel.api.MapPosList;
+import zombieTsunami.model.mapModel.api.TileElement;
+import zombieTsunami.model.mapModel.impl.GameMapImpl;
+import zombieTsunami.model.mapModel.impl.MapPosListImpl;
+import zombieTsunami.model.mapModel.impl.TileElementImpl;
+import zombieTsunami.model.zombieModel.api.Zombie;
+import zombieTsunami.model.zombieModel.impl.ZombieImpl;
 
 public class ModelImpl implements Model {
 

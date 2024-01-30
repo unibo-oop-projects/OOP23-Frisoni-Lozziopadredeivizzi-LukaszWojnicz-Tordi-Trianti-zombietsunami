@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.api;
+package zombieTsunami.api;
 
 import java.util.List;
 
@@ -46,4 +46,6 @@ public interface Controller {
     int getWorldWidth();
 
     int getWorldHight();
+
+    boolean isPressed();
 }

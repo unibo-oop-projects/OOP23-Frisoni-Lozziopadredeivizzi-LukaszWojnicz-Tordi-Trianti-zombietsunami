@@ -1,7 +1,7 @@
-package main.java.zombieTsunami;
+package zombieTsunami;
 
-import main.java.zombieTsunami.api.Controller;
-import main.java.zombieTsunami.controller.ControllerImpl;
+import zombieTsunami.api.Controller;
+import zombieTsunami.controller.ControllerImpl;
 
 public class LaunchGame {
     

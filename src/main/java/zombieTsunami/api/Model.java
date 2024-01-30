@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.api;
+package zombieTsunami.api;
 
 import java.util.List;
 

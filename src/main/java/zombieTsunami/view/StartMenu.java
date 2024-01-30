@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view;
+package zombieTsunami.view;
 
 import java.awt.Color;
 import java.awt.Component;
