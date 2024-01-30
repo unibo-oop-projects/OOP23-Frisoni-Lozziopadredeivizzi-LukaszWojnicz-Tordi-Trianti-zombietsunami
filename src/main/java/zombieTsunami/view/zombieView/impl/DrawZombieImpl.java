@@ -6,8 +6,8 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.zombieView.api.DrawZombie;
 
 public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
