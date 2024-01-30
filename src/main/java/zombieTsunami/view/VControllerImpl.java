@@ -35,13 +35,13 @@ public class VControllerImpl implements VController{
 
     
     @Override
-    public int getMapX() {
-        return this.control.getMapX();
+    public int getZombieMapX() {
+        return this.control.getZombieMapX();
     }
 
     @Override
-    public int getMapY() {
-        return this.control.getMapY();
+    public int getZombieMapY() {
+        return this.control.getZombieMapY();
     }
 
     @Override

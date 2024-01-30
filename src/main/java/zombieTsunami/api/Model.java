@@ -14,9 +14,9 @@ public interface Model {
 
     List<Pair<Integer, Integer>> getScreenTilePos();
 
-    int getX();
+    int getZombieMapX();
 
-    int getY();
+    int getZombieMapY();
 
     int getSpeed();
 

@@ -63,8 +63,8 @@ public class ControllerImpl implements Controller{
     }
 */
     @Override
-    public int getMapX() {
-        return this.model.getX();
+    public int getZombieMapX() {
+        return this.model.getZombieMapX();
     }
 
     @Override
@@ -82,8 +82,8 @@ public class ControllerImpl implements Controller{
         return this.model.getScreenTilePos();
     }
 
-    public int getMapY() {
-        return this.model.getY();
+    public int getZombieMapY() {
+        return this.model.getZombieMapY();
     }
 
     @Override
