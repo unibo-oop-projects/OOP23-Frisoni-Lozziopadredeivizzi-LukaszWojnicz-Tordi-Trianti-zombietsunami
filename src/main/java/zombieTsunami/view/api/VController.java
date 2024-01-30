@@ -28,9 +28,9 @@ public interface VController {
 
     List<Integer> mapIndexListC();
     
-    int getMapX();
+    int getZombieMapX();
 
-    int getMapY();
+    int getZombieMapY();
 
     int getSpeed();
 
