@@ -113,9 +113,4 @@ public class VControllerImpl implements VController{
     public int getWorldHightC() {
         return this.control.getWorldHight();
     }
-
-    @Override
-    public boolean isPressed() {
-        return this.control.isPressed();
-    }
 }

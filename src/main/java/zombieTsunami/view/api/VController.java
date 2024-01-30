@@ -47,7 +47,4 @@ public interface VController {
     int getWorldWidthC();
 
     int getWorldHightC();
-
-    boolean isPressed();
-
 }
