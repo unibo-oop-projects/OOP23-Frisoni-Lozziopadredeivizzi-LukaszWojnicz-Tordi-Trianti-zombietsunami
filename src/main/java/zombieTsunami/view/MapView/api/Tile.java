@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.mapView.api;
+package zombieTsunami.view.mapView.api;
 
 import java.awt.image.BufferedImage;
 

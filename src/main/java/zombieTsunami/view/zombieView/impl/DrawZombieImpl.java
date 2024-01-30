@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.zombieView.impl;
+package zombieTsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -6,8 +6,8 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.zombieView.api.DrawZombie;
 
 public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
@@ -30,9 +30,10 @@ public class DrawZombieImpl implements DrawZombie{
         BufferedImage image=null;
         try {
                 if (sprite) {
-                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie.png"));
+                    //src/main/resources/
+                    image = ImageIO.read(new File("ZombieTsunami/zombie/Zombie.png"));
                 } else {
-                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie2.png"));
+                    image = ImageIO.read(new File("ZombieTsunami/zombie/Zombie2.png"));
                 }
                 increaseCounter();
                 if (getCounter()>FRAMESCHANGE) {//se il contatore è maggiore del numero di frame per il cambio sprite
@@ -54,5 +55,13 @@ public class DrawZombieImpl implements DrawZombie{
     @Override
     public void updateZombie(VController controller) {
         controller.updateZombie();
+    }
+    @Override
+    public void handleKeyPress(VController controller) {
+        if (controller.isPressed()) {
+            jump();
+        }else {
+            updateZombie(controller);
+        }
     }
 }
