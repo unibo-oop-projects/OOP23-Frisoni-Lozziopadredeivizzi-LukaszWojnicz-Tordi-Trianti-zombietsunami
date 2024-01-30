@@ -20,7 +20,6 @@ public interface Controller {
 
     int getScreenHigh();
 
-    
     List<Integer> mapList();
 
     List<String> tileElements();
@@ -47,5 +46,4 @@ public interface Controller {
 
     int getWorldHight();
 
-    boolean isPressed();
 }

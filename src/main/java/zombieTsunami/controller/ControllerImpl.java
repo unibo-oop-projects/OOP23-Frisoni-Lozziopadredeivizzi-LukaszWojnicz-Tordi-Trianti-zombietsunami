@@ -57,11 +57,6 @@ public class ControllerImpl implements Controller{
         return MapData.getScreenH();
     }
 
-    /*@Override
-    public void updateZombie(){
-        this.model.updateZombie();
-    }
-*/
     @Override
     public int getZombieMapX() {
         return this.model.getZombieMapX();
@@ -126,8 +121,5 @@ public class ControllerImpl implements Controller{
         return MapData.getWorldHight();
     }
 
-    @Override
-    public boolean isPressed() {
-        return this.viewController.isPressed();
-    }
+   
 }

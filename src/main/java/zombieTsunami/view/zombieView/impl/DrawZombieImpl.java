@@ -6,6 +6,7 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
+import zombieTsunami.view.api.KeyHandler;
 import zombieTsunami.view.api.VController;
 import zombieTsunami.view.zombieView.api.DrawZombie;
 
@@ -31,9 +32,9 @@ public class DrawZombieImpl implements DrawZombie{
         try {
                 if (sprite) {
                     //src/main/resources/
-                    image = ImageIO.read(new File("ZombieTsunami/zombie/Zombie.png"));
+                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie.png"));
                 } else {
-                    image = ImageIO.read(new File("ZombieTsunami/zombie/Zombie2.png"));
+                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie2.png"));
                 }
                 increaseCounter();
                 if (getCounter()>FRAMESCHANGE) {//se il contatore è maggiore del numero di frame per il cambio sprite
@@ -57,8 +58,9 @@ public class DrawZombieImpl implements DrawZombie{
         controller.updateZombie();
     }
     @Override
-    public void handleKeyPress(VController controller) {
-        if (controller.isPressed()) {
+    public void handleKeyPress(VController controller,KeyHandler keyH) {
+        if (keyH.isPressed()) {
+            System.out.println("Jump"); 
             jump();
         }else {
             updateZombie(controller);
