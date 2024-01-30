@@ -27,9 +27,9 @@ public interface Controller {
 
     List<Pair<Integer, Integer>> screenTilePos();
 
-    int getMapX();
+    int getZombieMapX();
 
-    int getMapY();
+    int getZombieMapY();
 
     int getSpeed();
 

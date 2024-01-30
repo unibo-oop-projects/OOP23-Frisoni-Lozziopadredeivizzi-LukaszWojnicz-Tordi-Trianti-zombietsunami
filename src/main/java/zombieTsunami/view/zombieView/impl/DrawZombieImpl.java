@@ -6,9 +6,8 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import zombieTsunami.model.MapData;
-import zombieTsunami.view.api.VController;
-import zombieTsunami.view.zombieView.api.DrawZombie;
+import main.java.zombieTsunami.view.api.VController;
+import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
 
 public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
@@ -17,7 +16,7 @@ public class DrawZombieImpl implements DrawZombie{
 
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
-        g2.drawImage(getZombie(), controller.getMapX()/controller.getNumX(),controller.getMapY(), MapData.getTitSize(),MapData.getTitSize(), null);
+        g2.drawImage(getZombie(), controller.getZombieMapX()/controller.getNumX(),controller.getZombieMapY(),controller.titleSizeC(),controller.titleSizeC(), null);
         g2.dispose();
     }
     private int getCounter(){
