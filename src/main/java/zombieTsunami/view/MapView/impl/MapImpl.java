@@ -19,7 +19,7 @@ import main.java.zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
 public class MapImpl extends JPanel implements Map, Runnable {
 
-    private final static long NANOSEC = 100000000;
+    private final static long NANOSEC = 1000000000;
 
     private Thread gameThread;
     private VController controller;
@@ -27,6 +27,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
     private final TileManager drowMap;
     KeyHandler keyH = new KeyHandlerImpl();
     private final DrawZombie drawZombie;
+
     public MapImpl(final VController c) {
         this.controller = c;
         this.drowMap = new TileManagerImpl();
@@ -75,8 +76,8 @@ public class MapImpl extends JPanel implements Map, Runnable {
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
-        this.drowMap.drow(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
-                controller.tilePosC());
+        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
+                controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
     }
 

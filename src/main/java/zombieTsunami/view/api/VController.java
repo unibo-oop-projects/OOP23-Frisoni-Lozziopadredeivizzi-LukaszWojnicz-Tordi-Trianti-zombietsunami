@@ -24,13 +24,13 @@ public interface VController {
 
     List<String> tileElementsC();
 
-    List<Pair<Integer, Integer>> tilePosC();
+    List<Pair<Integer, Integer>> screenTilePosC();
 
     List<Integer> mapIndexListC();
     
-    int getMapX();
+    int getZombieMapX();
 
-    int getMapY();
+    int getZombieMapY();
 
     int getSpeed();
 
@@ -39,5 +39,13 @@ public interface VController {
     void jumpZombie();
 
     void updateZombie();
+
+    int getWorldColC();
+
+    int getWorldRowC();
+
+    int getWorldWidthC();
+
+    int getWorldHightC();
 
 }

@@ -35,13 +35,13 @@ public class VControllerImpl implements VController{
 
     
     @Override
-    public int getMapX() {
-        return this.control.getMapX();
+    public int getZombieMapX() {
+        return this.control.getZombieMapX();
     }
 
     @Override
-    public int getMapY() {
-        return this.control.getMapY();
+    public int getZombieMapY() {
+        return this.control.getZombieMapY();
     }
 
     @Override
@@ -75,13 +75,13 @@ public class VControllerImpl implements VController{
     }
 
     @Override
-    public List<Pair<Integer, Integer>> tilePosC() {
-        return this.control.tilePos();
+    public List<Pair<Integer, Integer>> screenTilePosC() {
+        return this.control.screenTilePos();
     }
 
     @Override
     public List<Integer> mapIndexListC() {
-        return this.control.mapIndexList();
+        return this.control.mapList();
     }
     
     @Override
@@ -92,5 +92,25 @@ public class VControllerImpl implements VController{
     @Override
     public void updateZombie() {
         this.control.updateZombie();
+    }
+
+    @Override
+    public int getWorldColC() {
+        return this.control.getWorldCol();
+    }
+
+    @Override
+    public int getWorldRowC() {
+        return this.control.getWorldRow();
+    }
+
+    @Override
+    public int getWorldWidthC() {
+        return this.control.getWorldWidth();
+    }
+
+    @Override
+    public int getWorldHightC() {
+        return this.control.getWorldHight();
     }
 }

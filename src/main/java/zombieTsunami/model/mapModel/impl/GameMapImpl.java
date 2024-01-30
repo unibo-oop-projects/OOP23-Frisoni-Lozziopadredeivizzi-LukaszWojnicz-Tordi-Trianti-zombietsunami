@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import main.java.zombieTsunami.model.MapData;
 import main.java.zombieTsunami.model.mapModel.api.GameMap;
@@ -20,16 +21,16 @@ public class GameMapImpl implements GameMap {
     private final List<List<Integer>> mapTileNum = new ArrayList<>();
 
     @Override
-    public List<List<Integer>> loadMap() {
+    public List<Integer> loadMap() {
         try {
             InputStream is = getClass().getResourceAsStream(filePath);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
-            for (int row = 0; row < MapData.getMaxScRow(); row++) {
+            for (int row = 0; row < MapData.getMaxWorldRow(); row++) {
                 final String line = br.readLine();
                 final List<Integer> list = new ArrayList<>();
 
-                for (int col = 0; col < MapData.getMaxScCol(); col++) {
+                for (int col = 0; col < MapData.getMaxWorldCol(); col++) {
                     final List<String> numbers = List.of(line.split(" "));
                     list.add(Integer.parseInt(numbers.get(col)));
                 }
@@ -43,7 +44,7 @@ public class GameMapImpl implements GameMap {
             e.getMessage();
         }
         
-        return mapTileNum;
+        return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
 }

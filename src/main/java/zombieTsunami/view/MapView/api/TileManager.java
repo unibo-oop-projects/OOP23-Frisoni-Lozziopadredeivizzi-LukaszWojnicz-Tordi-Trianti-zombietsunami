@@ -15,7 +15,7 @@ public interface TileManager {
      * @param screenRow screen rows
      * @param titleSize title's size for the game
      */
-    void drow(Graphics2D g2, int titleSize, List<String> element, List<Integer> mapIndex,
+    void drawMap(Graphics2D g2, int titleSize, List<String> element, List<Integer> mapIndex,
             List<Pair<Integer, Integer>> tilePos);
 
 }
