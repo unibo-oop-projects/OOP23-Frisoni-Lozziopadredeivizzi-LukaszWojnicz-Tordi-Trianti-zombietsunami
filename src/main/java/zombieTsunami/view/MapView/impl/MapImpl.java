@@ -79,6 +79,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
+        g2.dispose();
     }
 
     @Override
