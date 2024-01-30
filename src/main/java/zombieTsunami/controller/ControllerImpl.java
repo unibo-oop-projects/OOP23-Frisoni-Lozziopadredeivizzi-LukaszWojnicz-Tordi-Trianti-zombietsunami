@@ -63,12 +63,12 @@ public class ControllerImpl implements Controller{
     }
 */
     @Override
-    public int getMapX() {
-        return this.model.getX();
+    public int getZombieMapX() {
+        return this.model.getZombieMapX();
     }
 
     @Override
-    public List<List<Integer>> mapList() {
+    public List<Integer> mapList() {
         return this.model.getMapList();
     }
 
@@ -78,16 +78,12 @@ public class ControllerImpl implements Controller{
     }
 
     @Override
-    public List<Pair<Integer, Integer>> tilePos() {
-        return this.model.getTilePos();
+    public List<Pair<Integer, Integer>> screenTilePos() {
+        return this.model.getScreenTilePos();
     }
 
-    @Override
-    public List<Integer> mapIndexList() {
-        return this.model.getMapIndexList();
-    }
-    public int getMapY() {
-        return this.model.getY();
+    public int getZombieMapY() {
+        return this.model.getZombieMapY();
     }
 
     @Override
@@ -108,5 +104,25 @@ public class ControllerImpl implements Controller{
     @Override
     public void updateZombie() {
         this.model.updateZombie();
+    }
+
+    @Override
+    public int getWorldCol() {
+        return MapData.getMaxWorldCol();
+    }
+
+    @Override
+    public int getWorldRow() {
+        return MapData.getMaxWorldRow();
+    }
+
+    @Override
+    public int getWorldWidth() {
+        return MapData.getWorldWidth();
+    }
+
+    @Override
+    public int getWorldHight() {
+        return MapData.getWorldHight();
     }
 }

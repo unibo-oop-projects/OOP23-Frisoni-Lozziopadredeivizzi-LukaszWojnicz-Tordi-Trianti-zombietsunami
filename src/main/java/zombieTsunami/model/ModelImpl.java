@@ -2,44 +2,43 @@ package main.java.zombieTsunami.model;
 
 import java.util.List;
 
-
 import main.java.zombieTsunami.api.Controller;
 import main.java.zombieTsunami.api.Model;
 import main.java.zombieTsunami.api.Pair;
 import main.java.zombieTsunami.model.mapModel.api.GameMap;
-import main.java.zombieTsunami.model.mapModel.api.MapIndexList;
+import main.java.zombieTsunami.model.mapModel.api.MapPosList;
 import main.java.zombieTsunami.model.mapModel.api.TileElement;
 import main.java.zombieTsunami.model.mapModel.impl.GameMapImpl;
-import main.java.zombieTsunami.model.mapModel.impl.MapIndexListImpl;
+import main.java.zombieTsunami.model.mapModel.impl.MapPosListImpl;
 import main.java.zombieTsunami.model.mapModel.impl.TileElementImpl;
 import main.java.zombieTsunami.model.zombieModel.api.Zombie;
 import main.java.zombieTsunami.model.zombieModel.impl.ZombieImpl;
 
-public class ModelImpl implements Model{
+public class ModelImpl implements Model {
 
     private final GameMap gameMap;
     private final TileElement tileElem;
-    private final MapIndexList mapIndex;
+    private final MapPosList mapPos;
     private final Zombie zombie;
     private Controller control;
 
-    public ModelImpl(){
+    public ModelImpl() {
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
-        this.mapIndex = new MapIndexListImpl();
-        this.zombie=new ZombieImpl();
+        this.mapPos = new MapPosListImpl();
+        this.zombie = new ZombieImpl();
     }
 
-    public void setController(final Controller c){
-        this.control=c;
+    public void setController(final Controller c) {
+        this.control = c;
     }
 
-    public void updateZombie(){
+    public void updateZombie() {
         this.zombie.update();
     }
-    
+
     @Override
-    public List<List<Integer>> getMapList() {
+    public List<Integer> getMapList() {
         return this.gameMap.loadMap();
     }
 
@@ -49,22 +48,18 @@ public class ModelImpl implements Model{
     }
 
     @Override
-    public List<Pair<Integer, Integer>> getTilePos() {
-        return this.mapIndex.getTilePosition(MapData.getMaxScRow(), MapData.getMaxScCol(), MapData.getTitSize());
+    public List<Pair<Integer, Integer>> getScreenTilePos() {
+        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
+                MapData.getTitSize(), getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
     }
 
     @Override
-    public List<Integer> getMapIndexList() {
-        return this.mapIndex.getMapIndexList(getMapList());
-    }
-    
-    @Override
-    public int getX() {
+    public int getZombieMapX() {
         return this.zombie.getX();
     }
 
     @Override
-    public int getY() {
+    public int getZombieMapY() {
         return this.zombie.getY();
     }
 
@@ -79,9 +74,8 @@ public class ModelImpl implements Model{
     }
 
     @Override
-    public void jump(){
+    public void jump() {
         this.zombie.jump();
     }
 
-   
 }
