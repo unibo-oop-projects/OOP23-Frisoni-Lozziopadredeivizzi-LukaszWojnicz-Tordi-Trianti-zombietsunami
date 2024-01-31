@@ -27,17 +27,16 @@ public class TileElementImpl implements TileElement{
 
     @Override
     public void setTileElement() {
-        final List<String> element = new ArrayList<>();
-        element.add(0, DIRT);
-        element.add(1, STREET);
-        element.add(2, SKY);
-        element.add(3, BULDING_LEFT);
-        element.add(4, BULDING_NORTH_LEFT);
-        element.add(5, BULDING_NORTH);
-        element.add(6, BULDING_NORTH_RIGHT);
-        element.add(7, BULDING_RIGHT);
-        element.add(8, BULDING_DOOR);
-        element.add(9, BULDING_WINDOW);
+        this.element.add(0, DIRT);
+        this.element.add(1, STREET);
+        this.element.add(2, SKY);
+        this.element.add(3, BULDING_LEFT);
+        this.element.add(4, BULDING_NORTH_LEFT);
+        this.element.add(5, BULDING_NORTH);
+        this.element.add(6, BULDING_NORTH_RIGHT);
+        this.element.add(7, BULDING_RIGHT);
+        this.element.add(8, BULDING_DOOR);
+        this.element.add(9, BULDING_WINDOW);
     }
 
     @Override

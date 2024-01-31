@@ -14,7 +14,6 @@ public class TileManagerImpl implements TileManager {
     @Override
     public void drawMap(final Graphics2D g2, final int titleSize,
             List<String> element, List<Integer> mapIndex, List<Pair<Integer, Integer>> screenTilePos) {
-            
         final var item = tileImg.setTileImage(element);
         for (int i = 0; i < screenTilePos.size(); i++) {
             g2.drawImage(item.get(mapIndex.get(i)).getImage(), screenTilePos.get(i).getX(), screenTilePos.get(i).getY(),
