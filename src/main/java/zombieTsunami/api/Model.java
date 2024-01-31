@@ -23,4 +23,10 @@ public interface Model {
     int getNumX();
     
     void jump();
+    
+    int getStrenght();
+    
+    void increaseStrenght();
+
+    void setStrenght(int strenght);
 }

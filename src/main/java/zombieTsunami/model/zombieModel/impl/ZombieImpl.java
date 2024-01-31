@@ -56,6 +56,18 @@ public class ZombieImpl implements Zombie{
     public int getScreenY(){
         return this.screenY;
     }
+    @Override
+    public int getStrenght() {
+        return this.entity.getStrenght();
+    }
+    @Override
+    public void increaseStrenght() {
+        this.entity.increaseStrenght();
+    }
+    @Override
+    public void setStrenght(int strenght) {
+        this.entity.setStrenght(strenght);
+    }
    
     
 }

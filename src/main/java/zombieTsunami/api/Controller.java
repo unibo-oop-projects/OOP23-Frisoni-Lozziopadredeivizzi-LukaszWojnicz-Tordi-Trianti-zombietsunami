@@ -45,5 +45,10 @@ public interface Controller {
     int getWorldWidth();
 
     int getWorldHight();
+    
+    int getStrenght();
+    
+    void increaseStrenght();
 
+    void setStrenght(int strenght);
 }
