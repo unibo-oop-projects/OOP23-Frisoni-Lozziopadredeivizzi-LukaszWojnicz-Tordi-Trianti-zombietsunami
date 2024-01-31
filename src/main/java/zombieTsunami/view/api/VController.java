@@ -47,4 +47,10 @@ public interface VController {
     int getWorldWidthC();
 
     int getWorldHightC();
+
+    int getStrenght();
+    
+    void increaseStrenght();
+
+    void setStrenght(int strenght);
 }

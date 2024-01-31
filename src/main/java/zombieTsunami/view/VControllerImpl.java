@@ -113,4 +113,19 @@ public class VControllerImpl implements VController{
     public int getWorldHightC() {
         return this.control.getWorldHight();
     }
+
+    @Override
+    public int getStrenght() {
+        return this.control.getStrenght();
+    }
+
+    @Override
+    public void increaseStrenght() {
+        this.control.increaseStrenght();
+    }
+
+    @Override
+    public void setStrenght(int strenght) {
+        this.control.setStrenght(strenght);
+    }
 }

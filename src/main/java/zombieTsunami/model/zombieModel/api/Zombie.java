@@ -9,4 +9,7 @@ public interface Zombie {
     int getNumX();
     int getScreenX();
     int getScreenY();
+    int getStrenght();
+    void increaseStrenght();
+    void setStrenght(int strenght);
 }

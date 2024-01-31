@@ -2,6 +2,7 @@ package zombieTsunami.model.zombieModel.impl;
 
 
 public class EntityImpl {
+    private int STREGHT;
     private int MapX, MapY;
     private int speed;
     private final int NUM=4;
@@ -45,7 +46,17 @@ public class EntityImpl {
     }
     
     public int getNumX() {
-        return NUM;
+        return this.NUM;
+    }
+    
+    public int getStrenght(){
+        return this.STREGHT;
+    }
+    public void increaseStrenght(){
+        this.STREGHT++;
+    }
+    public void setStrenght(int strenght){
+        this.STREGHT=strenght;
     }
 }
 
