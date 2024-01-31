@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.api;
+package zombieTsunami.api;
 
 import java.util.List;
 
@@ -20,7 +20,6 @@ public interface Controller {
 
     int getScreenHigh();
 
-    
     List<Integer> mapList();
 
     List<String> tileElements();
@@ -46,4 +45,5 @@ public interface Controller {
     int getWorldWidth();
 
     int getWorldHight();
+
 }

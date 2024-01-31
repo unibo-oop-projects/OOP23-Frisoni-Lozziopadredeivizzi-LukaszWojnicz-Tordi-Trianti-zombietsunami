@@ -1,14 +1,14 @@
-package main.java.zombieTsunami.controller;
+package zombieTsunami.controller;
 
 import java.util.List;
 
-import main.java.zombieTsunami.api.Controller;
-import main.java.zombieTsunami.api.Model;
-import main.java.zombieTsunami.api.Pair;
-import main.java.zombieTsunami.model.MapData;
-import main.java.zombieTsunami.model.ModelImpl;
-import main.java.zombieTsunami.view.VControllerImpl;
-import main.java.zombieTsunami.view.api.VController;
+import zombieTsunami.api.Controller;
+import zombieTsunami.api.Model;
+import zombieTsunami.api.Pair;
+import zombieTsunami.model.MapData;
+import zombieTsunami.model.ModelImpl;
+import zombieTsunami.view.VControllerImpl;
+import zombieTsunami.view.api.VController;
 
 public class ControllerImpl implements Controller{
     
@@ -57,11 +57,6 @@ public class ControllerImpl implements Controller{
         return MapData.getScreenH();
     }
 
-    /*@Override
-    public void updateZombie(){
-        this.model.updateZombie();
-    }
-*/
     @Override
     public int getZombieMapX() {
         return this.model.getZombieMapX();
@@ -125,4 +120,6 @@ public class ControllerImpl implements Controller{
     public int getWorldHight() {
         return MapData.getWorldHight();
     }
+
+   
 }

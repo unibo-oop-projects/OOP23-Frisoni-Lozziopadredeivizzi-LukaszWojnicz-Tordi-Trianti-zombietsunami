@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.view.zombieView.impl;
+package zombieTsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -6,8 +6,9 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.zombieView.api.DrawZombie;
+import zombieTsunami.view.api.KeyHandler;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.zombieView.api.DrawZombie;
 
 public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
@@ -17,7 +18,6 @@ public class DrawZombieImpl implements DrawZombie{
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
         g2.drawImage(getZombie(), controller.getZombieMapX()/controller.getNumX(),controller.getZombieMapY(),controller.titleSizeC(),controller.titleSizeC(), null);
-        g2.dispose();
     }
     private int getCounter(){
         return spriteCounter;
@@ -30,6 +30,7 @@ public class DrawZombieImpl implements DrawZombie{
         BufferedImage image=null;
         try {
                 if (sprite) {
+                    //src/main/resources/
                     image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie.png"));
                 } else {
                     image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie2.png"));
@@ -54,5 +55,14 @@ public class DrawZombieImpl implements DrawZombie{
     @Override
     public void updateZombie(VController controller) {
         controller.updateZombie();
+    }
+    @Override
+    public void handleKeyPress(VController controller,KeyHandler keyH) {
+        if (keyH.isPressed()) {
+            System.out.println("Jump"); 
+            jump();
+        }else {
+            updateZombie(controller);
+        }
     }
 }

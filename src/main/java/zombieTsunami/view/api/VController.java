@@ -1,9 +1,9 @@
-package main.java.zombieTsunami.view.api;
+package zombieTsunami.view.api;
 
 import java.util.List;
 
-import main.java.zombieTsunami.api.Controller;
-import main.java.zombieTsunami.api.Pair;
+import zombieTsunami.api.Controller;
+import zombieTsunami.api.Pair;
 
 public interface VController {
 
@@ -47,5 +47,4 @@ public interface VController {
     int getWorldWidthC();
 
     int getWorldHightC();
-
 }

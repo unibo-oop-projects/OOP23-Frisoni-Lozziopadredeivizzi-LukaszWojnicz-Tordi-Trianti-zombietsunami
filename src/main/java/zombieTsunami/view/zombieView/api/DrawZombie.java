@@ -1,9 +1,10 @@
-package main.java.zombieTsunami.view.zombieView.api;
+package zombieTsunami.view.zombieView.api;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import main.java.zombieTsunami.view.api.VController;
+import zombieTsunami.view.api.KeyHandler;
+import zombieTsunami.view.api.VController;
 
 public interface DrawZombie {
 
@@ -11,4 +12,5 @@ public interface DrawZombie {
     BufferedImage getZombie();
     void updateZombie(final VController controller);
     void jump();
+    void handleKeyPress(VController controller, KeyHandler keyH);
 } 

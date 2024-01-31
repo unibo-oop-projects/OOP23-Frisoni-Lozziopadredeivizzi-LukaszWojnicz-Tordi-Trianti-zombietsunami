@@ -1,10 +1,11 @@
-package main.java.zombieTsunami.view.obstacleView.impl;
+package zombieTsunami.view.obstacleView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import main.java.zombieTsunami.view.api.VController;
-import main.java.zombieTsunami.view.obstacleView.api.DrawBomb;
+import zombieTsunami.model.MapData;
+import zombieTsunami.view.api.VController;
+import zombieTsunami.view.obstacleView.api.DrawBomb;
 
 public class DrawBombImpl implements DrawBomb{
 

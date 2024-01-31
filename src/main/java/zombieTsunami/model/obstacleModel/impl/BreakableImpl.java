@@ -1,6 +1,8 @@
-package main.java.zombieTsunami.model.obstacleModel.impl;
+package zombieTsunami.model.obstacleModel.impl;
 
-import main.java.zombieTsunami.model.obstacleModel.api.*;
+import java.awt.Graphics2D;
+
+import zombieTsunami.model.obstacleModel.api.*;
 
 public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle{
 
