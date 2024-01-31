@@ -123,14 +123,12 @@ public class ControllerImpl implements Controller{
 
     @Override
     public int getStrenght() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getStrenght'");
+        return this.model.getStrenght();
     }
 
     @Override
     public void increaseStrenght() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'increaseStrenght'");
+        this.model.increaseStrenght();
     }
 
     @Override
@@ -153,8 +151,7 @@ public class ControllerImpl implements Controller{
 
     @Override
     public void setStrenght(int strenght) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setStrenght'");
+        this.model.setStrenght(strenght);
     }
 
     @Override
