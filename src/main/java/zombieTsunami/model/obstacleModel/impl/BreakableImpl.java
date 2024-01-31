@@ -8,7 +8,11 @@ import zombieTsunami.model.obstacleModel.api.*;
 
 public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle{
 
-    public int MINFORCE = 1; //messa a 1 per test
+    public int MINFORCE;
+
+    public BreakableImpl(int minforce){
+        this.MINFORCE = minforce;
+    }
 
     @Override
     public void update() {
@@ -16,15 +20,12 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
     }
 
     @Override
-    public boolean canBreakObstacle() {
-        /*
-        if (this.MINFORCE <= Model.getStrenght()){
+    public boolean canBreakObstacle(int zombieForce) {
+        if (this.MINFORCE <= zombieForce){
             return true;
         }else{
             return false;
         }
-        */
-        return true;
     }
 
     @Override

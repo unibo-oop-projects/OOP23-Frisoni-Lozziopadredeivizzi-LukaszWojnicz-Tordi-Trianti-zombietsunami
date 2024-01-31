@@ -61,4 +61,6 @@ public interface Controller {
     int getObstacleMapX();
 
     int getObstacleMapY();
+
+    boolean canBreakObstacle(int zombieStrength);
 }
