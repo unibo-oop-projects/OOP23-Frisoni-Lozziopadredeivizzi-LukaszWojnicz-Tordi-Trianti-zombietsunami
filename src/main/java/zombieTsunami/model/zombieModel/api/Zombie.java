@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.zombieModel.api;
+package zombieTsunami.model.zombieModel.api;
 
 public interface Zombie {
     void jump();

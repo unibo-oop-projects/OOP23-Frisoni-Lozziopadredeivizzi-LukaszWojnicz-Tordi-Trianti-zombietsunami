@@ -1,4 +1,4 @@
-package main.java.zombieTsunami.model.zombieModel.impl;
+package zombieTsunami.model.zombieModel.impl;
 
 
 public class EntityImpl {

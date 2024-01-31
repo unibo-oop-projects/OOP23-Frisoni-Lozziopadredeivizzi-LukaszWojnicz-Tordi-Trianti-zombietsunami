@@ -1,9 +1,9 @@
-package main.java.zombieTsunami.model.mapModel.impl;
+package zombieTsunami.model.mapModel.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.zombieTsunami.model.mapModel.api.TileElement;
+import zombieTsunami.model.mapModel.api.TileElement;
 
 public class TileElementImpl implements TileElement{
 
@@ -34,5 +34,6 @@ public class TileElementImpl implements TileElement{
         this.element.add(9, BULDING_WINDOW);
         return this.element;
     }
+    
     
 }

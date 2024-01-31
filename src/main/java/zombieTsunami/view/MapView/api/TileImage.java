@@ -1,8 +1,8 @@
-package main.java.zombieTsunami.view.mapView.api;
+package zombieTsunami.view.mapView.api;
 
 import java.util.List;
 
-import main.java.zombieTsunami.view.mapView.impl.TileImpl;
+import zombieTsunami.view.mapView.impl.TileImpl;
 
 public interface TileImage {
 
