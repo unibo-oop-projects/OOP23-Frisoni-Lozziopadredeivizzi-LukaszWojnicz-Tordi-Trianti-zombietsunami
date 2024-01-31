@@ -50,5 +50,10 @@ public interface Controller {
     
     void increaseStrenght();
 
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    int getNumXp();
     void setStrenght(int strenght);
 }
