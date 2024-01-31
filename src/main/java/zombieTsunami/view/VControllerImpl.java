@@ -131,4 +131,19 @@ public class VControllerImpl implements VController{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updatePerson'");
     }
+
+    @Override
+    public int getStrenght() {
+        return this.control.getStrenght();
+    }
+
+    @Override
+    public void increaseStrenght() {
+        this.control.increaseStrenght();
+    }
+
+    @Override
+    public void setStrenght(int strenght) {
+        this.control.setStrenght(strenght);
+    }
 }

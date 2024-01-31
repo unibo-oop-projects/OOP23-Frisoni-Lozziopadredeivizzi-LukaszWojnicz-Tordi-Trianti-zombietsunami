@@ -1,15 +1,18 @@
-package zombieTsunami.model.zombieModel.api;
+package zombieTsunami.api;
 
-public interface Zombie {
-    void jump();
-    void update();
+public interface Entity {
+    
     int getX();
+
     int getY();
+
     int getSpeed();
+    
     int getNumX();
-    int getScreenX();
-    int getScreenY();
+    
     int getStrenght();
+    
     void increaseStrenght();
+
     void setStrenght(int strenght);
 }

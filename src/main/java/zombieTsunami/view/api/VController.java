@@ -53,4 +53,10 @@ public interface VController {
     int getPersonMapY();
 
     void updatePerson();
+
+    int getStrenght();
+    
+    void increaseStrenght();
+
+    void setStrenght(int strenght);
 }
