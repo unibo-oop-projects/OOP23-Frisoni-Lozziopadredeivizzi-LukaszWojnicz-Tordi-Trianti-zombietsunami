@@ -43,4 +43,6 @@ public interface Model {
     int getObstacleMapX();
 
     int getObstacleMapY();
+
+    boolean canBreakObstacle(int zombieStrength);
 }

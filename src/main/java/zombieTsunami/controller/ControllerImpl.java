@@ -164,5 +164,10 @@ public class ControllerImpl implements Controller{
         return this.model.getObstacleMapX();
     }
 
+    @Override
+    public boolean canBreakObstacle(int zombieStrength) {
+        return this.model.canBreakObstacle(zombieStrength);
+    }
+
    
 }
