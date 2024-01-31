@@ -8,21 +8,11 @@ import zombieTsunami.model.mapModel.api.MapPosList;
 
 public class MapPosListImpl implements MapPosList {
 
-    private final List<Pair<Integer, Integer>> screenTilePos;
-
-    public MapPosListImpl(final int maxWorldRow, final int maxWorldCol,
-            final int titleSize, final int zombieWorldX, final int zombieWorldY, final int zombieScreenX,
-            final int zombieScreenY) {
-        
-        this.screenTilePos = new ArrayList<>();
-        setScreenTilePosition(maxWorldRow, maxWorldCol, titleSize, zombieWorldX, zombieWorldY,
-                zombieScreenX, zombieScreenY);
-    }
-
     @Override
-    public void setScreenTilePosition(final int maxWorldRow, final int maxWorldCol,
+    public List<Pair<Integer, Integer>> getScreenTilePosition(final int maxWorldRow, final int maxWorldCol,
             final int titleSize, final int zombieWorldX, final int zombieWorldY, final int zombieScreenX,
             final int zombieScreenY) {
+        final List<Pair<Integer, Integer>> screenTilePos = new ArrayList<>();
         int worldX;
         int worldY;
         int pos = 0;
@@ -33,15 +23,12 @@ public class MapPosListImpl implements MapPosList {
                 worldY = worldRow * titleSize;
                 final int screenX = worldX - zombieWorldX + zombieScreenX;
                 final int screenY = worldY - zombieWorldY + zombieScreenY;
-                this.screenTilePos.add(pos, new Pair<Integer, Integer>(screenX, screenY));
+                screenTilePos.add(pos, new Pair<Integer, Integer>(screenX, screenY));
                 pos++;
             }
         }
-    }
 
-    @Override
-    public List<Pair<Integer, Integer>> getScreenTilePosition() {
-        return this.screenTilePos;
+        return screenTilePos;
     }
 
 }

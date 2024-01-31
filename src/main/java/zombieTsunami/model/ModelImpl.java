@@ -26,8 +26,7 @@ public class ModelImpl implements Model {
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
         this.zombie = new ZombieImpl();
-        this.mapPos = new MapPosListImpl(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(), MapData.getTitSize(),
-                getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
+        this.mapPos = new MapPosListImpl();
     }
 
     public void setController(final Controller c) {
@@ -51,7 +50,8 @@ public class ModelImpl implements Model {
 
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePos() {
-        return this.mapPos.getScreenTilePosition();
+        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(), MapData.getTitSize(),
+        getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
     }
 
     @Override
