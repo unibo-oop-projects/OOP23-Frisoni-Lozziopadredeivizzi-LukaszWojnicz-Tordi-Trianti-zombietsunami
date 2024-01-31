@@ -32,7 +32,7 @@ public class ModelImpl implements Model {
     public void setController(final Controller c) {
         this.control = c;
     }
-
+    @Override
     public void updateZombie() {
         this.zombie.update();
     }
