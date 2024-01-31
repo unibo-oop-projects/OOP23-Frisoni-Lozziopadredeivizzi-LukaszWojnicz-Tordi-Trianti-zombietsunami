@@ -123,20 +123,17 @@ public class ControllerImpl implements Controller{
 
     @Override
     public int getPersonMapX() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+        return this.model.getPersonMapX();
     }
 
     @Override
     public int getPersonMapY() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
+        return this.model.getPersonMapY();
     }
 
     @Override
-    public void updatePerson() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updatePerson'");
+    public int getNumXp() {
+       return this.model.getNumXp();
     }
    
 }

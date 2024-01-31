@@ -50,5 +50,5 @@ public interface Controller {
 
     int getPersonMapY();
 
-    void updatePerson();
+    int getNumXp();
 }

@@ -1,9 +1,10 @@
 package zombieTsunami.model.personModel.api;
 
-public interface Person {
+public interface Position {
+    
     int getXp();
+
     int getYp();
+    
     int getNumXp();
-    int getScreenXp();
-    int getScreenYp();
 }
