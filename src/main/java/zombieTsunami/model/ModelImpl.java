@@ -100,4 +100,19 @@ public class ModelImpl implements Model {
         throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
     }
 
+    @Override
+    public int getStrenght() {
+        return this.zombie.getStrenght();
+    }
+
+    @Override
+    public void increaseStrenght() {
+        this.zombie.increaseStrenght();
+    }
+
+    @Override
+    public void setStrenght(int strenght) {
+        this.zombie.setStrenght(strenght);
+    }
+
 }

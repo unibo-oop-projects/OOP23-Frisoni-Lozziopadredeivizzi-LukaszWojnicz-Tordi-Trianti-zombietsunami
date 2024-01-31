@@ -29,4 +29,10 @@ public interface Model {
     int getPersonMapY();
 
     int getNumXp();
+    
+    int getStrenght();
+    
+    void increaseStrenght();
+
+    void setStrenght(int strenght);
 }
