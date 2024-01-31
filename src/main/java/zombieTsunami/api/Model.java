@@ -23,4 +23,10 @@ public interface Model {
     int getNumX();
     
     void jump();
+
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    void updatePerson();
 }
