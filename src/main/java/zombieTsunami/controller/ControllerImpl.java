@@ -121,5 +121,19 @@ public class ControllerImpl implements Controller{
         return MapData.getWorldHight();
     }
 
+    @Override
+    public int getStrenght() {
+        return this.model.getStrenght();
+    }
+
+    @Override
+    public void increaseStrenght() {
+        this.model.increaseStrenght();
+    }
+
+    @Override
+    public void setStrenght(int strenght) {
+        this.model.setStrenght(strenght);
+    }
    
 }
