@@ -52,4 +52,9 @@ public class GameMapImpl implements GameMap {
         return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
+    @Override
+    public List<Integer> getLoadedMapList() {
+        return this.mapOfNumberTile;
+    }
+
 }
