@@ -8,6 +8,15 @@ import zombieTsunami.model.mapModel.api.MapPosList;
 
 public class MapPosListImpl implements MapPosList {
 
+    private final List<Pair<Integer, Integer>> tilePos;
+
+    public MapPosListImpl(final int maxWorldRow, final int maxWorldCol,
+            final int titleSize, final int zombieWorldX, final int zombieWorldY, final int zombieScreenX,
+            final int zombieScreenY) {
+        this.tilePos = getScreenTilePosition(maxWorldRow, maxWorldCol, titleSize, zombieWorldX, zombieWorldY,
+                zombieScreenX, zombieScreenY);
+    }
+
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePosition(final int maxWorldRow, final int maxWorldCol,
             final int titleSize, final int zombieWorldX, final int zombieWorldY, final int zombieScreenX,
@@ -27,7 +36,7 @@ public class MapPosListImpl implements MapPosList {
                 pos++;
             }
         }
-        
+
         return screenTilePos;
     }
 

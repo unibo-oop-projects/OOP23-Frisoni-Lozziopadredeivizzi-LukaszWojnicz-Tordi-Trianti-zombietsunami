@@ -18,6 +18,12 @@ public class GameMapImpl implements GameMap {
 
     private final String filePath = ROOT + MAP1;
 
+    private final List<Integer> mapOfNumberTile;
+
+    public GameMapImpl() {
+        this.mapOfNumberTile = loadMap();
+    }
+
     @Override
     public List<Integer> loadMap() {
         final List<List<Integer>> mapTileNum = new ArrayList<>();
@@ -42,7 +48,7 @@ public class GameMapImpl implements GameMap {
         } catch (Exception e) {
             e.getMessage();
         }
-        
+
         return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
