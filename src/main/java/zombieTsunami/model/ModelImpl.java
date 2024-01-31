@@ -30,7 +30,6 @@ public class ModelImpl implements Model {
         this.tileElem = new TileElementImpl();
         this.zombie = new ZombieImpl();
         this.mapPos = new MapPosListImpl();
-        this.zombie = new ZombieImpl();
         this.person = new PersonImpl();
     }
 
