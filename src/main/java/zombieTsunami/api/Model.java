@@ -35,4 +35,8 @@ public interface Model {
     void increaseStrenght();
 
     void setStrenght(int strenght);
+
+    int getObstacleMapX();
+
+    int getObstacleMapY();
 }
