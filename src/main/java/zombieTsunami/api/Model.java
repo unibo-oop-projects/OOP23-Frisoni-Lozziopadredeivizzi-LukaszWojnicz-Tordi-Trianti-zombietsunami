@@ -28,5 +28,5 @@ public interface Model {
 
     int getPersonMapY();
 
-    void updatePerson();
+    int getNumXp();
 }

@@ -113,4 +113,22 @@ public class VControllerImpl implements VController{
     public int getWorldHightC() {
         return this.control.getWorldHight();
     }
+
+    @Override
+    public int getPersonMapX() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+    }
+
+    @Override
+    public int getPersonMapY() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
+    }
+
+    @Override
+    public void updatePerson() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updatePerson'");
+    }
 }
