@@ -2,9 +2,13 @@ package zombieTsunami.model.obstacleModel.impl;
 
 import java.awt.Graphics2D;
 
+import zombieTsunami.api.Model;
+import zombieTsunami.model.ModelImpl;
 import zombieTsunami.model.obstacleModel.api.*;
 
 public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle{
+
+    public int MINFORCE = 1; //messa a 1 per test
 
     @Override
     public void update() {
@@ -13,17 +17,19 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
 
     @Override
     public boolean canBreakObstacle() {
-        return true; // messo per non dare errori, se lo zombie ha abbastanza forza, lo rompe e gli da forza +1
+        /*
+        if (this.MINFORCE <= Model.getStrenght()){
+            return true;
+        }else{
+            return false;
+        }
+        */
+        return true;
     }
 
     @Override
     public void breakObstacle() {
         //break
-    }
-
-    @Override
-    public void addForce() {
-        //aggiunge +1 alla forza dello zombie
     }
     
 }
