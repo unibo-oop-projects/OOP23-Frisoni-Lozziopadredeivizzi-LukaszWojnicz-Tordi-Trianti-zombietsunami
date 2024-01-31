@@ -14,6 +14,10 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     private ObstacleEntity entity = new ObstacleEntity();
 
+    private Model model;
+    
+    public int damage = 1; //per test
+
     public BombImpl(){
         setDefaultValue();
     }
@@ -30,6 +34,6 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     @Override
     public void hit() {
-        //Qui dovrebbe esserci il decremento della vita dello zombie.
+        
     }
 }
