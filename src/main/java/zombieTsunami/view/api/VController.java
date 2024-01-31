@@ -48,6 +48,12 @@ public interface VController {
 
     int getWorldHightC();
 
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    void updatePerson();
+
     int getStrenght();
     
     void increaseStrenght();

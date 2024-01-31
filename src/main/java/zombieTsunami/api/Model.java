@@ -23,10 +23,24 @@ public interface Model {
     int getNumX();
     
     void jump();
+
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    int getNumXp();
     
     int getStrenght();
     
     void increaseStrenght();
 
     void setStrenght(int strenght);
+
+    int getScreenX();
+    
+    int getScreenY();
+      
+    int getObstacleMapX();
+
+    int getObstacleMapY();
 }

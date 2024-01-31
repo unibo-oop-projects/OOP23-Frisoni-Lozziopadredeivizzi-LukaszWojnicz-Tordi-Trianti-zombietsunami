@@ -7,12 +7,15 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
+import zombieTsunami.api.Model;
 import zombieTsunami.model.MapData;
 import zombieTsunami.model.obstacleModel.api.*;
 
 public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     private ObstacleEntity entity = new ObstacleEntity();
+    
+    public int damage = 1; //per test
 
     public BombImpl(){
         setDefaultValue();
@@ -30,6 +33,6 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     @Override
     public void hit() {
-        //Qui dovrebbe esserci il decremento della vita dello zombie.
+        
     }
 }

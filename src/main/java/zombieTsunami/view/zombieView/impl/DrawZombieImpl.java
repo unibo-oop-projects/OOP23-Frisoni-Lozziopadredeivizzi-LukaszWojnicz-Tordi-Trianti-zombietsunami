@@ -14,6 +14,8 @@ public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
     private int spriteCounter;
     private final int FRAMESCHANGE = 15;
+    private final String zombie1="src/main/resources/ZombieTsunami/zombie/Zombie.png";
+    private final String zombie2="src/main/resources/ZombieTsunami/zombie/Zombie.png";
 
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
@@ -31,9 +33,9 @@ public class DrawZombieImpl implements DrawZombie{
         try {
                 if (sprite) {
                     //src/main/resources/
-                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie.png"));
+                    image = ImageIO.read(new File(zombie1));
                 } else {
-                    image = ImageIO.read(new File("src/main/resources/ZombieTsunami/zombie/Zombie2.png"));
+                    image = ImageIO.read(new File(zombie2));
                 }
                 increaseCounter();
                 if (getCounter()>FRAMESCHANGE) {//se il contatore è maggiore del numero di frame per il cambio sprite
