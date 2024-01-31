@@ -115,4 +115,16 @@ public class ModelImpl implements Model {
         this.zombie.setStrenght(strenght);
     }
 
+    @Override
+    public int getObstacleMapX() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapX'");
+    }
+
+    @Override
+    public int getObstacleMapY() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapY'");
+    }
+
 }

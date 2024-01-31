@@ -157,5 +157,15 @@ public class ControllerImpl implements Controller{
         throw new UnsupportedOperationException("Unimplemented method 'setStrenght'");
     }
 
+    @Override
+    public int getObstacleMapX() {
+        return this.model.getObstacleMapX();
+    }
+
+    @Override
+    public int getObstacleMapY() {
+        return this.model.getObstacleMapX();
+    }
+
    
 }

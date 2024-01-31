@@ -7,14 +7,13 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
+import zombieTsunami.api.Model;
 import zombieTsunami.model.MapData;
 import zombieTsunami.model.obstacleModel.api.*;
 
 public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     private ObstacleEntity entity = new ObstacleEntity();
-
-    private Model model;
     
     public int damage = 1; //per test
 
