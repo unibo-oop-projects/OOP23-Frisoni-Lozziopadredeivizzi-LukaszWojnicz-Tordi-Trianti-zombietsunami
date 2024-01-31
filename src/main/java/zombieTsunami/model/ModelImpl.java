@@ -13,6 +13,8 @@ import zombieTsunami.model.mapModel.impl.MapPosListImpl;
 import zombieTsunami.model.mapModel.impl.TileElementImpl;
 import zombieTsunami.model.zombieModel.api.Zombie;
 import zombieTsunami.model.zombieModel.impl.ZombieImpl;
+import zombieTsunami.model.personModel.api.Person;
+import zombieTsunami.model.personModel.impl.PersonImpl;
 
 public class ModelImpl implements Model {
 
@@ -20,6 +22,7 @@ public class ModelImpl implements Model {
     private final TileElement tileElem;
     private final MapPosList mapPos;
     private final Zombie zombie;
+    private final Person person;
     private Controller control;
 
     public ModelImpl() {
@@ -27,6 +30,7 @@ public class ModelImpl implements Model {
         this.tileElem = new TileElementImpl();
         this.mapPos = new MapPosListImpl();
         this.zombie = new ZombieImpl();
+        this.person = new PersonImpl();
     }
 
     public void setController(final Controller c) {
@@ -76,6 +80,24 @@ public class ModelImpl implements Model {
     @Override
     public void jump() {
         this.zombie.jump();
+    } 
+    
+    @Override
+    public int getPersonMapX() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+    }
+
+    @Override
+    public int getPersonMapY() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
+    }
+
+    @Override
+    public int getNumXp() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
     }
 
     @Override

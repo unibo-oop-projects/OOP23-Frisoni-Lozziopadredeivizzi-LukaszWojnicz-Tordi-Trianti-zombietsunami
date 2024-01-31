@@ -123,17 +123,39 @@ public class ControllerImpl implements Controller{
 
     @Override
     public int getStrenght() {
-        return this.model.getStrenght();
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getStrenght'");
     }
 
     @Override
     public void increaseStrenght() {
-        this.model.increaseStrenght();
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'increaseStrenght'");
+    }
+
+    @Override
+    public int getPersonMapX() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+    }
+
+    @Override
+    public int getPersonMapY() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
+    }
+
+    @Override
+    public int getNumXp() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
     }
 
     @Override
     public void setStrenght(int strenght) {
-        this.model.setStrenght(strenght);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setStrenght'");
     }
+
    
 }

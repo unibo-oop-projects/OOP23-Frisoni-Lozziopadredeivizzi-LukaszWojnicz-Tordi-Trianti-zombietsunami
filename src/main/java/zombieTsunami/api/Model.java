@@ -23,6 +23,12 @@ public interface Model {
     int getNumX();
     
     void jump();
+
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    int getNumXp();
     
     int getStrenght();
     

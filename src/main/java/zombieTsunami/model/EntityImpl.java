@@ -1,9 +1,9 @@
-package zombieTsunami.model.zombieModel.impl;
+package zombieTsunami.model;
 
 
 public class EntityImpl {
     private int STREGHT;
-    private int MapX, MapY;
+    private int mapX, mapY;
     private int speed;
     private final int NUM=4;
 
@@ -22,19 +22,19 @@ public class EntityImpl {
         this.dir = Direction.RIGHT;
     }
     public int getX() {
-        return MapX;
+        return mapX;
     }
 
     public void setX(int x) {
-        this.MapX = x;
+        this.mapX = x;
     }
 
     public int getY() {
-        return MapY;
+        return mapY;
     }
 
     public void setY(int y) {
-        this.MapY = y;
+        this.mapY = y;
     }
 
     public int getSpeed() {
