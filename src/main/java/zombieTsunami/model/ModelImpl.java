@@ -41,7 +41,7 @@ public class ModelImpl implements Model {
 
     @Override
     public List<Integer> getMapList() {
-        return this.gameMap.loadMap();
+        return this.gameMap.getLoadedMapList();
     }
 
     @Override
@@ -51,9 +51,7 @@ public class ModelImpl implements Model {
 
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePos() {
-        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
-                MapData.getTitSize(), getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(),
-                this.zombie.getScreenY());
+        return this.mapPos.getScreenTilePosition();
     }
 
     @Override
