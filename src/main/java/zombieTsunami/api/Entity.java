@@ -1,4 +1,4 @@
-package zombieTsunami.model.zombieModel.api;
+package zombieTsunami.api;
 
 public interface Entity {
     

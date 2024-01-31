@@ -1,5 +1,6 @@
 package zombieTsunami.model.zombieModel.impl;
 
+import zombieTsunami.model.EntityImpl;
 import zombieTsunami.model.MapData;
 import zombieTsunami.model.zombieModel.api.Zombie;
 
