@@ -121,5 +121,19 @@ public class ControllerImpl implements Controller{
         return MapData.getWorldHight();
     }
 
+    @Override
+    public int getPersonMapX() {
+        return this.model.getPersonMapX();
+    }
+
+    @Override
+    public int getPersonMapY() {
+        return this.model.getPersonMapY();
+    }
+
+    @Override
+    public int getNumXp() {
+       return this.model.getNumXp();
+    }
    
 }

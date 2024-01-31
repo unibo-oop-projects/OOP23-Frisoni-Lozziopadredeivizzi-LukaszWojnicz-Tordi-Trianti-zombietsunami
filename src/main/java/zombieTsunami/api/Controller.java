@@ -46,4 +46,9 @@ public interface Controller {
 
     int getWorldHight();
 
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    int getNumXp();
 }

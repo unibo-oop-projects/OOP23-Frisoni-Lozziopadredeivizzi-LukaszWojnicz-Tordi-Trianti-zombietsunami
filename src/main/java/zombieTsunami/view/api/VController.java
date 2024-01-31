@@ -47,4 +47,10 @@ public interface VController {
     int getWorldWidthC();
 
     int getWorldHightC();
+
+    int getPersonMapX();
+
+    int getPersonMapY();
+
+    void updatePerson();
 }
