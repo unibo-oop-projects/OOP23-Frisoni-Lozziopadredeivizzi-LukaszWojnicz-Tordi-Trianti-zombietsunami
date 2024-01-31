@@ -29,4 +29,9 @@ public interface Model {
     void increaseStrenght();
 
     void setStrenght(int strenght);
+
+    int getScreenX();
+    
+    int getScreenY();
+      
 }
