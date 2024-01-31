@@ -116,7 +116,6 @@ public class ModelImpl implements Model {
     }
 
     @Override
-<<<<<<< HEAD
     public int getScreenX() {
         return this.getScreenX();
     }
@@ -128,7 +127,6 @@ public class ModelImpl implements Model {
 
     
 
-=======
     public int getObstacleMapX() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapX'");
@@ -140,5 +138,4 @@ public class ModelImpl implements Model {
         throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapY'");
     }
 
->>>>>>> c0747f65797202f8d280f80675b1e3e29a9ed93a
 }
