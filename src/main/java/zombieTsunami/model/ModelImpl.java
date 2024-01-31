@@ -78,4 +78,19 @@ public class ModelImpl implements Model {
         this.zombie.jump();
     }
 
+    @Override
+    public int getStrenght() {
+        return this.zombie.getStrenght();
+    }
+
+    @Override
+    public void increaseStrenght() {
+        this.zombie.increaseStrenght();
+    }
+
+    @Override
+    public void setStrenght(int strenght) {
+        this.zombie.setStrenght(strenght);
+    }
+
 }
