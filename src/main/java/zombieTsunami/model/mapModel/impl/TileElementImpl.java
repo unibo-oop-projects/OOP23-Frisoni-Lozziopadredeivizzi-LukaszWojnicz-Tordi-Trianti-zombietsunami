@@ -7,7 +7,7 @@ import zombieTsunami.model.mapModel.api.TileElement;
 
 public class TileElementImpl implements TileElement{
 
-    private final List<String> elementList;
+    private final List<String> element;
 
     private final String DIRT = "dirt.png";
     private final String SKY = "sky.png";
@@ -21,11 +21,12 @@ public class TileElementImpl implements TileElement{
     private final String BULDING_WINDOW = "buldingWindow.png";
 
     public TileElementImpl(){
-        this.elementList = getTileElement();
+        this.element = new ArrayList<>();
+        setTileElement();
     }
 
     @Override
-    public List<String> getTileElement() {
+    public void setTileElement() {
         final List<String> element = new ArrayList<>();
         element.add(0, DIRT);
         element.add(1, STREET);
@@ -37,7 +38,11 @@ public class TileElementImpl implements TileElement{
         element.add(7, BULDING_RIGHT);
         element.add(8, BULDING_DOOR);
         element.add(9, BULDING_WINDOW);
-        return element;
+    }
+
+    @Override
+    public List<String> getTileElement() {
+        return this.element;
     }
     
     
