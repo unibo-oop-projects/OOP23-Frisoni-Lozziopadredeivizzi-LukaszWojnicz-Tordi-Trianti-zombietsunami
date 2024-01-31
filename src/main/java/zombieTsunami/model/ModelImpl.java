@@ -93,4 +93,16 @@ public class ModelImpl implements Model {
         this.zombie.setStrenght(strenght);
     }
 
+    @Override
+    public int getScreenX() {
+        return this.getScreenX();
+    }
+
+    @Override
+    public int getScreenY() {
+        return this.zombie.getScreenY();
+    }
+
+    
+
 }
