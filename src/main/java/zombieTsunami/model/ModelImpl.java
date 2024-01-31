@@ -11,6 +11,8 @@ import zombieTsunami.model.mapModel.api.TileElement;
 import zombieTsunami.model.mapModel.impl.GameMapImpl;
 import zombieTsunami.model.mapModel.impl.MapPosListImpl;
 import zombieTsunami.model.mapModel.impl.TileElementImpl;
+import zombieTsunami.model.obstacleModel.api.Breakable;
+import zombieTsunami.model.obstacleModel.impl.BreakableImpl;
 import zombieTsunami.model.zombieModel.api.Zombie;
 import zombieTsunami.model.zombieModel.impl.ZombieImpl;
 import zombieTsunami.model.personModel.api.Person;
@@ -23,6 +25,7 @@ public class ModelImpl implements Model {
     private final MapPosList mapPos;
     private final Zombie zombie;
     private final Person person;
+    private final Breakable breakable; //Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private Controller control;
 
     public ModelImpl() {
@@ -31,6 +34,7 @@ public class ModelImpl implements Model {
         this.zombie = new ZombieImpl();
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
+        this.breakable = new BreakableImpl(1); //1 per test
     }
 
     public void setController(final Controller c) {
@@ -137,6 +141,11 @@ public class ModelImpl implements Model {
     public int getObstacleMapY() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapY'");
+    }
+
+    @Override
+    public boolean canBreakObstacle(int zombieStrength) {
+        return this.breakable.canBreakObstacle(zombieStrength);
     }
 
 }
