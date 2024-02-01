@@ -5,7 +5,7 @@ import java.util.List;
 
 import zombieTsunami.model.mapModel.api.TileElement;
 
-public class TileElementImpl implements TileElement{
+public class TileElementImpl implements TileElement {
 
     private final List<String> element;
 
@@ -20,13 +20,17 @@ public class TileElementImpl implements TileElement{
     private final String BULDING_DOOR = "buldingDoor.png";
     private final String BULDING_WINDOW = "buldingWindow.png";
 
-    public TileElementImpl(){
+    public TileElementImpl() {
         this.element = new ArrayList<>();
         setTileElement();
     }
 
-    @Override
-    public void setTileElement() {
+    /**
+     * This method puts in a List the strings that represent the name of the tile's
+     * file, and puts them into their respective index, whitch are the number values
+     * that represent that tile into the map.
+     */
+    private final void setTileElement() {
         this.element.add(0, DIRT);
         this.element.add(1, STREET);
         this.element.add(2, SKY);
@@ -43,6 +47,5 @@ public class TileElementImpl implements TileElement{
     public List<String> getTileElement() {
         return this.element;
     }
-    
-    
+
 }
