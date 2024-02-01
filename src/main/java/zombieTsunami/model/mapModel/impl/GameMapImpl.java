@@ -21,11 +21,19 @@ public class GameMapImpl implements GameMap {
     private final List<Integer> mapOfNumberTile;
 
     public GameMapImpl() {
-        this.mapOfNumberTile = loadMap();
+        this.mapOfNumberTile = loadMap(this.filePath);
     }
 
-    @Override
-    public List<Integer> loadMap() {
+    /**
+     * This method reads the map's txt file and take all the numbers written into it
+     * to then register them firstly into a List of integer's List (like a matrix), 
+     * then transform it into a List of Integers.
+     * 
+     * @param filePath is the path where to catch the txt file where the map is
+     *                 written
+     * @return a List of Integers with all the item's numbers of the map
+     */
+    private final List<Integer> loadMap(final String filePath) {
         final List<List<Integer>> mapTileNum = new ArrayList<>();
         try {
             InputStream is = getClass().getResourceAsStream(filePath);
