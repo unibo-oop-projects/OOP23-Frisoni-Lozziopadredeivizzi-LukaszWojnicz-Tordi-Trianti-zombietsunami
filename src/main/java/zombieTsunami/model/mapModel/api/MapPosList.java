@@ -7,6 +7,8 @@ import zombieTsunami.api.Pair;
 public interface MapPosList {
 
     /**
+     * This method represents the moving camera of the game.
+     *  
      * @param worldRow      the map's (world) row
      * @param worldCol      the map's (world) col
      * @param titleSize     the size of title
