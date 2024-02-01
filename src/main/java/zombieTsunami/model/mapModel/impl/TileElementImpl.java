@@ -27,7 +27,7 @@ public class TileElementImpl implements TileElement {
 
     /**
      * This method puts in a List the strings that represent the name of the tile's
-     * file, and puts them into their respective index, whitch are the number values
+     * file, and puts them into their respective index, which are the number values
      * that represent that tile into the map.
      */
     private final void setTileElement() {

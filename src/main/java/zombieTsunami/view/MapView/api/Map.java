@@ -14,7 +14,7 @@ public interface Map {
     void startGameThread();
 
     /**
-     * This method, whitch is recalled in the game engine, updates the elements of the game map.
+     * This method, which is recalled in the game engine, updates the elements of the game map.
      * 
      */
     void update();
