@@ -118,7 +118,7 @@ public class ControllerImpl implements Controller{
 
     @Override
     public int getWorldHight() {
-        return MapData.getWorldHight();
+        return MapData.getWorldHeight();
     }
 
     @Override

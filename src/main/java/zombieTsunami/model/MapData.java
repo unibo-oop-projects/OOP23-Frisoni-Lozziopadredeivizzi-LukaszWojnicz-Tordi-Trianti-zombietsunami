@@ -12,6 +12,7 @@ public class MapData {
     private final static int screenWidth = titleSize * maxScreenCol;
     private final static int screenHigh = titleSize * maxScreenRow;
 
+    //FPS
     private final static int FPS = 60;
 
     //WORLD SETTINGS
@@ -21,43 +22,73 @@ public class MapData {
     private final static int worldHight = titleSize * maxWorldRow;
 
 
+    /**
+     * @return the screen's cols
+     */
     public static int getMaxScCol() {
         return maxScreenCol;
     }
 
+    /**
+     * @return the screen's rows
+     */
     public static int getMaxScRow() {
         return maxScreenRow;
     }
 
+    /**
+     * @return the title's size
+     */
     public static int getTitSize() {
         return titleSize;
     }
 
+    /**
+     * @return the FPS' value
+     */
     public static int getFPS() {
         return FPS;
     }
 
+    /**
+     * @return the screen width
+     */
     public static int getScreenW() {
         return screenWidth;
     }
 
+    /**
+     * @return the screen height
+     */
     public static int getScreenH() {
         return screenHigh;
     }
 
+    /**
+     * @return the map's (world) cols
+     */
     public static int getMaxWorldCol(){
         return maxWorldCol;
     }
 
+    /**
+     * @return the map's (world) rows
+     */
     public static int getMaxWorldRow(){
         return maxWorldRow;
     }
 
+    /**
+     * @return the map (world) width
+     */
     public static int getWorldWidth(){
         return worldWidth;
     }
 
-    public static int getWorldHight(){
+    /**
+     * @return the map (world) height
+     */
+    public static int getWorldHeight(){
         return worldHight;
     }
 
