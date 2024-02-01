@@ -73,6 +73,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.drawZombie.handleKeyPress(controller,keyH);// handleKeyPress();
     }
 
+    @Override
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
