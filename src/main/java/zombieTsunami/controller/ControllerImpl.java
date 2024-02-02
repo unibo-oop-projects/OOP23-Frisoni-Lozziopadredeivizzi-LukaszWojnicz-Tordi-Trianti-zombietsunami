@@ -189,5 +189,10 @@ public final class ControllerImpl implements Controller {
         this.model.setScreenY(screenY);
     }
 
+    @Override
+    public void jumpPress() {
+        this.model.jumpPress();
+    }
+
 
 }

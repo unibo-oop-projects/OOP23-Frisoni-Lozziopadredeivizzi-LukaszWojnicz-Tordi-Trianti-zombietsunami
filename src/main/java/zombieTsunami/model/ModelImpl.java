@@ -160,4 +160,9 @@ public final class ModelImpl implements Model {
     public void setScreenY(int screenY){
         this.zombie.setScreenY( screenY);
     }
+
+    @Override
+    public void jumpPress() {
+        this.zombie.jumpPress();
+    }
 }

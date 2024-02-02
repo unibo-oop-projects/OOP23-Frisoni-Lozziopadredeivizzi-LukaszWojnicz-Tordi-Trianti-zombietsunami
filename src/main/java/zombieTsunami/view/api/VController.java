@@ -64,4 +64,6 @@ public interface VController {
     int getZombieScreenY();
 
     void setZombieScreenY(int screenY);
+
+    void jumpPress();
 }
