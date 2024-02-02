@@ -15,20 +15,20 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
 
     private ObstacleEntity entity = new ObstacleEntity();
     
-    public int damage = 1; //per test
+    public int damage = 1; //for test
 
     public BombImpl(){
         setDefaultValue();
     }
 
     private void setDefaultValue() {
-        entity.setX(350); //350 Per testare, poi dovremo gestire la creazione procedurale di Bombe e Ostacoli
+        entity.setX(350); //350 just for test
         entity.setY(250);
     }
 
     @Override
     public void update() {
-        //Se collide con lo zombie, chiama hit();
+        //if collides with zombie, calls hit()
     }
 
     @Override

@@ -11,12 +11,12 @@ public class DrawBombImpl implements DrawBomb{
 
     @Override
     public void drawBombV(Graphics2D g2, VController controller) {
-        //non c'è ancora lo sprite della bomba
+        //bomb sprite doesn't exist yet
     }
 
     @Override
     public BufferedImage getBomb() {
-        //stesso motivo del metodo di sopra ^^
+        //same reason as above
         return null;
     }
 
