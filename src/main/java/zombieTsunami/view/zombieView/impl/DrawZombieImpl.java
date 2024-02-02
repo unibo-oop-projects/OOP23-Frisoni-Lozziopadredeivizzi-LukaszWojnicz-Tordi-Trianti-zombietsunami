@@ -14,8 +14,8 @@ public class DrawZombieImpl implements DrawZombie{
     private boolean sprite = true;
     private int spriteCounter;
     private final int FRAMESCHANGE = 15;
-    private final String zombie1="src/main/resources/ZombieTsunami/zombie/Zombie.png";
-    private final String zombie2="src/main/resources/ZombieTsunami/zombie/Zombie2.png";
+    private static final String zombie1="src/main/resources/ZombieTsunami/zombie/Zombie.png";
+    private static final String zombie2="src/main/resources/ZombieTsunami/zombie/Zombie2.png";
 
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
