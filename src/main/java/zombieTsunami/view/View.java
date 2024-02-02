@@ -19,7 +19,7 @@ public class View {
         final KeyHandler keyH= new KeyHandlerImpl();
         window.addKeyListener((KeyListener) keyH);
         final StartMenu startMenu = new StartMenu(width, high);
-        final MapImpl gamePanel = new MapImpl(c);
+        final MapImpl gamePanel = new MapImpl(c,keyH);
 
         startMenu.enable();
         window.add(startMenu);
