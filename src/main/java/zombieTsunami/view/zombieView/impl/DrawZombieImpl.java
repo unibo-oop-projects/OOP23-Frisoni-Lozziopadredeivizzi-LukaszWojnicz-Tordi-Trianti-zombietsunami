@@ -61,8 +61,9 @@ public class DrawZombieImpl implements DrawZombie {
     }
 
     @Override
-    public void jump(VController controller) {
-        controller.jumpZombie();
+    public void decreaseHeight(VController controller) {
+        controller.decreaseZombieScreenY();
+        updateZombie(controller);
     }
 
     @Override
@@ -76,12 +77,12 @@ public class DrawZombieImpl implements DrawZombie {
             spriteZombie = true;
             jump= true;
             initialY = controller.getZombieScreenY();// imposto la y in cui deve tornare
-            maxY =maxY - initialY;// imposto l'altezza massima
+            maxY = initialY-maxY ;// imposto l'altezza massima
             System.out.println("sono in isPressed ");
         }
         if (spriteZombie) {// se hai premuto spazio
             if (counterJump > counterSprite) {// ogni "giro" aumenti la y in contemporanea della x
-                jump(controller);
+            decreaseHeight(controller);
                 System.out.println("couterSprite "+ counterSprite);
                 counterSprite += counterSprite;
             }

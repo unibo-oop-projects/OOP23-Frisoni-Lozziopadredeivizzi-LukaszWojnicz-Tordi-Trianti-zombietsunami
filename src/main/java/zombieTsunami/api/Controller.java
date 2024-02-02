@@ -86,9 +86,9 @@ public interface Controller {
     int getNumX();
 
     /**
-     * Calls the jump method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the decreaseZombieScreenY method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
      */
-    void jumpZombie();
+    void decreaseZombieScreenY();
 
     /**
      * Calls the update method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.

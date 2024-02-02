@@ -27,9 +27,8 @@ public class ZombieImpl implements Zombie {
     }
 
     @Override
-    public void jump() {
-        this.entity.setY(entity.getY()-entity.getSpeed());
-        update();
+    public void decreaseZombieScreenY() {
+        setScreenY(entity.getY()-entity.getSpeed());
     }
 
     @Override

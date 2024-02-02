@@ -83,8 +83,8 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public void jump() {
-        this.zombie.jump();
+    public void decreaseZombieScreenY() {
+        this.zombie.decreaseZombieScreenY();
     } 
     
     @Override
