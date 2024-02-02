@@ -47,4 +47,6 @@ public interface Model {
     boolean canBreakObstacle(int zombieStrength);
 
     void setScreenY(int screenY);
+
+    void jumpPress();
 }

@@ -24,4 +24,6 @@ public interface Zombie {
     void setStrenght(int strenght);
 
     void setScreenY(int y);
+
+    void jumpPress();
 }

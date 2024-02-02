@@ -36,7 +36,7 @@ public class EntityImpl {
     public void setY(int y) {
         this.mapY = y;
     }
-
+    
     public int getSpeed() {
         return speed;
     }

@@ -6,10 +6,10 @@ import zombieTsunami.model.zombieModel.api.Zombie;
 
 public class ZombieImpl implements Zombie {
     private EntityImpl entity = new EntityImpl();
+    private jumpZombieImpl jumpZombie=new jumpZombieImpl(entity);
     private static final int NUM = 4;
-
     private final int screenX;
-    private final int screenY;
+    private int screenY;
     private static final int initialZombieX = 360;
     private static final int initialZombieY = 300;
     private static final int initialZombieSpeed = 1;
@@ -28,7 +28,7 @@ public class ZombieImpl implements Zombie {
 
     @Override
     public void decreaseZombieScreenY() {
-        setScreenY(entity.getY()-entity.getSpeed());
+        this.jumpZombie.decreaseZombieScreenY();
     }
 
     @Override
@@ -81,8 +81,8 @@ public class ZombieImpl implements Zombie {
     }
 
     @Override
-    public void setScreenY(int screenY){
-        this.entity.setY(screenY);
+    public void jumpPress() {
+        this.jumpZombie.jumpZombie();
     }
 
 }
