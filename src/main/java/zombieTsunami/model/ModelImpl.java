@@ -18,25 +18,33 @@ import zombieTsunami.model.zombieModel.impl.ZombieImpl;
 import zombieTsunami.model.personModel.api.Person;
 import zombieTsunami.model.personModel.impl.PersonImpl;
 
-public class ModelImpl implements Model {
+/**
+ * This class is the Model of the MVC and implements the Model interface
+ * {@link zombieTsunami.api.Model}.
+ */
+public final class ModelImpl implements Model {
 
     private final GameMap gameMap;
     private final TileElement tileElem;
     private final MapPosList mapPos;
     private final Zombie zombie;
     private final Person person;
-    private final Breakable breakable; //Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
+    private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private Controller control;
 
+    /**
+     * Allows to set the different elements belonging to the Model.
+     */
     public ModelImpl() {
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
         this.zombie = new ZombieImpl();
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
-        this.breakable = new BreakableImpl(1); //1 per test
+        this.breakable = new BreakableImpl(1); // 1 per test
     }
 
+    @Override
     public void setController(final Controller c) {
         this.control = c;
     }
@@ -58,8 +66,9 @@ public class ModelImpl implements Model {
 
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePos() {
-        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(), MapData.getTitSize(),
-        getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
+        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
+                MapData.getTitSize(),
+                getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
     }
 
     @Override
@@ -85,8 +94,8 @@ public class ModelImpl implements Model {
     @Override
     public void jump() {
         this.zombie.jump();
-    } 
-    
+    }
+
     @Override
     public int getPersonMapX() {
         // TODO Auto-generated method stub
@@ -116,7 +125,7 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public void setStrenght(int strenght) {
+    public void setStrenght(final int strenght) {
         this.zombie.setStrenght(strenght);
     }
 
@@ -130,8 +139,7 @@ public class ModelImpl implements Model {
         return this.zombie.getScreenY();
     }
 
-    
-
+    @Override
     public int getObstacleMapX() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapX'");
@@ -144,7 +152,7 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public boolean canBreakObstacle(int zombieStrength) {
+    public boolean canBreakObstacle(final int zombieStrength) {
         return this.breakable.canBreakObstacle(zombieStrength);
     }
 
