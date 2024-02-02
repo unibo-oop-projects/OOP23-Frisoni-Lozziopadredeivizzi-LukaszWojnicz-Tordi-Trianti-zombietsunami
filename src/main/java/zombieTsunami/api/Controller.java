@@ -165,4 +165,11 @@ public interface Controller {
      * @return the zombie's screen Y coordiante
      */
     int getZombieScreenY();
+
+    /**
+     * Calls the set strenght method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * 
+     * @param screenY set the screen Y that wants to be setted
+     */
+    void setScreenY(int screenY);
 }

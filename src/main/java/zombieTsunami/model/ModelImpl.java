@@ -148,4 +148,8 @@ public class ModelImpl implements Model {
         return this.breakable.canBreakObstacle(zombieStrength);
     }
 
+    @Override
+    public void setScreenY(int screenY){
+        this.zombie.setScreenY( screenY);
+    }
 }

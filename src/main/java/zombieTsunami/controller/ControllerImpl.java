@@ -179,5 +179,10 @@ public class ControllerImpl implements Controller{
         return this.model.getZombieScreenY();
     }
 
+    @Override
+    public void setScreenY(int screenY) {
+        this.model.setScreenY(screenY);
+    }
+
    
 }

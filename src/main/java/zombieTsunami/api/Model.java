@@ -3,7 +3,7 @@ package zombieTsunami.api;
 import java.util.List;
 
 public interface Model {
-    
+
     void updateZombie();
 
     void setController(Controller c);
@@ -21,7 +21,7 @@ public interface Model {
     int getSpeed();
 
     int getNumX();
-    
+
     void jump();
 
     int getPersonMapX();
@@ -29,20 +29,22 @@ public interface Model {
     int getPersonMapY();
 
     int getNumXp();
-    
+
     int getStrenght();
-    
+
     void increaseStrenght();
 
     void setStrenght(int strenght);
 
     int getZombieScreenX();
-    
+
     int getZombieScreenY();
-      
+
     int getObstacleMapX();
 
     int getObstacleMapY();
 
     boolean canBreakObstacle(int zombieStrength);
+
+    void setScreenY(int screenY);
 }
