@@ -21,7 +21,6 @@ public interface VController {
 
     int getFPSC();
 
-
     List<String> tileElementsC();
 
     List<Pair<Integer, Integer>> screenTilePosC();
@@ -36,7 +35,7 @@ public interface VController {
 
     int getNumX();
 
-    void jumpZombie();
+    void decreaseZombieScreenY();
 
     void updateZombie();
 

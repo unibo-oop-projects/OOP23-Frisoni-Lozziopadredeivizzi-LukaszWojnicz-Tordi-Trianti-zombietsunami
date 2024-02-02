@@ -85,8 +85,8 @@ public class VControllerImpl implements VController{
     }
     
     @Override
-    public void jumpZombie() {
-        this.control.jumpZombie();
+    public void decreaseZombieScreenY() {
+        this.control.decreaseZombieScreenY();
     }
 
     @Override
