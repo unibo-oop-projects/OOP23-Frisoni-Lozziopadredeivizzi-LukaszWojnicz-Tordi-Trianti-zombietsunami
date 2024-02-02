@@ -38,7 +38,11 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler{
     }
     @Override
     public boolean isPressed() {
-        return jump;
+        if (jump) {
+            jump= false;
+            return true;
+        }
+        return false;
     }
 
    
