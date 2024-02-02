@@ -11,6 +11,9 @@ public class ZombieImpl implements Zombie{
 
     private final int screenX;
     private final int screenY;
+    private final int initialZombieX=360;
+    private final int initialZombieY=300;
+    private final int initialZombieSpeed=1;
 
     public ZombieImpl() {
         this.screenX =MapData.getScreenW() / 2 - (MapData.getTitSize() / 2);
@@ -18,9 +21,9 @@ public class ZombieImpl implements Zombie{
         setDefaultValue();
     }
     private void setDefaultValue() {
-        entity.setX(150);
-        entity.setY(300);
-        entity.setSpeed(1);
+        entity.setX(initialZombieX);
+        entity.setY(initialZombieY);
+        entity.setSpeed(initialZombieSpeed);
     }
     @Override
     public void jump() {
