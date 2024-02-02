@@ -28,8 +28,7 @@ public class ZombieImpl implements Zombie {
 
     @Override
     public void jump() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'jump'");
+        this.entity.setY(entity.getY()+entity.getSpeed());
     }
 
     @Override
