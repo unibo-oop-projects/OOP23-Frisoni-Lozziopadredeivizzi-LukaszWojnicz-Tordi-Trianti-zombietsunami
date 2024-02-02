@@ -20,8 +20,8 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean spriteZombie = false;
     private int initialY;
     private boolean decrease = false;
-    private int counterSprite = 1;
-    private static int MAX_Y = 50;
+    private int counterSprite = 5;
+    private int maxY = 250;
     private boolean jump= false;
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
@@ -71,12 +71,11 @@ public class DrawZombieImpl implements DrawZombie {
 
     @Override
     public void handleKeyPress(VController controller, KeyHandler keyH) {
-        if (keyH.isPressed()&& (!jump)) {// se premi jump imposta la variabile spriteZombie true per indicare che deve
-                               // fare un ciclo di jump
+        if (keyH.isPressed()&& (!jump)) {// se premi jump imposta la variabile spriteZombie true per indicare che hai clicclato jump
             spriteZombie = true;
             jump= true;
             initialY = controller.getZombieScreenY();// imposto la y in cui deve tornare
-            MAX_Y -= initialY;// imposto l'altezza massima
+            maxY -= initialY;// imposto l'altezza massima
             System.out.println("sono in isPressed ");
         }
         if (spriteZombie) {// se hai premuto spazio
@@ -85,11 +84,11 @@ public class DrawZombieImpl implements DrawZombie {
                 System.out.println("couterSprite "+ counterSprite);
                 counterSprite += counterSprite;
             }
-            if (controller.getZombieScreenY() >= MAX_Y) {
+            if (controller.getZombieScreenY() >= maxY) {
                 decrease = true;
                 spriteZombie = false;
             }
-        }/*
+        }
         if (decrease) {
             if (controller.getZombieScreenY() >= initialY) {
                 controller.setZombieScreenY(controller.getZombieScreenY() - controller.getSpeed());
@@ -98,7 +97,7 @@ public class DrawZombieImpl implements DrawZombie {
         }
         if (!spriteZombie && (!decrease)) {
             updateZombie(controller);
-        }*/
+        }
         counterJump++;
     }
 }
