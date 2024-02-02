@@ -16,7 +16,7 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
 
     @Override
     public void update() {
-        //se collide con lo zombie, vede se canBreakObstacle()
+        //if collides, checks if canBreakObstacle()
     }
 
     @Override
