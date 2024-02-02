@@ -184,10 +184,6 @@ public final class ControllerImpl implements Controller {
     public int getZombieScreenY() {
         return this.model.getZombieScreenY();
     }
-    @Override
-    public void setScreenY(int screenY) {
-        this.model.setScreenY(screenY);
-    }
 
     @Override
     public void jumpPress() {

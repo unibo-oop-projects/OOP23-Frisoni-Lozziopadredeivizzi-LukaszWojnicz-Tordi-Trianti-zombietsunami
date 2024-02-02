@@ -156,11 +156,6 @@ public class VControllerImpl implements VController{
     }
 
     @Override
-    public void setZombieScreenY(int screenY){
-        this.control.setScreenY(screenY);
-    }
-
-    @Override
     public void jumpPress() {
         this.control.jumpPress();
     }
