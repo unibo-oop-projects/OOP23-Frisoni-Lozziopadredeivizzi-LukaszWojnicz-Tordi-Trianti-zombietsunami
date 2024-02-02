@@ -1,7 +1,7 @@
 package zombieTsunami.model.zombieModel.api;
 
 public interface Zombie {
-    void jump();
+    void decreaseZombieScreenY();
 
     void update();
 

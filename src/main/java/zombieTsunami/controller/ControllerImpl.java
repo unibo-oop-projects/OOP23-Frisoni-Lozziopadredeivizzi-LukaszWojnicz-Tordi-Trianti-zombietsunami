@@ -98,8 +98,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void jumpZombie() {
-        this.model.jump();
+    public void decreaseZombieScreenY() {
+        this.model.decreaseZombieScreenY();
     }
 
     @Override

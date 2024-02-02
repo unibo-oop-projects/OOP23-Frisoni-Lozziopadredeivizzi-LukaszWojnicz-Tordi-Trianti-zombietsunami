@@ -92,10 +92,10 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void jump() {
-        this.zombie.jump();
-    }
-
+    public void decreaseZombieScreenY() {
+        this.zombie.decreaseZombieScreenY();
+    } 
+    
     @Override
     public int getPersonMapX() {
         // TODO Auto-generated method stub

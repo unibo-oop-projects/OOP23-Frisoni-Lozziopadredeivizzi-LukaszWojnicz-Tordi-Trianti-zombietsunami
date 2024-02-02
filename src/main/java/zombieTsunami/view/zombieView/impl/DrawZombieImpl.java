@@ -20,9 +20,10 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean spriteZombie = false;
     private int initialY;
     private boolean decrease = false;
-    private int counterSprite = 5;
-    private int maxY = 250;
+    private int counterSprite = 1;
+    private int maxY = 10;
     private boolean jump= false;
+    
     @Override
     public void drawZombieV(Graphics2D g2, VController controller) {
         g2.drawImage(getZombie(), controller.getZombieScreenX() / controller.getNumX(), controller.getZombieScreenY(),
@@ -60,8 +61,9 @@ public class DrawZombieImpl implements DrawZombie {
     }
 
     @Override
-    public void jump(VController controller) {
-        controller.jumpZombie();
+    public void decreaseHeight(VController controller) {
+        controller.decreaseZombieScreenY();
+        updateZombie(controller);
     }
 
     @Override
@@ -75,16 +77,16 @@ public class DrawZombieImpl implements DrawZombie {
             spriteZombie = true;
             jump= true;
             initialY = controller.getZombieScreenY();// imposto la y in cui deve tornare
-            maxY -= initialY;// imposto l'altezza massima
+            maxY = initialY-maxY ;// imposto l'altezza massima
             System.out.println("sono in isPressed ");
         }
         if (spriteZombie) {// se hai premuto spazio
-            if (counterJump > counterSprite) {// ogni 5 "giri" aumenti la y in contemporanea della x
-                jump(controller);
+            if (counterJump > counterSprite) {// ogni "giro" aumenti la y in contemporanea della x
+            decreaseHeight(controller);
                 System.out.println("couterSprite "+ counterSprite);
                 counterSprite += counterSprite;
             }
-            if (controller.getZombieScreenY() >= maxY) {
+            if (controller.getZombieScreenY() <= maxY) {//entro quando il mio zombie è alla altezza massima o oltre
                 decrease = true;
                 spriteZombie = false;
             }
@@ -93,9 +95,10 @@ public class DrawZombieImpl implements DrawZombie {
             if (controller.getZombieScreenY() >= initialY) {
                 controller.setZombieScreenY(controller.getZombieScreenY() - controller.getSpeed());
                 decrease = false;
+                jump= true;// ha finito il jump e ora può ripremerlo
             }
-        }
-        if (!spriteZombie && (!decrease)) {
+        } 
+        if ((spriteZombie==false) && (decrease==false)) {
             updateZombie(controller);
         }
         counterJump++;
