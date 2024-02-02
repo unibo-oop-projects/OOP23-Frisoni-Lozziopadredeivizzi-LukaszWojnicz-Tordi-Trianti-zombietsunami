@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zombieTsunami.model.mapModel.api.TileElement;
-
+/**
+ * This class implements the TileElement interface {@link zombieTsunami.model.mapModel.api.TileElement}.
+ */
 public final class TileElementImpl implements TileElement {
 
     private final List<String> element;
@@ -20,6 +22,9 @@ public final class TileElementImpl implements TileElement {
     private static final String BULDING_DOOR = "buldingDoor.png";
     private static final String BULDING_WINDOW = "buldingWindow.png";
 
+    /**
+     * Allows to create a new Array list and sets the List's elements.
+     */
     public TileElementImpl() {
         this.element = new ArrayList<>();
         setTileElement();
