@@ -50,9 +50,8 @@ public class DrawZombieImpl implements DrawZombie{
     }
     
     @Override
-    public void jump() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'jump'");
+    public void jump(VController controller) {
+        controller.updateZombie();
     }
     @Override
     public void updateZombie(VController controller) {
@@ -62,7 +61,7 @@ public class DrawZombieImpl implements DrawZombie{
     public void handleKeyPress(VController controller,KeyHandler keyH) {
         if (keyH.isPressed()) {
             System.out.println("Jump"); 
-            jump();
+            jump(controller);
         }else {
             updateZombie(controller);
         }

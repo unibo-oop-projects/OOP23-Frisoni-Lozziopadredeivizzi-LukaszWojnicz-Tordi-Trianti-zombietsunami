@@ -1,7 +1,10 @@
 package zombieTsunami.view;
 
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 
+import zombieTsunami.view.api.KeyHandler;
 import zombieTsunami.view.api.VController;
 import zombieTsunami.view.mapView.impl.MapImpl;
 
@@ -12,9 +15,11 @@ public class View {
         final JFrame window = new JFrame("Zombie Tsunami");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-
+        window.setFocusable(true);
+        final KeyHandler keyH= new KeyHandlerImpl();
+        window.addKeyListener((KeyListener) keyH);
         final StartMenu startMenu = new StartMenu(width, high);
-        final MapImpl gamePanel = new MapImpl(c);
+        final MapImpl gamePanel = new MapImpl(c,keyH);
 
         startMenu.enable();
         window.add(startMenu);
