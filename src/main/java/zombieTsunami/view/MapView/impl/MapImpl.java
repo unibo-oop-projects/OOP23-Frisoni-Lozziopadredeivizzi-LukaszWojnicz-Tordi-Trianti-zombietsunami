@@ -75,7 +75,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        this.drawZombie.handleKeyPress(this.controller, this.keyH);// handleKeyPress();
+        this.drawZombie.handleKeyPress(this.controller, this.keyH);
     }
 
     @Override

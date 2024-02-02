@@ -17,11 +17,11 @@ public class DrawZombieImpl implements DrawZombie {
     private static final String zombie1 = "src/main/resources/ZombieTsunami/zombie/Zombie.png";
     private static final String zombie2 = "src/main/resources/ZombieTsunami/zombie/Zombie2.png";
     private int counterJump;
-    private boolean spriteZombie = false;
+    /*private boolean spriteZombie = false;
     private int initialY;
     private boolean decrease = false;
     private int counterSprite = 1;
-    private int maxY = 10;
+    private int maxY = 10;*/
     private boolean jump = false;
 
     @Override
@@ -63,7 +63,6 @@ public class DrawZombieImpl implements DrawZombie {
     @Override
     public void decreaseHeight(VController controller) {
         controller.decreaseZombieScreenY();
-        updateZombie(controller);
     }
 
     @Override
@@ -74,35 +73,8 @@ public class DrawZombieImpl implements DrawZombie {
     @Override
     public void handleKeyPress(VController controller, KeyHandler keyH) {
         if (keyH.isPressed() && (!jump)) {// se premi jump imposta la variabile spriteZombie true per indicare che hai saltato e la varibile jump a true significa che stai saltando
-            spriteZombie = true;
-            jump = true;
-            initialY = controller.getZombieScreenY();// imposto la y in cui deve tornare
-            maxY = initialY - maxY;// imposto l'altezza massima
-            System.out.println("sono in isPressed ");
+            controller.jumpPress();        
         }
-        if (spriteZombie) {// se hai premuto spazio
-            if (counterJump > counterSprite) {// ogni "giro" aumenti la y in contemporanea della x
-                decreaseHeight(controller);// diminuisce l'altezza con la velocità una volta
-                System.out.println("couterSprite " + counterSprite);
-                System.out.println("counterJump " + counterJump);
-
-                counterSprite += counterSprite;
-            }
-            if (controller.getZombieScreenY() <= maxY) {// entro quando il mio zombie è alla altezza massima o oltre
-                decrease = true;
-                spriteZombie = false;
-            }
-        }
-        if (decrease) {
-            if (controller.getZombieScreenY() >= initialY) {
-                controller.setZombieScreenY(controller.getZombieScreenY() - controller.getSpeed());
-                decrease = false;
-                jump = true;// ha finito il jump e ora può ripremerlo
-            }
-        }
-        if ((spriteZombie == false) && (decrease == false)) {
-            updateZombie(controller);
-        }
-        counterJump++;
+        updateZombie(controller);
     }
 }
