@@ -5,8 +5,10 @@ import java.util.List;
 
 import zombieTsunami.api.Pair;
 import zombieTsunami.model.mapModel.api.MapPosList;
-
-public class MapPosListImpl implements MapPosList {
+/**
+ * This class implements the MapPosList interface {@link zombieTsunami.model.mapModel.api.MapPosList}.
+ */
+public final class MapPosListImpl implements MapPosList {
 
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePosition(final int maxWorldRow, final int maxWorldCol,
