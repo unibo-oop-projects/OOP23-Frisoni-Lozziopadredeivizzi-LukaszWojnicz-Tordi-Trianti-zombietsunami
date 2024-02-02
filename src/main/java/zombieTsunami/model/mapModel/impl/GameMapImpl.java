@@ -9,31 +9,36 @@ import java.util.stream.Collectors;
 
 import zombieTsunami.model.MapData;
 import zombieTsunami.model.mapModel.api.GameMap;
+/**
+ * This class implements the GameMap interface {@link zombieTsunami.model.mapModel.api.GameMap}.
+ */
+public final class GameMapImpl implements GameMap {
 
-public class GameMapImpl implements GameMap {
-
-    private final String SEP = "/";
-    private final String MAP1 = "maps/map01.txt";
-    private final String ROOT = SEP + "zombieTsunami" + SEP;
+    private static final String SEP = "/";
+    private static final String MAP1 = "maps/map01.txt";
+    private static final String ROOT = SEP + "zombieTsunami" + SEP;
 
     private final String filePath = ROOT + MAP1;
 
     private final List<Integer> mapOfNumberTile;
 
+    /**
+     * Assigns the List of Integers with the map values at a new List.
+     */
     public GameMapImpl() {
         this.mapOfNumberTile = loadMap(this.filePath);
     }
 
     /**
      * This method reads the map's txt file and take all the numbers written into it
-     * to then register them firstly into a List of integer's List (like a matrix), 
+     * to then register them firstly into a List of integer's List (like a matrix),
      * then transform it into a List of Integers.
      * 
      * @param filePath is the path where to catch the txt file where the map is
      *                 written
      * @return a List of Integers with all the item's numbers of the map
      */
-    private final List<Integer> loadMap(final String filePath) {
+    private List<Integer> loadMap(final String filePath) {
         final List<List<Integer>> mapTileNum = new ArrayList<>();
         try {
             InputStream is = getClass().getResourceAsStream(filePath);
