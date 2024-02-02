@@ -22,7 +22,7 @@ public interface Model {
 
     int getNumX();
 
-    void jump();
+    void decreaseZombieScreenY();
 
     int getPersonMapX();
 
