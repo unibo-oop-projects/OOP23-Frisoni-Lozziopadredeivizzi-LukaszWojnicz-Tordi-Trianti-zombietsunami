@@ -155,4 +155,14 @@ public interface Controller {
     int getObstacleMapY();
 
     boolean canBreakObstacle(int zombieStrength);
+
+    /**
+     * @return the zombie's screen X coordiante
+     */
+    int getZombieScreenX();
+
+    /**
+     * @return the zombie's screen Y coordiante
+     */
+    int getZombieScreenY();
 }

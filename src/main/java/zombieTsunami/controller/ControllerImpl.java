@@ -169,5 +169,15 @@ public class ControllerImpl implements Controller{
         return this.model.canBreakObstacle(zombieStrength);
     }
 
+    @Override
+    public int getZombieScreenX() {
+        return this.model.getZombieScreenX();
+    }
+
+    @Override
+    public int getZombieScreenY() {
+        return this.model.getZombieScreenY();
+    }
+
    
 }

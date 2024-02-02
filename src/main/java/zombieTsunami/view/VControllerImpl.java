@@ -146,4 +146,13 @@ public class VControllerImpl implements VController{
     public void setStrenght(int strenght) {
         this.control.setStrenght(strenght);
     }
+    @Override
+    public int getZombieScreenX(){
+        return this.control.getZombieScreenX();
+    }
+    @Override
+    public int getZombieScreenY(){
+        return this.control.getZombieScreenY();
+    }
+
 }
