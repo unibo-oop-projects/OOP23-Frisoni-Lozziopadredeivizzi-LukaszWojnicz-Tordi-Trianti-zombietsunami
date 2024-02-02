@@ -25,18 +25,17 @@ public class MapImpl extends JPanel implements Map, Runnable {
     private VController controller;
 
     private final TileManager drowMap;
-    KeyHandler keyH = new KeyHandlerImpl();
     private final DrawZombie drawZombie;
-
-    public MapImpl(final VController c) {
+    private final KeyHandler keyH;
+    public MapImpl(final VController c, final KeyHandler keyH) {
         this.controller = c;
+        this.keyH=keyH;
         this.drowMap = new TileManagerImpl();
         this.drawZombie= new DrawZombieImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
-        this.addKeyListener((KeyListener) this.keyH);
-        this.setFocusable(true);
+        
     }
 
     @Override
@@ -70,7 +69,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        this.drawZombie.handleKeyPress(controller,keyH);// handleKeyPress();
+        this.drawZombie.handleKeyPress(this.controller,this.keyH);// handleKeyPress();
     }
 
     @Override
