@@ -2,6 +2,10 @@ package zombieTsunami.model.mapModel.api;
 
 import java.util.List;
 
+/**
+ * This interface loads the map file, whose file type is .txt, and store its data
+ * into a List.
+ */
 public interface GameMap {
 
     /**
