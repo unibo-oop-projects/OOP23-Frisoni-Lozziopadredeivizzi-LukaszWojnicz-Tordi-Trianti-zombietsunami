@@ -155,4 +155,9 @@ public class VControllerImpl implements VController{
         return this.control.getZombieScreenY();
     }
 
+    @Override
+    public void setZombieScreenY(int screenY){
+        this.control.setScreenY(screenY);
+    }
+
 }

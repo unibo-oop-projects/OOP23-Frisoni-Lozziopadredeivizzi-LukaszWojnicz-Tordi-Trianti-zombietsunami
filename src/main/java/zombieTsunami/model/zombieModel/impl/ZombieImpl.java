@@ -28,7 +28,8 @@ public class ZombieImpl implements Zombie {
 
     @Override
     public void jump() {
-        this.entity.setY(entity.getY()+entity.getSpeed());
+        this.entity.setY(entity.getY()-entity.getSpeed());
+        update();
     }
 
     @Override
@@ -78,6 +79,11 @@ public class ZombieImpl implements Zombie {
     @Override
     public void setStrenght(int strenght) {
         this.entity.setStrenght(strenght);
+    }
+
+    @Override
+    public void setScreenY(int screenY){
+        this.entity.setY(screenY);
     }
 
 }

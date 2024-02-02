@@ -63,4 +63,6 @@ public interface VController {
     int getZombieScreenX();
 
     int getZombieScreenY();
+
+    void setZombieScreenY(int screenY);
 }
