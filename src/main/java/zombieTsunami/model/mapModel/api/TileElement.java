@@ -2,6 +2,11 @@ package zombieTsunami.model.mapModel.api;
 
 import java.util.List;
 
+/**
+ * This interface allows you to get a List of the tile's elements of the whole
+ * game map by putting their file's name into the right index, the same as their
+ * assigned value on the map.
+ */
 public interface TileElement {
 
     /**
