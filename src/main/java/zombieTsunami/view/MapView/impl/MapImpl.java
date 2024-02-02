@@ -1,6 +1,7 @@
 package zombieTsunami.view.mapView.impl;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyListener;
@@ -16,10 +17,14 @@ import zombieTsunami.view.mapView.api.TileManager;
 import zombieTsunami.view.zombieView.api.DrawZombie;
 import zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
-
 public class MapImpl extends JPanel implements Map, Runnable {
 
-    private final static long NANOSEC = 1000000000;
+    private static final long NANOSEC = 1000000000;
+    private static final int FONT_SIZE = 20;
+    private static final int RECT_WIDTH = 130;
+    private static final int RECT_HEIGHT = 40;
+    private static final int INFO_POS_X = 5;
+    private static final int INFO_POS_Y = 25;
 
     private Thread gameThread;
     private VController controller;
@@ -27,15 +32,16 @@ public class MapImpl extends JPanel implements Map, Runnable {
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
     private final KeyHandler keyH;
+
     public MapImpl(final VController c, final KeyHandler keyH) {
         this.controller = c;
-        this.keyH=keyH;
+        this.keyH = keyH;
         this.drowMap = new TileManagerImpl();
-        this.drawZombie= new DrawZombieImpl();
+        this.drawZombie = new DrawZombieImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
-        
+
     }
 
     @Override
@@ -69,7 +75,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
 
     @Override
     public void update() {
-        this.drawZombie.handleKeyPress(this.controller,this.keyH);// handleKeyPress();
+        this.drawZombie.handleKeyPress(this.controller, this.keyH);// handleKeyPress();
     }
 
     @Override
@@ -79,6 +85,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
+        drawInfo(g2);
         g2.dispose();
     }
 
@@ -91,5 +98,13 @@ public class MapImpl extends JPanel implements Map, Runnable {
     public void startGameThread() {
         this.gameThread = new Thread(this);
         this.gameThread.start();
+    }
+
+    private void drawInfo(final Graphics2D g2) {
+        g2.setColor(Color.DARK_GRAY);
+        g2.fillRect(0, 0, RECT_WIDTH, RECT_HEIGHT);
+        g2.setFont(new Font("Arial", Font.BOLD, FONT_SIZE));
+        g2.setColor(Color.WHITE);
+        g2.drawString("Forza   x " + controller.getStrenght(), INFO_POS_X, INFO_POS_Y);
     }
 }
