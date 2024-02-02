@@ -160,4 +160,9 @@ public class VControllerImpl implements VController{
         this.control.setScreenY(screenY);
     }
 
+    @Override
+    public void jumpPress() {
+        this.control.jumpPress();
+    }
+
 }

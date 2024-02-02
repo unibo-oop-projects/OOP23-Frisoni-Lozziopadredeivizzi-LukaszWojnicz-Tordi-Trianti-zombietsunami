@@ -172,4 +172,6 @@ public interface Controller {
      * @param screenY set the screen Y that wants to be setted
      */
     void setScreenY(int screenY);
+
+    void jumpPress();
 }
