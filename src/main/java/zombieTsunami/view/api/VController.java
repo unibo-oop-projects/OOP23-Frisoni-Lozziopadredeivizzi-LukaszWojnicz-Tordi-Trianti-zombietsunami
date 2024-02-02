@@ -59,4 +59,8 @@ public interface VController {
     void increaseStrenght();
 
     void setStrenght(int strenght);
+    
+    int getZombieScreenX();
+
+    int getZombieScreenY();
 }

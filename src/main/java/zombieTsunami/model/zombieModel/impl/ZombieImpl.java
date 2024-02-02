@@ -18,8 +18,8 @@ public class ZombieImpl implements Zombie{
         setDefaultValue();
     }
     private void setDefaultValue() {
-        entity.setX(100);
-        entity.setY(250);
+        entity.setX(150);
+        entity.setY(300);
         entity.setSpeed(1);
     }
     @Override

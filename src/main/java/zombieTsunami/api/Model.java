@@ -36,9 +36,9 @@ public interface Model {
 
     void setStrenght(int strenght);
 
-    int getScreenX();
+    int getZombieScreenX();
     
-    int getScreenY();
+    int getZombieScreenY();
       
     int getObstacleMapX();
 
