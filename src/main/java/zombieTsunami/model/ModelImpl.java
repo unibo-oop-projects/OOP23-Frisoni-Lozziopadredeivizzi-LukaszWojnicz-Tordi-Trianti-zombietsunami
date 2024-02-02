@@ -121,12 +121,12 @@ public class ModelImpl implements Model {
     }
 
     @Override
-    public int getScreenX() {
-        return this.getScreenX();
+    public int getZombieScreenX() {
+        return this.zombie.getScreenX();
     }
 
     @Override
-    public int getScreenY() {
+    public int getZombieScreenY() {
         return this.zombie.getScreenY();
     }
 
