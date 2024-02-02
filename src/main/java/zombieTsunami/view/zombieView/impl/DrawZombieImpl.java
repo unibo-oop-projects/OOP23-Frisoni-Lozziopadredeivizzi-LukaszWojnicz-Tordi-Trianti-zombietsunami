@@ -51,7 +51,7 @@ public class DrawZombieImpl implements DrawZombie{
     
     @Override
     public void jump(VController controller) {
-        controller.updateZombie();
+        controller.jumpZombie();
     }
     @Override
     public void updateZombie(VController controller) {
