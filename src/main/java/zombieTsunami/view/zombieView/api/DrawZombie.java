@@ -11,6 +11,5 @@ public interface DrawZombie {
     void drawZombieV(final Graphics2D g2, final VController controller);
     BufferedImage getZombie();
     void updateZombie(final VController controller);
-    void decreaseHeight(VController controller);
     void handleKeyPress(VController controller, KeyHandler keyH);
 } 

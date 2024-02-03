@@ -3,12 +3,12 @@ package zombieTsunami.model.zombieModel.impl;
 import zombieTsunami.model.EntityImpl;
 import zombieTsunami.model.zombieModel.api.jumpZombie;
 
-public class jumpZombieImpl implements jumpZombie{
+public class jumpZombieImpl implements jumpZombie {
     private boolean spriteZombie = false;
     private boolean jumping = false;
     private int initialY = 1;
     private int maxY = 10;
-    private boolean decrease = false;
+    private boolean down = false;
     private int counterJump;
     private EntityImpl entity;
     private int counterSprite;
@@ -21,14 +21,12 @@ public class jumpZombieImpl implements jumpZombie{
         return spriteZombie;
     }
 
-    @Override
-    public void setMapY(int mapY){
+    public void setMapY(int mapY) {
         this.entity.setY(mapY);
     }
 
-    @Override
     public void decreaseZombieMapY() {
-        entity.setY(entity.getY()-entity.getSpeed());
+        entity.setY(entity.getY() - entity.getSpeed());
     }
 
     @Override
@@ -39,32 +37,44 @@ public class jumpZombieImpl implements jumpZombie{
         maxY = initialY - maxY;// imposto l'altezza massima
     }
 
-    public boolean getDecresing() {
-        return decrease;
-    }
-
-    public void jumpZombie() {
-        if (counterJump > counterSprite) {// ogni "giro" aumenti la y in contemporanea della x
-            decreaseZombieMapY();// diminuisce l'altezza con la velocità una volta
-            System.out.println("couterSprite " + counterSprite);
-            System.out.println("counterJump " + counterJump);
-            counterSprite += counterSprite;
-        }
-        if (entity.getY() <= maxY) {// entro quando il mio zombie è alla altezza massima o oltre
-            decrease = true;
-            spriteZombie = false;
-        }
-    }
-
-    public void decreaseZombieScreenY(){
-        if (entity.getY()  >= initialY) {
+    public void decreaseZombieY() {
+        if (entity.getY() >= initialY) {
             setMapY(entity.getY() - entity.getSpeed());
-            decrease = false;
+            down = false;
             jumping = true;// ha finito il jump e ora può ripremerlo
         }
         counterJump++;
 
     }
 
+    public void updateJumpZombie() {
+        if (jumping) {// se sta saltando e spriteZombie è true
+            jumpUp();// gestire salto verso l'alto
+        }
+
+        if (down) {
+            jumpDown();
+        }
+    }
+
+    private void jumpDown() {
+        if (entity.getY() < initialY) {// se la y dello zombie è maggiore della maxY(massima y verso l'alto)
+            setMapY(entity.getY() + entity.getSpeed());
+        } else {
+            jumping=false;
+        }
+    }
+
+    private void jumpUp() {
+        if (entity.getY() >= maxY) {// se la y dello zombie è maggiore o uguale della maxY(massima y verso l'alto)
+            setMapY(entity.getY() - entity.getSpeed());
+        } else {
+            down = true;
+        }
+    }
+
+    public boolean getJumping() {
+        return jumping;
+    }
 
 }

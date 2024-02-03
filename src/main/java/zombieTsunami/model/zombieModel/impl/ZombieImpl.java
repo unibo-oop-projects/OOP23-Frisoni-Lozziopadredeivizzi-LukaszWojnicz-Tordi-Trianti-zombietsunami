@@ -10,7 +10,7 @@ public class ZombieImpl implements Zombie {
     private static final int NUM = 4;
     private final int screenX;
     private int screenY;
-    private static final int initialZombieX = 360;
+    private static final int initialZombieX = 450;
     private static final int initialZombieY = 450;
     private static final int initialZombieSpeed = 1;
 
@@ -26,10 +26,7 @@ public class ZombieImpl implements Zombie {
         entity.setSpeed(initialZombieSpeed);
     }
 
-    @Override
-    public void decreaseZombieScreenY() {
-        this.jumpZombie.decreaseZombieScreenY();
-    }
+   
 
     @Override
     public void update() {
@@ -82,7 +79,17 @@ public class ZombieImpl implements Zombie {
 
     @Override
     public void jumpPress() {
-        this.jumpZombie.jumpZombie();
+        this.jumpZombie.jumpPress();
+    }
+
+    @Override
+    public void updateJumpZombie() {
+        this.jumpZombie.updateJumpZombie();
+    }
+
+    @Override
+    public boolean getJumping() {
+        return jumpZombie.getJumping();
     }
 
 }

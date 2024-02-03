@@ -22,8 +22,6 @@ public interface Model {
 
     int getNumX();
 
-    void decreaseZombieScreenY();
-
     int getPersonMapX();
 
     int getPersonMapY();
@@ -47,4 +45,8 @@ public interface Model {
     boolean canBreakObstacle(int zombieStrength);
 
     void jumpPress();
+
+    void updateJumpZombie();
+
+    boolean getJumping();
 }
