@@ -26,8 +26,6 @@ public class ZombieImpl implements Zombie {
         entity.setSpeed(initialZombieSpeed);
     }
 
-   
-
     @Override
     public void update() {
         entity.setX(entity.getX() + entity.getSpeed());
