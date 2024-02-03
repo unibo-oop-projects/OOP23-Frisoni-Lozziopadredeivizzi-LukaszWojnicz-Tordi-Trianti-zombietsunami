@@ -4,7 +4,7 @@ public interface jumpZombie {
    
     void jumpPress();
 
-    void setMapY(int mapY);
+    boolean getJumping();
 
-    void decreaseZombieMapY();
+    void updateJumpZombie();
 } 
