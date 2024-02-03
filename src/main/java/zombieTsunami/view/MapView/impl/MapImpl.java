@@ -4,12 +4,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.KeyListener;
 
 import javax.swing.*;
 import javax.swing.plaf.DimensionUIResource;
 
-import zombieTsunami.view.KeyHandlerImpl;
+import zombieTsunami.view.Pause;
 import zombieTsunami.view.api.KeyHandler;
 import zombieTsunami.view.api.VController;
 import zombieTsunami.view.mapView.api.Map;
@@ -53,7 +52,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         long timer = 0;
         int drowCount = 0;
 
-        while (gameThread != null) {
+        while (!isPause()) {
             currentTime = System.nanoTime();
             delta += (currentTime - lastTime) / drowIntervall;
             timer += (currentTime - lastTime);
@@ -86,12 +85,21 @@ public class MapImpl extends JPanel implements Map, Runnable {
                 controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
         drawInfo(g2);
+        if (isPause()) {
+            Pause.pause(g2);
+        }
         g2.dispose();
     }
 
     @Override
     public void run() {
-        gameLoop();
+        while (gameThread != null) {
+            if (isPause()) {
+                repaint();
+            } else {
+                gameLoop();
+            }
+        }
     }
 
     @Override
@@ -106,5 +114,12 @@ public class MapImpl extends JPanel implements Map, Runnable {
         g2.setFont(new Font("Arial", Font.BOLD, FONT_SIZE));
         g2.setColor(Color.WHITE);
         g2.drawString("Forza   x " + controller.getStrenght(), INFO_POS_X, INFO_POS_Y);
+    }
+
+    /**
+     * @return if the game is on pause or not
+     */
+    private boolean isPause(){
+        return this.keyH.isOnPause();
     }
 }
