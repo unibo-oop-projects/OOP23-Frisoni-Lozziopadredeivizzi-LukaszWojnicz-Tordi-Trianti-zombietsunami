@@ -10,7 +10,7 @@ public class ZombieImpl implements Zombie {
     private static final int NUM = 4;
     private final int screenX;
     private int screenY;
-    private static final int initialZombieX = 450;
+    private static final int initialZombieX = 380;
     private static final int initialZombieY = 450;
     private static final int initialZombieSpeed = 1;
 
