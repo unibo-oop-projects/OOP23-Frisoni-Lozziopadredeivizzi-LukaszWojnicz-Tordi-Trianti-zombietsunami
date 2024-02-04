@@ -36,15 +36,13 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
 
     @Override
     public void jumpPress() {
-        //System.out.println("JUmpPress");
+        
         spriteZombie = true;
         jumping = true;// general jump
         jumpUp = true;// jumpUp
         initialY = entity.getY();// imposto la y in cui deve tornare
-        System.out.println("initialy: " + initialY);
-        System.out.println("prima operazione :" +maxY);
+        
         maxY = initialY - maxY;// imposto l'altezza massima
-        System.out.println("dopo operazione :" +maxY);
     }
 
     public void updateJumpZombie() {
@@ -59,7 +57,6 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
 
     private void jumpDown() {
         if (entity.getY() < initialY) {// se la y dello zombie è maggiore della maxY(massima y verso l'alto)
-            //System.out.println("jumpDown");
             increaseZombieMapY();
         } else {
             jumping = false;
