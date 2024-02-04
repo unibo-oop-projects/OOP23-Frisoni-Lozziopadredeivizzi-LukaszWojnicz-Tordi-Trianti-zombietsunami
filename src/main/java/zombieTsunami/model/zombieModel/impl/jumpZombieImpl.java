@@ -13,7 +13,7 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
     private int counterJump;
     private EntityImpl entity;
     private int counterSprite;
-
+    private static final int MAX_Y_VALUE = 90;
     public jumpZombieImpl(EntityImpl entity) {
         this.entity = entity;
     }
@@ -36,13 +36,11 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
 
     @Override
     public void jumpPress() {
-        
         spriteZombie = true;
         jumping = true;// general jump
         jumpUp = true;// jumpUp
         initialY = entity.getY();// imposto la y in cui deve tornare
-        
-        maxY = initialY - maxY;// imposto l'altezza massima
+        maxY = initialY - MAX_Y_VALUE;// imposto l'altezza massima
     }
 
     public void updateJumpZombie() {
