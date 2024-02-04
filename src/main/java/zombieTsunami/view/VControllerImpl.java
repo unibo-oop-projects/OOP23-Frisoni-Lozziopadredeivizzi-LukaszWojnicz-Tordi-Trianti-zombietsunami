@@ -6,7 +6,7 @@ import zombieTsunami.api.Controller;
 import zombieTsunami.api.Pair;
 import zombieTsunami.view.api.VController;
 
-public class VControllerImpl implements VController{
+public final class VControllerImpl implements VController{
     
     private Controller control;
     @Override
