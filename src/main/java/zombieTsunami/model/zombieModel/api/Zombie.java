@@ -1,7 +1,6 @@
 package zombieTsunami.model.zombieModel.api;
 
 public interface Zombie {
-    void decreaseZombieScreenY();
 
     void update();
 
@@ -24,4 +23,8 @@ public interface Zombie {
     void setStrenght(int strenght);
 
     void jumpPress();
+
+    void updateJumpZombie();
+
+    boolean getJumping();
 }

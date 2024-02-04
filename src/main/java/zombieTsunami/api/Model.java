@@ -51,11 +51,6 @@ public interface Model {
 
     int getNumX();
 
-    /**
-     * Calls the decrease method of the zombie {@link zombieTsunami.model.zombieModel.api.jumpZombie}. 
-     */
-    void decreaseZombieScreenY();
-
     int getPersonMapX();
 
     int getPersonMapY();
@@ -101,4 +96,8 @@ public interface Model {
     boolean canBreakObstacle(int zombieStrength);
 
     void jumpPress();
+
+    void updateJumpZombie();
+
+    boolean getJumping();
 }

@@ -35,8 +35,6 @@ public interface VController {
 
     int getNumX();
 
-    void decreaseZombieScreenY();
-
     void updateZombie();
 
     int getWorldColC();
@@ -64,4 +62,8 @@ public interface VController {
     int getZombieScreenY();
 
     void jumpPress();
+
+    void updateJumpZombie();
+
+    boolean getJumping();
 }

@@ -90,11 +90,6 @@ public final class ModelImpl implements Model {
     public int getNumX() {
         return this.zombie.getNumX();
     }
-
-    @Override
-    public void decreaseZombieScreenY() {
-        this.zombie.decreaseZombieScreenY();
-    } 
     
     @Override
     public int getPersonMapX() {
@@ -159,5 +154,15 @@ public final class ModelImpl implements Model {
     @Override
     public void jumpPress() {
         this.zombie.jumpPress();
+    }
+
+    @Override
+    public void updateJumpZombie() {
+        this.zombie.updateJumpZombie();
+    }
+
+    @Override
+    public boolean getJumping() {
+        return this.zombie.getJumping();
     }
 }
