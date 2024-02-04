@@ -184,7 +184,6 @@ public interface Controller {
 
   /**
    * Retrieves the current jumping status of the jumpZombie.
-   * 
    * @return true if the jumpZombie is currently in a jumping state, false
    *         otherwise.
    *         {@link zombieTsunami.model.zombieModel.api.Zombie}
