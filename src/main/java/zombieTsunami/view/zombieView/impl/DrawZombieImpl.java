@@ -16,12 +16,6 @@ public class DrawZombieImpl implements DrawZombie {
     private final int FRAMESCHANGE = 15;
     private static final String zombie1 = "src/main/resources/ZombieTsunami/zombie/Zombie.png";
     private static final String zombie2 = "src/main/resources/ZombieTsunami/zombie/Zombie2.png";
-    private int counterJump;
-    /*private boolean spriteZombie = false;
-    private int initialY;
-    private boolean decrease = false;
-    private int counterSprite = 1;
-    private int maxY = 10;*/
     private boolean jump = false;
 
     @Override
@@ -61,19 +55,17 @@ public class DrawZombieImpl implements DrawZombie {
     }
 
     @Override
-    public void decreaseHeight(VController controller) {
-        controller.decreaseZombieScreenY();
-    }
-
-    @Override
     public void updateZombie(VController controller) {
         controller.updateZombie();
     }
 
     @Override
     public void handleKeyPress(VController controller, KeyHandler keyH) {
-        if (keyH.isPressed() && (!jump)) {// se premi jump imposta la variabile spriteZombie true per indicare che hai saltato e la varibile jump a true significa che stai saltando
-            controller.jumpPress();        
+        if (keyH.isPressed() && (!controller.getJumping())) {// se premi spazio imposta jump su true
+            controller.jumpPress();
+        }
+        if (controller.getJumping()) {
+            controller.updateJumpZombie();
         }
         updateZombie(controller);
     }

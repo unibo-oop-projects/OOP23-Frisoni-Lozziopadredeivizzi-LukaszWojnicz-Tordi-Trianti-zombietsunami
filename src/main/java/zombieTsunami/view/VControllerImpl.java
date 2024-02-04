@@ -83,11 +83,6 @@ public class VControllerImpl implements VController{
     public List<Integer> mapIndexListC() {
         return this.control.mapList();
     }
-    
-    @Override
-    public void decreaseZombieScreenY() {
-        this.control.decreaseZombieScreenY();
-    }
 
     @Override
     public void updateZombie() {
@@ -158,6 +153,16 @@ public class VControllerImpl implements VController{
     @Override
     public void jumpPress() {
         this.control.jumpPress();
+    }
+
+    @Override
+    public void updateJumpZombie() {
+        this.control.updateJumpZombie();
+    }
+
+    @Override
+    public boolean getJumping() {
+        return this.control.getJumping();
     }
 
 }

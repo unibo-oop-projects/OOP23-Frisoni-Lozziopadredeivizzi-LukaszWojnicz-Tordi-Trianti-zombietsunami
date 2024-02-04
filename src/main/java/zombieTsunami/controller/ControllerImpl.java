@@ -98,11 +98,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void decreaseZombieScreenY() {
-        this.model.decreaseZombieScreenY();
-    }
-
-    @Override
     public void updateZombie() {
         this.model.updateZombie();
     }
@@ -188,6 +183,16 @@ public final class ControllerImpl implements Controller {
     @Override
     public void jumpPress() {
         this.model.jumpPress();
+    }
+
+    @Override
+    public void updateJumpZombie() {
+        this.model.updateJumpZombie();
+    }
+
+    @Override
+    public boolean getJumping() {
+        return this.model.getJumping();    
     }
 
 
