@@ -17,8 +17,8 @@ public class DrawBombImpl implements DrawBomb{
     @Override
     public void drawBombV(Graphics2D g2, VController controller) {
         g2.drawImage(getBomb(), 
-            350,
-            250,
+            controller.getObstacleMapX(),
+            controller.getObstacleMapY(),
             controller.titleSizeC(),
             controller.titleSizeC(), 
             null);
@@ -35,9 +35,8 @@ public class DrawBombImpl implements DrawBomb{
         return image;
     }
 
-    @Override
-    public void update() {
-        //TBD
+    public void update(final VController controller) {
+        controller.updateObstacle();
     }
     
 }
