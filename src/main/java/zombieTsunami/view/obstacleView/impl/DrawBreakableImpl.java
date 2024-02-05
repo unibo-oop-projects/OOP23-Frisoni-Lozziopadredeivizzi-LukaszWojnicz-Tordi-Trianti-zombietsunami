@@ -10,7 +10,7 @@ public class DrawBreakableImpl implements DrawBreakable{
 
     @Override
     public void drawBreakableV(Graphics2D g2, VController controller) {
-        //breakable sprite doesn't exist
+        //Needs breakable sprite
     }
 
     @Override

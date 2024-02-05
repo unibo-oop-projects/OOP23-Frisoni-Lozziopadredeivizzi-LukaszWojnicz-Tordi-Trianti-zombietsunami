@@ -2,6 +2,9 @@ package zombieTsunami.view.obstacleView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
 
 import zombieTsunami.model.MapData;
 import zombieTsunami.view.api.VController;
@@ -9,15 +12,27 @@ import zombieTsunami.view.obstacleView.api.DrawBomb;
 
 public class DrawBombImpl implements DrawBomb{
 
+    private static final String bomb1="src/main/resources/ZombieTsunami/obstacles/bomb/bomb1.png";
+
     @Override
     public void drawBombV(Graphics2D g2, VController controller) {
-        //bomb sprite doesn't exist yet
+        g2.drawImage(getBomb(), 
+            350,
+            250,
+            controller.titleSizeC(),
+            controller.titleSizeC(), 
+            null);
     }
 
     @Override
     public BufferedImage getBomb() {
-        //same reason as above
-        return null;
+        BufferedImage image=null;
+        try {      
+            image = ImageIO.read(new File(bomb1));
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+        return image;
     }
 
     @Override
