@@ -7,13 +7,12 @@ import javax.imageio.ImageIO;
 
 import zombieTsunami.view.mapView.api.Tile;
 
-public class TileImpl implements Tile{
+public final class TileImpl implements Tile {
 
     private BufferedImage image;
-    private boolean collision = false;
 
     @Override
-    public void setImage(String string) {
+    public void setImage(final String string) {
         try {
             this.image = ImageIO.read(getClass().getResourceAsStream(string));
         } catch (IOException e) {
@@ -25,5 +24,5 @@ public class TileImpl implements Tile{
     public BufferedImage getImage() {
         return this.image;
     }
-    
+
 }
