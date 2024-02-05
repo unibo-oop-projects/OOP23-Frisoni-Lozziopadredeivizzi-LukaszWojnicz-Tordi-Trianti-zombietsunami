@@ -195,5 +195,10 @@ public final class ControllerImpl implements Controller {
         return this.model.getJumping();    
     }
 
+    @Override
+    public void updateObstacle() {
+         this.model.updateOstacle();
+    }
+
 
 }

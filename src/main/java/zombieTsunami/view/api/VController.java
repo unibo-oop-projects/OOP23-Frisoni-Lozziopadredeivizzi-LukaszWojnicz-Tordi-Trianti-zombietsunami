@@ -1,5 +1,6 @@
 package zombieTsunami.view.api;
 
+import java.awt.image.BufferedImageOp;
 import java.util.List;
 
 import zombieTsunami.api.Controller;
@@ -129,4 +130,11 @@ public interface VController {
      * @return True if the zombie is jumping, otherwise false.
      */
     boolean getJumping();
+
+    int getObstacleMapX();
+
+    int getObstacleMapY();
+
+    void updateObstacle();
+
 }

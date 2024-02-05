@@ -40,6 +40,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.keyH = keyH;
         this.drowMap = new TileManagerImpl();
         this.drawZombie = new DrawZombieImpl();
+        this.drawBomb = new DrawBombImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -87,6 +88,7 @@ public class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
+        this.drawBomb.drawBombV(g2, controller);
         drawInfo(g2);
         if (isPause()) {
             Pause.pause(g2);

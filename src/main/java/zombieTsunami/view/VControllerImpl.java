@@ -165,4 +165,19 @@ public class VControllerImpl implements VController {
         return this.control.getJumping();
     }
 
+    @Override
+    public int getObstacleMapX() {
+        return this.control.getObstacleMapX();
+    }
+
+    @Override
+    public int getObstacleMapY() {
+        return this.control.getObstacleMapY();
+    }
+
+    @Override
+    public void updateObstacle() {
+        this.control.updateObstacle();
+    }
+
 }

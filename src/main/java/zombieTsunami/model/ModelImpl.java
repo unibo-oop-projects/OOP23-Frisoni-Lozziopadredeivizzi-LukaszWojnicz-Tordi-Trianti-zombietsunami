@@ -11,7 +11,9 @@ import zombieTsunami.model.mapModel.api.TileElement;
 import zombieTsunami.model.mapModel.impl.GameMapImpl;
 import zombieTsunami.model.mapModel.impl.MapPosListImpl;
 import zombieTsunami.model.mapModel.impl.TileElementImpl;
+import zombieTsunami.model.obstacleModel.api.Bomb;
 import zombieTsunami.model.obstacleModel.api.Breakable;
+import zombieTsunami.model.obstacleModel.impl.BombImpl;
 import zombieTsunami.model.obstacleModel.impl.BreakableImpl;
 import zombieTsunami.model.zombieModel.api.Zombie;
 import zombieTsunami.model.zombieModel.impl.ZombieImpl;
@@ -28,6 +30,7 @@ public final class ModelImpl implements Model {
     private final TileElement tileElem;
     private final MapPosList mapPos;
     private final Zombie zombie;
+    private final Bomb bomb;
     private final Person person;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private Controller control;
@@ -39,6 +42,7 @@ public final class ModelImpl implements Model {
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
         this.zombie = new ZombieImpl();
+        this.bomb = new BombImpl();
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
         this.breakable = new BreakableImpl(1); // 1 per test
@@ -136,14 +140,12 @@ public final class ModelImpl implements Model {
 
     @Override
     public int getObstacleMapX() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapX'");
+        return this.bomb.getX();
     }
 
     @Override
     public int getObstacleMapY() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getObstacleMapY'");
+        return this.bomb.getY();
     }
 
     @Override
@@ -164,5 +166,10 @@ public final class ModelImpl implements Model {
     @Override
     public boolean getJumping() {
         return this.zombie.getJumping();
+    }
+
+    @Override
+    public void updateOstacle() {
+        this.bomb.update();
     }
 }
