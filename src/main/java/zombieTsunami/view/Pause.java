@@ -17,8 +17,12 @@ public final class Pause {
     private static final int PAUSE_POS_X = 300;
     private static final int PAUSE_POS_Y = 200;
 
+    private Pause() {
+    }
+
     /**
      * This method draw the elements to obtain the pause scene in the game.
+     * 
      * @param g2 is the Graphic to drow the element of the pause scene
      */
     public static void pause(final Graphics2D g2) {
