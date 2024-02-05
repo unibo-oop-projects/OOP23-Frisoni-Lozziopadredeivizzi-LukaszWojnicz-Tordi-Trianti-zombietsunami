@@ -22,8 +22,8 @@ public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
     }
 
     private void setDefaultValue() {
-        entity.setX(350); //350 just for test
-        entity.setY(250);
+        entity.setX(360); //just for test
+        entity.setY(500);
     }
 
     @Override
