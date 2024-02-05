@@ -24,7 +24,6 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Draws the zombie on the graphics context based on the provided controller.
-     *
      * @param g2         The graphics context.
      * @param controller The controller with the game-related information.
      */
@@ -44,7 +43,6 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Gets the image representation of the zombie.
-     *
      * @return The BufferedImage representing the zombie.
      */
     @Override
@@ -71,7 +69,6 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Updates the zombie's visual representation based on the same controller.
-     *
      * @param controller The controller providing game-related information.
      */
     @Override
@@ -81,7 +78,6 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Handles key presses related to the zombie .
-     *
      * @param controller The controller with the game-related information.
      * @param keyH       The key handler for processing key events.
      */
