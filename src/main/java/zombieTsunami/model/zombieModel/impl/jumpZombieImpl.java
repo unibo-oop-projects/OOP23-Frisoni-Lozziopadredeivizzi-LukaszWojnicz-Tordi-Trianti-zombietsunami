@@ -14,6 +14,7 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
     private EntityImpl entity;
     private int counterSprite;
     private static final int MAX_Y_VALUE = 90;
+
     public jumpZombieImpl(EntityImpl entity) {
         this.entity = entity;
     }

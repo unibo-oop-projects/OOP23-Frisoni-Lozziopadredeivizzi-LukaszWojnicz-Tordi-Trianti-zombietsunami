@@ -49,6 +49,9 @@ public interface Model {
      */
     int getSpeed();
 
+    /**
+     * @return the number to divides the zombie mapX
+     */
     int getNumX();
 
     int getPersonMapX();
@@ -95,9 +98,19 @@ public interface Model {
 
     boolean canBreakObstacle(int zombieStrength);
 
+    /**
+     * Calls the jumpPress method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     */
     void jumpPress();
 
+    /**
+     * Calls the updateJumpZombie method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     */
     void updateJumpZombie();
 
+    /**
+     * Calls the getJumping method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * @return  true if zombie is jumping
+     */
     boolean getJumping();
 }
