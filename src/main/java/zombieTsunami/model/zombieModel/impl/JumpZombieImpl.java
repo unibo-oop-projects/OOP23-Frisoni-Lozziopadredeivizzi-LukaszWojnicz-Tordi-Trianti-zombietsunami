@@ -10,6 +10,8 @@ public class JumpZombieImpl implements JumpZombie {
     private boolean jumpUp = false;
     private int initialY;
     private int maxY;
+    private int counterJump;
+    private int counterSprite;
     private static final int MAX_Y_VALUE = 90;
     private final EntityImpl entity;
 
