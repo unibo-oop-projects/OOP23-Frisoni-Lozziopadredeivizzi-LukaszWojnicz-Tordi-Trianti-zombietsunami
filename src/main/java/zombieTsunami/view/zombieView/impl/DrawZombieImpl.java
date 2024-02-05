@@ -16,7 +16,6 @@ import zombieTsunami.view.zombieView.api.DrawZombie;
  */
 public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
-    private boolean jump = false;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
     private static final String zombie1 = "src/main/resources/ZombieTsunami/zombie/Zombie.png";
