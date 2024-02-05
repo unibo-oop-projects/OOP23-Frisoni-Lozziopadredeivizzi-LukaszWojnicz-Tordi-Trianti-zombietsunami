@@ -13,7 +13,7 @@ import zombieTsunami.model.zombieModel.api.Zombie;
  */
 public class ZombieImpl implements Zombie {
     private final EntityImpl entity = new EntityImpl();
-    private final jumpZombieImpl jumpZombie = new jumpZombieImpl(entity);
+    private final JumpZombieImpl jumpZombie = new JumpZombieImpl(entity);
     private final int screenX;
     private int screenY;
     private static final int NUM = 4;

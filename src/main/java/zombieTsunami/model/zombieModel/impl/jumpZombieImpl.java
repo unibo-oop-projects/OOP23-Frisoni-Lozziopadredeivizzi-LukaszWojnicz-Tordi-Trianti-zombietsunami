@@ -1,29 +1,47 @@
 package zombieTsunami.model.zombieModel.impl;
 
 import zombieTsunami.model.EntityImpl;
-import zombieTsunami.model.zombieModel.api.jumpZombie;
+import zombieTsunami.model.zombieModel.api.JumpZombie;
 
-public class jumpZombieImpl extends EntityImpl implements jumpZombie {
+/**
+ * Implementation of the jumpZombie interface, representing the jumping behavior
+ * of a zombie in the Zombie Tsunami game.
+ *
+ * @see zombieTsunami.model.EntityImpl
+ * @see zombieTsunami.model.zombieModel.api.JumpZombie
+ */
+public class JumpZombieImpl extends EntityImpl implements JumpZombie {
     private boolean spriteZombie = false;
     private boolean jumping = false;
-    private int initialY = 1;
-    private int maxY = 90;
     private boolean jumpingDown = false;
     private boolean jumpUp = false;
+    private int initialY;
+    private int maxY;
     private int counterJump;
-    private EntityImpl entity;
     private int counterSprite;
     private static final int MAX_Y_VALUE = 90;
+    private final EntityImpl entity;
 
-    public jumpZombieImpl(EntityImpl entity) {
+    /**
+     * Constructs a jumpZombieImpl with the specified EntityImpl as the underlying
+     * entity.
+     *
+     * @param entity the underlying entity for the jumpZombie behavior.
+     */
+    public JumpZombieImpl(final EntityImpl entity) {
         this.entity = entity;
     }
 
+    /**
+     * Gets the current state of the spriteZombie.
+     *
+     * @return true if spriteZombie is active.
+     */
     public boolean getSpriteZombie() {
         return spriteZombie;
     }
 
-    private void setMapY(int mapY) {
+    private void setMapY(final int mapY) {
         this.entity.setY(mapY);
     }
 
@@ -35,19 +53,25 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
         entity.setY(entity.getY() + entity.getSpeed());
     }
 
+    /**
+     * Initiates the jump action for the zombie.
+     */
     @Override
     public void jumpPress() {
         spriteZombie = true;
-        jumping = true;// general jump
-        jumpUp = true;// jumpUp
-        initialY = entity.getY();// imposto la y in cui deve tornare
-        maxY = initialY - MAX_Y_VALUE;// imposto l'altezza massima
+        jumping = true;
+        jumpUp = true;
+        initialY = entity.getY();
+        maxY = initialY - MAX_Y_VALUE;
     }
 
+    /**
+     * Updates the jump action for the zombie.
+     */
     public void updateJumpZombie() {
-        if (jumping) {// se sta saltando e spriteZombie è true
+        if (jumping) {
             if (jumpUp) {
-                jumpUp();// gestire salto verso l'alto
+                jumpUp();
             } else if (jumpingDown) {
                 jumpDown();
             }
@@ -55,7 +79,7 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
     }
 
     private void jumpDown() {
-        if (entity.getY() < initialY) {// se la y dello zombie è maggiore della maxY(massima y verso l'alto)
+        if (entity.getY() < initialY) {
             increaseZombieMapY();
         } else {
             jumping = false;
@@ -64,7 +88,7 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
     }
 
     private void jumpUp() {
-        if (entity.getY() > maxY) {// se la y dello zombie è maggiore o uguale della maxY(massima y verso l'alto)
+        if (entity.getY() > maxY) {
             decreaseZombieMapY();
         } else {
             jumpingDown = true;
@@ -72,8 +96,12 @@ public class jumpZombieImpl extends EntityImpl implements jumpZombie {
         }
     }
 
+    /**
+     * Gets the current jumping state of the zombie.
+     *
+     * @return true if the zombie is currently jumping.
+     */
     public boolean getJumping() {
         return jumping;
     }
-
 }

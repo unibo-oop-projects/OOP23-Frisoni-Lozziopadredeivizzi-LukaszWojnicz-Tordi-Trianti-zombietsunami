@@ -1,6 +1,6 @@
 package zombieTsunami.model.zombieModel.api;
 
-public interface jumpZombie {
+public interface JumpZombie {
    
     void jumpPress();
 
