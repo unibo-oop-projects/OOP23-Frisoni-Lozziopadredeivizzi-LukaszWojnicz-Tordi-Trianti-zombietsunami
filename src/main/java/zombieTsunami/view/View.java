@@ -11,14 +11,14 @@ import zombieTsunami.view.mapView.impl.MapImpl;
 public class View {
 
 
-    public static void start(final VController c, int width, int high) {
+    public static void start(final VController c, final int width, final int height) {
         final JFrame window = new JFrame("Zombie Tsunami");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setFocusable(true);
         final KeyHandler keyH= new KeyHandlerImpl();
         window.addKeyListener((KeyListener) keyH);
-        final StartMenu startMenu = new StartMenu(width, high);
+        final StartMenu startMenu = new StartMenu(width, height);
         final MapImpl gamePanel = new MapImpl(c,keyH);
 
         startMenu.enable();

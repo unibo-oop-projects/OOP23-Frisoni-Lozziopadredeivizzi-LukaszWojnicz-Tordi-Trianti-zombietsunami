@@ -10,50 +10,55 @@ import zombieTsunami.model.ModelImpl;
 import zombieTsunami.view.VControllerImpl;
 import zombieTsunami.view.api.VController;
 
-public class ControllerImpl implements Controller{
-    
+/**
+ * This class is the Controller of the MVC and implements the Controller
+ * interface
+ * {@link zombieTsunami.api.Controller}.
+ */
+public final class ControllerImpl implements Controller {
+
     private Model model;
     private VController viewController;
 
     @Override
-    public void setModel(){
-        this.model=new ModelImpl();
+    public void setModel() {
+        this.model = new ModelImpl();
         this.model.setController(this);
     }
 
     @Override
-    public void setView(){
-        this.viewController=new VControllerImpl();
+    public void setView() {
+        this.viewController = new VControllerImpl();
         this.viewController.set(this);
     }
 
     @Override
-    public int getScreenCol(){
+    public int getScreenCol() {
         return MapData.getMaxScCol();
     }
 
     @Override
-    public int getScreenRow(){
+    public int getScreenRow() {
         return MapData.getMaxScRow();
     }
 
     @Override
-    public int getTitleSize(){
+    public int getTitleSize() {
         return MapData.getTitSize();
     }
 
     @Override
-    public int getFPS(){
-        return MapData.getFPS(); 
+    public int getFPS() {
+        return MapData.getFPS();
     }
 
     @Override
-    public int getScreenWidth(){
+    public int getScreenWidth() {
         return MapData.getScreenW();
     }
 
     @Override
-    public int getScreenHigh(){
+    public int getScreenHigh() {
         return MapData.getScreenH();
     }
 
@@ -77,6 +82,7 @@ public class ControllerImpl implements Controller{
         return this.model.getScreenTilePos();
     }
 
+    @Override
     public int getZombieMapY() {
         return this.model.getZombieMapY();
     }
@@ -89,11 +95,6 @@ public class ControllerImpl implements Controller{
     @Override
     public int getNumX() {
         return this.model.getNumX();
-    }
-
-    @Override
-    public void jumpZombie() {
-        this.model.jump();
     }
 
     @Override
@@ -150,7 +151,7 @@ public class ControllerImpl implements Controller{
     }
 
     @Override
-    public void setStrenght(int strenght) {
+    public void setStrenght(final int strenght) {
         this.model.setStrenght(strenght);
     }
 
@@ -165,7 +166,7 @@ public class ControllerImpl implements Controller{
     }
 
     @Override
-    public boolean canBreakObstacle(int zombieStrength) {
+    public boolean canBreakObstacle(final int zombieStrength) {
         return this.model.canBreakObstacle(zombieStrength);
     }
 
@@ -179,5 +180,20 @@ public class ControllerImpl implements Controller{
         return this.model.getZombieScreenY();
     }
 
-   
+    @Override
+    public void jumpPress() {
+        this.model.jumpPress();
+    }
+
+    @Override
+    public void updateJumpZombie() {
+        this.model.updateJumpZombie();
+    }
+
+    @Override
+    public boolean getJumping() {
+        return this.model.getJumping();    
+    }
+
+
 }

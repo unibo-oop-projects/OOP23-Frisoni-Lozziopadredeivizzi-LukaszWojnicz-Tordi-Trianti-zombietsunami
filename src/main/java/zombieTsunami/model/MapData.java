@@ -22,7 +22,7 @@ public final class MapData {
 
     // WORLD SETTINGS
     private static final int MAX_WORLD_COL = 50;
-    private static final int MAX_WORLD_ROW = 10;
+    private static final int MAX_WORLD_ROW = 15;
     private static final int WORLD_WIDTH = TITLE_SIZE * MAX_WORLD_COL;
     private static final int WORLD_HIGHT = TITLE_SIZE * MAX_WORLD_ROW;
 
