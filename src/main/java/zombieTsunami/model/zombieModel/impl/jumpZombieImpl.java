@@ -6,7 +6,6 @@ import zombieTsunami.model.zombieModel.api.JumpZombie;
 /**
  * Implementation of the jumpZombie interface, representing the jumping behavior
  * of a zombie in the Zombie Tsunami game.
- *
  * @see zombieTsunami.model.EntityImpl
  * @see zombieTsunami.model.zombieModel.api.JumpZombie
  */
@@ -25,7 +24,6 @@ public class JumpZombieImpl extends EntityImpl implements JumpZombie {
     /**
      * Constructs a jumpZombieImpl with the specified EntityImpl as the underlying
      * entity.
-     *
      * @param entity the underlying entity for the jumpZombie behavior.
      */
     public JumpZombieImpl(final EntityImpl entity) {
@@ -34,7 +32,6 @@ public class JumpZombieImpl extends EntityImpl implements JumpZombie {
 
     /**
      * Gets the current state of the spriteZombie.
-     *
      * @return true if spriteZombie is active.
      */
     public boolean getSpriteZombie() {
@@ -98,7 +95,6 @@ public class JumpZombieImpl extends EntityImpl implements JumpZombie {
 
     /**
      * Gets the current jumping state of the zombie.
-     *
      * @return true if the zombie is currently jumping.
      */
     public boolean getJumping() {
