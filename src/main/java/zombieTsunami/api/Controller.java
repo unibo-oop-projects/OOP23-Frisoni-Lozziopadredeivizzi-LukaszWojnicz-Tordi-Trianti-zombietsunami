@@ -115,6 +115,7 @@ public interface Controller {
 
   /**
    * @return the strenght of the zombie
+   *         {@link zombieTsunami.model.zombieModel.api.Zombie}.
    */
   int getStrenght();
 
@@ -158,13 +159,13 @@ public interface Controller {
 
   /**
    * @return the zombie's screen X coordiante
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}
+   *         {@link zombieTsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenX();
 
   /**
    * @return the zombie's screen Y coordiante
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}
+   *         {@link zombieTsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenY();
 
