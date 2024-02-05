@@ -158,11 +158,13 @@ public interface Controller {
 
   /**
    * @return the zombie's screen X coordiante
+   * {@link zombieTsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenX();
 
   /**
    * @return the zombie's screen Y coordiante
+   * {@link zombieTsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenY();
 
