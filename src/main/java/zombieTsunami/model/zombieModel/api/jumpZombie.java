@@ -1,4 +1,5 @@
 package zombieTsunami.model.zombieModel.api;
+
 /**
  * This interface defines the jumping behavior of a Zombie, enabling it to perform jumps.
  */
@@ -20,3 +21,4 @@ public interface JumpZombie {
      */
     void updateJumpZombie();
 }
+
