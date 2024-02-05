@@ -6,34 +6,32 @@ import zombieTsunami.api.Controller;
 import zombieTsunami.api.Pair;
 import zombieTsunami.view.api.VController;
 
-public class VControllerImpl implements VController{
-    
+public class VControllerImpl implements VController {
+
     private Controller control;
+
     @Override
-    public void set(final Controller c){
-        this.control=c;
+    public void set(final Controller c) {
+        this.control = c;
 
         View.start(this, getScreenWC(), getScreenHC());
     }
 
     @Override
-    public int getScreenWC(){
+    public int getScreenWC() {
         return this.control.getScreenWidth();
     }
 
     @Override
-    public int getScreenHC(){
+    public int getScreenHC() {
         return this.control.getScreenHigh();
     }
-
-   
 
     @Override
     public int getFPSC() {
         return this.control.getFPS();
     }
 
-    
     @Override
     public int getZombieMapX() {
         return this.control.getZombieMapX();
@@ -82,11 +80,6 @@ public class VControllerImpl implements VController{
     @Override
     public List<Integer> mapIndexListC() {
         return this.control.mapList();
-    }
-    
-    @Override
-    public void jumpZombie() {
-        this.control.jumpZombie();
     }
 
     @Override
@@ -146,13 +139,30 @@ public class VControllerImpl implements VController{
     public void setStrenght(int strenght) {
         this.control.setStrenght(strenght);
     }
+
     @Override
-    public int getZombieScreenX(){
+    public int getZombieScreenX() {
         return this.control.getZombieScreenX();
     }
+
     @Override
-    public int getZombieScreenY(){
+    public int getZombieScreenY() {
         return this.control.getZombieScreenY();
+    }
+
+    @Override
+    public void jumpPress() {
+        this.control.jumpPress();
+    }
+
+    @Override
+    public void updateJumpZombie() {
+        this.control.updateJumpZombie();
+    }
+
+    @Override
+    public boolean getJumping() {
+        return this.control.getJumping();
     }
 
 }

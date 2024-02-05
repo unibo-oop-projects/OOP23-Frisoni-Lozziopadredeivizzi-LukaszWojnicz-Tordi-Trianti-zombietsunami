@@ -4,11 +4,15 @@ import java.util.List;
 
 import zombieTsunami.api.Pair;
 
+/**
+ * This interface allows you to get the positions of every single tile in the
+ * map game, and it puts them into a List of Pairs of Integers.
+ */
 public interface MapPosList {
 
     /**
      * This method represents the moving camera of the game.
-     *  
+     * 
      * @param worldRow      the map's (world) row
      * @param worldCol      the map's (world) col
      * @param titleSize     the size of title
@@ -20,7 +24,7 @@ public interface MapPosList {
      *         single tile that has to be putten into the graphic.
      */
     List<Pair<Integer, Integer>> getScreenTilePosition(int worldRow, int worldCol, int titleSize,
-            final int zombieWorldX, final int zombieWorldY, final int zombieScreenX,
-            final int zombieScreenY);
+            int zombieWorldX, int zombieWorldY, int zombieScreenX,
+            int zombieScreenY);
 
 }
