@@ -56,12 +56,14 @@ public interface Controller {
   List<Integer> mapList();
 
   /**
-   * @return the List of Strings with the file's name of the different tile elements
+   * @return the List of Strings with the file's name of the different tile
+   *         elements
    */
   List<String> tileElements();
 
   /**
-   * @return the List of Pair of Integers with the positions of all the tiles in the map
+   * @return the List of Pair of Integers with the positions of all the tiles in
+   *         the map
    */
   List<Pair<Integer, Integer>> screenTilePos();
 
@@ -113,7 +115,7 @@ public interface Controller {
 
   /**
    * @return the strenght of the zombie
-   * {@link zombietsunami.model.zombieModel.api.Zombie}.
+   *         {@link zombietsunami.model.zombieModel.api.Zombie}.
    */
   int getStrenght();
 
@@ -138,6 +140,7 @@ public interface Controller {
   /**
    * Calls the set strenght method of the zombie
    * {@link zombietsunami.model.zombieModel.api.Zombie}.
+   * 
    * @param strenght is the strenght that wants to be setted
    */
   void setStrenght(int strenght);
@@ -156,13 +159,13 @@ public interface Controller {
 
   /**
    * @return the zombie's screen X coordiante
-   * {@link zombietsunami.model.zombieModel.api.Zombie}
+   *         {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenX();
 
   /**
    * @return the zombie's screen Y coordiante
-   * {@link zombietsunami.model.zombieModel.api.Zombie}
+   *         {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenY();
 
@@ -182,8 +185,10 @@ public interface Controller {
 
   /**
    * Retrieves the current jumping status of the jumpZombie.
-   * @return true if the jumpZombie is currently in a jumping state, false otherwise.
-   *{@link zombietsunami.model.zombieModel.api.Zombie}
+   * 
+   * @return true if the jumpZombie is currently in a jumping state, false
+   *         otherwise.
+   *         {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   boolean getJumping();
 
