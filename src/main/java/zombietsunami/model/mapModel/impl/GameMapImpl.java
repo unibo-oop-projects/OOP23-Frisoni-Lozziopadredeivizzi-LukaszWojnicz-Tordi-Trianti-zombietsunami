@@ -9,8 +9,10 @@ import java.util.stream.Collectors;
 
 import zombietsunami.model.MapData;
 import zombietsunami.model.mapModel.api.GameMap;
+
 /**
- * This class implements the GameMap interface {@link zombietsunami.model.mapModel.api.GameMap}.
+ * This class implements the GameMap interface
+ * {@link zombietsunami.model.mapModel.api.GameMap}.
  */
 public final class GameMapImpl implements GameMap {
 
@@ -72,7 +74,8 @@ public final class GameMapImpl implements GameMap {
         return this.mapOfNumberTile;
     }
 
-    public List<Integer> getLoadedObstacleList(){
+    @Override
+    public List<Integer> getLoadedObstacleList() {
         return this.mapOfNumberObstacle;
     }
 
