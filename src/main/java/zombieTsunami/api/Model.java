@@ -115,4 +115,6 @@ public interface Model {
     boolean getJumping();
 
     void updateOstacle();
+
+    List<Integer> getObstacleList();
 }

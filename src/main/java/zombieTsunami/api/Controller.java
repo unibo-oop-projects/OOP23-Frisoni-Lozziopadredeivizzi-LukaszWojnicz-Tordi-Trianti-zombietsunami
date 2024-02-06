@@ -189,4 +189,6 @@ public interface Controller {
   boolean getJumping();
 
   void updateObstacle();
+
+  List<Integer> obstacleList();
 }

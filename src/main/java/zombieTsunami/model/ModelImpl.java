@@ -172,4 +172,9 @@ public final class ModelImpl implements Model {
     public void updateOstacle() {
         this.bomb.update();
     }
+
+    @Override
+    public List<Integer> getObstacleList() {
+        return this.gameMap.getLoadedObstacleList();
+    }
 }

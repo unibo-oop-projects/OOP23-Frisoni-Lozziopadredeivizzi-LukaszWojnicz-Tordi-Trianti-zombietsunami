@@ -137,4 +137,6 @@ public interface VController {
 
     void updateObstacle();
 
+    List<Integer> obstacleIndexListC();
+
 }

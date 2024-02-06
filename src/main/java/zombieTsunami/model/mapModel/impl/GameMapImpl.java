@@ -21,12 +21,14 @@ public final class GameMapImpl implements GameMap {
     private final String filePath = ROOT + MAP1;
 
     private final List<Integer> mapOfNumberTile;
+    private final List<Integer> mapOfNumberObstacle;
 
     /**
      * Assigns the List of Integers with the map values at a new List.
      */
     public GameMapImpl() {
         this.mapOfNumberTile = loadMap(this.filePath);
+        this.mapOfNumberObstacle = loadMap("/zombieTsunami/obstaclemap/obstacleMap.txt");
     }
 
     /**
@@ -68,6 +70,10 @@ public final class GameMapImpl implements GameMap {
     @Override
     public List<Integer> getLoadedMapList() {
         return this.mapOfNumberTile;
+    }
+
+    public List<Integer> getLoadedObstacleList(){
+        return this.mapOfNumberObstacle;
     }
 
 }
