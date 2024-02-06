@@ -18,6 +18,11 @@ import zombietsunami.view.obstacleView.impl.DrawBombImpl;
 import zombietsunami.view.zombieView.api.DrawZombie;
 import zombietsunami.view.zombieView.impl.DrawZombieImpl;
 
+/**
+ * This class implements the Map interface
+ * {@link zombietsunami.view.mapView.api.Map}; it contains the game engine of
+ * the game.
+ */
 public final class MapImpl extends JPanel implements Map, Runnable {
 
     private static final long NANOSEC = 1000000000;
@@ -35,6 +40,11 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private final DrawBomb drawBomb;
     private final KeyHandler keyH;
 
+    /**
+     * Sets the objects in the map like the zombie and the obstacles.
+     * @param c sets the view controller 
+     * @param keyH sets the key listener for the class
+     */
     public MapImpl(final VController c, final KeyHandler keyH) {
         this.controller = c;
         this.keyH = keyH;
