@@ -169,7 +169,6 @@ public interface Controller {
   /**
    * Initiates the jump action by invoking the setStrength method of the
    * jumpZombie model.
-   * @param jumpPress Indicates whether the jump action should be triggered.
    * {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   void jumpPress();

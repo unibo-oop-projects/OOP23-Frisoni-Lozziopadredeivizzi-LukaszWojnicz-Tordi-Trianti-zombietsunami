@@ -6,11 +6,6 @@ import zombietsunami.api.Entity;
  * This class represents a generic implementation of Pair<X, Y>, with
  * well-implemented methods
  * for getting and setting values, hashCode, equals, and toString.
- *
- * @param strenght is the zombie variable for strength.
- * @param mapX     is the X-coordinate on the map.
- * @param mapY     is the Y-coordinate on the map.
- * @param speed    is the speed of the entity.
  */
 public class EntityImpl implements Entity {
     private int strenght;
@@ -20,7 +15,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Returns the X coordinate of the entity on the map.
-     *
      * @return the X coordinate.
      */
     public int getX() {
@@ -29,7 +23,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Sets the X coordinate of the entity on the map.
-     *
      * @param x the new X coordinate.
      */
     public void setX(final int x) {
@@ -38,7 +31,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Returns the Y coordinate of the entity on the map.
-     *
      * @return the Y coordinate.
      */
     public int getY() {
@@ -47,7 +39,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Sets the Y coordinate of the entity on the map.
-     *
      * @param y the new Y coordinate.
      */
     public void setY(final int y) {
@@ -56,7 +47,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Returns the speed of the entity.
-     *
      * @return the speed.
      */
     public int getSpeed() {
@@ -65,7 +55,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Sets the speed of the entity.
-     *
      * @param speed the new speed.
      */
     public void setSpeed(final int speed) {
@@ -74,7 +63,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Returns the constant NUM.
-     *
      * @return the constant NUM.
      */
     public int getNumX() {
@@ -83,7 +71,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Returns the strength of the entity.
-     *
      * @return the strength.
      */
     public int getStrenght() {
@@ -99,7 +86,6 @@ public class EntityImpl implements Entity {
 
     /**
      * Sets the strength of the entity.
-     *
      * @param strength the new strength.
      */
     public void setStrenght(final int strenght) {
