@@ -23,8 +23,8 @@ public class BombImpl implements Bomb, Obstacle{
     }
 
     private void setDefaultValue() {
-        entity.setX(420); //just for test
-        entity.setY(1000);
+        entity.setX(350); //just for test
+        entity.setY(350);
     }
 
     @Override
