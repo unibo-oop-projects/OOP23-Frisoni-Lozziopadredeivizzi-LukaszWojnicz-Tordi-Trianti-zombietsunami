@@ -6,12 +6,6 @@ import zombietsunami.api.Entity;
  * This class represents a generic implementation of Pair<X, Y>, with
  * well-implemented methods
  * for getting and setting values, hashCode, equals, and toString.
- *
- * @param strenght is the zombie variable for strength.
- * @param mapX     is the X-coordinate on the map.
- * @param mapY     is the Y-coordinate on the map.
- * @param speed    is the speed of the entity.
- * @param NUM      is the num to divedes the x-screen
  */
 public class EntityImpl implements Entity {
     private int strenght;
