@@ -45,7 +45,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("zombieTsunami.LaunchGame")
+    mainClass.set("zombietsunami.LaunchGame")
 }
 
 tasks.test {
