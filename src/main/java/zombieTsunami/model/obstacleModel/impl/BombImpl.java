@@ -1,4 +1,4 @@
-package zombieTsunami.model.obstacleModel.impl;
+package zombietsunami.model.obstacleModel.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -7,10 +7,10 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-import zombieTsunami.api.Model;
-import zombieTsunami.model.EntityImpl;
-import zombieTsunami.model.MapData;
-import zombieTsunami.model.obstacleModel.api.*;
+import zombietsunami.api.Model;
+import zombietsunami.model.EntityImpl;
+import zombietsunami.model.MapData;
+import zombietsunami.model.obstacleModel.api.*;
 
 public class BombImpl implements Bomb, Obstacle{
 

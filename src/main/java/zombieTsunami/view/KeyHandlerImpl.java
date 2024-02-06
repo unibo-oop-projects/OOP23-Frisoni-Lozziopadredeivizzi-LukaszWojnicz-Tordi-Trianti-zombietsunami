@@ -1,9 +1,9 @@
-package zombieTsunami.view;
+package zombietsunami.view;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import zombieTsunami.view.api.KeyHandler;
+import zombietsunami.view.api.KeyHandler;
 
 public class KeyHandlerImpl implements KeyListener, KeyHandler {
 

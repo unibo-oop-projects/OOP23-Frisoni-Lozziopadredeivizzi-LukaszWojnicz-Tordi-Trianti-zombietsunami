@@ -1,4 +1,4 @@
-package zombieTsunami.model.mapModel.impl;
+package zombietsunami.model.mapModel.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import zombieTsunami.model.MapData;
-import zombieTsunami.model.mapModel.api.GameMap;
+import zombietsunami.model.MapData;
+import zombietsunami.model.mapModel.api.GameMap;
 /**
- * This class implements the GameMap interface {@link zombieTsunami.model.mapModel.api.GameMap}.
+ * This class implements the GameMap interface {@link zombietsunami.model.mapModel.api.GameMap}.
  */
 public final class GameMapImpl implements GameMap {
 
     private static final String SEP = "/";
     private static final String MAP1 = "maps/map01.txt";
-    private static final String ROOT = SEP + "zombieTsunami" + SEP;
+    private static final String ROOT = SEP + "zombietsunami" + SEP;
 
     private final String filePath = ROOT + MAP1;
 

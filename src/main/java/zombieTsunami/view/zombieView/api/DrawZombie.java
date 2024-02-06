@@ -1,10 +1,10 @@
-package zombieTsunami.view.zombieView.api;
+package zombietsunami.view.zombieView.api;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import zombieTsunami.view.api.KeyHandler;
-import zombieTsunami.view.api.VController;
+import zombietsunami.view.api.KeyHandler;
+import zombietsunami.view.api.VController;
 
 /**
  * Interface representing the drawing and updating of the zombie.

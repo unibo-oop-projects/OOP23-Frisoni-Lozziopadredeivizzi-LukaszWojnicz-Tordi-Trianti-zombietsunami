@@ -1,10 +1,10 @@
-package zombieTsunami.view.api;
+package zombietsunami.view.api;
 
 import java.awt.image.BufferedImageOp;
 import java.util.List;
 
-import zombieTsunami.api.Controller;
-import zombieTsunami.api.Pair;
+import zombietsunami.api.Controller;
+import zombietsunami.api.Pair;
 
 /**
  * Interface representing the View Controller in the Zombie Tsunami game.

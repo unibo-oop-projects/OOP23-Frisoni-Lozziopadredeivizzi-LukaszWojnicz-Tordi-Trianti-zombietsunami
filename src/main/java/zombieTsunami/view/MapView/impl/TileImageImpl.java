@@ -1,14 +1,14 @@
-package zombieTsunami.view.mapView.impl;
+package zombietsunami.view.mapView.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import zombieTsunami.view.mapView.api.TileImage;
+import zombietsunami.view.mapView.api.TileImage;
 
 public class TileImageImpl implements TileImage {
 
     private static final String SEP = "/";
-    private static final String ROOT = SEP + "zombieTsunami" + SEP + "tile" + SEP;
+    private static final String ROOT = SEP + "zombietsunami" + SEP + "tile" + SEP;
 
     private final List<TileImpl> itemMap = new ArrayList<>();
 

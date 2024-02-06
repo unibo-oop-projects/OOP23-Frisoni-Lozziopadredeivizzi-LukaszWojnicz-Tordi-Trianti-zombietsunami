@@ -1,4 +1,4 @@
-package zombieTsunami.view.zombieView.impl;
+package zombietsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -6,9 +6,9 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import zombieTsunami.view.api.KeyHandler;
-import zombieTsunami.view.api.VController;
-import zombieTsunami.view.zombieView.api.DrawZombie;
+import zombietsunami.view.api.KeyHandler;
+import zombietsunami.view.api.VController;
+import zombietsunami.view.zombieView.api.DrawZombie;
 
 /**
  * Implementation of the DrawZombie interface, responsible for drawing and

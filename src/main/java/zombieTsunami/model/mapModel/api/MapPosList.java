@@ -1,8 +1,8 @@
-package zombieTsunami.model.mapModel.api;
+package zombietsunami.model.mapModel.api;
 
 import java.util.List;
 
-import zombieTsunami.api.Pair;
+import zombietsunami.api.Pair;
 
 /**
  * This interface allows you to get the positions of every single tile in the

@@ -1,6 +1,6 @@
-package zombieTsunami.model;
+package zombietsunami.model;
 
-import zombieTsunami.api.Entity;
+import zombietsunami.api.Entity;
 
 /**
  * This class represents a generic implementation of Pair<X, Y>, with
