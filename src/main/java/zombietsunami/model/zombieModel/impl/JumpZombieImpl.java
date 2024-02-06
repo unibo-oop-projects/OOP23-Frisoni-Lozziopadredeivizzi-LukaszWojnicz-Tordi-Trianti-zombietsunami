@@ -32,10 +32,6 @@ public class JumpZombieImpl implements JumpZombie {
         return spriteZombie;
     }
 
-    private void setMapY(final int mapY) {
-        this.entity.setY(mapY);
-    }
-
     private void decreaseZombieMapY() {
         entity.setY(entity.getY() - entity.getSpeed());
     }
