@@ -192,18 +192,17 @@ public final class ControllerImpl implements Controller {
 
     @Override
     public boolean getJumping() {
-        return this.model.getJumping();    
+        return this.model.getJumping();
     }
 
     @Override
     public void updateObstacle() {
-         this.model.updateOstacle();
+        this.model.updateOstacle();
     }
 
     @Override
     public List<Integer> obstacleList() {
         return this.model.getObstacleList();
     }
-
 
 }
