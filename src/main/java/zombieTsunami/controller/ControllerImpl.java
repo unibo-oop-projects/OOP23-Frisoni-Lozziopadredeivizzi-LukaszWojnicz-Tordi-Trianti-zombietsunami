@@ -200,5 +200,10 @@ public final class ControllerImpl implements Controller {
          this.model.updateOstacle();
     }
 
+    @Override
+    public List<Integer> obstacleList() {
+        return this.model.getObstacleList();
+    }
+
 
 }

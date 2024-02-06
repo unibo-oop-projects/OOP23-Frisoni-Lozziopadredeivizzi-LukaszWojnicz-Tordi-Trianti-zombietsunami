@@ -180,4 +180,9 @@ public final class VControllerImpl implements VController{
         this.control.updateObstacle();
     }
 
+    @Override
+    public List<Integer> obstacleIndexListC() {
+        return this.control.obstacleList();
+    }
+
 }

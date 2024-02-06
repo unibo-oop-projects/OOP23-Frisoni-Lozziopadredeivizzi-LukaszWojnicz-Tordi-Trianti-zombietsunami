@@ -124,7 +124,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     /**
      * @return if the game is on pause or not
      */
-    private boolean isPause(){
+    private boolean isPause() {
         return this.keyH.isOnPause();
     }
 }
