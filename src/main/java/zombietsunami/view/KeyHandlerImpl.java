@@ -16,6 +16,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
     /**
      * This method is not used in this implementation and does not perform any
      * actions.
+     * 
      * @param e The KeyEvent object representing the key event.
      */
     @Override
@@ -24,6 +25,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
 
     /**
      * Responds to a key being pressed.
+     * 
      * @param e The KeyEvent object representing the key event.
      */
     @Override
@@ -41,6 +43,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
 
     /**
      * Responds to a key being released.
+     * 
      * @param e The KeyEvent object representing the key event.
      */
     @Override
@@ -54,6 +57,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
 
     /**
      * Checks if the jump key is currently pressed and resets its state.
+     * 
      * @return true if the jump key is currently pressed, false otherwise.
      */
     @Override
@@ -67,6 +71,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
 
     /**
      * Checks if the game is currently paused.
+     * 
      * @return true if the game is paused, false otherwise.
      */
     @Override
