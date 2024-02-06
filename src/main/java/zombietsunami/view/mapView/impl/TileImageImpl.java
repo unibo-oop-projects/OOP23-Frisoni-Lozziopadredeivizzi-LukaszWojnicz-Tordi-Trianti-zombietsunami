@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zombietsunami.view.mapView.api.TileImage;
-
-public class TileImageImpl implements TileImage {
+/**
+ * This class implements the TielImage interface {@link zombietsunami.view.mapView.api.TileImage}.
+ */
+public final class TileImageImpl implements TileImage {
 
     private static final String SEP = "/";
     private static final String ROOT = SEP + "zombietsunami" + SEP + "tile" + SEP;
@@ -28,7 +30,7 @@ public class TileImageImpl implements TileImage {
      * @param index  the index of the List, which match the value of the tile
      * @param source the image file source name
      */
-    private final void setSingleTile(final int index, final String source) {
+    private void setSingleTile(final int index, final String source) {
         this.itemMap.add(index, new TileImpl());
         this.itemMap.get(index).setImage(ROOT + source);
     }
