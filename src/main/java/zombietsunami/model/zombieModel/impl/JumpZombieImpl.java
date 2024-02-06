@@ -2,7 +2,9 @@ package zombietsunami.model.zombieModel.impl;
 
 import zombietsunami.model.EntityImpl;
 import zombietsunami.model.zombieModel.api.JumpZombie;
-
+/**
+ * Implementation of the JumpZombie interface representing the behavior of a jumping zombie in the game.
+ */
 public class JumpZombieImpl implements JumpZombie {
     private boolean spriteZombie = false;
     private boolean jumping = false;
@@ -10,8 +12,6 @@ public class JumpZombieImpl implements JumpZombie {
     private boolean jumpUp = false;
     private int initialY;
     private int maxY;
-    private int counterJump;
-    private int counterSprite;
     private static final int MAX_Y_VALUE = 90;
     private final EntityImpl entity;
 
