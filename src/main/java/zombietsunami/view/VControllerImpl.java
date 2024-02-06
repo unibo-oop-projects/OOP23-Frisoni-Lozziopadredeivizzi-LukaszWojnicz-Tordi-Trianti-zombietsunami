@@ -6,8 +6,12 @@ import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 import zombietsunami.view.api.VController;
 
-public final class VControllerImpl implements VController{
-    
+/**
+ * Implementation of the VController interface for controlling zombies in the
+ * Zombie Tsunami game.
+ */
+public final class VControllerImpl implements VController {
+
     private Controller control;
 
     @Override
@@ -32,21 +36,41 @@ public final class VControllerImpl implements VController{
         return this.control.getFPS();
     }
 
+    /**
+     * Gets the x-coordinate of the zombie in the game map.
+     *
+     * @return The x-coordinate of the zombie.
+     */
     @Override
     public int getZombieMapX() {
         return this.control.getZombieMapX();
     }
 
+    /**
+     * Gets the y-coordinate of the zombie in the game map.
+     *
+     * @return The y-coordinate of the zombie.
+     */
     @Override
     public int getZombieMapY() {
         return this.control.getZombieMapY();
     }
 
+    /**
+     * Gets the speed of the zombie.
+     *
+     * @return The speed of the zombie.
+     */
     @Override
     public int getSpeed() {
         return this.control.getSpeed();
     }
 
+    /**
+     * Gets the number of times the zombie has moved in the x-direction.
+     *
+     * @return The number of times the zombie has moved in the x-direction.
+     */
     @Override
     public int getNumX() {
         return this.control.getNumX();
@@ -82,6 +106,9 @@ public final class VControllerImpl implements VController{
         return this.control.mapList();
     }
 
+    /**
+     * Updates the position and state of the zombie in the game.
+     */
     @Override
     public void updateZombie() {
         this.control.updateZombie();
@@ -125,41 +152,73 @@ public final class VControllerImpl implements VController{
         throw new UnsupportedOperationException("Unimplemented method 'updatePerson'");
     }
 
+    /**
+     * Gets the strength of the zombie.
+     *
+     * @return The strength of the zombie.
+     */
     @Override
     public int getStrenght() {
         return this.control.getStrenght();
     }
 
+    /**
+     * Increases the strength of the zombie with its speed.
+     */
     @Override
     public void increaseStrenght() {
         this.control.increaseStrenght();
     }
 
+    /**
+     * Sets the strength of the zombie to the specified value.
+     */
     @Override
-    public void setStrenght(int strenght) {
+    public void setStrenght(final int strenght) {
         this.control.setStrenght(strenght);
     }
 
+    /**
+     * Gets the x-coordinate of the zombie on the screen.
+     *
+     * @return The x-coordinate of the zombie on the screen.
+     */
     @Override
     public int getZombieScreenX() {
         return this.control.getZombieScreenX();
     }
 
+    /**
+     * Gets the y-coordinate of the zombie on the screen.
+     *
+     * @return The y-coordinate of the zombie on the screen.
+     */
     @Override
     public int getZombieScreenY() {
         return this.control.getZombieScreenY();
     }
 
+    /**
+     * Signals that the jump action has been initiated for the zombie.
+     */
     @Override
     public void jumpPress() {
         this.control.jumpPress();
     }
 
+    /**
+     * Updates the jump action for the zombie.
+     */
     @Override
     public void updateJumpZombie() {
         this.control.updateJumpZombie();
     }
 
+    /**
+     * Checks if the zombie is currently jumping.
+     *
+     * @return true if the zombie is jumping, false otherwise.
+     */
     @Override
     public boolean getJumping() {
         return this.control.getJumping();

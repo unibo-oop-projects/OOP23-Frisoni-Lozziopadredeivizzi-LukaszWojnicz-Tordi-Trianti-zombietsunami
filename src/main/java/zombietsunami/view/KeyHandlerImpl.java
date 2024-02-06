@@ -20,7 +20,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
      * @param e The KeyEvent object representing the key event.
      */
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(final KeyEvent e) {
     }
 
     /**
@@ -29,7 +29,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
      * @param e The KeyEvent object representing the key event.
      */
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(final KeyEvent e) {
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_SPACE) {
             jump = true;
@@ -47,7 +47,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
      * @param e The KeyEvent object representing the key event.
      */
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(final KeyEvent e) {
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_SPACE) {
             jump = false;

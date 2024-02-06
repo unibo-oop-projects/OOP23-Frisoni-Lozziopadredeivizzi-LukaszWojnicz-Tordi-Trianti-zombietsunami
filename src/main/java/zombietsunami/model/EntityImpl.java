@@ -95,7 +95,7 @@ public class EntityImpl implements Entity {
     /**
      * Sets the strength of the entity.
      * 
-     * @param strength the new strength.
+     * @param strenght the new strength.
      */
     public void setStrenght(final int strenght) {
         this.strenght = strenght;
