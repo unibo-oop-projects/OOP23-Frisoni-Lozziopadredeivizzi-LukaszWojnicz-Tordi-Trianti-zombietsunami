@@ -1,4 +1,4 @@
-package zombieTsunami.api;
+package zombietsunami.api;
 
 import java.util.List;
 
@@ -87,7 +87,7 @@ public interface Controller {
 
   /**
    * Calls the update method of the zombie
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}.
+   * {@link zombietsunami.model.zombieModel.api.Zombie}.
    */
   void updateZombie();
 
@@ -113,13 +113,13 @@ public interface Controller {
 
   /**
    * @return the strenght of the zombie
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}.
+   * {@link zombietsunami.model.zombieModel.api.Zombie}.
    */
   int getStrenght();
 
   /**
    * Calls the increases strenght method of the zombie
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}.
+   * {@link zombietsunami.model.zombieModel.api.Zombie}.
    */
   void increaseStrenght();
 
@@ -137,7 +137,7 @@ public interface Controller {
 
   /**
    * Calls the set strenght method of the zombie
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}.
+   * {@link zombietsunami.model.zombieModel.api.Zombie}.
    * @param strenght is the strenght that wants to be setted
    */
   void setStrenght(int strenght);
@@ -156,13 +156,13 @@ public interface Controller {
 
   /**
    * @return the zombie's screen X coordiante
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}
+   * {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenX();
 
   /**
    * @return the zombie's screen Y coordiante
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}
+   * {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   int getZombieScreenY();
 
@@ -170,21 +170,21 @@ public interface Controller {
    * Initiates the jump action by invoking the setStrength method of the
    * jumpZombie model.
    * @param jumpPress Indicates whether the jump action should be triggered.
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}
+   * {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   void jumpPress();
 
   /**
    * Updates the state of the jumpZombie, adjusting its properties based on the
    * game's progression.
-   * {@link zombieTsunami.model.zombieModel.api.Zombie}
+   * {@link zombietsunami.model.zombieModel.api.Zombie}
    */
   void updateJumpZombie();
 
   /**
    * Retrieves the current jumping status of the jumpZombie.
    * @return true if the jumpZombie is currently in a jumping state, false otherwise.
-   *{@link zombieTsunami.model.zombieModel.api.Zombie}
+   *{@link zombietsunami.model.zombieModel.api.Zombie}
    */
   boolean getJumping();
 

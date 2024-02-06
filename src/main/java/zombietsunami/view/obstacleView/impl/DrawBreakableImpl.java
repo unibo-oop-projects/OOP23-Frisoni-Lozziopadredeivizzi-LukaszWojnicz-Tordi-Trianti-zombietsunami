@@ -1,10 +1,10 @@
-package zombieTsunami.view.obstacleView.impl;
+package zombietsunami.view.obstacleView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import zombieTsunami.view.api.VController;
-import zombieTsunami.view.obstacleView.api.DrawBreakable;
+import zombietsunami.view.api.VController;
+import zombietsunami.view.obstacleView.api.DrawBreakable;
 
 public class DrawBreakableImpl implements DrawBreakable{
 

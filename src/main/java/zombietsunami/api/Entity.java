@@ -1,4 +1,4 @@
-package zombieTsunami.api;
+package zombietsunami.api;
 
 public interface Entity {
     

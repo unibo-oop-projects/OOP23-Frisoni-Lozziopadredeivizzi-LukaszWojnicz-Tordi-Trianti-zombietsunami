@@ -1,12 +1,12 @@
-package zombieTsunami.view;
+package zombietsunami.view;
 
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-import zombieTsunami.view.api.KeyHandler;
-import zombieTsunami.view.api.VController;
-import zombieTsunami.view.mapView.impl.MapImpl;
+import zombietsunami.view.api.KeyHandler;
+import zombietsunami.view.api.VController;
+import zombietsunami.view.mapView.impl.MapImpl;
 
 public class View {
 

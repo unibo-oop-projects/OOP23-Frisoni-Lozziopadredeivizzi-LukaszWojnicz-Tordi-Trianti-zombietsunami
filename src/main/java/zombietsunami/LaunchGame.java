@@ -1,7 +1,7 @@
 package zombietsunami;
 
-import zombieTsunami.api.Controller;
-import zombieTsunami.controller.ControllerImpl;
+import zombietsunami.api.Controller;
+import zombietsunami.controller.ControllerImpl;
 
 /**
  * This class allows you to launch the game.

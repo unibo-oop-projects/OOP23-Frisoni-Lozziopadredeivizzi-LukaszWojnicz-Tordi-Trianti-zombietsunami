@@ -1,4 +1,4 @@
-package zombieTsunami.model.obstacleModel.impl;
+package zombietsunami.model.obstacleModel.impl;
 
 public class ObstacleEntity{
 

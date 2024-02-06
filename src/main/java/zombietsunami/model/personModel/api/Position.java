@@ -1,4 +1,4 @@
-package zombieTsunami.model.personModel.api;
+package zombietsunami.model.personModel.api;
 
 public interface Position {
     

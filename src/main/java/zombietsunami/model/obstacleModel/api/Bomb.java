@@ -1,4 +1,4 @@
-package zombieTsunami.model.obstacleModel.api;
+package zombietsunami.model.obstacleModel.api;
 
 public interface Bomb {
     public void hit();

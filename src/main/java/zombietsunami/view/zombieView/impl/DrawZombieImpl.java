@@ -1,4 +1,4 @@
-package zombieTsunami.view.zombieView.impl;
+package zombietsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -6,9 +6,9 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import zombieTsunami.view.api.KeyHandler;
-import zombieTsunami.view.api.VController;
-import zombieTsunami.view.zombieView.api.DrawZombie;
+import zombietsunami.view.api.KeyHandler;
+import zombietsunami.view.api.VController;
+import zombietsunami.view.zombieView.api.DrawZombie;
 
 /**
  * Implementation of the DrawZombie interface, responsible for drawing and
@@ -18,8 +18,8 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
-    private static final String zombie1 = "src/main/resources/ZombieTsunami/zombie/Zombie.png";
-    private static final String zombie2 = "src/main/resources/ZombieTsunami/zombie/Zombie2.png";
+    private static final String zombie1 = "src/main/resources/zombietsunami/zombie/Zombie.png";
+    private static final String zombie2 = "src/main/resources/zombietsunami/zombie/Zombie2.png";
 
     /**
      * Draws the zombie on the graphics context based on the provided controller.

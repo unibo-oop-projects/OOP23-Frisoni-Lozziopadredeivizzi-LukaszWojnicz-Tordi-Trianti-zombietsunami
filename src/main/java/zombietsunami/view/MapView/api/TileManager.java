@@ -1,9 +1,9 @@
-package zombieTsunami.view.mapView.api;
+package zombietsunami.view.mapView.api;
 
 import java.awt.Graphics2D;
 import java.util.List;
 
-import zombieTsunami.api.Pair;
+import zombietsunami.api.Pair;
 
 public interface TileManager {
 
