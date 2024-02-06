@@ -5,6 +5,9 @@ import java.awt.event.KeyListener;
 
 import zombietsunami.view.api.KeyHandler;
 
+/**
+ * Implementation of the KeyHandler interface for handling keyboard input.
+ */
 public class KeyHandlerImpl implements KeyListener, KeyHandler {
 
     private boolean jump;
@@ -14,6 +17,10 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
     public void keyTyped(KeyEvent e) {
     }
 
+    /**
+     * Responds to a key being pressed.
+     * @param e The KeyEvent object representing the key event.
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
@@ -27,6 +34,10 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
         }
     }
 
+     /**
+     * Responds to a key being released.
+     * @param e The KeyEvent object representing the key event.
+     */
     @Override
     public void keyReleased(KeyEvent e) {
         int code = e.getKeyCode();
@@ -35,7 +46,10 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
         }
 
     }
-
+/**
+     * Checks if the jump key is currently pressed and resets its state.
+     * @return true if the jump key is currently pressed, false otherwise.
+     */
     @Override
     public boolean isPressed() {
         if (jump) {
@@ -45,6 +59,10 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
         return false;
     }
 
+    /**
+     * Checks if the game is currently paused.
+     * @return true if the game is paused, false otherwise.
+     */
     @Override
     public boolean isOnPause() {
         return this.onPause;
