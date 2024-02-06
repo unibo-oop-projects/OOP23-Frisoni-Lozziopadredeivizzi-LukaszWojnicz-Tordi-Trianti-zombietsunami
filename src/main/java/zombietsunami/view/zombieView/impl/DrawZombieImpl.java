@@ -18,7 +18,7 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
-    private static final String zombie1 = "src/main/resources/zombietsunami/zombie/Zombie.png";
+    private static final String zombie_1 = "src/main/resources/zombietsunami/zombie/Zombie.png";
     private static final String zombie2 = "src/main/resources/zombietsunami/zombie/Zombie2.png";
 
     /**
