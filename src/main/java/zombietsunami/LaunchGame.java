@@ -1,4 +1,4 @@
-package game;
+package zombietsunami;
 
 import zombieTsunami.api.Controller;
 import zombieTsunami.controller.ControllerImpl;
