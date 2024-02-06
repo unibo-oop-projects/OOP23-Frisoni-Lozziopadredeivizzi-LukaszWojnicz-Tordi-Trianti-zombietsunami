@@ -17,9 +17,9 @@ public class ZombieImpl implements Zombie {
     private final int screenX;
     private int screenY;
     private static final int NUM = 4;
-    private static final int initialZombie_X = 380;
-    private static final int initialZombie_Y = 450;
-    private static final int initialZombie_Speed = 1;
+    private static final int INITIALZOMBIE_X = 380;
+    private static final int INITIALZOMBIE_Y = 450;
+    private static final int INITIALZOMBIE_SPEED = 1;
 
     /**
      * Updates the zombie's position based on its speed.
@@ -31,9 +31,9 @@ public class ZombieImpl implements Zombie {
     }
 
     private void setDefaultValue() {
-        entity.setX(initialZombie_X);
-        entity.setY(initialZombie_Y);
-        entity.setSpeed(initialZombie_Speed);
+        entity.setX(INITIALZOMBIE_X);
+        entity.setY(INITIALZOMBIE_Y);
+        entity.setSpeed(INITIALZOMBIE_SPEED);
     }
 
     /**
