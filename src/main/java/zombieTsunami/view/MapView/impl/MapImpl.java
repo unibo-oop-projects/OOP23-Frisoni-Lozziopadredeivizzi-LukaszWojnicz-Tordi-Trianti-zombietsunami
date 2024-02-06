@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
 import zombieTsunami.view.Pause;
@@ -18,7 +18,7 @@ import zombieTsunami.view.obstacleView.impl.DrawBombImpl;
 import zombieTsunami.view.zombieView.api.DrawZombie;
 import zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
-public class MapImpl extends JPanel implements Map, Runnable {
+public final class MapImpl extends JPanel implements Map, Runnable {
 
     private static final long NANOSEC = 1000000000;
     private static final int FONT_SIZE = 20;

@@ -94,7 +94,7 @@ public final class ModelImpl implements Model {
     public int getNumX() {
         return this.zombie.getNumX();
     }
-    
+
     @Override
     public int getPersonMapX() {
         // TODO Auto-generated method stub
