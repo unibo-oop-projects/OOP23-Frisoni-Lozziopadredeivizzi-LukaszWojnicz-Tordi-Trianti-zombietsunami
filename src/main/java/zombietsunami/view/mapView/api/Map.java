@@ -1,5 +1,9 @@
 package zombietsunami.view.mapView.api;
 
+/**
+ * This is the principal panel for the game, that allows you to run the map and
+ * its game engine.
+ */
 public interface Map {
 
     /**
@@ -9,12 +13,13 @@ public interface Map {
     void gameLoop();
 
     /**
-     * This method calls the Thread and starts it. 
+     * This method calls the Thread and starts it.
      */
     void startGameThread();
 
     /**
-     * This method, which is recalled in the game engine, updates the elements of the game map.
+     * This method, which is recalled in the game engine, updates the elements of
+     * the game map.
      * 
      */
     void update();

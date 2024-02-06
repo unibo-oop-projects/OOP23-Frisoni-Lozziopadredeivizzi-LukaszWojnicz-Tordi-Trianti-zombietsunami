@@ -6,7 +6,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import zombietsunami.view.mapView.api.Tile;
-
+/**
+ * This class implements the Tile interface {@link zombietsunami.view.mapView.api.Tile}.
+ */
 public final class TileImpl implements Tile {
 
     private BufferedImage image;
