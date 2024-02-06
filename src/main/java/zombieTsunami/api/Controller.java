@@ -187,4 +187,6 @@ public interface Controller {
    *{@link zombieTsunami.model.zombieModel.api.Zombie}
    */
   boolean getJumping();
+
+  void updateObstacle();
 }

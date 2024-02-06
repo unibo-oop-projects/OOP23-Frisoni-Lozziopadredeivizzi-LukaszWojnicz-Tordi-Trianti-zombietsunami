@@ -113,4 +113,6 @@ public interface Model {
      * @return  true if zombie is jumping
      */
     boolean getJumping();
+
+    void updateOstacle();
 }
