@@ -1,4 +1,4 @@
-package zombieTsunami.api;
+package zombietsunami.api;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public interface Model {
 
    /**
-     * Calls the zombie's update method {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the zombie's update method {@link zombietsunami.model.zombieModel.api.Zombie}.
      */
      void updateZombie();
 
@@ -66,12 +66,12 @@ public interface Model {
     int getStrenght();
 
     /**
-     * Calls the increese strenght method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the increese strenght method of the zombie {@link zombietsunami.model.zombieModel.api.Zombie}.
      */
     void increaseStrenght();
 
     /**
-     * Calls the set strenght method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the set strenght method of the zombie {@link zombietsunami.model.zombieModel.api.Zombie}.
      * @param strenght is the strenght that will be setted
      */
     void setStrenght(int strenght);
@@ -99,17 +99,17 @@ public interface Model {
     boolean canBreakObstacle(int zombieStrength);
 
     /**
-     * Calls the jumpPress method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the jumpPress method of the zombie {@link zombietsunami.model.zombieModel.api.Zombie}.
      */
     void jumpPress();
 
     /**
-     * Calls the updateJumpZombie method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the updateJumpZombie method of the zombie {@link zombietsunami.model.zombieModel.api.Zombie}.
      */
     void updateJumpZombie();
 
     /**
-     * Calls the getJumping method of the zombie {@link zombieTsunami.model.zombieModel.api.Zombie}.
+     * Calls the getJumping method of the zombie {@link zombietsunami.model.zombieModel.api.Zombie}.
      * @return  true if zombie is jumping
      */
     boolean getJumping();

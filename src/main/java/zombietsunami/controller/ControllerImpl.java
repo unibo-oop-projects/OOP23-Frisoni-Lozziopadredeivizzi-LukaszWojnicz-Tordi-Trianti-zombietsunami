@@ -1,19 +1,19 @@
-package zombieTsunami.controller;
+package zombietsunami.controller;
 
 import java.util.List;
 
-import zombieTsunami.api.Controller;
-import zombieTsunami.api.Model;
-import zombieTsunami.api.Pair;
-import zombieTsunami.model.MapData;
-import zombieTsunami.model.ModelImpl;
-import zombieTsunami.view.VControllerImpl;
-import zombieTsunami.view.api.VController;
+import zombietsunami.api.Controller;
+import zombietsunami.api.Model;
+import zombietsunami.api.Pair;
+import zombietsunami.model.MapData;
+import zombietsunami.model.ModelImpl;
+import zombietsunami.view.VControllerImpl;
+import zombietsunami.view.api.VController;
 
 /**
  * This class is the Controller of the MVC and implements the Controller
  * interface
- * {@link zombieTsunami.api.Controller}.
+ * {@link zombietsunami.api.Controller}.
  */
 public final class ControllerImpl implements Controller {
 

@@ -1,4 +1,4 @@
-package zombieTsunami.model;
+package zombietsunami.model;
 
 /**
  * This an Utility class, used for store the informations about the screen

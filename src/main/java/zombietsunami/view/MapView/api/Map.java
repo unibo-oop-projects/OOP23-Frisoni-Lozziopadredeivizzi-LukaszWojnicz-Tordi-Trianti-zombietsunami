@@ -1,4 +1,4 @@
-package zombieTsunami.view.mapView.api;
+package zombietsunami.view.mapView.api;
 
 public interface Map {
 

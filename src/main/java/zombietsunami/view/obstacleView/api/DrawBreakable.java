@@ -1,6 +1,6 @@
-package zombieTsunami.view.obstacleView.api;
+package zombietsunami.view.obstacleView.api;
 
-import zombieTsunami.view.api.VController;
+import zombietsunami.view.api.VController;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;

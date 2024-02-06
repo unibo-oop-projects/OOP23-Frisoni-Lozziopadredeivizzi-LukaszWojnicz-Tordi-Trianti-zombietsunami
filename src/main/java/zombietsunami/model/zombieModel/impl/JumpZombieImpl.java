@@ -1,7 +1,7 @@
-package zombieTsunami.model.zombieModel.impl;
+package zombietsunami.model.zombieModel.impl;
 
-import zombieTsunami.model.EntityImpl;
-import zombieTsunami.model.zombieModel.api.JumpZombie;
+import zombietsunami.model.EntityImpl;
+import zombietsunami.model.zombieModel.api.JumpZombie;
 
 public class JumpZombieImpl implements JumpZombie {
     private boolean spriteZombie = false;

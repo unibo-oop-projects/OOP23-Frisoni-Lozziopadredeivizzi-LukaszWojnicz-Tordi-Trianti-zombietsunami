@@ -1,28 +1,28 @@
-package zombieTsunami.model;
+package zombietsunami.model;
 
 import java.util.List;
 
-import zombieTsunami.api.Controller;
-import zombieTsunami.api.Model;
-import zombieTsunami.api.Pair;
-import zombieTsunami.model.mapModel.api.GameMap;
-import zombieTsunami.model.mapModel.api.MapPosList;
-import zombieTsunami.model.mapModel.api.TileElement;
-import zombieTsunami.model.mapModel.impl.GameMapImpl;
-import zombieTsunami.model.mapModel.impl.MapPosListImpl;
-import zombieTsunami.model.mapModel.impl.TileElementImpl;
-import zombieTsunami.model.obstacleModel.api.Bomb;
-import zombieTsunami.model.obstacleModel.api.Breakable;
-import zombieTsunami.model.obstacleModel.impl.BombImpl;
-import zombieTsunami.model.obstacleModel.impl.BreakableImpl;
-import zombieTsunami.model.zombieModel.api.Zombie;
-import zombieTsunami.model.zombieModel.impl.ZombieImpl;
-import zombieTsunami.model.personModel.api.Person;
-import zombieTsunami.model.personModel.impl.PersonImpl;
+import zombietsunami.api.Controller;
+import zombietsunami.api.Model;
+import zombietsunami.api.Pair;
+import zombietsunami.model.mapModel.api.GameMap;
+import zombietsunami.model.mapModel.api.MapPosList;
+import zombietsunami.model.mapModel.api.TileElement;
+import zombietsunami.model.mapModel.impl.GameMapImpl;
+import zombietsunami.model.mapModel.impl.MapPosListImpl;
+import zombietsunami.model.mapModel.impl.TileElementImpl;
+import zombietsunami.model.obstacleModel.api.Bomb;
+import zombietsunami.model.obstacleModel.api.Breakable;
+import zombietsunami.model.obstacleModel.impl.BombImpl;
+import zombietsunami.model.obstacleModel.impl.BreakableImpl;
+import zombietsunami.model.zombieModel.api.Zombie;
+import zombietsunami.model.zombieModel.impl.ZombieImpl;
+import zombietsunami.model.personModel.api.Person;
+import zombietsunami.model.personModel.impl.PersonImpl;
 
 /**
  * This class is the Model of the MVC and implements the Model interface
- * {@link zombieTsunami.api.Model}.
+ * {@link zombietsunami.api.Model}.
  */
 public final class ModelImpl implements Model {
 

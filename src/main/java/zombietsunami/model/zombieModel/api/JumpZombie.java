@@ -1,4 +1,4 @@
-package zombieTsunami.model.zombieModel.api;
+package zombietsunami.model.zombieModel.api;
 
 /**
  * This interface defines the jumping behavior of a Zombie, enabling it to perform jumps.
