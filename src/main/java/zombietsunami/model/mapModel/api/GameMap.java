@@ -13,5 +13,8 @@ public interface GameMap {
      */
     List<Integer> getLoadedMapList();
 
+    /**
+     * @return the list of Integer with the item's number of the obstacles
+     */
     List<Integer> getLoadedObstacleList();
 }
