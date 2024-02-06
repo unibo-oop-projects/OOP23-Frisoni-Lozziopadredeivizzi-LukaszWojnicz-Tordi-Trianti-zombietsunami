@@ -18,11 +18,12 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
-    private static final String zombie1 = "src/main/resources/zombietsunami/zombie/Zombie.png";
-    private static final String zombie2 = "src/main/resources/zombietsunami/zombie/Zombie2.png";
+    private static final String ZOMBIE_1 = "src/main/resources/zombietsunami/zombie/Zombie.png";
+    private static final String ZOMBIE_2 = "src/main/resources/zombietsunami/zombie/Zombie2.png";
 
     /**
      * Draws the zombie on the graphics context based on the provided controller.
+     * 
      * @param g2         The graphics context.
      * @param controller The controller with the game-related information.
      */
@@ -42,6 +43,7 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Gets the image representation of the zombie.
+     * 
      * @return The BufferedImage representing the zombie.
      */
     @Override
@@ -50,9 +52,9 @@ public class DrawZombieImpl implements DrawZombie {
         try {
             if (sprite) {
                 // src/main/resources/
-                image = ImageIO.read(new File(zombie1));
+                image = ImageIO.read(new File(ZOMBIE_1));
             } else {
-                image = ImageIO.read(new File(zombie2));
+                image = ImageIO.read(new File(ZOMBIE_2));
             }
             increaseCounter();
             if (getCounter() > FRAMESCHANGE) {
@@ -68,6 +70,7 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Updates the zombie's visual representation based on the same controller.
+     * 
      * @param controller The controller providing game-related information.
      */
     @Override
@@ -77,12 +80,13 @@ public class DrawZombieImpl implements DrawZombie {
 
     /**
      * Handles key presses related to the zombie .
+     * 
      * @param controller The controller with the game-related information.
      * @param keyH       The key handler for processing key events.
      */
     @Override
     public void handleKeyPress(final VController controller, final KeyHandler keyH) {
-        if (keyH.isPressed() && (!controller.getJumping())) {// se premi spazio imposta jump su true
+        if (keyH.isPressed() && (!controller.getJumping())) {
             controller.jumpPress();
         }
         if (controller.getJumping()) {
