@@ -2,6 +2,9 @@ package zombietsunami.view.mapView.api;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Allows you to consider a single tile of the game map with its image.
+ */
 public interface Tile {
 
     /**
