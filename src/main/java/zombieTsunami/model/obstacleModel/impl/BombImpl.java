@@ -8,31 +8,41 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 import zombieTsunami.api.Model;
+import zombieTsunami.model.EntityImpl;
 import zombieTsunami.model.MapData;
 import zombieTsunami.model.obstacleModel.api.*;
 
-public class BombImpl extends ObstacleEntity implements Bomb, Obstacle{
+public class BombImpl implements Bomb, Obstacle{
 
     private ObstacleEntity entity = new ObstacleEntity();
     
-    public int damage = 1; //per test
+    public int damage = 1; //for test
 
     public BombImpl(){
         setDefaultValue();
     }
 
     private void setDefaultValue() {
-        entity.setX(350); //350 Per testare, poi dovremo gestire la creazione procedurale di Bombe e Ostacoli
-        entity.setY(250);
+        entity.setX(350); //just for test
+        entity.setY(350);
     }
 
     @Override
     public void update() {
-        //Se collide con lo zombie, chiama hit();
     }
 
     @Override
     public void hit() {
-        
+        //Gameover
+    }
+
+    @Override
+    public int getX() {
+        return this.entity.getX();
+    }
+
+    @Override
+    public int getY() {
+        return this.entity.getY();
     }
 }

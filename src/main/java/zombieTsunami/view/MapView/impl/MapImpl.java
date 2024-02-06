@@ -13,6 +13,8 @@ import zombieTsunami.view.api.KeyHandler;
 import zombieTsunami.view.api.VController;
 import zombieTsunami.view.mapView.api.Map;
 import zombieTsunami.view.mapView.api.TileManager;
+import zombieTsunami.view.obstacleView.api.DrawBomb;
+import zombieTsunami.view.obstacleView.impl.DrawBombImpl;
 import zombieTsunami.view.zombieView.api.DrawZombie;
 import zombieTsunami.view.zombieView.impl.DrawZombieImpl;
 
@@ -30,6 +32,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
+    private final DrawBomb drawBomb;
     private final KeyHandler keyH;
 
     public MapImpl(final VController c, final KeyHandler keyH) {
@@ -37,6 +40,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.keyH = keyH;
         this.drowMap = new TileManagerImpl();
         this.drawZombie = new DrawZombieImpl();
+        this.drawBomb = new DrawBombImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -84,6 +88,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC());
         this.drawZombie.drawZombieV(g2, controller);
+        this.drawBomb.drawBombV(g2, controller);
         drawInfo(g2);
         if (isPause()) {
             Pause.pause(g2);
