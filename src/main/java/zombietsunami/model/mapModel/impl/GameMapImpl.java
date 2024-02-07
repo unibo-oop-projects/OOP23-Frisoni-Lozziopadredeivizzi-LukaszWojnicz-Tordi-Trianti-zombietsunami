@@ -18,9 +18,12 @@ public final class GameMapImpl implements GameMap {
 
     private static final String SEP = "/";
     private static final String MAP1 = "maps/map01.txt";
+    private static final String OBST = "obstaclemap/obstacleMap.txt";
     private static final String ROOT = SEP + "zombietsunami" + SEP;
 
-    private final String filePath = ROOT + MAP1;
+    private final String filePathMap = ROOT + MAP1;
+    private final String filePathObst = ROOT + OBST;
+
 
     private final List<Integer> mapOfNumberTile;
     private final List<Integer> mapOfNumberObstacle;
@@ -29,8 +32,8 @@ public final class GameMapImpl implements GameMap {
      * Assigns the List of Integers with the map values at a new List.
      */
     public GameMapImpl() {
-        this.mapOfNumberTile = loadMap(this.filePath);
-        this.mapOfNumberObstacle = loadMap("/zombietsunami/obstaclemap/obstacleMap.txt");
+        this.mapOfNumberTile = loadMap(this.filePathMap);
+        this.mapOfNumberObstacle = loadMap(filePathObst);
     }
 
     /**
