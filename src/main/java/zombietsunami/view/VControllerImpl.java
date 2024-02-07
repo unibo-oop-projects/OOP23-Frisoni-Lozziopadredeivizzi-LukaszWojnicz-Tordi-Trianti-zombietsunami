@@ -220,8 +220,8 @@ public final class VControllerImpl implements VController {
      * @return true if the zombie is jumping, false otherwise.
      */
     @Override
-    public boolean getJumping() {
-        return this.control.getJumping();
+    public boolean isJumping() {
+        return this.control.isJumping();
     }
 
     @Override

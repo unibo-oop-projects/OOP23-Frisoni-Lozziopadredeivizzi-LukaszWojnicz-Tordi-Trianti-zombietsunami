@@ -35,7 +35,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final int INFO_POS_Y = 25;
 
     private Thread gameThread;
-    private VController controller;
+    private final VController controller;
 
     private final TileManager drowMap;
     private final DrawZombie drawZombie;

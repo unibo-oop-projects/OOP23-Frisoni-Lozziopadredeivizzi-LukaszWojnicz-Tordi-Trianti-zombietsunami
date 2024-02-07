@@ -190,7 +190,7 @@ public interface Controller {
    *         otherwise.
    *         {@link zombietsunami.model.zombieModel.api.Zombie}
    */
-  boolean getJumping();
+  boolean isJumping();
 
   void updateObstacle();
 

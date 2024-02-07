@@ -6,10 +6,9 @@ import zombietsunami.model.zombieModel.api.JumpZombie;
  * Implementation of the JumpZombie interface representing the behavior of a jumping zombie in the game.
  */
 public class JumpZombieImpl implements JumpZombie {
-    private boolean spriteZombie = false;
-    private boolean jumping = false;
-    private boolean jumpingDown = false;
-    private boolean jumpUp = false;
+    private boolean jumping;
+    private boolean jumpingDown;
+    private boolean jumpUp;
     private int initialY;
     private int maxY;
     private static final int MAX_Y_VALUE = 90;
@@ -22,14 +21,6 @@ public class JumpZombieImpl implements JumpZombie {
      */
     public JumpZombieImpl(final EntityImpl entity) {
         this.entity = entity;
-    }
-
-    /**
-     * Gets the current state of the spriteZombie.
-     * @return true if spriteZombie is active.
-     */
-    public boolean getSpriteZombie() {
-        return spriteZombie;
     }
 
     private void decreaseZombieMapY() {
@@ -45,7 +36,6 @@ public class JumpZombieImpl implements JumpZombie {
      */
     @Override
     public void jumpPress() {
-        spriteZombie = true;
         jumping = true;
         jumpUp = true;
         initialY = entity.getY();
@@ -55,6 +45,7 @@ public class JumpZombieImpl implements JumpZombie {
     /**
      * Updates the jump action for the zombie.
      */
+    @Override
     public void updateJumpZombie() {
         if (jumping) {
             if (jumpUp) {
@@ -87,7 +78,8 @@ public class JumpZombieImpl implements JumpZombie {
      * Gets the current jumping state of the zombie.
      * @return true if the zombie is currently jumping.
      */
-    public boolean getJumping() {
+    @Override
+    public boolean isJumping() {
         return jumping;
     }
 }

@@ -18,7 +18,7 @@ import zombietsunami.view.api.VController;
 public final class ControllerImpl implements Controller {
 
     private Model model;
-    private VController viewController;
+    VController viewController;
 
     @Override
     public void setModel() {
@@ -191,8 +191,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public boolean getJumping() {
-        return this.model.getJumping();
+    public boolean isJumping() {
+        return this.model.isJumping();
     }
 
     @Override

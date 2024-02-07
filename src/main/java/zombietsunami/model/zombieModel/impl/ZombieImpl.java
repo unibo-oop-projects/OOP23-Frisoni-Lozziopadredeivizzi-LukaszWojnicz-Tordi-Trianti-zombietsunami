@@ -15,7 +15,7 @@ public class ZombieImpl implements Zombie {
     private final EntityImpl entity = new EntityImpl();
     private final JumpZombieImpl jumpZombie = new JumpZombieImpl(entity);
     private final int screenX;
-    private int screenY;
+    private final int screenY;
     private static final int NUM = 4;
     private static final int INITIALZOMBIE_X = 380;
     private static final int INITIALZOMBIE_Y = 450;
@@ -25,7 +25,7 @@ public class ZombieImpl implements Zombie {
      * Updates the zombie's position based on its speed.
      */
     public ZombieImpl() {
-        this.screenX = MapData.getScreenW() / 2 - (MapData.getTitSize() / 2);
+        this.screenX = MapData.getScreenW() / 2 - MapData.getTitSize() / 2;
         this.screenY = MapData.getScreenH() - (MapData.getTitSize() * 3);
         setDefaultValue();
     }
@@ -91,6 +91,7 @@ public class ZombieImpl implements Zombie {
      *
      * @return the screen X-coordinate.
      */
+    @Override
     public int getScreenX() {
         return this.screenX;
     }
@@ -101,6 +102,7 @@ public class ZombieImpl implements Zombie {
      *
      * @return the screen Y-coordinate.
      */
+    @Override
     public int getScreenY() {
         return this.screenY;
     }
@@ -155,7 +157,7 @@ public class ZombieImpl implements Zombie {
      * @return true if the zombie is jumping.
      */
     @Override
-    public boolean getJumping() {
-        return jumpZombie.getJumping();
+    public boolean isJumping() {
+        return jumpZombie.isJumping();
     }
 }
