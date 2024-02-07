@@ -28,6 +28,7 @@ public class EntityImpl implements Entity {
      * 
      * @param x the new X coordinate.
      */
+    @Override
     public void setX(final int x) {
         this.mapX = x;
     }
@@ -47,6 +48,7 @@ public class EntityImpl implements Entity {
      * 
      * @param y the new Y coordinate.
      */
+    @Override
     public void setY(final int y) {
         this.mapY = y;
     }

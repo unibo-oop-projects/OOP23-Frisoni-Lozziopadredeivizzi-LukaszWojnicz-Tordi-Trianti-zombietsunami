@@ -5,17 +5,17 @@ package zombietsunami.api;
  */
 public interface Entity {
     /**
-     * @return The x-coordinate of the entity.
+     * @return The x-coordinate of the zombie.
      */
     int getX();
 
     /**
-     * @return The y-coordinate of the entity.
+     * @return The y-coordinate of the zombie.
      */
     int getY();
 
     /**
-     * @return The speed of the entity.
+     * @return The speed of the zombie.
      */
     int getSpeed();
 
@@ -25,19 +25,33 @@ public interface Entity {
     int getNumX();
 
     /**
-     * @return The strength of the entity.
+     * @return The strength of the zombie.
      */
     int getStrenght();
 
     /**
-     * Increases the strength of the entity with the speed value.
+     * Increases the strength of the zombie with the speed value.
      */
     void increaseStrenght();
 
     /**
-     * Sets the strength of the entity.
+     * Sets the strength of the zombie.
      * 
-     * @param strenght The new strength value for the entity.
+     * @param strenght The new strength value for the zombie.
      */
     void setStrenght(int strenght);
+
+    /**
+     * Sets the X-coordinate of zombie.
+     * 
+     * @param x The new X-coordinate value for the zombie.
+     */
+    void setX(int x);
+
+    /**
+     * Sets the Y-coordinate of zombie.
+     * 
+     * @param x The new Y-coordinate value for the zombie.
+     */
+    void setY(int y);
 }
