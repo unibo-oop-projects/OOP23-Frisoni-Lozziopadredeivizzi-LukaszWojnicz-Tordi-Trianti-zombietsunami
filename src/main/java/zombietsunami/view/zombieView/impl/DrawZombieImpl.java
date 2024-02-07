@@ -2,6 +2,8 @@ package zombietsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
@@ -27,9 +29,10 @@ public class DrawZombieImpl implements DrawZombie {
      * 
      * @param g2         The graphics context.
      * @param controller The controller with the game-related information.
+     * @throws IOException 
      */
     @Override
-    public void drawZombieV(final Graphics2D g2, final VController controller) {
+    public void drawZombieV(final Graphics2D g2, final VController controller){
         g2.drawImage(getZombie(), controller.getZombieScreenX() / controller.getNumX(), controller.getZombieScreenY(),
                 controller.titleSizeC(), controller.titleSizeC(), null);
     }
@@ -47,26 +50,36 @@ public class DrawZombieImpl implements DrawZombie {
      * 
      * @return The BufferedImage representing the zombie.
      */
+    
+
     @Override
     public BufferedImage getZombie() {
-        BufferedImage image = null;
         final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
+        BufferedImage image = null;
         try {
             if (sprite) {
-                image = ImageIO.read(getClass().getResourceAsStream(ZOMBIE_1));
+                image = loadImage(ZOMBIE_1);
             } else {
-                image = ImageIO.read(getClass().getResourceAsStream(ZOMBIE_2));
+                image = loadImage(ZOMBIE_2);
             }
             increaseCounter();
             if (getCounter() > FRAMESCHANGE) {
                 sprite = !sprite;
                 spriteCounter = 0;
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             logger.severe("Errore durante il caricamento dell'immagine dello zombie: " + e.getMessage());
         }
         return image;
+    }
 
+    private BufferedImage loadImage(final String imagePath) throws IOException {
+        try (InputStream stream = getClass().getResourceAsStream(imagePath)) {
+            if (stream == null) {
+                throw new IOException("Image not found: " + imagePath);
+            }
+            return ImageIO.read(stream);
+        }
     }
 
     /**
