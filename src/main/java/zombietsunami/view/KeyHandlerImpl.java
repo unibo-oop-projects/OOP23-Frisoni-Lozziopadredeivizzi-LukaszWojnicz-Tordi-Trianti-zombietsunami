@@ -11,7 +11,7 @@ import zombietsunami.view.api.KeyHandler;
 public class KeyHandlerImpl implements KeyListener, KeyHandler {
 
     private boolean jump;
-    private boolean onPause = false;
+    private boolean onPause;
 
     /**
      * This method is not used in this implementation and does not perform any
@@ -30,7 +30,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
      */
     @Override
     public void keyPressed(final KeyEvent e) {
-        int code = e.getKeyCode();
+        final int code = e.getKeyCode();
         if (code == KeyEvent.VK_SPACE) {
             jump = true;
         }
@@ -48,7 +48,7 @@ public class KeyHandlerImpl implements KeyListener, KeyHandler {
      */
     @Override
     public void keyReleased(final KeyEvent e) {
-        int code = e.getKeyCode();
+        final int code = e.getKeyCode();
         if (code == KeyEvent.VK_SPACE) {
             jump = false;
         }

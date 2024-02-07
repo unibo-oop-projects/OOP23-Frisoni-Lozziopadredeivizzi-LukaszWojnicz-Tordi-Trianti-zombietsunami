@@ -45,6 +45,7 @@ public class JumpZombieImpl implements JumpZombie {
     /**
      * Updates the jump action for the zombie.
      */
+    @Override
     public void updateJumpZombie() {
         if (jumping) {
             if (jumpUp) {
@@ -77,6 +78,7 @@ public class JumpZombieImpl implements JumpZombie {
      * Gets the current jumping state of the zombie.
      * @return true if the zombie is currently jumping.
      */
+    @Override
     public boolean isJumping() {
         return jumping;
     }
