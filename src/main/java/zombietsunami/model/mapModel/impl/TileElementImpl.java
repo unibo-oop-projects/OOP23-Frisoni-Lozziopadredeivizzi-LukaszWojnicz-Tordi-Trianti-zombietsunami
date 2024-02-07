@@ -47,6 +47,7 @@ public final class TileElementImpl implements TileElement {
         this.element.add(pos++, BULDING_RIGHT);
         this.element.add(pos++, BULDING_DOOR);
         this.element.add(pos++, BULDING_WINDOW);
+        
     }
 
     @Override
