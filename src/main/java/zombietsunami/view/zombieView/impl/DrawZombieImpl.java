@@ -2,10 +2,9 @@ package zombietsunami.view.zombieView.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
-
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.zombieView.api.DrawZombie;
@@ -18,10 +17,10 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
-    private static final String SEP ="/";
-    private static final String ROOT =SEP+"zombietsunami"+SEP+"zombie"+SEP;
-    private static final String ZOMBIE_1 = ROOT+"Zombie.png";
-    private static final String ZOMBIE_2 = ROOT+"Zombie2.png";
+    private static final String SEP = "/";
+    private static final String ROOT = SEP + "zombietsunami" + SEP + "zombie" + SEP;
+    private static final String ZOMBIE_1 = ROOT + "Zombie.png";
+    private static final String ZOMBIE_2 = ROOT + "Zombie2.png";
 
     /**
      * Draws the zombie on the graphics context based on the provided controller.
@@ -51,9 +50,9 @@ public class DrawZombieImpl implements DrawZombie {
     @Override
     public BufferedImage getZombie() {
         BufferedImage image = null;
+        final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
         try {
             if (sprite) {
-                // src/main/resources/
                 image = ImageIO.read(getClass().getResourceAsStream(ZOMBIE_1));
             } else {
                 image = ImageIO.read(getClass().getResourceAsStream(ZOMBIE_2));
@@ -64,7 +63,7 @@ public class DrawZombieImpl implements DrawZombie {
                 spriteCounter = 0;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.severe("Errore durante il caricamento dell'immagine dello zombie: " + e.getMessage());
         }
         return image;
 
@@ -88,7 +87,7 @@ public class DrawZombieImpl implements DrawZombie {
      */
     @Override
     public void handleKeyPress(final VController controller, final KeyHandler keyH) {
-        if (keyH.isPressed() && (!controller.isJumping())) {
+        if (keyH.isPressed() && !controller.isJumping()) {
             controller.jumpPress();
         }
         if (controller.isJumping()) {
