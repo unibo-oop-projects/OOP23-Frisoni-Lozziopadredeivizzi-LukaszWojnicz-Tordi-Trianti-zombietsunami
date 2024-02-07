@@ -8,5 +8,5 @@ import java.awt.image.BufferedImage;
 public interface DrawBreakable {
     void drawBreakableV(final Graphics2D g2, final VController controller);
     BufferedImage getBreakable();
-    void update();
+    void update(final VController controller);
 }
