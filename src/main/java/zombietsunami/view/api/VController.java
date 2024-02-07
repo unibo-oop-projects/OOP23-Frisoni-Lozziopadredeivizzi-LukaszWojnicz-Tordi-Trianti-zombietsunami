@@ -1,6 +1,5 @@
 package zombietsunami.view.api;
 
-import java.awt.image.BufferedImageOp;
 import java.util.List;
 
 import zombietsunami.api.Controller;
