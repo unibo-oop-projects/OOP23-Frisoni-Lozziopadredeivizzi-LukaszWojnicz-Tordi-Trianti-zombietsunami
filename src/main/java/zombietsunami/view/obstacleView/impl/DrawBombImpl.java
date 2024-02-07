@@ -16,12 +16,16 @@ public class DrawBombImpl implements DrawBomb{
 
     @Override
     public void drawBombV(Graphics2D g2, VController controller) {
-        g2.drawImage(getBomb(), 
-            controller.getObstacleMapX(),
-            controller.getObstacleMapY(),
-            controller.titleSizeC(),
-            controller.titleSizeC(), 
-            null);
+        for(int i = 0; i < controller.obstacleIndexListC().size(); i++){
+            if(controller.obstacleIndexListC().get(i) == 1){
+                g2.drawImage(getBomb(), 
+                controller.screenTilePosC().get(i).getX(), 
+                controller.screenTilePosC().get(i).getY(),
+                controller.titleSizeC(),
+                controller.titleSizeC(),
+                null);
+            }
+        }
     }
 
     @Override
