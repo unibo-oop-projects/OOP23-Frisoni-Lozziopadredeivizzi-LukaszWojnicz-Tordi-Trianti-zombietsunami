@@ -18,8 +18,10 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
-    private static final String ZOMBIE_1 = "src/main/resources/zombietsunami/zombie/Zombie.png";
-    private static final String ZOMBIE_2 = "src/main/resources/zombietsunami/zombie/Zombie2.png";
+    private static final String ROOT = "src"+File.separator+"main"+File.separator+"resources"+File.separator+"zombietsunami"+File.separator+"zombie"+File.separator;
+
+    private static final String ZOMBIE_1 = ROOT+"Zombie.png";
+    private static final String ZOMBIE_2 = ROOT+"Zombie2.png";
 
     /**
      * Draws the zombie on the graphics context based on the provided controller.
