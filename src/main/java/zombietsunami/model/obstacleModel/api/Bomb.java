@@ -1,8 +1,29 @@
 package zombietsunami.model.obstacleModel.api;
 
+/**
+ * Defines the Bomb object.
+ */
 public interface Bomb {
-    public void hit();
-    public int getX();
-    public int getY();
-    public void update();
+
+    /**
+     * If the bomb hits the zombie, it decreases the zombies' strength.
+     */
+    void hit();
+
+    /**
+     * Gets the X coordinate of the Bomb.
+     * @return the X coordinate of the Bomb.
+     */
+    int getX();
+
+    /**
+     * Gets the Y coordinate of the Bomb.
+     * @return the Y coordinate of the Bomb.
+     */
+    int getY();
+
+    /**
+     * Updates the state of the Bomb.
+     */
+    void update();
 }
