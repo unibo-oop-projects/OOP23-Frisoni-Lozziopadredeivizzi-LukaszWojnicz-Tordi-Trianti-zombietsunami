@@ -18,8 +18,8 @@ public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
     private static final int FRAMESCHANGE = 15;
-    private static final String ROOT = "src"+File.separator+"main"+File.separator+"resources"+File.separator+"zombietsunami"+File.separator+"zombie"+File.separator;
-
+    private static final String SEP ="/";
+    private static final String ROOT =SEP+"zombietsunami"+SEP+"zombie"+SEP;
     private static final String ZOMBIE_1 = ROOT+"Zombie.png";
     private static final String ZOMBIE_2 = ROOT+"Zombie2.png";
 
@@ -54,9 +54,9 @@ public class DrawZombieImpl implements DrawZombie {
         try {
             if (sprite) {
                 // src/main/resources/
-                image = ImageIO.read(new File(ZOMBIE_1));
+                image = ImageIO.read(getClass().getResourceAsStream(ZOMBIE_1));
             } else {
-                image = ImageIO.read(new File(ZOMBIE_2));
+                image = ImageIO.read(getClass().getResourceAsStream(ZOMBIE_2));
             }
             increaseCounter();
             if (getCounter() > FRAMESCHANGE) {
