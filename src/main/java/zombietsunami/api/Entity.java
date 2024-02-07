@@ -18,17 +18,17 @@ public interface Entity {
      * @return The speed of the entity.
      */
     int getSpeed();
-
+    
     /**
      * @return The number to divides the x-screen.
      */
     int getNumX();
-
+    
     /**
      * @return The strength of the entity.
      */
     int getStrenght();
-
+    
     /**
      * Increases the strength of the entity with the speed value.
      */
