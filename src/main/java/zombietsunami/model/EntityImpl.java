@@ -18,6 +18,7 @@ public class EntityImpl implements Entity {
      * 
      * @return the X coordinate.
      */
+    @Override
     public int getX() {
         return mapX;
     }
@@ -36,6 +37,7 @@ public class EntityImpl implements Entity {
      * 
      * @return the Y coordinate.
      */
+    @Override
     public int getY() {
         return mapY;
     }
@@ -54,6 +56,7 @@ public class EntityImpl implements Entity {
      * 
      * @return the speed.
      */
+    @Override
     public int getSpeed() {
         return speed;
     }
@@ -72,6 +75,7 @@ public class EntityImpl implements Entity {
      * 
      * @return the constant NUM.
      */
+    @Override
     public int getNumX() {
         return this.NUM;
     }
@@ -81,6 +85,7 @@ public class EntityImpl implements Entity {
      * 
      * @return the strength.
      */
+    @Override
     public int getStrenght() {
         return this.strenght;
     }
@@ -88,6 +93,7 @@ public class EntityImpl implements Entity {
     /**
      * Increases the strength of the entity by one.
      */
+    @Override
     public void increaseStrenght() {
         this.strenght++;
     }
@@ -97,6 +103,7 @@ public class EntityImpl implements Entity {
      * 
      * @param strenght the new strength.
      */
+    @Override
     public void setStrenght(final int strenght) {
         this.strenght = strenght;
     }
