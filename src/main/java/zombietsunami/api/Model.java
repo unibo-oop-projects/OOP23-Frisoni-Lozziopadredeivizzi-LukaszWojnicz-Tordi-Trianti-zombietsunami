@@ -112,7 +112,7 @@ public interface Model {
      * Calls the getJumping method of the zombie {@link zombietsunami.model.zombieModel.api.Zombie}.
      * @return  true if zombie is jumping
      */
-    boolean getJumping();
+    boolean isJumping();
 
     void updateOstacle();
 

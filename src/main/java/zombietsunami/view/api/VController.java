@@ -129,7 +129,7 @@ public interface VController {
      *
      * @return True if the zombie is jumping, otherwise false.
      */
-    boolean getJumping();
+    boolean isJumping();
 
     int getObstacleMapX();
 

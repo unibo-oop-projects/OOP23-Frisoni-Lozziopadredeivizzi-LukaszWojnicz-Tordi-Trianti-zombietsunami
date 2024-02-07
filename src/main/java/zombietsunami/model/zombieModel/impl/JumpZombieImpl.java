@@ -87,7 +87,7 @@ public class JumpZombieImpl implements JumpZombie {
      * Gets the current jumping state of the zombie.
      * @return true if the zombie is currently jumping.
      */
-    public boolean getJumping() {
+    public boolean isJumping() {
         return jumping;
     }
 }

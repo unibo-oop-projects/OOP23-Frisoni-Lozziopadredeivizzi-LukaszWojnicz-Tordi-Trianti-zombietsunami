@@ -155,7 +155,7 @@ public class ZombieImpl implements Zombie {
      * @return true if the zombie is jumping.
      */
     @Override
-    public boolean getJumping() {
-        return jumpZombie.getJumping();
+    public boolean isJumping() {
+        return jumpZombie.isJumping();
     }
 }

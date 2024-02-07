@@ -164,8 +164,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public boolean getJumping() {
-        return this.zombie.getJumping();
+    public boolean isJumping() {
+        return this.zombie.isJumping();
     }
 
     @Override

@@ -14,7 +14,7 @@ public interface JumpZombie {
      * Checks if the zombie is currently jumping.
      * @return true if the zombie is jumping.
      */
-    boolean getJumping();
+    boolean isJumping();
 
     /**
      * Updates the jump action for the zombie.

@@ -88,10 +88,10 @@ public class DrawZombieImpl implements DrawZombie {
      */
     @Override
     public void handleKeyPress(final VController controller, final KeyHandler keyH) {
-        if (keyH.isPressed() && (!controller.getJumping())) {
+        if (keyH.isPressed() && (!controller.isJumping())) {
             controller.jumpPress();
         }
-        if (controller.getJumping()) {
+        if (controller.isJumping()) {
             controller.updateJumpZombie();
         }
         updateZombie(controller);
