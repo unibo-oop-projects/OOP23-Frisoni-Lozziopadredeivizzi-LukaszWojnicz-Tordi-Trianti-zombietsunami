@@ -15,8 +15,8 @@ import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
-import zombietsunami.model.zombieModel.api.Zombie;
-import zombietsunami.model.zombieModel.impl.ZombieImpl;
+import zombietsunami.model.zombiemodel.api.Zombie;
+import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.model.personmodel.impl.PersonImpl;
 

@@ -1,15 +1,15 @@
-package zombietsunami.model.zombieModel.impl;
+package zombietsunami.model.zombiemodel.impl;
 
 import zombietsunami.model.EntityImpl;
 import zombietsunami.model.MapData;
-import zombietsunami.model.zombieModel.api.Zombie;
+import zombietsunami.model.zombiemodel.api.Zombie;
 
 /**
  * Implementation of the Zombie interface, representing a zombie entity in the
  * Zombie Tsunami game.
  *
  * @see zombietsunami.model.EntityImpl
- * @see zombietsunami.model.zombieModel.api.Zombie
+ * @see zombietsunami.model.zombiemodel.api.Zombie
  */
 public class ZombieImpl implements Zombie {
     private final EntityImpl entity = new EntityImpl();

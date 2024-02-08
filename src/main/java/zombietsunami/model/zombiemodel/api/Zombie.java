@@ -1,4 +1,4 @@
-package zombietsunami.model.zombieModel.api;
+package zombietsunami.model.zombiemodel.api;
 
 /**
  * This interface represents a zombie in the Zombie Tsunami game.

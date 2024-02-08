@@ -1,7 +1,7 @@
-package zombietsunami.model.zombieModel.impl;
+package zombietsunami.model.zombiemodel.impl;
 
 import zombietsunami.model.EntityImpl;
-import zombietsunami.model.zombieModel.api.JumpZombie;
+import zombietsunami.model.zombiemodel.api.JumpZombie;
 /**
  * Implementation of the JumpZombie interface representing the behavior of a jumping zombie in the game.
  */
