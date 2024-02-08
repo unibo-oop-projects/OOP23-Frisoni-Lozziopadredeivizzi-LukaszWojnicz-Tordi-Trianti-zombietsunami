@@ -13,10 +13,10 @@ import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.mapview.api.Map;
 import zombietsunami.view.mapview.api.TileManager;
-import zombietsunami.view.obstacleView.api.DrawBomb;
-import zombietsunami.view.obstacleView.api.DrawBreakable;
-import zombietsunami.view.obstacleView.impl.DrawBombImpl;
-import zombietsunami.view.obstacleView.impl.DrawBreakableImpl;
+import zombietsunami.view.obstacleview.api.DrawBomb;
+import zombietsunami.view.obstacleview.api.DrawBreakable;
+import zombietsunami.view.obstacleview.impl.DrawBombImpl;
+import zombietsunami.view.obstacleview.impl.DrawBreakableImpl;
 import zombietsunami.view.zombieView.api.DrawZombie;
 import zombietsunami.view.zombieView.impl.DrawZombieImpl;
 

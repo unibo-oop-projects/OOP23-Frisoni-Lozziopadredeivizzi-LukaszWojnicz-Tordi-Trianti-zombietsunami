@@ -1,4 +1,4 @@
-package zombietsunami.view.obstacleView.impl;
+package zombietsunami.view.obstacleview.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
 import zombietsunami.view.api.VController;
-import zombietsunami.view.obstacleView.api.DrawBreakable;
+import zombietsunami.view.obstacleview.api.DrawBreakable;
 
 /**
  * Implementation of the DrawBomb interface, responsible for drawing and

@@ -1,4 +1,4 @@
-package zombietsunami.view.obstacleView.api;
+package zombietsunami.view.obstacleview.api;
 
 import zombietsunami.view.api.VController;
 
