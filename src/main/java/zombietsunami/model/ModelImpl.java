@@ -31,7 +31,7 @@ public final class ModelImpl implements Model {
     private final MapPosList mapPos;
     private final Zombie zombie;
     private final Bomb bomb;
-    final Person person;
+    private final Person person;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private Controller control;
 
