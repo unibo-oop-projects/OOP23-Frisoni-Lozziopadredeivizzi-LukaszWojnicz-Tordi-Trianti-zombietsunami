@@ -1,4 +1,4 @@
-package zombietsunami.model.mapModel.api;
+package zombietsunami.model.mapmodel.api;
 
 import java.util.List;
 

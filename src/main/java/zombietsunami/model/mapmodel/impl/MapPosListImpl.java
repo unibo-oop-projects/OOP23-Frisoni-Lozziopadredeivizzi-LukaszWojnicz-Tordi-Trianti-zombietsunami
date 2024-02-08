@@ -1,14 +1,14 @@
-package zombietsunami.model.mapModel.impl;
+package zombietsunami.model.mapmodel.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import zombietsunami.api.Pair;
-import zombietsunami.model.mapModel.api.MapPosList;
+import zombietsunami.model.mapmodel.api.MapPosList;
 
 /**
  * This class implements the MapPosList interface
- * {@link zombietsunami.model.mapModel.api.MapPosList}.
+ * {@link zombietsunami.model.mapmodel.api.MapPosList}.
  */
 public final class MapPosListImpl implements MapPosList {
 

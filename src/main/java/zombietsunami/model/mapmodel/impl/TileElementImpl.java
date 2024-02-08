@@ -1,11 +1,11 @@
-package zombietsunami.model.mapModel.impl;
+package zombietsunami.model.mapmodel.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import zombietsunami.model.mapModel.api.TileElement;
+import zombietsunami.model.mapmodel.api.TileElement;
 /**
- * This class implements the TileElement interface {@link zombietsunami.model.mapModel.api.TileElement}.
+ * This class implements the TileElement interface {@link zombietsunami.model.mapmodel.api.TileElement}.
  */
 public final class TileElementImpl implements TileElement {
 

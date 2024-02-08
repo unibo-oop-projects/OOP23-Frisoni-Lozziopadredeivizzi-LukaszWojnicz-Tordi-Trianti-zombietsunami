@@ -1,4 +1,4 @@
-package zombietsunami.model.mapModel.impl;
+package zombietsunami.model.mapmodel.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import zombietsunami.model.MapData;
-import zombietsunami.model.mapModel.api.GameMap;
+import zombietsunami.model.mapmodel.api.GameMap;
 
 /**
  * This class implements the GameMap interface
- * {@link zombietsunami.model.mapModel.api.GameMap}.
+ * {@link zombietsunami.model.mapmodel.api.GameMap}.
  */
 public final class GameMapImpl implements GameMap {
 
