@@ -1,4 +1,4 @@
-package zombietsunami.model.obstacleModel.impl;
+package zombietsunami.model.obstaclemodel.impl;
 
 /**
  * Defines the entity object of an Obstacle.

@@ -1,4 +1,4 @@
-package zombietsunami.model.obstacleModel.api;
+package zombietsunami.model.obstaclemodel.api;
 
 /**
  * Defines the Bomb object.
