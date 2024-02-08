@@ -11,24 +11,58 @@ import zombietsunami.api.Pair;
  */
 public interface VController {
 
+    /**
+     * This method sets a Controller for the View.
+     * 
+     * @param c is the Controller that will be setted as view's controller
+     */
     void set(Controller c);
 
+    /**
+     * @return the screen width
+     */
     int getScreenWC();
 
+    /**
+     * @return the screen hight
+     */
     int getScreenHC();
 
+    /**
+     * @return the screen's cols
+     */
     int screenColC();
 
+    /**
+     * @return the screen's row
+     */
     int screenRowC();
 
+    /**
+     * @return the size of titles
+     */
     int titleSizeC();
 
+    /**
+     * @return the FPS for tha game
+     */
     int getFPSC();
 
+    /**
+     * @return the List of Strings with the file's name of the different tile
+     *         elements
+     */
     List<String> tileElementsC();
 
+    /**
+     * @return the List of Pair of Integers with the positions of all the tiles in
+     *         the map
+     */
     List<Pair<Integer, Integer>> screenTilePosC();
 
+    /**
+     * @return the List of Integers with all the values in the map's txt file
+     */
     List<Integer> mapIndexListC();
 
     /**
@@ -51,19 +85,31 @@ public interface VController {
      * @return The speed of the zombie.
      */
     int getSpeed();
-    
+
     /**
      * Updates the position and state of the zombie in the game.
      */
     void updateZombie();
 
+    /**
+     * @return the map's (world) cols
+     */
     int getWorldColC();
 
+    /**
+     * @return the map's (world) rows
+     */
     int getWorldRowC();
 
+    /**
+     * @return the map (world) width
+     */
     int getWorldWidthC();
 
-    int getWorldHightC();
+   /**
+     * @return the map (world) hight
+     */
+     int getWorldHightC();
 
     int getPersonMapX();
 
@@ -129,6 +175,9 @@ public interface VController {
 
     void updateObstacle();
 
+    /**
+     * @return the List of Integers with all the values in the obstacle map's txt file
+     */
     List<Integer> obstacleIndexListC();
 
 }
