@@ -17,8 +17,8 @@ import zombietsunami.view.obstacleview.api.DrawBomb;
 import zombietsunami.view.obstacleview.api.DrawBreakable;
 import zombietsunami.view.obstacleview.impl.DrawBombImpl;
 import zombietsunami.view.obstacleview.impl.DrawBreakableImpl;
-import zombietsunami.view.zombieView.api.DrawZombie;
-import zombietsunami.view.zombieView.impl.DrawZombieImpl;
+import zombietsunami.view.zombieview.api.DrawZombie;
+import zombietsunami.view.zombieview.impl.DrawZombieImpl;
 
 /**
  * This class implements the Map interface

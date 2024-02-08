@@ -1,4 +1,4 @@
-package zombietsunami.view.zombieView.api;
+package zombietsunami.view.zombieview.api;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
