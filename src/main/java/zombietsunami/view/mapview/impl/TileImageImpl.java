@@ -1,11 +1,11 @@
-package zombietsunami.view.mapView.impl;
+package zombietsunami.view.mapview.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import zombietsunami.view.mapView.api.TileImage;
+import zombietsunami.view.mapview.api.TileImage;
 /**
- * This class implements the TielImage interface {@link zombietsunami.view.mapView.api.TileImage}.
+ * This class implements the TielImage interface {@link zombietsunami.view.mapview.api.TileImage}.
  */
 public final class TileImageImpl implements TileImage {
 

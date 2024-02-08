@@ -1,4 +1,4 @@
-package zombietsunami.view.mapView.api;
+package zombietsunami.view.mapview.api;
 
 /**
  * This is the principal panel for the game, that allows you to run the map and

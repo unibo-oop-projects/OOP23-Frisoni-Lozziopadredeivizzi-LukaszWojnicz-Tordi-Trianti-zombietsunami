@@ -1,15 +1,15 @@
-package zombietsunami.view.mapView.impl;
+package zombietsunami.view.mapview.impl;
 
 import java.awt.Graphics2D;
 import java.util.List;
 
 import zombietsunami.api.Pair;
-import zombietsunami.view.mapView.api.TileImage;
-import zombietsunami.view.mapView.api.TileManager;
+import zombietsunami.view.mapview.api.TileImage;
+import zombietsunami.view.mapview.api.TileManager;
 
 /**
  * This class implements the TileManager interface
- * {@link zombietsunami.view.mapView.api.TileManager}.
+ * {@link zombietsunami.view.mapview.api.TileManager}.
  */
 public final class TileManagerImpl implements TileManager {
 

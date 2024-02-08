@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
-import zombietsunami.view.mapView.impl.MapImpl;
+import zombietsunami.view.mapview.impl.MapImpl;
 
 /**
  * This utility class is the main view of the game and sets the main JFrame.

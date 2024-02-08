@@ -1,4 +1,4 @@
-package zombietsunami.view.mapView.impl;
+package zombietsunami.view.mapview.impl;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -11,8 +11,8 @@ import javax.swing.plaf.DimensionUIResource;
 import zombietsunami.view.Pause;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
-import zombietsunami.view.mapView.api.Map;
-import zombietsunami.view.mapView.api.TileManager;
+import zombietsunami.view.mapview.api.Map;
+import zombietsunami.view.mapview.api.TileManager;
 import zombietsunami.view.obstacleView.api.DrawBomb;
 import zombietsunami.view.obstacleView.api.DrawBreakable;
 import zombietsunami.view.obstacleView.impl.DrawBombImpl;
@@ -22,7 +22,7 @@ import zombietsunami.view.zombieView.impl.DrawZombieImpl;
 
 /**
  * This class implements the Map interface
- * {@link zombietsunami.view.mapView.api.Map}; it contains the game engine of
+ * {@link zombietsunami.view.mapview.api.Map}; it contains the game engine of
  * the game.
  */
 public final class MapImpl extends JPanel implements Map, Runnable {

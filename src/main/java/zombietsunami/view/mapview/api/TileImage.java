@@ -1,8 +1,8 @@
-package zombietsunami.view.mapView.api;
+package zombietsunami.view.mapview.api;
 
 import java.util.List;
 
-import zombietsunami.view.mapView.impl.TileImpl;
+import zombietsunami.view.mapview.impl.TileImpl;
 
 /**
  * Allows you to sets the imgages to their relative tiles.

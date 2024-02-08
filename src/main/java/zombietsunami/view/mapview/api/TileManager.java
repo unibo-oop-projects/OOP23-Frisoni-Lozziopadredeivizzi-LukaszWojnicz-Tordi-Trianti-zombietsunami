@@ -1,4 +1,4 @@
-package zombietsunami.view.mapView.api;
+package zombietsunami.view.mapview.api;
 
 import java.awt.Graphics2D;
 import java.util.List;
