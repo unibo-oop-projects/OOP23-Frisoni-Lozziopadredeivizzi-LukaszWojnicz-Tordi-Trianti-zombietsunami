@@ -27,7 +27,9 @@ import zombietsunami.view.zombieview.impl.DrawZombieImpl;
  */
 public final class MapImpl extends JPanel implements Map, Runnable {
 
-    private static final long NANOSEC = 1000000000;
+    private static final long serialVersionUID = 123456788L;
+
+    private static final long NANOSEC = 1_000_000_000;
     private static final int FONT_SIZE = 20;
     private static final int RECT_WIDTH = 130;
     private static final int RECT_HEIGHT = 40;
@@ -45,7 +47,8 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     /**
      * Sets the objects in the map like the zombie and the obstacles.
-     * @param c sets the view controller 
+     * 
+     * @param c    sets the view controller
      * @param keyH sets the key listener for the class
      */
     public MapImpl(final VController c, final KeyHandler keyH) {
@@ -68,23 +71,19 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
-        int drowCount = 0;
 
         while (!isPause()) {
             currentTime = System.nanoTime();
             delta += (currentTime - lastTime) / drowIntervall;
-            timer += (currentTime - lastTime);
+            timer += currentTime - lastTime;
             lastTime = currentTime;
             if (delta >= 1) {
                 update();
                 repaint();
                 delta--;
-                drowCount++;
             }
 
             if (timer >= NANOSEC) {
-                System.out.println("FPS: " + drowCount);
-                drowCount = 0;
                 timer = 0;
             }
         }
