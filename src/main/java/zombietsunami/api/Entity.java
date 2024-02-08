@@ -46,7 +46,7 @@ public interface Entity {
     /**
      * Sets the Y-coordinate of zombie.
      * 
-     * @param x The new Y-coordinate value for the zombie.
+     * @param y The new Y-coordinate value for the zombie.
      */
     void setY(int y);
 }

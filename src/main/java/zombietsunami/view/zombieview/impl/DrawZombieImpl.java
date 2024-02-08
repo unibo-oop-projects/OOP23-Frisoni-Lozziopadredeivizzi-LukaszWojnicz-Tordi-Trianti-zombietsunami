@@ -30,10 +30,10 @@ public class DrawZombieImpl implements DrawZombie {
      * 
      * @param g2         The graphics context.
      * @param controller The controller with the game-related information.
-     * @throws IOException 
+     * @throws IOException
      */
     @Override
-    public void drawZombieV(final Graphics2D g2, final VController controller){
+    public void drawZombieV(final Graphics2D g2, final VController controller) {
         g2.drawImage(getZombie(), controller.getZombieScreenX() / NUM, controller.getZombieScreenY(),
                 controller.titleSizeC(), controller.titleSizeC(), null);
     }
@@ -51,7 +51,6 @@ public class DrawZombieImpl implements DrawZombie {
      * 
      * @return The BufferedImage representing the zombie.
      */
-    
 
     @Override
     public BufferedImage getZombie() {
