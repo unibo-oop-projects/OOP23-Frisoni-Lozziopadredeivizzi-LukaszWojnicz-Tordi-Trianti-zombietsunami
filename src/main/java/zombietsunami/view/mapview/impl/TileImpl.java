@@ -2,6 +2,7 @@ package zombietsunami.view.mapview.impl;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
@@ -15,10 +16,11 @@ public final class TileImpl implements Tile {
 
     @Override
     public void setImage(final String string) {
+        final Logger logger = Logger.getLogger(TileImpl.class.getName());
         try {
             this.image = ImageIO.read(getClass().getResourceAsStream(string));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.severe("Error reading the image: " + e.getMessage());
         }
     }
 
