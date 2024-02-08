@@ -111,5 +111,8 @@ public interface Model {
 
     void updateOstacle();
 
+    /**
+     * @return the List of Integers that contains all the values of the obstacle map's txt file
+     */
     List<Integer> getObstacleList();
 }
