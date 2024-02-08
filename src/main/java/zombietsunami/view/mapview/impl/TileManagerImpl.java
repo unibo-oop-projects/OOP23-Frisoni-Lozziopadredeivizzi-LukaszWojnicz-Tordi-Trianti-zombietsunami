@@ -20,7 +20,7 @@ public final class TileManagerImpl implements TileManager {
             final List<String> element, final List<Integer> mapIndex,
             final List<Pair<Integer, Integer>> screenTilePos) {
 
-        final var item = tileImg.setTileImage(element);
+        final var item = tileImg.getTileImage(element);
         for (int i = 0; i < screenTilePos.size(); i++) {
             if (screenTilePos.get(i) != null) {
                 g2.drawImage(item.get(mapIndex.get(i)).getImage(), screenTilePos.get(i).getX(),

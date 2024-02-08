@@ -14,5 +14,5 @@ public interface TileImage {
      * @return a List where each position of the List (the element's number of the
      *         Tile) has their associated Tile
      */
-    List<TileImpl> setTileImage(List<String> element);
+    List<TileImpl> getTileImage(List<String> element);
 }

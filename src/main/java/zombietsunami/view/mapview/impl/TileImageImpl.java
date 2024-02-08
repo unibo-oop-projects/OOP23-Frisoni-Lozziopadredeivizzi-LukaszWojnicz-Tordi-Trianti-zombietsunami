@@ -15,7 +15,7 @@ public final class TileImageImpl implements TileImage {
     private final List<TileImpl> itemMap = new ArrayList<>();
 
     @Override
-    public List<TileImpl> setTileImage(final List<String> element) {
+    public List<TileImpl> getTileImage(final List<String> element) {
         for (int i = 0; i < element.size(); i++) {
             setSingleTile(i, element.get(i));
         }
