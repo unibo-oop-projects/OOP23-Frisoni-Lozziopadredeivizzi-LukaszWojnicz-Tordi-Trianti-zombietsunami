@@ -1,4 +1,4 @@
-package zombietsunami.model.personModel.impl;
+package zombietsunami.model.personmodel.impl;
 
 public class PositionImpl {
     private int mapXp, mapYp;

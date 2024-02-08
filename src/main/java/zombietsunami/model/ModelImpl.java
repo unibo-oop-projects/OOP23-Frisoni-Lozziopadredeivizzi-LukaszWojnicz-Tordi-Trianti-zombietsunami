@@ -17,8 +17,8 @@ import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
 import zombietsunami.model.zombieModel.api.Zombie;
 import zombietsunami.model.zombieModel.impl.ZombieImpl;
-import zombietsunami.model.personModel.api.Person;
-import zombietsunami.model.personModel.impl.PersonImpl;
+import zombietsunami.model.personmodel.api.Person;
+import zombietsunami.model.personmodel.impl.PersonImpl;
 
 /**
  * This class is the Model of the MVC and implements the Model interface

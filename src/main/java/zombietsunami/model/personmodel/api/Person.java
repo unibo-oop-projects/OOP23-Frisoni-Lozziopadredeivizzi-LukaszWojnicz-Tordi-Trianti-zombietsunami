@@ -1,4 +1,4 @@
-package zombietsunami.model.personModel.api;
+package zombietsunami.model.personmodel.api;
 
 public interface Person {
     int getXp();

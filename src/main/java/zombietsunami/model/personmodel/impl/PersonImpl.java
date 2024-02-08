@@ -1,7 +1,7 @@
-package zombietsunami.model.personModel.impl;
+package zombietsunami.model.personmodel.impl;
 
 import zombietsunami.model.MapData;
-import zombietsunami.model.personModel.api.Person;
+import zombietsunami.model.personmodel.api.Person;
 
 public class PersonImpl implements Person {
     private PositionImpl pos = new PositionImpl();
