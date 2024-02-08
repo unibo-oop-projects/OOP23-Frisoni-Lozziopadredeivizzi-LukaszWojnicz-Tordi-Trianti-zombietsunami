@@ -30,7 +30,7 @@ public final class Pause {
         g2.fillRect(RECT_POS_X, RECT_POS_Y, RECT_WIDTH, RECT_HEIGHT);
         g2.setFont(new Font("Arial", Font.BOLD, FONT_SIZE));
         g2.setColor(Color.WHITE);
-        g2.drawString("PAUSA", PAUSE_POS_X, PAUSE_POS_Y);
+        g2.drawString("PAUSE", PAUSE_POS_X, PAUSE_POS_Y);
     }
 
 }
