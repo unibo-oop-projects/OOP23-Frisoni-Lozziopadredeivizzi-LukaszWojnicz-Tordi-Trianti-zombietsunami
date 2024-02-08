@@ -26,4 +26,10 @@ public interface Bomb {
      * Updates the state of the Bomb.
      */
     void update();
+
+    /**
+     * Gets the bombs id.
+     * @return the bomb id.
+     */
+    int getId();
 }
