@@ -11,6 +11,11 @@ import zombietsunami.model.obstaclemodel.api.Obstacle;
  */
 public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle {
 
+    private ObstacleEntity entity = new ObstacleEntity();
+
+    private static int nextId = 0;
+
+    private final int id;
     private final int minforce;
 
     /**
@@ -19,6 +24,8 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
      * @param minforce the minimum force to break the Breakable.
      */
     public BreakableImpl(final int minforce) {
+        this.id = nextId;
+        nextId++;
         this.minforce = minforce;
     }
 
@@ -50,5 +57,30 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
     @Override
     public void breakObstacle() {
         //break
+    }
+
+    /**
+     * Gets the X coordinate of the Breakable.
+     */
+    @Override
+    public int getX() {
+        return this.entity.getX();
+    }
+
+    /**
+     * Gets the Y coordinate of the Breakable.
+     */
+    @Override
+    public int getY() {
+        return this.entity.getY();
+    }
+
+    /**
+     * Returns the breakables id.
+     * @return the breakable id.
+     */
+    @Override
+    public int getId() {
+        return this.id;
     }
 }

@@ -13,6 +13,9 @@ public class BombImpl implements Bomb, Obstacle {
 
     private ObstacleEntity entity = new ObstacleEntity();
 
+    private static int nextId = 0;
+
+    private final int id;
     private final int damage = 1; //for test
     private final int testcoord = 350; //test
 
@@ -20,6 +23,8 @@ public class BombImpl implements Bomb, Obstacle {
      * Constructor that sets the default values for the Bomb.
      */
     public BombImpl() {
+        this.id = nextId;
+        nextId++;
         setDefaultValue();
     }
 
@@ -29,6 +34,16 @@ public class BombImpl implements Bomb, Obstacle {
     private void setDefaultValue() {
         entity.setX(testcoord); //just for test
         entity.setY(testcoord);
+    }
+
+    /**
+     * Gets the bomb Id.
+     * @param bomb the bomb object.
+     * @return the bomb's Id.
+     */
+    @Override
+    public int getId() {
+        return this.id;
     }
 
     /**
