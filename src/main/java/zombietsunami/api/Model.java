@@ -49,11 +49,6 @@ public interface Model {
      */
     int getSpeed();
 
-    /**
-     * @return the number to divides the zombie mapX
-     */
-    int getNumX();
-
     int getPersonMapX();
 
     int getPersonMapY();

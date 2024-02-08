@@ -51,14 +51,7 @@ public interface VController {
      * @return The speed of the zombie.
      */
     int getSpeed();
-
-    /**
-     * Gets the constant representing the number of X units.
-     *
-     * @return The constant value for the number of X units.
-     */
-    int getNumX();
-
+    
     /**
      * Updates the position and state of the zombie in the game.
      */

@@ -18,6 +18,7 @@ import zombietsunami.view.zombieview.api.DrawZombie;
 public class DrawZombieImpl implements DrawZombie {
     private boolean sprite = true;
     private int spriteCounter;
+    private static final int NUM = 4;
     private static final int FRAMESCHANGE = 15;
     private static final String SEP = "/";
     private static final String ROOT = SEP + "zombietsunami" + SEP + "zombie" + SEP;
@@ -33,7 +34,7 @@ public class DrawZombieImpl implements DrawZombie {
      */
     @Override
     public void drawZombieV(final Graphics2D g2, final VController controller){
-        g2.drawImage(getZombie(), controller.getZombieScreenX() / controller.getNumX(), controller.getZombieScreenY(),
+        g2.drawImage(getZombie(), controller.getZombieScreenX() / NUM, controller.getZombieScreenY(),
                 controller.titleSizeC(), controller.titleSizeC(), null);
     }
 

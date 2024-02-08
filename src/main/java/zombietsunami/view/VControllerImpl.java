@@ -66,16 +66,6 @@ public final class VControllerImpl implements VController {
         return this.control.getSpeed();
     }
 
-    /**
-     * Gets the number of times the zombie has moved in the x-direction.
-     *
-     * @return The number of times the zombie has moved in the x-direction.
-     */
-    @Override
-    public int getNumX() {
-        return this.control.getNumX();
-    }
-
     @Override
     public List<String> tileElementsC() {
         return this.control.tileElements();

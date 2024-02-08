@@ -81,12 +81,7 @@ public interface Controller {
    * @return the zombie's speed value
    */
   int getSpeed();
-
-  /**
-   * @return the NUM value of zombie
-   */
-  int getNumX();
-
+  
   /**
    * Calls the update method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.

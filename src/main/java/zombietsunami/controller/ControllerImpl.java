@@ -93,11 +93,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public int getNumX() {
-        return this.model.getNumX();
-    }
-
-    @Override
     public void updateZombie() {
         this.model.updateZombie();
     }

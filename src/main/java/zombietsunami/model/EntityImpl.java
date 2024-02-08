@@ -11,7 +11,6 @@ public class EntityImpl implements Entity {
     private int strenght;
     private int mapX, mapY;
     private int speed;
-    private static final int NUM = 4;
 
     /**
      * Returns the X coordinate of the entity on the map.
@@ -70,16 +69,6 @@ public class EntityImpl implements Entity {
      */
     public void setSpeed(final int speed) {
         this.speed = speed;
-    }
-
-    /**
-     * Returns the constant NUM.
-     * 
-     * @return the constant NUM.
-     */
-    @Override
-    public int getNumX() {
-        return this.NUM;
     }
 
     /**

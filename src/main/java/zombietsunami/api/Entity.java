@@ -20,11 +20,6 @@ public interface Entity {
     int getSpeed();
 
     /**
-     * @return The number to divides the x-screen.
-     */
-    int getNumX();
-
-    /**
      * @return The strength of the zombie.
      */
     int getStrenght();
