@@ -1,4 +1,4 @@
-package zombietsunami.view.personView.api;
+package zombietsunami.view.personview.api;
 
 public class DrawPerson {
     

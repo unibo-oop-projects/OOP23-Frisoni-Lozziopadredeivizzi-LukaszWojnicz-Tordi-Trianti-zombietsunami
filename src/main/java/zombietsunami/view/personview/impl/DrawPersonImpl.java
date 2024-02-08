@@ -1,4 +1,4 @@
-package zombietsunami.view.personView.impl;
+package zombietsunami.view.personview.impl;
 
 public class DrawPersonImpl {
     
