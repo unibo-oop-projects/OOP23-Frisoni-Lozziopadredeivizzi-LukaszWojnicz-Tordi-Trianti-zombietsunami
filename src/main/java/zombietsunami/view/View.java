@@ -33,7 +33,7 @@ public final class View {
         final StartMenu startMenu = new StartMenu(width, height);
         final MapImpl gamePanel = new MapImpl(c, keyH);
 
-        startMenu.enable();
+        startMenu.enableStartPanel();
         window.add(startMenu);
 
         startMenu.getStartButton().addActionListener(e -> {
