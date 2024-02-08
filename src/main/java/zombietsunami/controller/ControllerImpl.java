@@ -18,7 +18,6 @@ import zombietsunami.view.api.VController;
 public final class ControllerImpl implements Controller {
 
     private Model model;
-    private VController viewController;
 
     @Override
     public void setModel() {
@@ -28,8 +27,8 @@ public final class ControllerImpl implements Controller {
 
     @Override
     public void setView() {
-        this.viewController = new VControllerImpl();
-        this.viewController.set(this);
+        final VController viewController = new VControllerImpl();
+        viewController.set(this);
     }
 
     @Override
