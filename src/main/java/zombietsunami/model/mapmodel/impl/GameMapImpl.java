@@ -1,11 +1,13 @@
 package zombietsunami.model.mapmodel.impl;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.logging.Logger;
 
 import zombietsunami.model.MapData;
 import zombietsunami.model.mapmodel.api.GameMap;
@@ -47,9 +49,10 @@ public final class GameMapImpl implements GameMap {
      */
     private List<Integer> loadMap(final String filePath) {
         final List<List<Integer>> mapTileNum = new ArrayList<>();
+        final Logger logger = Logger.getLogger(GameMapImpl.class.getName());
         try {
-            InputStream is = getClass().getResourceAsStream(filePath);
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            final InputStream is = getClass().getResourceAsStream(filePath);
+            final BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             for (int row = 0; row < MapData.getMaxWorldRow(); row++) {
                 final String line = br.readLine();
@@ -65,8 +68,8 @@ public final class GameMapImpl implements GameMap {
 
             br.close();
 
-        } catch (Exception e) {
-            e.getMessage();
+        } catch (IOException e) {
+            logger.severe("Error reading the input file: " + e.getMessage());
         }
 
         return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
