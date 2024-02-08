@@ -11,10 +11,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
+
 /**
  * This class is the start menu panel for the game.
  */
 public final class StartMenu extends JPanel {
+
+    private static final long serialVersionUID = 123456789L;
 
     private static final int FONT_SIZE = 50;
     private static final int LABEL_HEIGHT = 120;
@@ -26,7 +29,8 @@ public final class StartMenu extends JPanel {
 
     /**
      * Sets the panel dimensions.
-     * @param screenW the screen width 
+     * 
+     * @param screenW the screen width
      * @param screenH the screen hight
      */
     public StartMenu(final int screenW, final int screenH) {
@@ -65,7 +69,7 @@ public final class StartMenu extends JPanel {
     }
 
     /**
-     * This method adds an action listener to the 'rules' button. 
+     * This method adds an action listener to the 'rules' button.
      */
     private void addActionListenerToRuleButton() {
         this.rulesButton.addActionListener(e -> {
@@ -76,7 +80,7 @@ public final class StartMenu extends JPanel {
     /**
      * This method enable all the start panel elements.
      */
-    public void enable() {
+    public void enableStartPanel() {
         enableLabel();
         enableStartButton();
         enableRulesButton();

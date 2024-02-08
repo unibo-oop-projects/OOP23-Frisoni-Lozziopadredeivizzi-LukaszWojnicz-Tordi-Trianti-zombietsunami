@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
-import zombietsunami.view.mapView.impl.MapImpl;
+import zombietsunami.view.mapview.impl.MapImpl;
 
 /**
  * This utility class is the main view of the game and sets the main JFrame.
@@ -33,7 +33,7 @@ public final class View {
         final StartMenu startMenu = new StartMenu(width, height);
         final MapImpl gamePanel = new MapImpl(c, keyH);
 
-        startMenu.enable();
+        startMenu.enableStartPanel();
         window.add(startMenu);
 
         startMenu.getStartButton().addActionListener(e -> {

@@ -5,20 +5,20 @@ import java.util.List;
 import zombietsunami.api.Controller;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
-import zombietsunami.model.mapModel.api.GameMap;
-import zombietsunami.model.mapModel.api.MapPosList;
-import zombietsunami.model.mapModel.api.TileElement;
-import zombietsunami.model.mapModel.impl.GameMapImpl;
-import zombietsunami.model.mapModel.impl.MapPosListImpl;
-import zombietsunami.model.mapModel.impl.TileElementImpl;
-import zombietsunami.model.obstacleModel.api.Bomb;
-import zombietsunami.model.obstacleModel.api.Breakable;
-import zombietsunami.model.obstacleModel.impl.BombImpl;
-import zombietsunami.model.obstacleModel.impl.BreakableImpl;
-import zombietsunami.model.zombieModel.api.Zombie;
-import zombietsunami.model.zombieModel.impl.ZombieImpl;
-import zombietsunami.model.personModel.api.Person;
-import zombietsunami.model.personModel.impl.PersonImpl;
+import zombietsunami.model.mapmodel.api.GameMap;
+import zombietsunami.model.mapmodel.api.MapPosList;
+import zombietsunami.model.mapmodel.api.TileElement;
+import zombietsunami.model.mapmodel.impl.GameMapImpl;
+import zombietsunami.model.mapmodel.impl.MapPosListImpl;
+import zombietsunami.model.mapmodel.impl.TileElementImpl;
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.obstaclemodel.impl.BombImpl;
+import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
+import zombietsunami.model.zombiemodel.api.Zombie;
+import zombietsunami.model.zombiemodel.impl.ZombieImpl;
+import zombietsunami.model.personmodel.api.Person;
+import zombietsunami.model.personmodel.impl.PersonImpl;
 
 /**
  * This class is the Model of the MVC and implements the Model interface
