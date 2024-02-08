@@ -33,7 +33,7 @@ public final class ModelImpl implements Model {
     private final Bomb bomb;
     final Person person;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
-    Controller control;
+    private Controller control;
 
     /**
      * Allows to set the different elements belonging to the Model.
