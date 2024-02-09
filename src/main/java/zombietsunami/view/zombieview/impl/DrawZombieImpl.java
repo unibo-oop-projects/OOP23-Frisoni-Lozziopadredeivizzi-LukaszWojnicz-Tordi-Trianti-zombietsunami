@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
+
+import zombietsunami.view.VCollision;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.zombieview.api.DrawZombie;
@@ -34,6 +36,9 @@ public class DrawZombieImpl implements DrawZombie {
      */
     @Override
     public void drawZombieV(final Graphics2D g2, final VController controller) {
+        if (VCollision.checkCollision(controller)) {
+            
+        }
         g2.drawImage(getZombie(), controller.getZombieScreenX() / NUM, controller.getZombieScreenY(),
                 controller.titleSizeC(), controller.titleSizeC(), null);
     }
