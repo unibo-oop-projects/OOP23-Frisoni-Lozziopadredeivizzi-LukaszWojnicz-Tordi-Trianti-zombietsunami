@@ -200,7 +200,7 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void setEndPos(int endX) {
+    public void setEndPos(final int endX) {
         this.model.setEndPos(endX);
     }
 

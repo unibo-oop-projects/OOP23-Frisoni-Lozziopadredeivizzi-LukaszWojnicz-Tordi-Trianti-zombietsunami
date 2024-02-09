@@ -7,7 +7,8 @@ package zombietsunami.api;
 public interface MightWin {
 
     /**
-     * This method updates the X coordinate of the Pair of Integers that rapresents the
+     * This method updates the X coordinate of the Pair of Integers that rapresents
+     * the
      * flag's position in the game screen.
      * 
      * @param endX is the flag's X coordinate

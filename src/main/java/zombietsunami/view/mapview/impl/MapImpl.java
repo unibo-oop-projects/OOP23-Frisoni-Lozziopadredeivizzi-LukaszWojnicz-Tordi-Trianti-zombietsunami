@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.logging.Logger;
 
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
@@ -160,11 +161,12 @@ public final class MapImpl extends JPanel implements Map, Runnable {
      * This method end the game after 3 seconds.
      */
     private void isOver() {
+        final Logger logger = Logger.getLogger(MapImpl.class.getName());
         try {
             Thread.sleep(MILLISEC * 3);
             System.exit(0);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.severe("Error: " + e.getMessage());
         }
 
     }

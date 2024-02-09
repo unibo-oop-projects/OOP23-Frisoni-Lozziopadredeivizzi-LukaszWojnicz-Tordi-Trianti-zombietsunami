@@ -81,7 +81,7 @@ public interface Controller {
    * @return the zombie's speed value
    */
   int getSpeed();
-  
+
   /**
    * Calls the update method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.
@@ -193,6 +193,7 @@ public interface Controller {
 
   /**
    * Calls the set end position method in {@link zombietsunami.api.Model}.
+   * 
    * @param endX is the flag's X coordinate
    */
   void setEndPos(int endX);

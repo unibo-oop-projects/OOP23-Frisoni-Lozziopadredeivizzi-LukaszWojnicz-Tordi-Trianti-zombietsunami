@@ -235,7 +235,7 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void setEndPosC(int endX) {
+    public void setEndPosC(final int endX) {
         this.control.setEndPos(endX);
     }
 

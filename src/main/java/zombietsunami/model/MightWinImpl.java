@@ -18,14 +18,14 @@ public final class MightWinImpl implements MightWin {
      * Initializes the class filds.
      */
     public MightWinImpl() {
-        this.endPos = new Pair<Integer, Integer>(0, 0);
+        this.endPos = new Pair<>(0, 0);
         this.mightWin = false;
     }
 
     @Override
     public void setEndPos(final int endX) {
         this.mightWin = true;
-        this.endPos = new Pair<Integer, Integer>(endX, null);
+        this.endPos = new Pair<>(endX, null);
     }
 
     @Override

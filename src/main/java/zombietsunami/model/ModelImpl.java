@@ -177,7 +177,7 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void setEndPos(int endX) {
+    public void setEndPos(final int endX) {
         this.win.setEndPos(endX);
     }
 
