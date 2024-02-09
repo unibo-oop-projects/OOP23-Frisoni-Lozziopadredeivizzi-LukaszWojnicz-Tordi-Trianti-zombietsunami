@@ -1,7 +1,9 @@
 package zombietsunami.model.obstaclemodel.impl;
 
+import zombietsunami.api.Controller;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Obstacle;
+import zombietsunami.model.zombiemodel.api.Zombie;
 
 /**
  * Class implementing the Bomb functionalities.
@@ -16,8 +18,7 @@ public class BombImpl implements Bomb, Obstacle {
     private static int nextId = 0;
 
     private final int id;
-    private final int damage = 1; //for test
-    private final int testcoord = 350; //test
+    private int damage;
 
     /**
      * Constructor that sets the default values for the Bomb.
@@ -25,15 +26,6 @@ public class BombImpl implements Bomb, Obstacle {
     public BombImpl() {
         this.id = nextId;
         nextId++;
-        setDefaultValue();
-    }
-
-    /**
-     * Sets the default values for the Bomb.
-     */
-    private void setDefaultValue() {
-        entity.setX(testcoord); //just for test
-        entity.setY(testcoord);
     }
 
     /**
@@ -57,10 +49,11 @@ public class BombImpl implements Bomb, Obstacle {
     /**
      * Method which sends the game into a state of gameover
      * if the zombie touches the bomb.
+     * @param controller the controller.
      */
     @Override
-    public void hit() {
-        //Gameover
+    public void hit(Controller controller) {
+        controller.setStrenght(controller.getStrenght() - damage);
     }
 
     /**
@@ -77,5 +70,28 @@ public class BombImpl implements Bomb, Obstacle {
     @Override
     public int getY() {
         return this.entity.getY();
+    }
+
+    /**
+     * Sets the X coordinate of the Bomb.
+     */
+    @Override
+    public void setX(int x) {
+        this.entity.setX(x);
+    }
+
+    /**
+     * Sets the Y coordinate of the Bomb.
+     */
+    @Override
+    public void setY(int y) {
+        this.entity.setY(y);
+    }
+
+    @Override
+    public void setDamage(int damage) {
+        if(damage > 0){
+            this.damage = damage;
+        }
     }
 }
