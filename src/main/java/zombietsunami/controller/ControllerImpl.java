@@ -213,8 +213,8 @@ public final class ControllerImpl implements Controller {
    * @param controller the controller.
    */
     @Override
-    public void getBombsFromMap(Controller controller) {
-        this.model.getBombsFromMap(controller);
+    public void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength) {
+        this.model.getBombsFromMap(bomblist, x, y, strength);
     }
 
 }

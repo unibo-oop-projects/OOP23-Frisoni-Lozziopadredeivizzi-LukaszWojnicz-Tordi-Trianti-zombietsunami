@@ -244,4 +244,9 @@ public final class VControllerImpl implements VController {
         return this.control.isWin();
     }
 
+    @Override
+    public void getBombsFromMapC(List<Integer> bomblist, int x, int y, Integer strength) {
+        this.control.getBombsFromMap(bomblist, x, y, strength);
+    }
+
 }

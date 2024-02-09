@@ -19,6 +19,8 @@ public class DrawBombImpl implements DrawBomb {
     private static final String ROOT = SEP + "zombietsunami" + SEP + "obstacles" + SEP + "bomb" + SEP;
     private static final String BOMB_1 = ROOT + "bomb1.png";
 
+    private Boolean initialiazed = false;
+
     /**
      * Draws the bomb on the graphics context based on the provided controller.
      * 
@@ -36,6 +38,9 @@ public class DrawBombImpl implements DrawBomb {
                 controller.titleSizeC(),
                 null);
             }
+        }
+        if(initialiazed == false) {
+           
         }
     }
 

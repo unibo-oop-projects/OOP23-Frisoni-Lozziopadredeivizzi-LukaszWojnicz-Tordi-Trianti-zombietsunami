@@ -106,15 +106,15 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the bombs.
      */
     @Override
-    public void getBombsFromMap(Controller controller) {
-        for(int i = 0; i < controller.obstacleList().size(); i++){
-            if(controller.obstacleList().get(i) == 1){
+    public void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength) {
+        for(int i = 0; i < bomblist.size(); i++){
+            if(bomblist.get(i) == 1){
                 Bomb bomb = new BombImpl();
 
-                bomb.setX(controller.screenTilePos().get(i).getX());
-                bomb.setY(controller.screenTilePos().get(i).getY());
-                bomb.setDamage(Math.round(controller.getStrenght() * 0.5f));
-                
+                bomb.setX(x);
+                bomb.setY(y);
+                bomb.setDamage(Math.round(strength * 0.5f));
+
                 bombList.add(bomb);
             }
         }
@@ -126,9 +126,9 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the breakables.
      */
     @Override
-    public void getBreakablesFromMap(Controller controller) {
-        for(int i = 0; i < controller.obstacleList().size(); i++){
-            if(controller.obstacleList().get(i) == 2){
+    public void getBreakablesFromMap(List<Integer> breakablelist, int x, int y, Integer strength) {
+        for(int i = 0; i < breakablelist.size(); i++){
+            if(breakablelist.get(i) == 2){
                 breakableList.add(new BreakableImpl(0));
             }
         }

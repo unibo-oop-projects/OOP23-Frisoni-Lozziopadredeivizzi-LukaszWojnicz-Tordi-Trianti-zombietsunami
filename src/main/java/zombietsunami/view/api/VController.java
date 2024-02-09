@@ -192,4 +192,8 @@ public interface VController {
    */
   boolean isWinC();
 
+  /**
+   * Returns the list of bombs from the map.
+   */
+  void getBombsFromMapC(List<Integer> bomblist, int x, int y, Integer strength);
 }

@@ -207,5 +207,5 @@ public interface Controller {
    * Returns the list of bombs from the map.
    * @param controller the controller.
    */
-  void getBombsFromMap(Controller controller);
+  void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength);
 }

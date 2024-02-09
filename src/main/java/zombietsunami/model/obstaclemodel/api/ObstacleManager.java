@@ -13,13 +13,13 @@ public interface ObstacleManager {
      * Returns the list of bombs from the map.
      * @param controller the controller.
      */
-    void getBombsFromMap(Controller controller);
+    void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength);
 
     /**
      * Returns the list of breakables from the map.
      * @param controller the controller.
      */
-    void getBreakablesFromMap(Controller controller);
+    void getBreakablesFromMap(List<Integer> breakablelist, int x, int y, Integer strength);
 
     /**
      * Adds a bomb into the bomb list.

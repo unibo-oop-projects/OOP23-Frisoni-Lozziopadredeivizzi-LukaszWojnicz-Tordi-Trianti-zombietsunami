@@ -56,8 +56,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getBombsFromMap(Controller controller) {
-        this.obstacleManager.getBombsFromMap(controller);
+    public void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength) {
+        this.obstacleManager.getBombsFromMap(bomblist, x, y,  strength);
     }
 
     @Override
