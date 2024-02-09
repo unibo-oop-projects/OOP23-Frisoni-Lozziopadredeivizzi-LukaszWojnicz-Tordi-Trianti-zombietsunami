@@ -21,7 +21,7 @@ public final class MapData {
     private static final int FPS = 60;
 
     // WORLD SETTINGS
-    private static final int MAX_WORLD_COL = 50;
+    private static final int MAX_WORLD_COL = 136;
     private static final int MAX_WORLD_ROW = 15;
     private static final int WORLD_WIDTH = TITLE_SIZE * MAX_WORLD_COL;
     private static final int WORLD_HIGHT = TITLE_SIZE * MAX_WORLD_ROW;

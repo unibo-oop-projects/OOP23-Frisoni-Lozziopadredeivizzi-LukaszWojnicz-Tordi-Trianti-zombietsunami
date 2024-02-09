@@ -11,173 +11,185 @@ import zombietsunami.api.Pair;
  */
 public interface VController {
 
-    /**
-     * This method sets a Controller for the View.
-     * 
-     * @param c is the Controller that will be setted as view's controller
-     */
-    void set(Controller c);
+  /**
+   * This method sets a Controller for the View.
+   * 
+   * @param c is the Controller that will be setted as view's controller
+   */
+  void set(Controller c);
 
-    /**
-     * @return the screen width
-     */
-    int getScreenWC();
+  /**
+   * @return the screen width
+   */
+  int getScreenWC();
 
-    /**
-     * @return the screen hight
-     */
-    int getScreenHC();
+  /**
+   * @return the screen hight
+   */
+  int getScreenHC();
 
-    /**
-     * @return the screen's cols
-     */
-    int screenColC();
+  /**
+   * @return the screen's cols
+   */
+  int screenColC();
 
-    /**
-     * @return the screen's row
-     */
-    int screenRowC();
+  /**
+   * @return the screen's row
+   */
+  int screenRowC();
 
-    /**
-     * @return the size of titles
-     */
-    int titleSizeC();
+  /**
+   * @return the size of titles
+   */
+  int titleSizeC();
 
-    /**
-     * @return the FPS for tha game
-     */
-    int getFPSC();
+  /**
+   * @return the FPS for tha game
+   */
+  int getFPSC();
 
-    /**
-     * @return the List of Strings with the file's name of the different tile
-     *         elements
-     */
-    List<String> tileElementsC();
+  /**
+   * @return the List of Strings with the file's name of the different tile
+   *         elements
+   */
+  List<String> tileElementsC();
 
-    /**
-     * @return the List of Pair of Integers with the positions of all the tiles in
-     *         the map
-     */
-    List<Pair<Integer, Integer>> screenTilePosC();
+  /**
+   * @return the List of Pair of Integers with the positions of all the tiles in
+   *         the map
+   */
+  List<Pair<Integer, Integer>> screenTilePosC();
 
-    /**
-     * @return the List of Integers with all the values in the map's txt file
-     */
-    List<Integer> mapIndexListC();
+  /**
+   * @return the List of Integers with all the values in the map's txt file
+   */
+  List<Integer> mapIndexListC();
 
-    /**
-     * Gets the current X-coordinate of the zombie on the map.
-     *
-     * @return The X-coordinate of the zombie on the map.
-     */
-    int getZombieMapX();
+  /**
+   * Gets the current X-coordinate of the zombie on the map.
+   *
+   * @return The X-coordinate of the zombie on the map.
+   */
+  int getZombieMapX();
 
-    /**
-     * Gets the current Y-coordinate of the zombie on the map.
-     *
-     * @return The Y-coordinate of the zombie on the map.
-     */
-    int getZombieMapY();
+  /**
+   * Gets the current Y-coordinate of the zombie on the map.
+   *
+   * @return The Y-coordinate of the zombie on the map.
+   */
+  int getZombieMapY();
 
-    /**
-     * Gets the speed of the zombie in the game.
-     *
-     * @return The speed of the zombie.
-     */
-    int getSpeed();
+  /**
+   * Gets the speed of the zombie in the game.
+   *
+   * @return The speed of the zombie.
+   */
+  int getSpeed();
 
-    /**
-     * Updates the position and state of the zombie in the game.
-     */
-    void updateZombie();
+  /**
+   * Updates the position and state of the zombie in the game.
+   */
+  void updateZombie();
 
-    /**
-     * @return the map's (world) cols
-     */
-    int getWorldColC();
+  /**
+   * @return the map's (world) cols
+   */
+  int getWorldColC();
 
-    /**
-     * @return the map's (world) rows
-     */
-    int getWorldRowC();
+  /**
+   * @return the map's (world) rows
+   */
+  int getWorldRowC();
 
-    /**
-     * @return the map (world) width
-     */
-    int getWorldWidthC();
+  /**
+   * @return the map (world) width
+   */
+  int getWorldWidthC();
 
-   /**
-     * @return the map (world) hight
-     */
-     int getWorldHightC();
+  /**
+   * @return the map (world) hight
+   */
+  int getWorldHightC();
 
-    int getPersonMapX();
+  int getPersonMapX();
 
-    int getPersonMapY();
+  int getPersonMapY();
 
-    void updatePerson();
+  void updatePerson();
 
-    /**
-     * Gets the current strength of the zombie character in the game.
-     *
-     * @return The strength of the zombie character.
-     */
-    int getStrenght();
+  /**
+   * Gets the current strength of the zombie character in the game.
+   *
+   * @return The strength of the zombie character.
+   */
+  int getStrenght();
 
-    /**
-     * Increases the strength of the player character by one.
-     */
-    void increaseStrenght();
+  /**
+   * Increases the strength of the player character by one.
+   */
+  void increaseStrenght();
 
-    /**
-     * Sets the strength of the player character to the specified value.
-     *
-     * @param strenght The new strength value.
-     */
-    void setStrenght(int strenght);
+  /**
+   * Sets the strength of the player character to the specified value.
+   *
+   * @param strenght The new strength value.
+   */
+  void setStrenght(int strenght);
 
-    /**
-     * Gets the current X-coordinate of the zombie on the screen.
-     *
-     * @return The X-coordinate of the zombie on the screen.
-     */
-    int getZombieScreenX();
+  /**
+   * Gets the current X-coordinate of the zombie on the screen.
+   *
+   * @return The X-coordinate of the zombie on the screen.
+   */
+  int getZombieScreenX();
 
-    /**
-     * Gets the current Y-coordinate of the zombie on the screen.
-     *
-     * @return The Y-coordinate of the zombie on the screen.
-     */
-    int getZombieScreenY();
+  /**
+   * Gets the current Y-coordinate of the zombie on the screen.
+   *
+   * @return The Y-coordinate of the zombie on the screen.
+   */
+  int getZombieScreenY();
 
-    /**
-     * Initiates a jump action for the zombie in the game.
-     */
-    void jumpPress();
+  /**
+   * Initiates a jump action for the zombie in the game.
+   */
+  void jumpPress();
 
-    /**
-     * Updates the jump action for the zombie in the game.
-     * This method is called to handle the animation and position update during a
-     * zombie jump.
-     */
-    void updateJumpZombie();
+  /**
+   * Updates the jump action for the zombie in the game.
+   * This method is called to handle the animation and position update during a
+   * zombie jump.
+   */
+  void updateJumpZombie();
 
-    /**
-     * Checks if the zombie in the game is currently jumping.
-     *
-     * @return True if the zombie is jumping, otherwise false.
-     */
-    boolean isJumping();
+  /**
+   * Checks if the zombie in the game is currently jumping.
+   *
+   * @return True if the zombie is jumping, otherwise false.
+   */
+  boolean isJumping();
 
-    int getObstacleMapX();
+  int getObstacleMapX();
 
-    int getObstacleMapY();
+  int getObstacleMapY();
 
-    void updateObstacle();
+  void updateObstacle();
 
-    /**
-     * @return the List of Integers with all the values in the obstacle map's txt file
-     */
-    List<Integer> obstacleIndexListC();
+  /**
+   * @return the List of Integers with all the values in the obstacle map's txt
+   *         file
+   */
+  List<Integer> obstacleIndexListC();
+
+  /**
+   * Calls the set end position method in {@link zombietsunami.api.Controller}.
+   * @param endX is the flag's X coordinate
+   */
+  void setEndPosC(int endX);
+
+  /**
+   * @return true if the flag's X position arrives in a certain axis
+   */
+  boolean isWinC();
 
 }

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zombietsunami.model.mapmodel.api.TileElement;
+
 /**
- * This class implements the TileElement interface {@link zombietsunami.model.mapmodel.api.TileElement}.
+ * This class implements the TileElement interface
+ * {@link zombietsunami.model.mapmodel.api.TileElement}.
  */
 public final class TileElementImpl implements TileElement {
 
@@ -21,6 +23,7 @@ public final class TileElementImpl implements TileElement {
     private static final String BULDING_RIGHT = "buldingRight.png";
     private static final String BULDING_DOOR = "buldingDoor.png";
     private static final String BULDING_WINDOW = "buldingWindow.png";
+    private static final String FLAG = "flag.png";
 
     /**
      * Allows to create a new Array list and sets the List's elements.
@@ -47,6 +50,7 @@ public final class TileElementImpl implements TileElement {
         this.element.add(pos++, BULDING_RIGHT);
         this.element.add(pos++, BULDING_DOOR);
         this.element.add(pos++, BULDING_WINDOW);
+        this.element.add(pos, FLAG);
     }
 
     @Override

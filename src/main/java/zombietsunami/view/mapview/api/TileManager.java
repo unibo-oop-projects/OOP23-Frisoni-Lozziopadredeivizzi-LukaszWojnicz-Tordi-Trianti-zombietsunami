@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.util.List;
 
 import zombietsunami.api.Pair;
+import zombietsunami.view.api.VController;
 /**
  * Allows you to manage the game map's tile and to draw them.
  */
@@ -18,6 +19,6 @@ public interface TileManager {
      * @param tilePos list of the tile's positions 
      */
     void drawMap(Graphics2D g2, int titleSize, List<String> element, List<Integer> mapIndex,
-            List<Pair<Integer, Integer>> tilePos);
+            List<Pair<Integer, Integer>> tilePos, VController controller);
 
 }

@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
 import zombietsunami.view.Pause;
+import zombietsunami.view.Win;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.mapview.api.Map;
@@ -30,6 +31,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final long serialVersionUID = 123456788L;
 
     private static final long NANOSEC = 1_000_000_000;
+    private static final long MILLISEC = 1_000;
     private static final int FONT_SIZE = 20;
     private static final int RECT_WIDTH = 130;
     private static final int RECT_HEIGHT = 40;
@@ -72,7 +74,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         long currentTime;
         long timer = 0;
 
-        while (!isPause()) {
+        while (!isPause() && !isWin()) {
             currentTime = System.nanoTime();
             delta += (currentTime - lastTime) / drowIntervall;
             timer += currentTime - lastTime;
@@ -99,13 +101,16 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g;
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
-                controller.screenTilePosC());
+                controller.screenTilePosC(), this.controller);
         this.drawZombie.drawZombieV(g2, controller);
         this.drawBomb.drawBombV(g2, controller);
         this.drawBreakable.drawBreakableV(g2, controller);
         drawInfo(g2);
         if (isPause()) {
             Pause.pause(g2);
+        }
+        if (isWin()) {
+            Win.win(g2);
         }
         g2.dispose();
     }
@@ -115,6 +120,8 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         while (gameThread != null) {
             if (isPause()) {
                 repaint();
+            } else if (isWin()) {
+                isOver();
             } else {
                 gameLoop();
             }
@@ -140,5 +147,25 @@ public final class MapImpl extends JPanel implements Map, Runnable {
      */
     private boolean isPause() {
         return this.keyH.isOnPause();
+    }
+
+    /**
+     * @return if you win or not
+     */
+    private boolean isWin() {
+        return this.controller.isWinC();
+    }
+
+    /**
+     * This method end the game after 3 seconds.
+     */
+    private void isOver() {
+        try {
+            Thread.sleep(MILLISEC * 3);
+            System.exit(0);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

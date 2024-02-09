@@ -190,4 +190,15 @@ public interface Controller {
   void updateObstacle();
 
   List<Integer> obstacleList();
+
+  /**
+   * Calls the set end position method in {@link zombietsunami.api.Model}.
+   * @param endX is the flag's X coordinate
+   */
+  void setEndPos(int endX);
+
+  /**
+   * @return true if the flag's X position arrives in a certain axis
+   */
+  boolean isWin();
 }

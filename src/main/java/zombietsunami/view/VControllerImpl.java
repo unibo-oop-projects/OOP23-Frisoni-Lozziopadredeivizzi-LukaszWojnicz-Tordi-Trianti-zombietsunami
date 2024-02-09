@@ -234,4 +234,14 @@ public final class VControllerImpl implements VController {
         return this.control.obstacleList();
     }
 
+    @Override
+    public void setEndPosC(int endX) {
+        this.control.setEndPos(endX);
+    }
+
+    @Override
+    public boolean isWinC() {
+        return this.control.isWin();
+    }
+
 }

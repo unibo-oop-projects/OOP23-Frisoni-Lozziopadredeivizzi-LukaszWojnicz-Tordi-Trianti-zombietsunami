@@ -199,4 +199,14 @@ public final class ControllerImpl implements Controller {
         return this.model.getObstacleList();
     }
 
+    @Override
+    public void setEndPos(int endX) {
+        this.model.setEndPos(endX);
+    }
+
+    @Override
+    public boolean isWin() {
+        return this.model.isWin();
+    }
+
 }

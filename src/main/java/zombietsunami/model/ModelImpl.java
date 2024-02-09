@@ -3,6 +3,7 @@ package zombietsunami.model;
 import java.util.List;
 
 import zombietsunami.api.Controller;
+import zombietsunami.api.MightWin;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
 import zombietsunami.model.mapmodel.api.GameMap;
@@ -33,6 +34,7 @@ public final class ModelImpl implements Model {
     private final Bomb bomb;
     private final Person person;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
+    private final MightWin win;
     private Controller control;
 
     /**
@@ -46,6 +48,7 @@ public final class ModelImpl implements Model {
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
         this.breakable = new BreakableImpl(1); // 1 per test
+        this.win = new MightWinImpl();
     }
 
     @Override
@@ -171,5 +174,15 @@ public final class ModelImpl implements Model {
     @Override
     public List<Integer> getObstacleList() {
         return this.gameMap.getLoadedObstacleList();
+    }
+
+    @Override
+    public void setEndPos(int endX) {
+        this.win.setEndPos(endX);
+    }
+
+    @Override
+    public boolean isWin() {
+        return this.win.isWin();
     }
 }
