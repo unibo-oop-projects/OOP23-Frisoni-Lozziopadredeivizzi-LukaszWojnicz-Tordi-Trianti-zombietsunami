@@ -2,6 +2,9 @@ package zombietsunami.api;
 
 import java.util.List;
 
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
+
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
  * all their useful methods that has to comunicate with the controller
@@ -12,7 +15,7 @@ public interface Model {
   /**
    * Returns the list of bombs from the map.
    */
-  void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength);
+  void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
   /**
    * Calls the zombie's update method
@@ -138,4 +141,10 @@ public interface Model {
    * @return true if the flag's X position arrives in a certain axis
    */
   boolean isWin();
+
+  List<Bomb> getBombList();
+
+  List<Breakable> getBreakableList();
+
+  void setCoordinatesOfBombInList(int index, int x, int y);
 }

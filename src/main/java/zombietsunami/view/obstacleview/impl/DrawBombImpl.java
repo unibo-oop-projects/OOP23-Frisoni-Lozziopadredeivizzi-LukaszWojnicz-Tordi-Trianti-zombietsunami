@@ -5,8 +5,10 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
-import zombietsunami.model.obstaclemodel.api.ObstacleManager;
-import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
+import java.util.List;
+import java.util.ArrayList;
+
+import zombietsunami.api.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawBomb;
 
@@ -20,6 +22,7 @@ public class DrawBombImpl implements DrawBomb {
     private static final String BOMB_1 = ROOT + "bomb1.png";
 
     private Boolean initialiazed = false;
+    private Integer nBomb = 0;
 
     /**
      * Draws the bomb on the graphics context based on the provided controller.
@@ -31,16 +34,22 @@ public class DrawBombImpl implements DrawBomb {
     public void drawBombV(final Graphics2D g2, final VController controller) {
         for (int i = 0; i < controller.obstacleIndexListC().size(); i++) {
             if (controller.obstacleIndexListC().get(i) == 1 && controller.screenTilePosC().get(i) != null) {
+                if(initialiazed){
+                    controller.setCoordinatesOfBombInListC(nBomb, controller.screenTilePosC().get(i).getX(), controller.screenTilePosC().get(i).getY());
+                }
                 g2.drawImage(getBomb(), 
                 controller.screenTilePosC().get(i).getX(), 
                 controller.screenTilePosC().get(i).getY(),
                 controller.titleSizeC(),
                 controller.titleSizeC(),
                 null);
+                nBomb++;
             }
         }
+        nBomb = 0;
         if(initialiazed == false) {
-           
+           controller.getBombsFromMapC(controller.obstacleIndexListC(), controller.screenTilePosC(), controller.getStrenght());
+           initialiazed = true;
         }
     }
 

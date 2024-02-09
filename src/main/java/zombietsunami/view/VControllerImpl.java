@@ -4,6 +4,8 @@ import java.util.List;
 
 import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.view.api.VController;
 
 /**
@@ -245,8 +247,23 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void getBombsFromMapC(List<Integer> bomblist, int x, int y, Integer strength) {
-        this.control.getBombsFromMap(bomblist, x, y, strength);
+    public void getBombsFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        this.control.getBombsFromMap(bomblist, coords, strength);
+    }
+
+    @Override
+    public List<Bomb> getBombListC() {
+        return this.control.getBombList();
+    }
+
+    @Override
+    public List<Breakable> getBreakableListC() {
+        return this.control.getBreakableList();
+    }
+
+    @Override
+    public void setCoordinatesOfBombInListC(int index, int x, int y) {
+        this.control.setCoordinatesOfBombInList(index, x, y);
     }
 
 }

@@ -2,6 +2,9 @@ package zombietsunami.api;
 
 import java.util.List;
 
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
+
 /**
  * This interface is the controller of the MVC pattern, and it allows to
  * comunicate with the model classes and with the view classes.
@@ -203,9 +206,11 @@ public interface Controller {
    */
   boolean isWin();
 
-  /**
-   * Returns the list of bombs from the map.
-   * @param controller the controller.
-   */
-  void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength);
+  void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+  List<Bomb> getBombList();
+
+  List<Breakable> getBreakableList();
+
+  void setCoordinatesOfBombInList(int index, int x, int y);
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zombietsunami.api.Controller;
+import zombietsunami.api.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
@@ -13,8 +14,8 @@ import zombietsunami.model.obstaclemodel.api.ObstacleManager;
  */
 public class ObstacleManagerImpl implements ObstacleManager {
 
-    private List<Bomb> bombList;
-    private List<Breakable> breakableList;
+    private List<Bomb> bombList = new ArrayList<Bomb>();
+    private List<Breakable> breakableList = new ArrayList<Breakable>();
 
     /**
      * Method that allows to retrieve a bomb by its id.
@@ -106,14 +107,16 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the bombs.
      */
     @Override
-    public void getBombsFromMap(List<Integer> bomblist, int x, int y, Integer strength) {
+    public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
         for(int i = 0; i < bomblist.size(); i++){
-            if(bomblist.get(i) == 1){
+            if(bomblist.get(i) == 1 && coords.get(i) != null){
                 Bomb bomb = new BombImpl();
 
-                bomb.setX(x);
-                bomb.setY(y);
+                bomb.setX(coords.get(i).getX());
+                bomb.setY(coords.get(i).getY());
                 bomb.setDamage(Math.round(strength * 0.5f));
+
+                //System.out.println(coords.get(i).getX() + " " + coords.get(i).getY());
 
                 bombList.add(bomb);
             }
@@ -126,11 +129,27 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the breakables.
      */
     @Override
-    public void getBreakablesFromMap(List<Integer> breakablelist, int x, int y, Integer strength) {
+    public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength) {
         for(int i = 0; i < breakablelist.size(); i++){
             if(breakablelist.get(i) == 2){
                 breakableList.add(new BreakableImpl(0));
             }
         }
+    }
+
+    @Override
+    public List<Bomb> getBombList() {
+        return bombList;
+    }
+
+    @Override
+    public List<Breakable> getBreakableList() {
+        return breakableList;
+    }
+
+    @Override
+    public void setCoordinatesOfBombInList(int index, int x, int y) {
+        bombList.get(index).setX(x);
+        bombList.get(index).setY(y);
     }
 }
