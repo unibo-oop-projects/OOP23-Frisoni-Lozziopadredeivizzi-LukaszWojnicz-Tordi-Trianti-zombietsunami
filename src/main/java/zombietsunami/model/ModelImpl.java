@@ -35,7 +35,6 @@ public final class ModelImpl implements Model {
     private final Person person;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private final MightWin win;
-    private Controller control;
 
     /**
      * Allows to set the different elements belonging to the Model.
@@ -49,11 +48,6 @@ public final class ModelImpl implements Model {
         this.person = new PersonImpl();
         this.breakable = new BreakableImpl(1); // 1 per test
         this.win = new MightWinImpl();
-    }
-
-    @Override
-    public void setController(final Controller c) {
-        this.control = c;
     }
 
     @Override

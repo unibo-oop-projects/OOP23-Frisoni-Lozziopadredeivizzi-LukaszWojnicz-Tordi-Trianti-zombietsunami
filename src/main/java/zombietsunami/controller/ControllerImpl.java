@@ -22,7 +22,6 @@ public final class ControllerImpl implements Controller {
     @Override
     public void setModel() {
         this.model = new ModelImpl();
-        this.model.setController(this);
     }
 
     @Override

@@ -16,13 +16,6 @@ public interface Model {
   void updateZombie();
 
   /**
-   * This method sets a Controller for the Model.
-   * 
-   * @param c is the Controller that will be setted as model's controller
-   */
-  void setController(Controller c);
-
-  /**
    * @return the List of Integers that contains all the values of the map's txt
    *         file
    */
