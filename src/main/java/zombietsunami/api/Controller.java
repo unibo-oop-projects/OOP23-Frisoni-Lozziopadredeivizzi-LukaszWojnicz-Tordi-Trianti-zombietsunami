@@ -202,4 +202,10 @@ public interface Controller {
    * @return true if the flag's X position arrives in a certain axis
    */
   boolean isWin();
+
+  /**
+   * Returns the list of bombs from the map.
+   * @param controller the controller.
+   */
+  void getBombsFromMap(Controller controller);
 }

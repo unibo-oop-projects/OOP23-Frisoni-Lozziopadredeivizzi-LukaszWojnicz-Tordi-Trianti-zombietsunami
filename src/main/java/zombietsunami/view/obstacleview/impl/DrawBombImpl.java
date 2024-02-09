@@ -5,6 +5,8 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+import zombietsunami.model.obstaclemodel.api.ObstacleManager;
+import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawBomb;
 

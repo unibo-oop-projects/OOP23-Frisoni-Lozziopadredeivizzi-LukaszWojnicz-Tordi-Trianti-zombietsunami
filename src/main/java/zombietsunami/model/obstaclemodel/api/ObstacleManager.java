@@ -1,9 +1,37 @@
 package zombietsunami.model.obstaclemodel.api;
 
+import java.util.List;
+
+import zombietsunami.api.Controller;
+
 /**
  * Interface whose purpose is to manage all obstacles.
  */
 public interface ObstacleManager {
+
+    /**
+     * Returns the list of bombs from the map.
+     * @param controller the controller.
+     */
+    void getBombsFromMap(Controller controller);
+
+    /**
+     * Returns the list of breakables from the map.
+     * @param controller the controller.
+     */
+    void getBreakablesFromMap(Controller controller);
+
+    /**
+     * Adds a bomb into the bomb list.
+     * @param bomb the bomb that needs to be added.
+     */
+    void addBomb(Bomb bomb);
+
+    /**
+     * Adds a breakable into the breakable list.
+     * @param breakable the breakable that needs to be added.
+     */
+    void addBreakable(Breakable breakable);
     
     /**
      * Method that allows to retrieve a bomb by its id.

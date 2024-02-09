@@ -3,6 +3,7 @@ package zombietsunami.model.obstaclemodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import zombietsunami.api.Controller;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
@@ -76,5 +77,60 @@ public class ObstacleManagerImpl implements ObstacleManager {
         }
         return null;
     }
-    
+
+    /**
+     * Adds a bomb into the bomb list.
+     * @param bomb the bomb that needs to be added.
+     */
+    @Override
+    public void addBomb(Bomb bomb) {
+        if(bomb != null) {
+            bombList.add(bomb);
+        }
+    }
+
+    /**
+     * Adds a breakable into the breakable list.
+     * @param breakable the breakable that needs to be added.
+     */
+    @Override
+    public void addBreakable(Breakable breakable) {
+        if(breakable != null) {
+            breakableList.add(breakable);
+        }
+    }
+
+    /**
+     * Returns the list of bombs from the map.
+     * @param controller the controller.
+     * @return the complete list of the bombs.
+     */
+    @Override
+    public void getBombsFromMap(Controller controller) {
+        for(int i = 0; i < controller.obstacleList().size(); i++){
+            if(controller.obstacleList().get(i) == 1){
+                Bomb bomb = new BombImpl();
+
+                bomb.setX(controller.screenTilePos().get(i).getX());
+                bomb.setY(controller.screenTilePos().get(i).getY());
+                bomb.setDamage(Math.round(controller.getStrenght() * 0.5f));
+                
+                bombList.add(bomb);
+            }
+        }
+    }
+
+    /**
+     * Returns the list of breakables from the map.
+     * @param controller the controller.
+     * @return the complete list of the breakables.
+     */
+    @Override
+    public void getBreakablesFromMap(Controller controller) {
+        for(int i = 0; i < controller.obstacleList().size(); i++){
+            if(controller.obstacleList().get(i) == 2){
+                breakableList.add(new BreakableImpl(0));
+            }
+        }
+    }
 }

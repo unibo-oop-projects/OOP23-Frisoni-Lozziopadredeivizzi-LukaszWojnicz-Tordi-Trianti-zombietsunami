@@ -208,4 +208,13 @@ public final class ControllerImpl implements Controller {
         return this.model.isWin();
     }
 
+    /**
+   * Returns the list of bombs from the map.
+   * @param controller the controller.
+   */
+    @Override
+    public void getBombsFromMap(Controller controller) {
+        this.model.getBombsFromMap(controller);
+    }
+
 }
