@@ -10,6 +10,12 @@ import java.util.List;
 public interface Model {
 
   /**
+   * Returns the list of bombs from the map.
+   * @param controller the controller.
+   */
+  void getBombsFromMap(Controller controller);
+
+  /**
    * Calls the zombie's update method
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.
    */
@@ -47,11 +53,15 @@ public interface Model {
    */
   int getSpeed();
 
+  /**
+   * @return the person's map X coordinate
+   */
   int getPersonMapX();
 
+  /**
+   * @return the person's map Y coordinate
+   */
   int getPersonMapY();
-
-  int getNumXp();
 
   /**
    * @return the strenght of the zombie

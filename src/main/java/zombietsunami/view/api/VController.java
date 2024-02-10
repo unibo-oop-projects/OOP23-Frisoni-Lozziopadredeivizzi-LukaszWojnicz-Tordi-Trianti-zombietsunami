@@ -191,5 +191,4 @@ public interface VController {
    * @return true if the flag's X position arrives in a certain axis
    */
   boolean isWinC();
-
 }

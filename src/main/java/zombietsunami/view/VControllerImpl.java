@@ -243,5 +243,4 @@ public final class VControllerImpl implements VController {
     public boolean isWinC() {
         return this.control.isWin();
     }
-
 }

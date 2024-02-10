@@ -127,20 +127,12 @@ public final class ControllerImpl implements Controller {
 
     @Override
     public int getPersonMapX() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+        return this.model.getPersonMapX();
     }
 
     @Override
     public int getPersonMapY() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
-    }
-
-    @Override
-    public int getNumXp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
+        return this.model.getPersonMapY();
     }
 
     @Override
@@ -206,6 +198,15 @@ public final class ControllerImpl implements Controller {
     @Override
     public boolean isWin() {
         return this.model.isWin();
+    }
+
+    /**
+   * Returns the list of bombs from the map.
+   * @param controller the controller.
+   */
+    @Override
+    public void getBombsFromMap(Controller controller) {
+        this.model.getBombsFromMap(controller);
     }
 
 }

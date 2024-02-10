@@ -1,46 +1,90 @@
 package zombietsunami.model.personmodel.impl;
 
-import zombietsunami.model.MapData;
+import zombietsunami.api.Controller;
+import zombietsunami.model.EntityImpl;
 import zombietsunami.model.personmodel.api.Person;
 
+/** 
+ * Class implementing the Person functionalities.
+ * 
+ * @see zombietsunami.model.personmodel.api.Person
+ * @see zombietsunami.model.EntityImpl
+*/
 public class PersonImpl implements Person {
-    private PositionImpl pos = new PositionImpl();
-    private final int NUM=4;
+    private final EntityImpl entity = new EntityImpl();
 
-    private final int screenXp;
-    private final int screenYp;
+    private static int nextId = 0;
 
-    public PersonImpl(){
-        this.screenXp = MapData.getScreenW() / 2 - (MapData.getTitSize() / 2);
-        this.screenYp = MapData.getScreenH() / 2 - (MapData.getTitSize() / 2);
-        setDefaultValue();
+    private final int id;
+    private int increase;
+    
+    /** 
+     * Constructor that sets default values of the Person.
+    */
+    public PersonImpl() {
+        this.id = nextId;
+        nextId++;
     }
-    private void setDefaultValue(){
-        pos.setXp(100);
-        pos.setYp(250); 
-    }
+
+    /**
+     * Gets the Person Id.
+     * @return the Person's Id.
+     */
     @Override
-    public int getXp(){
-        return pos.getXp();
+    public int getId() {
+        return this.id;
     }
+
+    /**
+     * Sets the Increase of the Person
+     */
     @Override
-    public int getYp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getYp'");
+    public void setIncrease(int increase) {
+       if(increase > 0){
+            this.increase = increase ;
+       }
     }
+
+    /**
+     * Method that allowsto continue the game if the Zombie
+     * touches the Person
+     * @param controller the controller
+     */
     @Override
-    public int getNumXp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
+    public void hit(Controller controller) {
+        controller.setStrenght(controller.getStrenght() + increase);
     }
+
+    /**
+     * Gets the X coordinate of the Person
+     */
     @Override
-    public int getScreenXp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getScreenXp'");
+    public int getX() {
+        return this.entity.getX();
     }
+
+    /**
+     * Gets the Y coordinate of the Person
+     */
     @Override
-    public int getScreenYp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getScreenYp'");
+    public int getY() {
+       return this.entity.getY();
     }
+
+    /**
+     * Sets the X coordinate of the Person
+     */
+    @Override
+    public void setX(int x) {
+        this.entity.setX(x);
+    }
+
+    /**
+     * Sets the Y coordinate of the Person
+     */
+    @Override
+    public void setY(int y) {
+        this.entity.setY(y);
+    }
+
 }

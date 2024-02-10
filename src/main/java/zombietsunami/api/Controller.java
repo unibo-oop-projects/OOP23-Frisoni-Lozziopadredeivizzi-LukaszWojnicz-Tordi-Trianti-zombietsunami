@@ -130,8 +130,6 @@ public interface Controller {
    */
   int getPersonMapY();
 
-  int getNumXp();
-
   /**
    * Calls the set strenght method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.
@@ -202,4 +200,10 @@ public interface Controller {
    * @return true if the flag's X position arrives in a certain axis
    */
   boolean isWin();
+
+  /**
+   * Returns the list of bombs from the map.
+   * @param controller the controller.
+   */
+  void getBombsFromMap(Controller controller);
 }

@@ -15,6 +15,9 @@ import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
+import zombietsunami.model.obstaclemodel.impl.ObstacleEntity;
+import zombietsunami.model.obstaclemodel.api.ObstacleManager;
+import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 import zombietsunami.model.personmodel.api.Person;
@@ -34,6 +37,7 @@ public final class ModelImpl implements Model {
     private final Person person;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private final MightWin win;
+    private final ObstacleManager obstacleManager;
 
     /**
      * Allows to set the different elements belonging to the Model.
@@ -47,6 +51,12 @@ public final class ModelImpl implements Model {
         this.person = new PersonImpl();
         this.breakable = new BreakableImpl(1); // 1 per test
         this.win = new MightWinImpl();
+        this.obstacleManager = new ObstacleManagerImpl();
+    }
+
+    @Override
+    public void getBombsFromMap(Controller controller) {
+        this.obstacleManager.getBombsFromMap(controller);
     }
 
     @Override
@@ -88,20 +98,12 @@ public final class ModelImpl implements Model {
 
     @Override
     public int getPersonMapX() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+       return this.person.getX();
     }
 
     @Override
     public int getPersonMapY() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
-    }
-
-    @Override
-    public int getNumXp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
+        return this.person.getY();
     }
 
     @Override
