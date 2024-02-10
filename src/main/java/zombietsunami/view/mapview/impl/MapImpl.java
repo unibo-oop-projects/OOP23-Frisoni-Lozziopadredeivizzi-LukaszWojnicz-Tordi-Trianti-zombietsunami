@@ -21,6 +21,8 @@ import zombietsunami.view.obstacleview.impl.DrawBombImpl;
 import zombietsunami.view.obstacleview.impl.DrawBreakableImpl;
 import zombietsunami.view.zombieview.api.DrawZombie;
 import zombietsunami.view.zombieview.impl.DrawZombieImpl;
+import zombietsunami.view.personview.api.DrawPerson;
+import zombietsunami.view.personview.impl.DrawPersonImpl;;
 
 /**
  * This class implements the Map interface
@@ -44,6 +46,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
+    private final DrawPerson drawPerson;
     private final DrawBomb drawBomb;
     private final DrawBreakable drawBreakable;
     private final KeyHandler keyH;
@@ -59,6 +62,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.keyH = keyH;
         this.drowMap = new TileManagerImpl();
         this.drawZombie = new DrawZombieImpl();
+        this.drawPerson = new DrawPersonImpl();
         this.drawBomb = new DrawBombImpl();
         this.drawBreakable = new DrawBreakableImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
@@ -104,6 +108,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC(), this.controller);
         this.drawZombie.drawZombieV(g2, controller);
+        this.drawPerson.drawPersonV(g2, controller);
         this.drawBomb.drawBombV(g2, controller);
         this.drawBreakable.drawBreakableV(g2, controller);
         drawInfo(g2);
