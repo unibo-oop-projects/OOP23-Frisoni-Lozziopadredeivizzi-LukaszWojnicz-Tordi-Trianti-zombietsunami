@@ -133,8 +133,6 @@ public interface Controller {
    */
   int getPersonMapY();
 
-  int getNumXp();
-
   /**
    * Calls the set strenght method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.

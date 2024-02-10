@@ -99,20 +99,12 @@ public final class ModelImpl implements Model {
 
     @Override
     public int getPersonMapX() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+       return this.person.getX();
     }
 
     @Override
     public int getPersonMapY() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
-    }
-
-    @Override
-    public int getNumXp() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumXp'");
+        return this.person.getY();
     }
 
     @Override
