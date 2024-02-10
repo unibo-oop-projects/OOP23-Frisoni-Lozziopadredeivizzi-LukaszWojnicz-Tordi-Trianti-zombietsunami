@@ -3,6 +3,7 @@ package zombietsunami.model;
 import java.util.List;
 
 import zombietsunami.api.Collision;
+import zombietsunami.api.Controller;
 import zombietsunami.api.MightWin;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
