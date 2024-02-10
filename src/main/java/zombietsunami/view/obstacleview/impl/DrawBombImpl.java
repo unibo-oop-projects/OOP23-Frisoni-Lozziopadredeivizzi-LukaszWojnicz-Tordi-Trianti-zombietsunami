@@ -22,7 +22,6 @@ public class DrawBombImpl implements DrawBomb {
     private static final String BOMB_1 = ROOT + "bomb1.png";
 
     private Boolean initialiazed = false;
-    private Integer nBomb = 0;
 
     /**
      * Draws the bomb on the graphics context based on the provided controller.
@@ -35,7 +34,7 @@ public class DrawBombImpl implements DrawBomb {
         for (int i = 0; i < controller.obstacleIndexListC().size(); i++) {
             if (controller.obstacleIndexListC().get(i) == 1 && controller.screenTilePosC().get(i) != null) {
                 if(initialiazed){
-                    controller.setCoordinatesOfBombInListC(nBomb, controller.screenTilePosC().get(i).getX(), controller.screenTilePosC().get(i).getY());
+                    controller.setCoordinatesOfBombInListC(i, controller.screenTilePosC().get(i).getX(), controller.screenTilePosC().get(i).getY());
                 }
                 g2.drawImage(getBomb(), 
                 controller.screenTilePosC().get(i).getX(), 
@@ -43,10 +42,8 @@ public class DrawBombImpl implements DrawBomb {
                 controller.titleSizeC(),
                 controller.titleSizeC(),
                 null);
-                nBomb++;
             }
         }
-        nBomb = 0;
         if(initialiazed == false) {
            controller.getBombsFromMapC(controller.obstacleIndexListC(), controller.screenTilePosC(), controller.getStrenght());
            initialiazed = true;

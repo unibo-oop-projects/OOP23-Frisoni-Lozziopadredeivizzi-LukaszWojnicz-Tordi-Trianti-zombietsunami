@@ -118,7 +118,9 @@ public class ObstacleManagerImpl implements ObstacleManager {
 
                 //System.out.println(coords.get(i).getX() + " " + coords.get(i).getY());
 
-                bombList.add(bomb);
+                bombList.add(i, bomb);
+            }else {
+                bombList.add(i, null);
             }
         }
     }
