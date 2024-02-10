@@ -6,6 +6,22 @@ package zombietsunami.model.obstaclemodel.api;
 public interface Breakable {
 
     /**
+     * Sets the X coordinate of the breakable.
+     */
+    void setX(int x);
+
+    /**
+     * Sets the Y coordinate of the breakable.
+     */
+    void setY(int y);
+
+    /**
+     * Sets the id of the breakable.
+     * @param id the id of the breakable.
+     */
+    void setId(int id);
+
+    /**
      * Gets the X coordinate of the Breakable.
      * @return the X coordinate of the Breakable.
      */
@@ -35,4 +51,9 @@ public interface Breakable {
      * @return the breakable id.
      */
     int getId();
+
+    /**
+     * Updates the state of the Breakable.
+     */
+    void update();
 }

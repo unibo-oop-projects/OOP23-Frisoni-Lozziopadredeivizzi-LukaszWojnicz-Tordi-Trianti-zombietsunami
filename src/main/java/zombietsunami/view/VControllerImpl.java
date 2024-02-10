@@ -217,21 +217,6 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public int getObstacleMapX() {
-        return this.control.getObstacleMapX();
-    }
-
-    @Override
-    public int getObstacleMapY() {
-        return this.control.getObstacleMapY();
-    }
-
-    @Override
-    public void updateObstacle() {
-        this.control.updateObstacle();
-    }
-
-    @Override
     public List<Integer> obstacleIndexListC() {
         return this.control.obstacleList();
     }
@@ -267,8 +252,29 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void removeBombFromList(int index) {
+    public void removeBombFromListC(int index) {
         this.control.removeBombFromList(index);
+    }
+
+    @Override
+    public void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
+            Integer strength) {
+        this.control.getBreakablesFromMap(breakablelist, coords, strength);
+    }
+
+    @Override
+    public void updateBreakable() {
+        this.control.updateBreakable();
+    }
+
+    @Override
+    public void updateBomb() {
+        this.control.updateBomb();
+    }
+
+    @Override
+    public void collisionZombieOstacleC() {
+        this.control.collisionZombieObstacle();
     }
 
 }

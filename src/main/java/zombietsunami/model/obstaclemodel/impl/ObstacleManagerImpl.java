@@ -132,9 +132,18 @@ public class ObstacleManagerImpl implements ObstacleManager {
      */
     @Override
     public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        breakableList.clear();
         for(int i = 0; i < breakablelist.size(); i++){
-            if(breakablelist.get(i) == 2){
-                breakableList.add(new BreakableImpl(0));
+            if(breakablelist.get(i) == 2 && coords.get(i) != null){
+                Breakable breakable = new BreakableImpl(Math.round(strength * 0.8f));
+
+                breakable.setX(coords.get(i).getX());
+                breakable.setY(coords.get(i).getY());
+                breakable.setId(i);
+
+                breakableList.add(i, breakable);
+            }else {
+                breakableList.add(i, null);
             }
         }
     }
@@ -158,5 +167,16 @@ public class ObstacleManagerImpl implements ObstacleManager {
     @Override
     public void removeBombFromList(int index) {
         bombList.set(index, null);
+    }
+
+    @Override
+    public void removeBreakableFromList(int index) {
+        breakableList.set(index, null);
+    }
+
+    @Override
+    public void setCoordinatesOfBreakableInList(int index, int x, int y) {
+        breakableList.get(index).setX(x);
+        breakableList.get(index).setY(y);
     }
 }

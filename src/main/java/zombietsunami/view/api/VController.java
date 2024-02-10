@@ -171,11 +171,9 @@ public interface VController {
    */
   boolean isJumping();
 
-  int getObstacleMapX();
+  void updateBomb();
 
-  int getObstacleMapY();
-
-  void updateObstacle();
+  void updateBreakable();
 
   /**
    * @return the List of Integers with all the values in the obstacle map's txt
@@ -209,5 +207,12 @@ public interface VController {
      * Removes the "index" bomb from the list.
      * @param index the index of the bomb in the list.
      */
-    void removeBombFromList(int index);
+    void removeBombFromListC(int index);
+
+    /**
+     * Returns the list of breakables from the map.
+     */
+    void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    void collisionZombieOstacleC();
 }

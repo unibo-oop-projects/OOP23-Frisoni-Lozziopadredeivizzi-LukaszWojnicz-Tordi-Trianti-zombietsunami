@@ -16,7 +16,7 @@ public class BombImpl implements Bomb, Obstacle {
     private ObstacleEntity entity = new ObstacleEntity();
 
     private int id;
-    private int damage;
+    private int damage = 1;
 
     /**
      * Constructor that sets the default values for the Bomb.
@@ -46,11 +46,10 @@ public class BombImpl implements Bomb, Obstacle {
     /**
      * Method which sends the game into a state of gameover
      * if the zombie touches the bomb.
-     * @param controller the controller.
      */
     @Override
-    public void hit(Controller controller) {
-        controller.setStrenght(controller.getStrenght() - damage);
+    public void hit() {
+        
     }
 
     /**

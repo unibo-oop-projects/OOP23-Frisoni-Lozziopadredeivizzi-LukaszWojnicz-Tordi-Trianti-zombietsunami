@@ -21,9 +21,8 @@ public interface Bomb {
 
     /**
      * If the bomb hits the zombie, it decreases the zombies' strength.
-     * @param controller the controller.
      */
-    void hit(Controller controller);
+    void hit();
 
     /**
      * Gets the X coordinate of the Bomb.

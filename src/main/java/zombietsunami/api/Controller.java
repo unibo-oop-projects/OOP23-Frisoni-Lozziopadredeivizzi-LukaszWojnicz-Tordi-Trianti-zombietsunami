@@ -141,16 +141,6 @@ public interface Controller {
    */
   void setStrenght(int strenght);
 
-  /**
-   * @return the obstacle's map X coordinate
-   */
-  int getObstacleMapX();
-
-  /**
-   * @return the obstacle's map Y coordiante
-   */
-  int getObstacleMapY();
-
   boolean canBreakObstacle(int zombieStrength);
 
   /**
@@ -188,7 +178,9 @@ public interface Controller {
    */
   boolean isJumping();
 
-  void updateObstacle();
+  void updateBreakable();
+
+  void updateBomb();
 
   List<Integer> obstacleList();
 
@@ -217,4 +209,16 @@ public interface Controller {
      * @param index the index of the bomb in the list.
      */
     void removeBombFromList(int index);
+
+    /**
+     * Returns the list of breakables from the map.
+     * @param controller the controller.
+     */
+    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    /**
+     * Checks collision between zombie and obstacles.
+     * @return true if collides, false otherwise.
+     */
+    void collisionZombieObstacle();
 }
