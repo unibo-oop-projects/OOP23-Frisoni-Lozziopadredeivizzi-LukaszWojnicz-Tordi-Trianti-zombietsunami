@@ -195,4 +195,9 @@ public final class ModelImpl implements Model {
     public void setCoordinatesOfBombInList(int index, int x, int y) {
         this.obstacleManager.setCoordinatesOfBombInList(index, x, y);
     }
+
+    @Override
+    public void removeBombFromList(int index) {
+        this.obstacleManager.removeBombFromList(index);
+    }
 }

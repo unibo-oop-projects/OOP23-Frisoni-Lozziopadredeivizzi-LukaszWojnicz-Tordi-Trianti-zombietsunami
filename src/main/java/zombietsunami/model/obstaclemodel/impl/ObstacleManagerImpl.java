@@ -108,6 +108,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      */
     @Override
     public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        bombList.clear();
         for(int i = 0; i < bomblist.size(); i++){
             if(bomblist.get(i) == 1 && coords.get(i) != null){
                 Bomb bomb = new BombImpl();
@@ -115,8 +116,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
                 bomb.setX(coords.get(i).getX());
                 bomb.setY(coords.get(i).getY());
                 bomb.setDamage(Math.round(strength * 0.5f));
-
-                //System.out.println(coords.get(i).getX() + " " + coords.get(i).getY());
+                bomb.setId(i);
 
                 bombList.add(i, bomb);
             }else {
@@ -153,5 +153,10 @@ public class ObstacleManagerImpl implements ObstacleManager {
     public void setCoordinatesOfBombInList(int index, int x, int y) {
         bombList.get(index).setX(x);
         bombList.get(index).setY(y);
+    }
+
+    @Override
+    public void removeBombFromList(int index) {
+        bombList.set(index, null);
     }
 }

@@ -9,8 +9,19 @@ import zombietsunami.api.Pair;
  * Interface whose purpose is to manage all obstacles.
  */
 public interface ObstacleManager {
+    
+    /**
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
 
-
+    /**
+     * Sets the coordinates of the "index" bomb.
+     * @param index index of the bomb in the list.
+     * @param x X coordinate.
+     * @param y Y coordinate.
+     */
     void setCoordinatesOfBombInList(int index, int x, int y);
 
     /**

@@ -266,4 +266,9 @@ public final class VControllerImpl implements VController {
         this.control.setCoordinatesOfBombInList(index, x, y);
     }
 
+    @Override
+    public void removeBombFromList(int index) {
+        this.control.removeBombFromList(index);
+    }
+
 }

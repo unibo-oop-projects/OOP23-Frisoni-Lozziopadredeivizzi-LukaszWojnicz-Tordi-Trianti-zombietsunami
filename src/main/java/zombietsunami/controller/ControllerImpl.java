@@ -226,4 +226,9 @@ public final class ControllerImpl implements Controller {
         this.model.setCoordinatesOfBombInList(index, x, y);
     }
 
+    @Override
+    public void removeBombFromList(int index) {
+        this.model.removeBombFromList(index);
+    }
+
 }

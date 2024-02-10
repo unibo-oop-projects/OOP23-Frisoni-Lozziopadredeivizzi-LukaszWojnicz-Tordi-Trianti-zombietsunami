@@ -33,9 +33,7 @@ public class DrawBombImpl implements DrawBomb {
     public void drawBombV(final Graphics2D g2, final VController controller) {
         for (int i = 0; i < controller.obstacleIndexListC().size(); i++) {
             if (controller.obstacleIndexListC().get(i) == 1 && controller.screenTilePosC().get(i) != null) {
-                if(initialiazed){
-                    controller.setCoordinatesOfBombInListC(i, controller.screenTilePosC().get(i).getX(), controller.screenTilePosC().get(i).getY());
-                }
+                controller.getBombsFromMapC(controller.obstacleIndexListC(), controller.screenTilePosC(), controller.getStrenght());
                 g2.drawImage(getBomb(), 
                 controller.screenTilePosC().get(i).getX(), 
                 controller.screenTilePosC().get(i).getY(),
@@ -44,10 +42,12 @@ public class DrawBombImpl implements DrawBomb {
                 null);
             }
         }
+        /* 
         if(initialiazed == false) {
            controller.getBombsFromMapC(controller.obstacleIndexListC(), controller.screenTilePosC(), controller.getStrenght());
            initialiazed = true;
         }
+        */
     }
 
     /**

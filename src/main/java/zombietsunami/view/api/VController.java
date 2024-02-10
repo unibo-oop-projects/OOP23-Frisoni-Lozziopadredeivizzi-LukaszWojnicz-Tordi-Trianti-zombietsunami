@@ -204,4 +204,10 @@ public interface VController {
   List<Breakable> getBreakableListC();
 
   void setCoordinatesOfBombInListC(int index, int x, int y);
+
+  /**
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
 }

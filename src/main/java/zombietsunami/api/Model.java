@@ -151,4 +151,10 @@ public interface Model {
   List<Breakable> getBreakableList();
 
   void setCoordinatesOfBombInList(int index, int x, int y);
+
+  /**
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
 }
