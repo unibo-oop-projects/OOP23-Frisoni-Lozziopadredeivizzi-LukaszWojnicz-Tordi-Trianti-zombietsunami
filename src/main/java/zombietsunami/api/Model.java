@@ -94,16 +94,6 @@ public interface Model {
    */
   int getZombieScreenY();
 
-  /**
-   * @return the obstacle's map X coordinate
-   */
-  int getObstacleMapX();
-
-  /**
-   * @return the obstacle's map Y coordinate
-   */
-  int getObstacleMapY();
-
   boolean canBreakObstacle(int zombieStrength);
 
   /**
@@ -126,7 +116,9 @@ public interface Model {
    */
   boolean isJumping();
 
-  void updateOstacle();
+  void updateBreakable();
+
+  void updateBomb();
 
   /**
    * @return the List of Integers that contains all the values of the obstacle
@@ -157,4 +149,10 @@ public interface Model {
      * @param index the index of the bomb in the list.
      */
     void removeBombFromList(int index);
+
+    /**
+     * Returns the list of breakables from the map.
+     * @param controller the controller.
+     */
+    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 }

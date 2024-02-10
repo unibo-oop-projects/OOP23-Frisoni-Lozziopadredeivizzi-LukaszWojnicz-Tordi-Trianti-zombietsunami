@@ -1,6 +1,8 @@
 package zombietsunami.view.obstacleview.api;
 
 import zombietsunami.view.api.VController;
+import zombietsunami.api.Pair;
+import java.util.List;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -16,7 +18,7 @@ public interface DrawBreakable {
      * @param g2         The graphics context.
      * @param controller The controller with the game-related information.
      */
-    void drawBreakableV(Graphics2D g2, VController controller);
+    void drawBreakableV(Graphics2D g2, List<Integer> obstacleIndexList, List<Pair<Integer, Integer>> screenTilePos, int titleSize, VController controller);
 
     /**
      * Gets the image representation of the breakable.

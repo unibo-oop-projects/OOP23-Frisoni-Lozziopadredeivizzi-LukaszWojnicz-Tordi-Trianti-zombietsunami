@@ -132,16 +132,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public int getObstacleMapX() {
-        return this.bomb.getX();
-    }
-
-    @Override
-    public int getObstacleMapY() {
-        return this.bomb.getY();
-    }
-
-    @Override
     public boolean canBreakObstacle(final int zombieStrength) {
         return this.breakable.canBreakObstacle(zombieStrength);
     }
@@ -162,7 +152,12 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void updateOstacle() {
+    public void updateBreakable() {
+        this.breakable.update();
+    }
+
+    @Override
+    public void updateBomb() {
         this.bomb.update();
     }
 
@@ -199,5 +194,11 @@ public final class ModelImpl implements Model {
     @Override
     public void removeBombFromList(int index) {
         this.obstacleManager.removeBombFromList(index);
+    }
+
+    @Override
+    public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
+            Integer strength) {
+        this.obstacleManager.getBreakablesFromMap(breakablelist, coords, strength);
     }
 }

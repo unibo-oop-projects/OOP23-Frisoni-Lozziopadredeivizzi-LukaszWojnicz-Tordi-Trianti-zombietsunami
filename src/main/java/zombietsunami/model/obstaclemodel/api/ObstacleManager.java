@@ -9,6 +9,20 @@ import zombietsunami.api.Pair;
  * Interface whose purpose is to manage all obstacles.
  */
 public interface ObstacleManager {
+
+    /**
+     * Removes the "index" breakable from the list.
+     * @param index the index of the breakable in the list.
+     */
+    void removeBreakableFromList(int index);
+
+    /**
+     * Sets the coordinates of the "index" breakable.
+     * @param index index of the breakable in the list.
+     * @param x X coordinate.
+     * @param y Y coordinate.
+     */
+    void setCoordinatesOfBreakableInList(int index, int x, int y);
     
     /**
      * Removes the "index" bomb from the list.
@@ -46,7 +60,7 @@ public interface ObstacleManager {
      * Returns the list of breakables from the map.
      * @param controller the controller.
      */
-    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strengthh);
+    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
     /**
      * Adds a bomb into the bomb list.

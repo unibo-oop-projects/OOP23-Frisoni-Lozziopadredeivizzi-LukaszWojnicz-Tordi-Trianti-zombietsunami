@@ -3,8 +3,11 @@ package zombietsunami.view.obstacleview.impl;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import java.util.List;
+
 import javax.imageio.ImageIO;
 
+import zombietsunami.api.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawBreakable;
 
@@ -25,14 +28,15 @@ public class DrawBreakableImpl implements DrawBreakable {
      * @param controller The controller with the game-related information.
      */
     @Override
-    public void drawBreakableV(final Graphics2D g2, final VController controller) {
-        for (int i = 0; i < controller.obstacleIndexListC().size(); i++) {
-            if (controller.obstacleIndexListC().get(i) == 2 && controller.screenTilePosC().get(i) != null) {
+    public void drawBreakableV(Graphics2D g2, List<Integer> obstacleIndexList, List<Pair<Integer, Integer>> screenTilePos, int titleSize, VController controller) {
+        for (int i = 0; i < obstacleIndexList.size(); i++) {
+            if (obstacleIndexList.get(i) == 2 && screenTilePos.get(i) != null) {
+                controller.getBreakablesFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
                 g2.drawImage(getBreakable(), 
-                controller.screenTilePosC().get(i).getX(), 
-                controller.screenTilePosC().get(i).getY(),
-                controller.titleSizeC(),
-                controller.titleSizeC(),
+                screenTilePos.get(i).getX(), 
+                screenTilePos.get(i).getY(),
+                titleSize,
+                titleSize,
                 null);
             }
         }
@@ -61,6 +65,6 @@ public class DrawBreakableImpl implements DrawBreakable {
      */
     @Override
     public void update(final VController controller) {
-        controller.updateObstacle();
+        controller.updateBreakable();
     }
 }

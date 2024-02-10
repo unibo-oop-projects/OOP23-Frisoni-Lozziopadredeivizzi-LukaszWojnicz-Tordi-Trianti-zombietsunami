@@ -22,6 +22,23 @@ public class VCollision {
                 }
             }
         }
+        for(int i = 0; i < controller.getBreakableListC().size(); i++)  {
+            if(controller.getBreakableListC().get(i) != null) {
+                if(controller.getZombieScreenY() == controller.getBreakableListC().get(i).getY()) { //condizione NON FUNZIONANTE
+                    
+                    System.out.println("Zombie:");
+                    System.out.println("X: " + controller.getZombieScreenX());
+                    System.out.println("Y: " + controller.getZombieScreenY());
+                    
+                    System.out.println("Breakable:");
+                    System.out.println("X: " + controller.getBreakableListC().get(i).getX());
+                    System.out.println("Y: " + controller.getBreakableListC().get(i).getY());
+                    System.out.println("ID: " +  controller.getBreakableListC().get(i).getId());
+                    
+                    return true;
+                }
+            }
+        }
         return false;
         
     }

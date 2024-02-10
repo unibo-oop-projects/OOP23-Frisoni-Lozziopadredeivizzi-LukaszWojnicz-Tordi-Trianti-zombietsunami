@@ -13,9 +13,7 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
 
     private ObstacleEntity entity = new ObstacleEntity();
 
-    private static int nextId = 0;
-
-    private final int id;
+    private int id;
     private final int minforce;
 
     /**
@@ -24,8 +22,6 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
      * @param minforce the minimum force to break the Breakable.
      */
     public BreakableImpl(final int minforce) {
-        this.id = nextId;
-        nextId++;
         this.minforce = minforce;
     }
 
@@ -82,5 +78,10 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
     @Override
     public int getId() {
         return this.id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 }
