@@ -8,6 +8,12 @@ import zombietsunami.api.Controller;
 public interface Bomb {
 
     /**
+     * Sets the id of the bomb.
+     * @param id the id of the bomb.
+     */
+    void setId(int id);
+
+    /**
      * Sets the damage of the bomb.
      * @param damage amount of damage that deals to the zombie.
      */
