@@ -55,8 +55,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getBombsFromMap(Controller controller) {
-        this.obstacleManager.getBombsFromMap(controller);
+    public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        this.obstacleManager.getBombsFromMap(bomblist, coords, strength);
     }
 
     @Override
@@ -179,5 +179,25 @@ public final class ModelImpl implements Model {
     @Override
     public boolean isWin() {
         return this.win.isWin();
+    }
+
+    @Override
+    public List<Bomb> getBombList() {
+        return this.obstacleManager.getBombList();
+    }
+
+    @Override
+    public List<Breakable> getBreakableList() {
+        return this.obstacleManager.getBreakableList();
+    }
+
+    @Override
+    public void setCoordinatesOfBombInList(int index, int x, int y) {
+        this.obstacleManager.setCoordinatesOfBombInList(index, x, y);
+    }
+
+    @Override
+    public void removeBombFromList(int index) {
+        this.obstacleManager.removeBombFromList(index);
     }
 }

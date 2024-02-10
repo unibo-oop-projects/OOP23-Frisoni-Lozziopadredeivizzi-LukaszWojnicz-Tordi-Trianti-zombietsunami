@@ -3,23 +3,50 @@ package zombietsunami.model.obstaclemodel.api;
 import java.util.List;
 
 import zombietsunami.api.Controller;
+import zombietsunami.api.Pair;
 
 /**
  * Interface whose purpose is to manage all obstacles.
  */
 public interface ObstacleManager {
+    
+    /**
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
+
+    /**
+     * Sets the coordinates of the "index" bomb.
+     * @param index index of the bomb in the list.
+     * @param x X coordinate.
+     * @param y Y coordinate.
+     */
+    void setCoordinatesOfBombInList(int index, int x, int y);
+
+    /**
+     * Returns the bomb list.
+     * @return the bomb list.
+     */
+    List<Bomb> getBombList();
+
+    /**
+     * Returns the breakable list.
+     * @return the breakable list.
+     */
+    List<Breakable> getBreakableList();
 
     /**
      * Returns the list of bombs from the map.
      * @param controller the controller.
      */
-    void getBombsFromMap(Controller controller);
+    void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
     /**
      * Returns the list of breakables from the map.
      * @param controller the controller.
      */
-    void getBreakablesFromMap(Controller controller);
+    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strengthh);
 
     /**
      * Adds a bomb into the bomb list.
