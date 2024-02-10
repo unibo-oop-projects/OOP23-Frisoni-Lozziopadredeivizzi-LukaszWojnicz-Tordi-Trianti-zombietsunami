@@ -272,4 +272,9 @@ public final class VControllerImpl implements VController {
         this.control.updateBomb();
     }
 
+    @Override
+    public void collisionZombieOstacleC() {
+        this.control.collisionZombieObstacle();
+    }
+
 }

@@ -211,7 +211,8 @@ public interface VController {
 
     /**
      * Returns the list of breakables from the map.
-     * @param controller the controller.
      */
     void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    void collisionZombieOstacleC();
 }

@@ -132,7 +132,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      */
     @Override
     public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength) {
-        bombList.clear();
+        breakableList.clear();
         for(int i = 0; i < breakablelist.size(); i++){
             if(breakablelist.get(i) == 2 && coords.get(i) != null){
                 Breakable breakable = new BreakableImpl(Math.round(strength * 0.8f));

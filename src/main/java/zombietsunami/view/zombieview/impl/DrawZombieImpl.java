@@ -36,9 +36,6 @@ public class DrawZombieImpl implements DrawZombie {
      */
     @Override
     public void drawZombieV(final Graphics2D g2, final VController controller) {
-        if (VCollision.checkCollision(controller)) {
-            
-        }
         g2.drawImage(getZombie(), controller.getZombieScreenX() / NUM, controller.getZombieScreenY(),
                 controller.titleSizeC(), controller.titleSizeC(), null);
     }

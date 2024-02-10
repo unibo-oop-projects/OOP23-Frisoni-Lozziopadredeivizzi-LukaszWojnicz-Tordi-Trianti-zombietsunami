@@ -155,4 +155,15 @@ public interface Model {
      * @param controller the controller.
      */
     void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    /**
+     * Checks collision between zombie and obstacles.
+     * @param bombList
+     * @param breakableList
+     * @param tileSize
+     * @param screenZombieX
+     * @param screenZombieY
+     * @return
+     */
+    void collisionZombieObstacle();
 }

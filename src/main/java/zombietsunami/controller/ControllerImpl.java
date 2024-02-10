@@ -232,4 +232,9 @@ public final class ControllerImpl implements Controller {
         this.model.getBreakablesFromMap(breakablelist, coords, strength);
     }
 
+    @Override
+    public void collisionZombieObstacle() {
+        this.model.collisionZombieObstacle();
+    }
+
 }

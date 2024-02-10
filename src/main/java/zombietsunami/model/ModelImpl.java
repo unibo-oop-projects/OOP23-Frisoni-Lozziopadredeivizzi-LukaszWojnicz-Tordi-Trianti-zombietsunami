@@ -2,6 +2,7 @@ package zombietsunami.model;
 
 import java.util.List;
 
+import zombietsunami.api.Collision;
 import zombietsunami.api.MightWin;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
@@ -38,6 +39,7 @@ public final class ModelImpl implements Model {
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private final MightWin win;
     private final ObstacleManager obstacleManager;
+    private final Collision collisionManager;
 
     /**
      * Allows to set the different elements belonging to the Model.
@@ -52,6 +54,7 @@ public final class ModelImpl implements Model {
         this.breakable = new BreakableImpl(1); // 1 per test
         this.win = new MightWinImpl();
         this.obstacleManager = new ObstacleManagerImpl();
+        this.collisionManager = new CollisionImpl();
     }
 
     @Override
@@ -200,5 +203,11 @@ public final class ModelImpl implements Model {
     public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
             Integer strength) {
         this.obstacleManager.getBreakablesFromMap(breakablelist, coords, strength);
+    }
+
+    @Override
+    public void collisionZombieObstacle() {
+        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(), 
+            MapData.getTitSize(), this.zombie);
     }
 }

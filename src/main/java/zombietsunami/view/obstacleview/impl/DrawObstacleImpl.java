@@ -25,23 +25,23 @@ public class DrawObstacleImpl implements DrawObstacle{
         for (int i = 0; i < obstacleIndexList.size(); i++) {
             if (obstacleIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
                 controller.getBombsFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
-                g2.drawImage(getBomb(), 
-                screenTilePos.get(i).getX(), 
-                screenTilePos.get(i).getY(),
-                titleSize,
-                titleSize,
-                null);
+                draw(getBomb(), g2, obstacleIndexList, screenTilePos, titleSize, i);
             }
             if (obstacleIndexList.get(i) == 2 && screenTilePos.get(i) != null) {
                 controller.getBreakablesFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
-                g2.drawImage(getBreakable(), 
+                draw(getBreakable(), g2, obstacleIndexList, screenTilePos, titleSize, i);
+            }
+        }
+    }
+
+    private void draw(BufferedImage image, Graphics2D g2, List<Integer> obstacleIndexList,
+    List<Pair<Integer, Integer>> screenTilePos, int titleSize, int i) {
+        g2.drawImage(image, 
                 screenTilePos.get(i).getX(), 
                 screenTilePos.get(i).getY(),
                 titleSize,
                 titleSize,
                 null);
-            }
-        }
     }
 
     /**

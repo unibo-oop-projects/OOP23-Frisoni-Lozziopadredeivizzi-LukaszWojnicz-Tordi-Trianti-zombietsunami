@@ -215,4 +215,10 @@ public interface Controller {
      * @param controller the controller.
      */
     void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    /**
+     * Checks collision between zombie and obstacles.
+     * @return true if collides, false otherwise.
+     */
+    void collisionZombieObstacle();
 }
