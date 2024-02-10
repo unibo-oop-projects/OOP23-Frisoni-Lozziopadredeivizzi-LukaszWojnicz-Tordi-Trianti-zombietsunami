@@ -4,6 +4,8 @@ import java.util.List;
 
 import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
 
 /**
  * Interface representing the View Controller in the Zombie Tsunami game.
@@ -191,4 +193,21 @@ public interface VController {
    * @return true if the flag's X position arrives in a certain axis
    */
   boolean isWinC();
+
+  /**
+   * Returns the list of bombs from the map.
+   */
+  void getBombsFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+  List<Bomb> getBombListC();
+
+  List<Breakable> getBreakableListC();
+
+  void setCoordinatesOfBombInListC(int index, int x, int y);
+
+  /**
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
 }

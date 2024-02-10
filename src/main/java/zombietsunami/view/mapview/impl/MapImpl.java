@@ -100,12 +100,12 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     @Override
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
-        final Graphics2D g2 = (Graphics2D) g;
+        final Graphics2D g2 = (Graphics2D) g; 
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC(), this.controller);
-        this.drawZombie.drawZombieV(g2, controller);
         this.drawBomb.drawBombV(g2, controller);
         this.drawBreakable.drawBreakableV(g2, controller);
+        this.drawZombie.drawZombieV(g2, controller);
         drawInfo(g2);
         if (isPause()) {
             Pause.pause(g2);

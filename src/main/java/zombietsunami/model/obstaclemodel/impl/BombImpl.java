@@ -15,17 +15,14 @@ public class BombImpl implements Bomb, Obstacle {
 
     private ObstacleEntity entity = new ObstacleEntity();
 
-    private static int nextId = 0;
-
-    private final int id;
+    private int id;
     private int damage;
 
     /**
      * Constructor that sets the default values for the Bomb.
      */
     public BombImpl() {
-        this.id = nextId;
-        nextId++;
+
     }
 
     /**
@@ -93,5 +90,10 @@ public class BombImpl implements Bomb, Obstacle {
         if(damage > 0){
             this.damage = damage;
         }
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 }
