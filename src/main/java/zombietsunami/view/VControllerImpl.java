@@ -6,7 +6,6 @@ import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
-import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.view.api.VController;
 
 /**

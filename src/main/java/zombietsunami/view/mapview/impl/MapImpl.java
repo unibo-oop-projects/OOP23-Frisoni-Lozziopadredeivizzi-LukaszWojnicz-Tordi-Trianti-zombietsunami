@@ -47,6 +47,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
     private final DrawObstacle drawObstacle;
+    private final DrawPerson drawPerson;
     private final KeyHandler keyH;
 
     /**
@@ -61,6 +62,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap = new TileManagerImpl();
         this.drawZombie = new DrawZombieImpl();
         this.drawObstacle = new DrawObstacleImpl();
+        this.drawPerson = new DrawPersonImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -105,6 +107,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC(), this.controller);
         this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(), controller.titleSizeC(), this.controller);
+        this.drawPerson.drawPersonV(g2, controller.personIndexListC(), controller.screenTilePosC(), controller.titleSizeC(), this.controller);
         this.drawZombie.drawZombieV(g2, controller);
         drawInfo(g2);
         if (isPause()) {

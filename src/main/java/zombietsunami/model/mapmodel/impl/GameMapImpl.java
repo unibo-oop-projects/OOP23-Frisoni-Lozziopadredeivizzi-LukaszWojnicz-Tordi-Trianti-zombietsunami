@@ -26,6 +26,7 @@ public final class GameMapImpl implements GameMap {
 
     private final String filePathMap = ROOT + MAP1;
     private final String filePathObst = ROOT + OBST;
+    private final String filePathPrsn = ROOT + PRSN;
 
 
     private final List<Integer> mapOfNumberTile;
