@@ -3,7 +3,6 @@ package zombietsunami.model;
 import java.util.List;
 
 import zombietsunami.api.Collision;
-import zombietsunami.api.Controller;
 import zombietsunami.api.MightWin;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
@@ -17,7 +16,6 @@ import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
-import zombietsunami.model.obstaclemodel.impl.ObstacleEntity;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
