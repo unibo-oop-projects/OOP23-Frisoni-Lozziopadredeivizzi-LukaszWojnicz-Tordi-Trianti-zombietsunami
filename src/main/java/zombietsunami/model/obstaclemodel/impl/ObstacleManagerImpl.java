@@ -23,7 +23,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the bomb.
      */
     @Override
-    public Bomb getBombById(int id) {
+    public Bomb getBombById(final int id) {
         for (Bomb bomb : bombList) {
             if(bomb.getId() == id) {
                 return bomb;
@@ -38,7 +38,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the breakable.
      */
     @Override
-    public Breakable getBreakableById(int id) {
+    public Breakable getBreakableById(final int id) {
         for (Breakable breakable : breakableList) {
             if(breakable.getId() == id) {
                 return breakable;
@@ -54,7 +54,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the bomb.
      */
     @Override
-    public Bomb getBombByCoordinates(int x, int y) {
+    public Bomb getBombByCoordinates(final int x, final int y) {
         for (Bomb bomb : bombList) {
             if(bomb.getX() == x && bomb.getY() == y) {
                 return bomb;
@@ -70,7 +70,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the breakable.
      */
     @Override
-    public Breakable getBreakableByCoordinates(int x, int y) {
+    public Breakable getBreakableByCoordinates(final int x, final int y) {
         for (Breakable breakable : breakableList) {
             if(breakable.getX() == x && breakable.getY() == y) {
                 return breakable;
@@ -84,7 +84,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @param bomb the bomb that needs to be added.
      */
     @Override
-    public void addBomb(Bomb bomb) {
+    public void addBomb(final Bomb bomb) {
         if(bomb != null) {
             bombList.add(bomb);
         }
@@ -95,7 +95,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @param breakable the breakable that needs to be added.
      */
     @Override
-    public void addBreakable(Breakable breakable) {
+    public void addBreakable(final Breakable breakable) {
         if(breakable != null) {
             breakableList.add(breakable);
         }
@@ -107,8 +107,8 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the bombs.
      */
     @Override
-    public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
-        bombList.clear();
+    public void getBombsFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords, final Integer strength) {
+        bombList = new ArrayList<>();
         for(int i = 0; i < bomblist.size(); i++){
             if(bomblist.get(i) == 1 && coords.get(i) != null){
                 Bomb bomb = new BombImpl();
@@ -131,8 +131,8 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the breakables.
      */
     @Override
-    public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength) {
-        breakableList.clear();
+    public void getBreakablesFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords, final Integer strength) {
+        breakableList = new ArrayList<>();
         for(int i = 0; i < breakablelist.size(); i++){
             if(breakablelist.get(i) == 2 && coords.get(i) != null){
                 Breakable breakable = new BreakableImpl(Math.round(strength * 0.8f));
@@ -159,23 +159,23 @@ public class ObstacleManagerImpl implements ObstacleManager {
     }
 
     @Override
-    public void setCoordinatesOfBombInList(int index, int x, int y) {
+    public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
         bombList.get(index).setX(x);
         bombList.get(index).setY(y);
     }
 
     @Override
-    public void removeBombFromList(int index) {
+    public void removeBombFromList(final int index) {
         bombList.set(index, null);
     }
 
     @Override
-    public void removeBreakableFromList(int index) {
+    public void removeBreakableFromList(final int index) {
         breakableList.set(index, null);
     }
 
     @Override
-    public void setCoordinatesOfBreakableInList(int index, int x, int y) {
+    public void setCoordinatesOfBreakableInList(final int index, final int x, final int y) {
         breakableList.get(index).setX(x);
         breakableList.get(index).setY(y);
     }
