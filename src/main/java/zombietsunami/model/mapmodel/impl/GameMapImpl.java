@@ -75,6 +75,8 @@ public final class GameMapImpl implements GameMap {
         return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
+    
+
     @Override
     public List<Integer> getLoadedMapList() {
         return this.mapOfNumberTile;
@@ -83,6 +85,11 @@ public final class GameMapImpl implements GameMap {
     @Override
     public List<Integer> getLoadedObstacleList() {
         return this.mapOfNumberObstacle;
+    }
+
+    @Override
+    public void removeObstacleListItem(int index) {
+        this.mapOfNumberObstacle.set(index, 0);
     }
 
 }
