@@ -8,7 +8,7 @@ import zombietsunami.api.Entity;
  * for getting and setting values, hashCode, equals, and toString.
  */
 public class EntityImpl implements Entity {
-    private int strenght=1;
+    private int strenght = 1;
     private int mapX, mapY;
     private int speed;
 
