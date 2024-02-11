@@ -7,8 +7,6 @@ import java.io.InputStream;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
-
-import zombietsunami.view.VCollision;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.zombieview.api.DrawZombie;
