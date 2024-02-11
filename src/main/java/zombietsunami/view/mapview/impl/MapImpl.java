@@ -9,8 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
-import zombietsunami.view.Pause;
-import zombietsunami.view.Win;
+import zombietsunami.view.TextScene;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.mapview.api.Map;
@@ -38,6 +37,9 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final int RECT_HEIGHT = 40;
     private static final int INFO_POS_X = 5;
     private static final int INFO_POS_Y = 25;
+
+    private static final String PAUSE = "PAUSE";
+    private static final String WIN = "WIN";
 
     private Thread gameThread;
     private final VController controller;
@@ -105,10 +107,10 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.drawZombie.drawZombieV(g2, controller);
         drawInfo(g2);
         if (isPause()) {
-            Pause.pause(g2);
+            TextScene.scene(g2, PAUSE);
         }
         if (isWin()) {
-            Win.win(g2);
+            TextScene.scene(g2, WIN);
         }
         g2.dispose();
     }
