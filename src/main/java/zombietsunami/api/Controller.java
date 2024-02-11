@@ -2,6 +2,9 @@ package zombietsunami.api;
 
 import java.util.List;
 
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
+
 /**
  * This interface is the controller of the MVC pattern, and it allows to
  * comunicate with the model classes and with the view classes.
@@ -138,16 +141,6 @@ public interface Controller {
    */
   void setStrenght(int strenght);
 
-  /**
-   * @return the obstacle's map X coordinate
-   */
-  int getObstacleMapX();
-
-  /**
-   * @return the obstacle's map Y coordiante
-   */
-  int getObstacleMapY();
-
   boolean canBreakObstacle(int zombieStrength);
 
   /**
@@ -185,7 +178,9 @@ public interface Controller {
    */
   boolean isJumping();
 
-  void updateObstacle();
+  void updateBreakable();
+
+  void updateBomb();
 
   List<Integer> obstacleList();
 
@@ -201,9 +196,29 @@ public interface Controller {
    */
   boolean isWin();
 
+  void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+  List<Bomb> getBombList();
+
+  List<Breakable> getBreakableList();
+
+  void setCoordinatesOfBombInList(int index, int x, int y);
+
   /**
-   * Returns the list of bombs from the map.
-   * @param controller the controller.
-   */
-  void getBombsFromMap(Controller controller);
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
+
+    /**
+     * Returns the list of breakables from the map.
+     * @param controller the controller.
+     */
+    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    /**
+     * Checks collision between zombie and obstacles.
+     * @return true if collides, false otherwise.
+     */
+    void collisionZombieObstacle();
 }

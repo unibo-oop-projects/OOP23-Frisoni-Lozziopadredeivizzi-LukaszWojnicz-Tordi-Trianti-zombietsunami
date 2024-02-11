@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import zombietsunami.api.Controller;
+import zombietsunami.api.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
@@ -13,8 +14,8 @@ import zombietsunami.model.obstaclemodel.api.ObstacleManager;
  */
 public class ObstacleManagerImpl implements ObstacleManager {
 
-    private List<Bomb> bombList;
-    private List<Breakable> breakableList;
+    private List<Bomb> bombList = new ArrayList<Bomb>();
+    private List<Breakable> breakableList = new ArrayList<Breakable>();
 
     /**
      * Method that allows to retrieve a bomb by its id.
@@ -106,16 +107,20 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the bombs.
      */
     @Override
-    public void getBombsFromMap(Controller controller) {
-        for(int i = 0; i < controller.obstacleList().size(); i++){
-            if(controller.obstacleList().get(i) == 1){
+    public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        bombList.clear();
+        for(int i = 0; i < bomblist.size(); i++){
+            if(bomblist.get(i) == 1 && coords.get(i) != null){
                 Bomb bomb = new BombImpl();
 
-                bomb.setX(controller.screenTilePos().get(i).getX());
-                bomb.setY(controller.screenTilePos().get(i).getY());
-                bomb.setDamage(Math.round(controller.getStrenght() * 0.5f));
-                
-                bombList.add(bomb);
+                bomb.setX(coords.get(i).getX());
+                bomb.setY(coords.get(i).getY());
+                bomb.setDamage(Math.round(strength * 0.5f));
+                bomb.setId(i);
+
+                bombList.add(i, bomb);
+            }else {
+                bombList.add(i, null);
             }
         }
     }
@@ -126,11 +131,52 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the complete list of the breakables.
      */
     @Override
-    public void getBreakablesFromMap(Controller controller) {
-        for(int i = 0; i < controller.obstacleList().size(); i++){
-            if(controller.obstacleList().get(i) == 2){
-                breakableList.add(new BreakableImpl(0));
+    public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        breakableList.clear();
+        for(int i = 0; i < breakablelist.size(); i++){
+            if(breakablelist.get(i) == 2 && coords.get(i) != null){
+                Breakable breakable = new BreakableImpl(Math.round(strength * 0.8f));
+
+                breakable.setX(coords.get(i).getX());
+                breakable.setY(coords.get(i).getY());
+                breakable.setId(i);
+
+                breakableList.add(i, breakable);
+            }else {
+                breakableList.add(i, null);
             }
         }
+    }
+
+    @Override
+    public List<Bomb> getBombList() {
+        return bombList;
+    }
+
+    @Override
+    public List<Breakable> getBreakableList() {
+        return breakableList;
+    }
+
+    @Override
+    public void setCoordinatesOfBombInList(int index, int x, int y) {
+        bombList.get(index).setX(x);
+        bombList.get(index).setY(y);
+    }
+
+    @Override
+    public void removeBombFromList(int index) {
+        bombList.set(index, null);
+    }
+
+    @Override
+    public void removeBreakableFromList(int index) {
+        breakableList.set(index, null);
+    }
+
+    @Override
+    public void setCoordinatesOfBreakableInList(int index, int x, int y) {
+        breakableList.get(index).setX(x);
+        breakableList.get(index).setY(y);
     }
 }

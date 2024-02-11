@@ -2,6 +2,9 @@ package zombietsunami.api;
 
 import java.util.List;
 
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
+
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
  * all their useful methods that has to comunicate with the controller
@@ -11,9 +14,8 @@ public interface Model {
 
   /**
    * Returns the list of bombs from the map.
-   * @param controller the controller.
    */
-  void getBombsFromMap(Controller controller);
+  void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
   /**
    * Calls the zombie's update method
@@ -92,16 +94,6 @@ public interface Model {
    */
   int getZombieScreenY();
 
-  /**
-   * @return the obstacle's map X coordinate
-   */
-  int getObstacleMapX();
-
-  /**
-   * @return the obstacle's map Y coordinate
-   */
-  int getObstacleMapY();
-
   boolean canBreakObstacle(int zombieStrength);
 
   /**
@@ -124,7 +116,9 @@ public interface Model {
    */
   boolean isJumping();
 
-  void updateOstacle();
+  void updateBreakable();
+
+  void updateBomb();
 
   /**
    * @return the List of Integers that contains all the values of the obstacle
@@ -143,4 +137,33 @@ public interface Model {
    * @return true if the flag's X position arrives in a certain axis
    */
   boolean isWin();
+
+  List<Bomb> getBombList();
+
+  List<Breakable> getBreakableList();
+
+  void setCoordinatesOfBombInList(int index, int x, int y);
+
+  /**
+     * Removes the "index" bomb from the list.
+     * @param index the index of the bomb in the list.
+     */
+    void removeBombFromList(int index);
+
+    /**
+     * Returns the list of breakables from the map.
+     * @param controller the controller.
+     */
+    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+
+    /**
+     * Checks collision between zombie and obstacles.
+     * @param bombList
+     * @param breakableList
+     * @param tileSize
+     * @param screenZombieX
+     * @param screenZombieY
+     * @return
+     */
+    void collisionZombieObstacle();
 }

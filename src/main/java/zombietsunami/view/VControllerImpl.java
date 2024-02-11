@@ -4,6 +4,8 @@ import java.util.List;
 
 import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.view.api.VController;
 
 /**
@@ -215,21 +217,6 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public int getObstacleMapX() {
-        return this.control.getObstacleMapX();
-    }
-
-    @Override
-    public int getObstacleMapY() {
-        return this.control.getObstacleMapY();
-    }
-
-    @Override
-    public void updateObstacle() {
-        this.control.updateObstacle();
-    }
-
-    @Override
     public List<Integer> obstacleIndexListC() {
         return this.control.obstacleList();
     }
@@ -243,4 +230,51 @@ public final class VControllerImpl implements VController {
     public boolean isWinC() {
         return this.control.isWin();
     }
+
+    @Override
+    public void getBombsFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+        this.control.getBombsFromMap(bomblist, coords, strength);
+    }
+
+    @Override
+    public List<Bomb> getBombListC() {
+        return this.control.getBombList();
+    }
+
+    @Override
+    public List<Breakable> getBreakableListC() {
+        return this.control.getBreakableList();
+    }
+
+    @Override
+    public void setCoordinatesOfBombInListC(int index, int x, int y) {
+        this.control.setCoordinatesOfBombInList(index, x, y);
+    }
+
+    @Override
+    public void removeBombFromListC(int index) {
+        this.control.removeBombFromList(index);
+    }
+
+    @Override
+    public void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
+            Integer strength) {
+        this.control.getBreakablesFromMap(breakablelist, coords, strength);
+    }
+
+    @Override
+    public void updateBreakable() {
+        this.control.updateBreakable();
+    }
+
+    @Override
+    public void updateBomb() {
+        this.control.updateBomb();
+    }
+
+    @Override
+    public void collisionZombieOstacleC() {
+        this.control.collisionZombieObstacle();
+    }
+
 }

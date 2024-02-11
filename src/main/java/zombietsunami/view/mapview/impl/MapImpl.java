@@ -15,10 +15,8 @@ import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.mapview.api.Map;
 import zombietsunami.view.mapview.api.TileManager;
-import zombietsunami.view.obstacleview.api.DrawBomb;
-import zombietsunami.view.obstacleview.api.DrawBreakable;
-import zombietsunami.view.obstacleview.impl.DrawBombImpl;
-import zombietsunami.view.obstacleview.impl.DrawBreakableImpl;
+import zombietsunami.view.obstacleview.api.DrawObstacle;
+import zombietsunami.view.obstacleview.impl.DrawObstacleImpl;
 import zombietsunami.view.zombieview.api.DrawZombie;
 import zombietsunami.view.zombieview.impl.DrawZombieImpl;
 import zombietsunami.view.personview.api.DrawPerson;
@@ -46,7 +44,6 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
-    private final DrawPerson drawPerson;
     private final DrawBomb drawBomb;
     private final DrawBreakable drawBreakable;
     private final KeyHandler keyH;
@@ -62,7 +59,6 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.keyH = keyH;
         this.drowMap = new TileManagerImpl();
         this.drawZombie = new DrawZombieImpl();
-        this.drawPerson = new DrawPersonImpl();
         this.drawBomb = new DrawBombImpl();
         this.drawBreakable = new DrawBreakableImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
@@ -99,16 +95,17 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     @Override
     public void update() {
         this.drawZombie.handleKeyPress(this.controller, this.keyH);
+        this.controller.collisionZombieOstacleC();
     }
 
     @Override
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
-        final Graphics2D g2 = (Graphics2D) g;
+        final Graphics2D g2 = (Graphics2D) g; 
         this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
                 controller.screenTilePosC(), this.controller);
+        this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(), controller.titleSizeC(), this.controller);
         this.drawZombie.drawZombieV(g2, controller);
-        this.drawPerson.drawPersonV(g2, controller);
         this.drawBomb.drawBombV(g2, controller);
         this.drawBreakable.drawBreakableV(g2, controller);
         drawInfo(g2);
