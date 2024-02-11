@@ -25,12 +25,12 @@ public class CollisionImpl implements Collision{
                         bombList.get(i).getX() < THRESHOLD_2 &&
                         zombie.getScreenY() > bombList.get(i).getY() - tileSize &&
                         zombie.getScreenY() < bombList.get(i).getY() + tileSize) {
-                            if(zombie.getStrenght() - zombie.getSpeed() < 0) {
+                            if(zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
                                 gameOver = true;
                             }
                             gameMap.removeObstacleListItem(i);
                             bombList.set(i, null);
-                            zombie.setStrenght(zombie.getStrenght() - zombie.getSpeed());
+                            zombie.setStrenght(zombie.getStrenght() - bombList.get(i).getDamage());
                     } 
                 }
             }
