@@ -242,4 +242,9 @@ public final class ControllerImpl implements Controller {
         this.model.removeBombFromList(index);
     }
 
+    @Override
+    public boolean isGameOver() {
+        return this.model.isGameOver();
+    }
+
 }

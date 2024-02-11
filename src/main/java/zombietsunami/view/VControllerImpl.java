@@ -277,4 +277,9 @@ public final class VControllerImpl implements VController {
         this.control.collisionZombieObstacle();
     }
 
+    @Override
+    public boolean isGameOver() {
+        return this.control.isGameOver();
+    }
+
 }

@@ -42,11 +42,6 @@ public interface Breakable {
     boolean canBreakObstacle(int zombieForce);
 
     /**
-     * Method that breaks the obstacle.
-     */
-    void breakObstacle();
-
-    /**
      * Gets the breakables id.
      * @return the breakable id.
      */

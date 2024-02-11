@@ -216,4 +216,9 @@ public final class ModelImpl implements Model {
     public void removeObstacleListItem(int index) {
         this.gameMap.removeObstacleListItem(index);
     }
+
+    @Override
+    public boolean isGameOver() {
+        return this.collisionManager.isGameOver();
+    }
 }
