@@ -4,6 +4,7 @@ import java.util.List;
 
 import zombietsunami.api.Collision;
 import zombietsunami.api.MightWin;
+import zombietsunami.api.GameOver;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
 import zombietsunami.model.mapmodel.api.GameMap;
@@ -40,6 +41,7 @@ public final class ModelImpl implements Model {
     private final PersonsManager personsManager;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private final MightWin win;
+    private final GameOver gameOver;
     private final ObstacleManager obstacleManager;
     private final Collision collisionManager;
 
@@ -56,6 +58,7 @@ public final class ModelImpl implements Model {
         this.personsManager = new PersonsManagerImpl();
         this.breakable = new BreakableImpl(1); // 1 per test
         this.win = new MightWinImpl();
+        this.gameOver = new GameOverImpl();
         this.obstacleManager = new ObstacleManagerImpl();
         this.collisionManager = new CollisionImpl();
     }
@@ -258,5 +261,15 @@ public final class ModelImpl implements Model {
     @Override
     public boolean isGameOver() {
         return this.collisionManager.isGameOver();
+    }
+
+    @Override
+    public boolean isNotEnough() {
+        return this.gameOver.isNotEnough(isGameOver());
+    }
+
+    @Override
+    public boolean isStrenghtZero() {
+        return this.gameOver.isStrenghtZero(getStrenght());
     }
 }

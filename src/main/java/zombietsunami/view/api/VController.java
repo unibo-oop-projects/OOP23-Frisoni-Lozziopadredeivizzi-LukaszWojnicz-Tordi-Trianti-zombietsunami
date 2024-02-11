@@ -267,4 +267,14 @@ public interface VController {
    * @return true if the game is over, false otherwise.
    */
   boolean isGameOver();
+
+  /**
+   * @return true if the zombie's strenght is not enough to break the breakable object in the map
+   */
+  boolean isNotEnoughC();
+
+  /**
+   * @return true if the zombie's strenght is zero
+   */
+  boolean isStrenghtZeroC();
 }
