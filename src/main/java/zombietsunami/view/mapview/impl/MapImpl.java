@@ -40,6 +40,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private static final String PAUSE = "PAUSE";
     private static final String WIN = "WINNER";
+    private static final String GAMEOVER = "LOSE";
 
     private Thread gameThread;
     private final VController controller;
@@ -77,7 +78,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         long currentTime;
         long timer = 0;
 
-        while (!isPause() && !isWin()) {
+        while (!isPause() && !isWin() && !isGameOver()) {
             currentTime = System.nanoTime();
             delta += (currentTime - lastTime) / drowIntervall;
             timer += currentTime - lastTime;
@@ -119,6 +120,9 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         if (isWin()) {
             TextScene.scene(g2, WIN);
         }
+        if(isGameOver()){
+            TextScene.scene(g2, GAMEOVER);
+        }
         g2.dispose();
     }
 
@@ -127,7 +131,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         while (gameThread != null) {
             if (isPause()) {
                 repaint();
-            } else if (isWin()) {
+            } else if (isWin() || isGameOver()) {
                 isOver();
             } else {
                 gameLoop();
@@ -164,6 +168,13 @@ public final class MapImpl extends JPanel implements Map, Runnable {
      */
     private boolean isWin() {
         return this.controller.isWinC();
+    }
+
+    /**
+     * @return if is Game Over or not
+     */
+    private boolean isGameOver(){
+        return this.controller.isNotEnoughC() || this.controller.isStrenghtZeroC();
     }
 
     /**
