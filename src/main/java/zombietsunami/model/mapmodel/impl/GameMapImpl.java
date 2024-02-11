@@ -21,14 +21,16 @@ public final class GameMapImpl implements GameMap {
     private static final String SEP = "/";
     private static final String MAP1 = "maps/map01.txt";
     private static final String OBST = "obstaclemap/obstacleMap.txt";
+    private static final String PRSN = "personmap/personsMap.txt";
     private static final String ROOT = SEP + "zombietsunami" + SEP;
 
     private final String filePathMap = ROOT + MAP1;
     private final String filePathObst = ROOT + OBST;
-
+    private final String filePathPrsn = ROOT + PRSN;
 
     private final List<Integer> mapOfNumberTile;
     private final List<Integer> mapOfNumberObstacle;
+    private final List<Integer> mapOfNumberPersons;
 
     /**
      * Assigns the List of Integers with the map values at a new List.
@@ -36,6 +38,7 @@ public final class GameMapImpl implements GameMap {
     public GameMapImpl() {
         this.mapOfNumberTile = loadMap(this.filePathMap);
         this.mapOfNumberObstacle = loadMap(filePathObst);
+        this.mapOfNumberPersons = loadMap(this.filePathPrsn);
     }
 
     /**
@@ -92,4 +95,13 @@ public final class GameMapImpl implements GameMap {
         this.mapOfNumberObstacle.set(index, 0);
     }
 
+    @Override
+    public List<Integer> getLoadedPersonList() {
+        return this.mapOfNumberPersons;
+    }
+
+    @Override
+    public void removePersonListItem(int index) {
+        this.mapOfNumberPersons.set(index, 0);
+    }
 }

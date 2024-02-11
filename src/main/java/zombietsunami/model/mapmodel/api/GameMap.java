@@ -23,4 +23,15 @@ public interface GameMap {
      * @param index
      */
     void removeObstacleListItem(int index);
+
+    /**
+     * @return the list of Integer with the item's number of the Person
+     */
+    List<Integer> getLoadedPersonList();
+
+    /**
+     * Removes a Person from the list
+     * @param index index of Person
+     */
+    void removePersonListItem(int index);
 }

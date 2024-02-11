@@ -8,6 +8,7 @@ import zombietsunami.api.Collision;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.personmodel.api.Person;
 public class CollisionImpl implements Collision{
 
     @SuppressFBWarnings
@@ -57,5 +58,29 @@ public class CollisionImpl implements Collision{
     @Override
     public boolean isGameOver() {
         return gameOver;
+    }
+
+
+    /**
+     * Checks when the zombie hit a Person
+     * @param personList  the Person list
+     * @param tileSize the size of one tile
+     * @param zombie the Zombie entity
+     * @param gameMap the game map
+     */
+    @Override
+    public void collisionZombiePersons(List<Person> personList, int tileSize, Zombie zombie, GameMap gameMap) {
+        for(int i = 0; i < personList.size() - 1; i++) {
+            if(personList.size() != 0) {
+                if(personList.get(i).getX() > THRESHOLD_1 && 
+                personList.get(i).getX() < THRESHOLD_2 && 
+                zombie.getScreenY() > personList.get(i).getY() - tileSize &&
+                zombie.getScreenY() < personList.get(i).getY() + tileSize) {
+                    gameMap.removePersonListItem(i);
+                    personList.set(i, null);
+                    zombie.setStrenght(zombie.getStrenght() + zombie.getSpeed());
+                }
+            }
+        }
     }
 }
