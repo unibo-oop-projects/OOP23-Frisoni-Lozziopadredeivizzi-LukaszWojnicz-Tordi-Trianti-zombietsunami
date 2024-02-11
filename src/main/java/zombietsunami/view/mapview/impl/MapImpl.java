@@ -37,7 +37,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final int INFO_POS_Y = 25;
 
     private static final String PAUSE = "PAUSE";
-    private static final String WIN = "WIN";
+    private static final String WIN = "WINNER";
 
     private Thread gameThread;
     private final VController controller;
