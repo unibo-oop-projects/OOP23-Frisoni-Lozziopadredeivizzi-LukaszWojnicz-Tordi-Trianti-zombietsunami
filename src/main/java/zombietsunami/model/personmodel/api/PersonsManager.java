@@ -2,7 +2,6 @@ package zombietsunami.model.personmodel.api;
 
 import java.util.List;
 
-import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 
 /**

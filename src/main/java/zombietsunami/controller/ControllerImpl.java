@@ -9,6 +9,7 @@ import zombietsunami.model.MapData;
 import zombietsunami.model.ModelImpl;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.view.VControllerImpl;
 import zombietsunami.view.api.VController;
 
@@ -137,6 +138,46 @@ public final class ControllerImpl implements Controller {
         return this.model.getPersonMapY();
     }
 
+    @Override
+    public void removePersonListItem(int index) {
+        this.model.removePersonListItem(index);
+    }
+
+    @Override
+    public void updatePerson() {
+        this.model.updatePerson();
+    }
+
+    @Override
+    public void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
+        this.model.getPersonFromMap(personlist, coords, strenght);
+    }
+
+    @Override
+    public List<Integer> getPersonList() {
+        return this.model.getPersonList();
+    }
+
+    @Override
+    public void setCoordinatesOfPersonInList(int index, int x, int y) {
+        this.model.setCoordinatesOfPersonInList(index, x, y);
+    }
+
+    @Override
+    public void removePersonFromList(int index) {
+       this.model.removePersonFromList(index);
+    }
+
+    @Override
+    public List<Integer> personList() {
+        return this.model.getPersonList();
+    }
+
+    @Override
+    public void collisionZombiePersons() {
+        this.model.collisionZombiePersons();
+    }
+    
     @Override
     public void setStrenght(final int strenght) {
         this.model.setStrenght(strenght);

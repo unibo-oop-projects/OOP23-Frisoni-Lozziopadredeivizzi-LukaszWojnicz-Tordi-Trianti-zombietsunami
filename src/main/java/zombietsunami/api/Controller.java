@@ -59,10 +59,16 @@ public interface Controller {
   List<Integer> mapList();
 
   /**
-     * Removes an obstacle from the list.
-     * @param index
-     */
-    void removeObstacleListItem(int index);
+   * Removes an obstacle from the list.
+   * @param index
+   */
+  void removeObstacleListItem(int index);
+
+  /**
+   * Removes a Person from the list
+   * @param index index of Person
+   */
+  void removePersonListItem(int index);
 
   /**
    * @return the List of Strings with the file's name of the different tile
@@ -138,6 +144,42 @@ public interface Controller {
    * @return the person's map Y coordinate
    */
   int getPersonMapY();
+
+  /**
+   * Updates the state of the Person
+   */
+  void updatePerson();
+
+  /**
+   * Returns the list of Person from the map
+   */
+  void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
+
+  /**
+   * @return the Person list
+   */
+  List<Integer> getPersonList();
+
+  /**
+   * Sets the coordinates of the "index" Person
+   * @param index index of the Person in the list
+   * @param x X coordinate
+   * @param y Y coordinate
+   */
+  void setCoordinatesOfPersonInList(int index, int x, int y);
+
+  /**
+   * Removes the "index" Person from the list
+   * @param index the index of the Person in the list
+   */
+  void removePersonFromList(int index);
+
+  /**
+   * List of Person
+   * @return the list of Person
+   */
+  List<Integer> personList();
+
 
   /**
    * Calls the set strenght method of the zombie
@@ -227,6 +269,12 @@ public interface Controller {
      * @return true if collides, false otherwise.
      */
     void collisionZombieObstacle();
+
+    /**
+     * Checks collision between zombie and Person
+     * @return true if collides, false otherwise
+     */
+    void collisionZombiePersons();
 
     /**
      * Checks if the game is over.

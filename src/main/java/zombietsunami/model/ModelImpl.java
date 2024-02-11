@@ -24,6 +24,8 @@ import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.model.personmodel.impl.PersonImpl;
+import zombietsunami.model.personmodel.api.PersonsManager;
+import zombietsunami.model.personmodel.impl.PersonsManagerImpl;
 
 /**
  * This class is the Model of the MVC and implements the Model interface
@@ -37,6 +39,7 @@ public final class ModelImpl implements Model {
     private final Zombie zombie;
     private final Bomb bomb;
     private final Person person;
+    private final PersonsManager personsManager;
     private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
     private final MightWin win;
     private final ObstacleManager obstacleManager;
@@ -52,6 +55,7 @@ public final class ModelImpl implements Model {
         this.bomb = new BombImpl();
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
+        this.personsManager = new PersonsManagerImpl();
         this.breakable = new BreakableImpl(1); // 1 per test
         this.win = new MightWinImpl();
         this.obstacleManager = new ObstacleManagerImpl();
@@ -113,6 +117,36 @@ public final class ModelImpl implements Model {
     @Override
     public void updatePerson() {
         this.person.update();
+    }
+
+    @Override
+    public List<Integer> getPersonList() {
+        return this.gameMap.getLoadedPersonList();
+    }
+
+    @Override
+    public void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
+        this.personsManager.getPersonFromMap(personlist, coords, strenght);
+    }
+
+    @Override
+    public void setCoordinatesOfPersonInList(int index, int x, int y) {
+        this.personsManager.setCoordinatesOfPersonInList(index, x, y);
+    }
+
+    @Override
+    public void removePersonFromList(int index) {
+       this.personsManager.removePersonFromList(index);
+    }
+
+    @Override
+    public void removePersonListItem(int index) {
+        this.gameMap.removePersonListItem(index);
+    }
+
+    @Override
+    public void collisionZombiePersons() {
+        this.collisionManager.collisionZombiePersons(personsManager.getPersonList(), MapData.getTitSize(), this.zombie, gameMap);
     }
 
     @Override

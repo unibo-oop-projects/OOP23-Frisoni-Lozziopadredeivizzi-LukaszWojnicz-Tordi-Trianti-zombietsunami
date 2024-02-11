@@ -3,7 +3,6 @@ package zombietsunami.model.personmodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.model.personmodel.api.PersonsManager;

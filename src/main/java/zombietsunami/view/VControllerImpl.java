@@ -6,6 +6,7 @@ import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.view.api.VController;
 
 /**
@@ -128,20 +129,42 @@ public final class VControllerImpl implements VController {
 
     @Override
     public int getPersonMapX() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapX'");
+        return this.control.getPersonMapX();
     }
 
     @Override
     public int getPersonMapY() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonMapY'");
+        return this.control.getPersonMapY();
     }
 
     @Override
     public void updatePerson() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updatePerson'");
+        this.control.updatePerson();
+    }
+
+    @Override
+    public void getPersonFromMapC(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
+        this.control.getPersonFromMap(personlist, coords, strenght);
+    }
+
+    @Override
+    public void setCoordinatesOfPersonInListC(int index, int x, int y) {
+        this.control.setCoordinatesOfPersonInList(index, x, y);
+    }
+
+    @Override
+    public void removePersonFromListC(int index) {
+        this.control.removePersonFromList(index);
+    }
+
+    @Override
+    public List<Integer> getPersonListC() {
+        return this.control.getPersonList();
+    }
+
+    @Override
+    public List<Integer> personIndexListC() {
+        return this.control.personList();
     }
 
     /**
@@ -281,5 +304,4 @@ public final class VControllerImpl implements VController {
     public boolean isGameOver() {
         return this.control.isGameOver();
     }
-
 }

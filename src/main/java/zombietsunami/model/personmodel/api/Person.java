@@ -48,7 +48,7 @@ public interface Person {
     void setY(int y);
 
     /**
-     * Updates teh state of the Person.
+     * Updates the state of the Person.
      */
     void update();
 

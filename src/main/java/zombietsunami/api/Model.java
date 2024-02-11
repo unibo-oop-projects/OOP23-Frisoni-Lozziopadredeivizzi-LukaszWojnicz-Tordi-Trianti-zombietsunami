@@ -2,8 +2,11 @@ package zombietsunami.api;
 
 import java.util.List;
 
+import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.personmodel.api.Person;
+import zombietsunami.model.zombiemodel.api.Zombie;
 
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
@@ -62,16 +65,49 @@ public interface Model {
   int getSpeed();
 
   /**
-   * @return the person's map X coordinate
+   * @return the Person's map X coordinate
    */
   int getPersonMapX();
 
   /**
-   * @return the person's map Y coordinate
+   * @return the Person's map Y coordinate
    */
   int getPersonMapY();
 
+  /**
+   * @return the Person list
+   */
+  List<Integer> getPersonList();
+
+  /**
+   * Returns the list of Person from the map
+   */
+  void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
+
+  /**
+   * Sets the coordinates of the "index" Person
+   * @param index index of the Person in the list
+   * @param x X coordinate
+   * @param y Y coordinate
+   */
+  void setCoordinatesOfPersonInList(int index, int x, int y);
+
+  /**
+   * Updates the state of Person
+   */
   void updatePerson();
+
+  /**
+   * Removes the "index" Person from the list
+   * @param index the index of the Person in the list
+   */
+  void removePersonFromList(int index);
+
+  /**
+   * Removes a Person from the list
+   * @param index index of Person
+   */
+  void removePersonListItem(int index);
 
   /**
    * @return the strenght of the zombie
@@ -174,6 +210,15 @@ public interface Model {
      * @return
      */
     void collisionZombieObstacle();
+
+    /**
+     * Checks when the zombie hit a Person
+     * @param personList  the Person list
+     * @param tileSize the size of one tile
+     * @param zombie the Zombie entity
+     * @param gameMap the game map
+     */
+    public void collisionZombiePersons();
 
     /**
      * Checks if the game is over.
