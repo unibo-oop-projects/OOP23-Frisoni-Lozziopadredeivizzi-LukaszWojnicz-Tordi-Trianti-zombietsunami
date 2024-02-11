@@ -259,6 +259,8 @@ public interface VController {
 
   void collisionZombieOstacleC();
 
+  void collisionZombiePersonsC();
+
   /**
    * Checks if the game is over.
    * 

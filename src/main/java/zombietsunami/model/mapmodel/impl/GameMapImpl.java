@@ -100,7 +100,7 @@ public final class GameMapImpl implements GameMap {
     }
 
     @Override
-    public void removePersonListItem(int index) {
+    public void removePersonListItem(final int index) {
         this.mapOfNumberPersons.set(index, 0);
     }
 }

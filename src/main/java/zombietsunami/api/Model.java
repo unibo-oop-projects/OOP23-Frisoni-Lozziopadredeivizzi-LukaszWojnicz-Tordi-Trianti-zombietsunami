@@ -2,12 +2,8 @@ package zombietsunami.api;
 
 import java.util.List;
 
-import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
-import zombietsunami.model.personmodel.api.Person;
-import zombietsunami.model.zombiemodel.api.Zombie;
-
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
  * all their useful methods that has to comunicate with the controller
