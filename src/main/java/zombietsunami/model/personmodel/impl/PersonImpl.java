@@ -11,28 +11,34 @@ import zombietsunami.model.personmodel.api.Person;
  * @see zombietsunami.model.EntityImpl
 */
 public class PersonImpl implements Person {
+
     private final EntityImpl entity = new EntityImpl();
 
-    private static int nextId = 0;
+    private int id;
+    private int increase = 1;
 
-    private final int id;
-    private int increase;
-    
-    /** 
-     * Constructor that sets default values of the Person.
-    */
+    /**
+     * Constructor that sets the default values for the Person
+     */
     public PersonImpl() {
-        this.id = nextId;
-        nextId++;
+
     }
 
     /**
-     * Gets the Person Id.
-     * @return the Person's Id.
+     * Gets the Person Id
+     * @return the Person's Id
      */
     @Override
     public int getId() {
         return this.id;
+    }
+
+    /**
+     * Updates the Person
+     */
+    @Override
+    public void update() {
+
     }
 
     /**
@@ -51,7 +57,7 @@ public class PersonImpl implements Person {
      * @param controller the controller
      */
     @Override
-    public void hit(Controller controller) {
+    public void touch(Controller controller) {
         controller.setStrenght(controller.getStrenght() + increase);
     }
 
@@ -87,4 +93,11 @@ public class PersonImpl implements Person {
         this.entity.setY(y);
     }
 
+    /**
+     * Sets the id
+     */
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 }

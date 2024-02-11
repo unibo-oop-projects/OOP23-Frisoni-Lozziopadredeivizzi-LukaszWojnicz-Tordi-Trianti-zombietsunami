@@ -8,16 +8,22 @@ import zombietsunami.api.Controller;
 public interface Person {
 
     /**
+     * Sets the id of the Person.
+     * @param id the id of the Person.
+     */
+    void setId(int id);
+
+    /**
      * Sets the increase of the Person.
      * @param increase amount of increase that deals to the Zombie.
      */
     void setIncrease(int increase);
 
     /**
-     * If the Person hits the zombie, it increase the Zombie's strenght.
+     * If the Person touches the zombie, it increase the Zombie's strenght.
      * @param controller the controller.
      */
-    void hit(Controller controller);
+    void touch(Controller controller);
 
     /**
      * Gets the X coordinate of the Person.
@@ -40,6 +46,11 @@ public interface Person {
      * Sets the Y coordinate of the Person.
     */
     void setY(int y);
+
+    /**
+     * Updates teh state of the Person.
+     */
+    void update();
 
     /**
      * Gets the Person id

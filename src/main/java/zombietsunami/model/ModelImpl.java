@@ -111,6 +111,11 @@ public final class ModelImpl implements Model {
     }
 
     @Override
+    public void updatePerson() {
+        this.person.update();
+    }
+
+    @Override
     public int getStrenght() {
         return this.zombie.getStrenght();
     }

@@ -71,6 +71,8 @@ public interface Model {
    */
   int getPersonMapY();
 
+  void updatePerson();
+
   /**
    * @return the strenght of the zombie
    */

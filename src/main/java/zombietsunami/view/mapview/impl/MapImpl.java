@@ -44,8 +44,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
-    private final DrawBomb drawBomb;
-    private final DrawBreakable drawBreakable;
+    private final DrawObstacle drawObstacle;
     private final KeyHandler keyH;
 
     /**
@@ -59,8 +58,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.keyH = keyH;
         this.drowMap = new TileManagerImpl();
         this.drawZombie = new DrawZombieImpl();
-        this.drawBomb = new DrawBombImpl();
-        this.drawBreakable = new DrawBreakableImpl();
+        this.drawObstacle = new DrawObstacleImpl();
         this.setPreferredSize(new DimensionUIResource(controller.getScreenWC(), controller.getScreenHC()));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
@@ -102,12 +100,9 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g; 
-        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
-                controller.screenTilePosC(), this.controller);
+        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),controller.screenTilePosC(), this.controller);
         this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(), controller.titleSizeC(), this.controller);
         this.drawZombie.drawZombieV(g2, controller);
-        this.drawBomb.drawBombV(g2, controller);
-        this.drawBreakable.drawBreakableV(g2, controller);
         drawInfo(g2);
         if (isPause()) {
             Pause.pause(g2);
