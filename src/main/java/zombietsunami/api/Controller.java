@@ -59,6 +59,12 @@ public interface Controller {
   List<Integer> mapList();
 
   /**
+     * Removes an obstacle from the list.
+     * @param index
+     */
+    void removeObstacleListItem(int index);
+
+  /**
    * @return the List of Strings with the file's name of the different tile
    *         elements
    */

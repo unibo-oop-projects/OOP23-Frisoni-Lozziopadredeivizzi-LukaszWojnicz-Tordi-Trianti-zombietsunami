@@ -30,6 +30,12 @@ public interface Model {
   List<Integer> getMapList();
 
   /**
+     * Removes an obstacle from the list.
+     * @param index
+     */
+    void removeObstacleListItem(int index);
+
+  /**
    * @return the List that contains the tile's elements file name of the game map
    */
   List<String> getTileElem();
