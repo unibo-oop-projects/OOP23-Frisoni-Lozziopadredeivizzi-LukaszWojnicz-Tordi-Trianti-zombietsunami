@@ -219,7 +219,7 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void updateBreakable(){
+    public void updateBreakable() {
         this.model.updateBreakable();
     }
 
@@ -239,11 +239,13 @@ public final class ControllerImpl implements Controller {
     }
 
     /**
-   * Returns the list of bombs from the map.
-   * @param controller the controller.
-   */
+     * Returns the list of bombs from the map.
+     * 
+     * @param controller the controller.
+     */
     @Override
-    public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+    public void getBombsFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
+            final Integer strength) {
         this.model.getBombsFromMap(bomblist, coords, strength);
     }
 
@@ -253,23 +255,23 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public List<Breakable> getBreakableList(){
+    public List<Breakable> getBreakableList() {
         return this.model.getBreakableList();
     }
 
     @Override
-    public void setCoordinatesOfBombInList(int index, int x, int y){
+    public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
         this.model.setCoordinatesOfBombInList(index, x, y);
     }
 
     @Override
-    public void removeBombFromList(int index) {
+    public void removeBombFromList(final int index) {
         this.model.removeBombFromList(index);
     }
 
     @Override
-    public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
-            Integer strength) {
+    public void getBreakablesFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
+            final Integer strength) {
         this.model.getBreakablesFromMap(breakablelist, coords, strength);
     }
 
@@ -279,7 +281,7 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void removeObstacleListItem(int index) {
+    public void removeObstacleListItem(final int index) {
         this.model.removeBombFromList(index);
     }
 

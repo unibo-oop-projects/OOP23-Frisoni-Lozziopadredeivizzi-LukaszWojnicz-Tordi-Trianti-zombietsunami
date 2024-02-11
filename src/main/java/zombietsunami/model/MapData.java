@@ -27,7 +27,6 @@ public final class MapData {
     private static final int WORLD_HIGHT = TITLE_SIZE * MAX_WORLD_ROW;
 
     private MapData() {
-
     }
 
     /**

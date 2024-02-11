@@ -14,6 +14,21 @@ import zombietsunami.model.mapmodel.impl.GameMapImpl;
  * correctly readden.
  */
 class TestLoadMap {
+    // CPD-OFF
+    /*
+     * CPD suppressed because tests are naturally repetitive and their purpose
+     * should be clear enough.
+     */
+    private static final int FIVE = 5;
+    private static final int SIX = 6;
+    private static final int SEVEN = 7;
+    private static final int EIGHT = 8;
+    private static final int NINE = 9;
+    private static final int TEN = 10;
+    private static final int ELEVEN = 11;
+    private static final int TWELVE = 12;
+    private static final int THIRTHEEN = 13;
+    private static final int FOURTHEEN = 14;
 
     private final GameMap gameMap = new GameMapImpl();
     private List<Integer> values;
@@ -68,10 +83,14 @@ class TestLoadMap {
      */
     @Test
     void checkLineFour() {
-        values = List.of(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5,
-                6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2, 2,
-                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2,
-                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 5, 6, 2, 2, 2);
+        values = List.of(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+                4, FIVE,
+                SIX, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4,
+                FIVE, SIX, 2, 2,
+                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4,
+                FIVE, SIX, 2,
+                2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, FIVE, SIX,
+                2, 2, 2);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
             assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 3), values.get(i));
@@ -83,10 +102,14 @@ class TestLoadMap {
      */
     @Test
     void checkLineFive() {
-        values = List.of(2, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9,
-                7, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2,
-                2, 2, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2,
-                2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 4, 5, 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 2);
+        values = List.of(2, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2,
+                2, 2, 2, 2, 3, NINE,
+                SEVEN, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2,
+                2, 2, 3, NINE, SEVEN, 2, 2,
+                2, 2, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2,
+                2, 2, 3, NINE, SEVEN, 2,
+                2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 4, FIVE, SIX, 2, 2, 2, 2, 2, 2, 2, 2, 3,
+                NINE, SEVEN, 2, 2, 2);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
             assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 4), values.get(i));
@@ -98,13 +121,17 @@ class TestLoadMap {
      */
     @Test
     void checkLineSix() {
-        values = List.of(2, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9,
-                7, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2,
-                2, 2, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2,
-                2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 2, 2, 2, 2, 2, 2, 2, 3, 9, 7, 2, 2, 2);
+        values = List.of(2, 2, 2, 3, NINE, SEVEN, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 2, 2,
+                2, 2, 2, 2, 2, 3, NINE,
+                SEVEN, 2, 2, 3, NINE, SEVEN, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 2, 2, 2,
+                2, 2, 2, 2, 3, NINE, SEVEN, 2, 2,
+                2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 2, 2, 2, 2,
+                2, 2, 2, 3, NINE, SEVEN, 2,
+                2, 3, NINE, SEVEN, 2, 2, 2, 2, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 2, 2, 2, 2, 2, 2, 2,
+                3, NINE, SEVEN, 2, 2, 2);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 5), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * FIVE), values.get(i));
         }
     }
 
@@ -113,13 +140,17 @@ class TestLoadMap {
      */
     @Test
     void checLineSeven() {
-        values = List.of(6, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9,
-                7, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2, 4,
-                5, 6, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2,
-                2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 4, 5, 6, 2, 2, 2, 2, 3, 9, 7, 2, 4, 5);
+        values = List.of(SIX, 2, 2, 3, NINE, SEVEN, 2, 4, FIVE, SIX, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN,
+                2, 4, FIVE, SIX, 2, 2, 2, 2, 3, NINE,
+                SEVEN, 2, 2, 3, NINE, SEVEN, 2, 4, FIVE, SIX, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 4,
+                FIVE, SIX, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 4,
+                FIVE, SIX, 2, 2, 3, NINE, SEVEN, 2, 4, FIVE, SIX, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2,
+                4, FIVE, SIX, 2, 2, 2, 2, 3, NINE, SEVEN, 2,
+                2, 3, NINE, SEVEN, 2, 4, FIVE, SIX, 2, 2, 2, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 4, FIVE, SIX,
+                2, 2, 2, 2, 3, NINE, SEVEN, 2, 4, FIVE);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 6), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * SIX), values.get(i));
         }
     }
 
@@ -128,13 +159,17 @@ class TestLoadMap {
      */
     @Test
     void checkLineEight() {
-        values = List.of(7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9,
-                7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2, 3,
-                9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2,
-                2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 4, 5, 6, 2, 3, 9, 7, 2, 3, 9);
+        values = List.of(SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2, 2, 3, NINE,
+                SEVEN, 2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE,
+                SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN,
+                2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2, 3,
+                NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2, 2, 3, NINE,
+                SEVEN, 2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2,
+                2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE,
+                SEVEN, 4, FIVE, SIX, 2, 3, NINE, SEVEN, 2, 3, NINE);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 7), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * SEVEN), values.get(i));
         }
     }
 
@@ -143,13 +178,17 @@ class TestLoadMap {
      */
     @Test
     void checkLineNine() {
-        values = List.of(7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9,
-                7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2, 3,
-                9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2,
-                2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2, 2, 3, 9, 7, 2, 3, 9, 7, 3, 9, 7, 2, 3, 9, 7, 2, 3, 9);
+        values = List.of(SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2, 2, 3,
+                NINE, SEVEN, 2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE,
+                SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN,
+                2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2, 3,
+                NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2, 2, 3, NINE,
+                SEVEN, 2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2,
+                2, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2, 2, 3, NINE, SEVEN, 2, 3,
+                NINE, SEVEN, 3, NINE, SEVEN, 2, 3, NINE, SEVEN, 2, 3, NINE);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 8), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * EIGHT), values.get(i));
         }
     }
 
@@ -158,13 +197,17 @@ class TestLoadMap {
      */
     @Test
     void checkLineTen() {
-        values = List.of(7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8, 7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8,
-                7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8, 7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8, 7, 2, 3,
-                8, 7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8, 7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8, 7, 2,
-                2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 2, 3, 8, 7, 2, 2, 3, 8, 7, 2, 3, 8, 7, 3, 8, 7, 10, 3, 8, 7, 2, 3, 8);
+        values = List.of(SEVEN, 2, 2, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 2, 2, 3,
+                EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT,
+                SEVEN, 2, 2, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 2, 2, 3, EIGHT,
+                SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 2, 3,
+                EIGHT, SEVEN, 2, 2, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 2, 2, 3,
+                EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 2,
+                2, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 3, EIGHT, SEVEN, 2, 3, EIGHT, SEVEN, 2, 2, 3, EIGHT, SEVEN, 2,
+                3, EIGHT, SEVEN, 3, EIGHT, SEVEN, TEN, 3, EIGHT, SEVEN, 2, 3, EIGHT);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 9), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * NINE), values.get(i));
         }
     }
 
@@ -179,7 +222,7 @@ class TestLoadMap {
                 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 10), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * TEN), values.get(i));
         }
     }
 
@@ -194,7 +237,7 @@ class TestLoadMap {
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 11), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * ELEVEN), values.get(i));
         }
     }
 
@@ -209,7 +252,7 @@ class TestLoadMap {
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 12), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * TWELVE), values.get(i));
         }
     }
 
@@ -224,7 +267,7 @@ class TestLoadMap {
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 13), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * THIRTHEEN), values.get(i));
         }
     }
 
@@ -239,7 +282,7 @@ class TestLoadMap {
                 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertEquals(values.size(), MapData.getMaxWorldCol());
         for (int i = 0; i < MapData.getMaxWorldCol(); i++) {
-            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * 14), values.get(i));
+            assertEquals(gameMap.getLoadedMapList().get(i + MapData.getMaxWorldCol() * FOURTHEEN), values.get(i));
         }
     }
 

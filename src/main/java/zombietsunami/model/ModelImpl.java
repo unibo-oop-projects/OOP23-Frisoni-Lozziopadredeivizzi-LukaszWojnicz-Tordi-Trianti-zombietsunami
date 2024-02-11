@@ -3,7 +3,6 @@ package zombietsunami.model;
 import java.util.List;
 
 import zombietsunami.api.Collision;
-import zombietsunami.api.Controller;
 import zombietsunami.api.MightWin;
 import zombietsunami.api.Model;
 import zombietsunami.api.Pair;
@@ -17,7 +16,6 @@ import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
-import zombietsunami.model.obstaclemodel.impl.ObstacleEntity;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
@@ -63,7 +61,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+    public void getBombsFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
+            final Integer strength) {
         this.obstacleManager.getBombsFromMap(bomblist, coords, strength);
     }
 
@@ -106,7 +105,7 @@ public final class ModelImpl implements Model {
 
     @Override
     public int getPersonMapX() {
-       return this.person.getX();
+        return this.person.getX();
     }
 
     @Override
@@ -230,29 +229,29 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void setCoordinatesOfBombInList(int index, int x, int y) {
+    public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
         this.obstacleManager.setCoordinatesOfBombInList(index, x, y);
     }
 
     @Override
-    public void removeBombFromList(int index) {
+    public void removeBombFromList(final int index) {
         this.obstacleManager.removeBombFromList(index);
     }
 
     @Override
-    public void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
-            Integer strength) {
+    public void getBreakablesFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
+            final Integer strength) {
         this.obstacleManager.getBreakablesFromMap(breakablelist, coords, strength);
     }
 
     @Override
     public void collisionZombieObstacle() {
-        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(), 
-            MapData.getTitSize(), this.zombie, gameMap);
+        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(),
+                MapData.getTitSize(), this.zombie, gameMap);
     }
 
     @Override
-    public void removeObstacleListItem(int index) {
+    public void removeObstacleListItem(final int index) {
         this.gameMap.removeObstacleListItem(index);
     }
 

@@ -44,15 +44,6 @@ public class BombImpl implements Bomb, Obstacle {
     }
 
     /**
-     * Method which sends the game into a state of gameover
-     * if the zombie touches the bomb.
-     */
-    @Override
-    public void hit() {
-        
-    }
-
-    /**
      * Gets the X coordinate of the Bomb.
      */
     @Override
@@ -94,5 +85,14 @@ public class BombImpl implements Bomb, Obstacle {
     @Override
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * Returns the damage of the bomb.
+     * @return the bombs damage.
+     */
+    @Override
+    public int getDamage() {
+        return this.damage;
     }
 }

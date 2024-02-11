@@ -39,7 +39,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final int INFO_POS_Y = 25;
 
     private static final String PAUSE = "PAUSE";
-    private static final String WIN = "WIN";
+    private static final String WIN = "WINNER";
 
     private Thread gameThread;
     private final VController controller;
@@ -102,7 +102,8 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
         final Graphics2D g2 = (Graphics2D) g; 
-        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),controller.screenTilePosC(), this.controller);
+        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
+                controller.screenTilePosC(), this.controller);
         this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(), controller.titleSizeC(), this.controller);
         this.drawZombie.drawZombieV(g2, controller);
         drawInfo(g2);
@@ -134,6 +135,9 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         this.gameThread.start();
     }
 
+    /**
+     * @param g2 is the graphic to draw the info elements on the screen
+     */
     private void drawInfo(final Graphics2D g2) {
         g2.setColor(Color.DARK_GRAY);
         g2.fillRect(0, 0, RECT_WIDTH, RECT_HEIGHT);

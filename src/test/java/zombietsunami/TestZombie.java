@@ -4,6 +4,7 @@ package zombietsunami;
 import org.junit.jupiter.api.Test;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,9 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * This class contains unit tests for various functionalities of the ZombieImpl
  * class.
  */
-public class TestZombie {
+class TestZombie {
 
-    private final static ZombieImpl zombie = new ZombieImpl();
+    private final ZombieImpl zombie = new ZombieImpl();
 
     /**
      * Test method to verify the default position of the zombie.
@@ -26,9 +27,9 @@ public class TestZombie {
      */
     @Test
     void checkDefaultPosition() {
-        assertTrue(zombie.getX() == 380);
-        assertTrue(zombie.getY() == 450);
-        assertTrue(zombie.getSpeed() == 1);
+        assertEquals(zombie.getX(), 380);
+        assertEquals(zombie.getY(), 450);
+        assertEquals(zombie.getSpeed(), 1);
     }
 
     /**
@@ -43,8 +44,8 @@ public class TestZombie {
     void checkUpdatePosition() {
         zombie.update();
         zombie.update();
-        assertTrue(zombie.getX() == 382);
-        assertTrue(zombie.getY() == 450);
+        assertEquals(zombie.getX(), 382);
+        assertEquals(zombie.getY(), 450);
     }
 
     /**
@@ -65,22 +66,22 @@ public class TestZombie {
     @Test
     void checkJumpPosition() {
         zombie.jumpPress();
-        assertTrue(zombie.isJumping() == true);
+        assertTrue(zombie.isJumping());
 
         for (int i = 450; i >= 360; i--) {
-            assertTrue(zombie.getX() == 380);
+            assertEquals(zombie.getX() , 380);
             zombie.updateJumpZombie();
         }
 
         assertFalse(zombie.getY() > 360);
-        assertTrue(zombie.getY() == 360);
-        assertTrue(zombie.getX() == 380);
+        assertEquals(zombie.getY(), 360);
+        assertEquals(zombie.getX(), 380);
 
         for (int i = 360; i <= 450; i++) {
-            assertTrue(zombie.getX() == 380);
+            assertEquals(zombie.getX(), 380);
             zombie.updateJumpZombie();
         }
-        assertTrue(zombie.getY() == 450);
-        assertTrue(zombie.isJumping() == false);
+        assertEquals(zombie.getY(), 450);
+        assertFalse(zombie.isJumping());
     }
 }

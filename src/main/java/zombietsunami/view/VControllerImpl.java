@@ -255,7 +255,8 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void getBombsFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength) {
+    public void getBombsFromMapC(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
+            final Integer strength) {
         this.control.getBombsFromMap(bomblist, coords, strength);
     }
 
@@ -270,18 +271,18 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void setCoordinatesOfBombInListC(int index, int x, int y) {
+    public void setCoordinatesOfBombInListC(final int index, final int x, final int y) {
         this.control.setCoordinatesOfBombInList(index, x, y);
     }
 
     @Override
-    public void removeBombFromListC(int index) {
+    public void removeBombFromListC(final int index) {
         this.control.removeBombFromList(index);
     }
 
     @Override
-    public void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords,
-            Integer strength) {
+    public void getBreakablesFromMapC(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
+            final Integer strength) {
         this.control.getBreakablesFromMap(breakablelist, coords, strength);
     }
 
