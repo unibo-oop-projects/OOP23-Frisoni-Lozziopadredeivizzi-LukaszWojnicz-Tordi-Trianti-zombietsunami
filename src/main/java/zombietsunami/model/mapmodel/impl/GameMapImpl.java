@@ -88,7 +88,7 @@ public final class GameMapImpl implements GameMap {
     }
 
     @Override
-    public void removeObstacleListItem(int index) {
+    public void removeObstacleListItem(final int index) {
         this.mapOfNumberObstacle.set(index, 0);
     }
 

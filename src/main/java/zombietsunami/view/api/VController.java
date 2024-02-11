@@ -183,6 +183,7 @@ public interface VController {
 
   /**
    * Calls the set end position method in {@link zombietsunami.api.Controller}.
+   * 
    * @param endX is the flag's X coordinate
    */
   void setEndPosC(int endX);
@@ -204,21 +205,23 @@ public interface VController {
   void setCoordinatesOfBombInListC(int index, int x, int y);
 
   /**
-     * Removes the "index" bomb from the list.
-     * @param index the index of the bomb in the list.
-     */
-    void removeBombFromListC(int index);
+   * Removes the "index" bomb from the list.
+   * 
+   * @param index the index of the bomb in the list.
+   */
+  void removeBombFromListC(int index);
 
-    /**
-     * Returns the list of breakables from the map.
-     */
-    void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+  /**
+   * Returns the list of breakables from the map.
+   */
+  void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
-    void collisionZombieOstacleC();
+  void collisionZombieOstacleC();
 
-    /**
-     * Checks if the game is over.
-     * @return true if the game is over, false otherwise.
-     */
-    public boolean isGameOver();
+  /**
+   * Checks if the game is over.
+   * 
+   * @return true if the game is over, false otherwise.
+   */
+  boolean isGameOver();
 }
