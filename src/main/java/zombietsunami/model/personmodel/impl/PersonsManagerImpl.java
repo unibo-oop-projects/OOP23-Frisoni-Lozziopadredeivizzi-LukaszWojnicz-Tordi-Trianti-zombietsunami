@@ -3,6 +3,7 @@ package zombietsunami.model.personmodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.model.personmodel.api.PersonsManager;
@@ -19,6 +20,7 @@ public class PersonsManagerImpl implements PersonsManager{
      * @param id the Person id
      * @return the Person
      */
+    @Override
     public Person getPersonById(final int id) {
         for (Person person : personList) {
             if(person.getId() == id) {
@@ -28,40 +30,84 @@ public class PersonsManagerImpl implements PersonsManager{
         return null;
     }
 
+    /**
+     * Method that allows to remove a Person from the list
+     * @param index index of the Person
+     */
     @Override
-    public void removePersonFromList(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removePersonFromList'");
+    public void removePersonFromList(final int index) {
+        personList.set(index, null);
     }
 
+    /**
+     * Sets the coordinates of the Person
+     * @param index index of the Person in the list
+     * @param x X coordinate
+     * @param y Y coordinate
+     */
     @Override
-    public void setCoordinatesOfPersonInList(int index, int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setCoordinatesOfPersonInList'");
+    public void setCoordinatesOfPersonInList(final int index, final int x, final int y) {
+        personList.get(index).setX(x);
+        personList.get(index).setY(y);
     }
 
+    /**
+     * Returns the Person list
+     * @return the Person list
+     */
     @Override
     public List<Person> getPersonList() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonList'");
+        return personList;
     }
 
+    /**
+     * Returns the list of Person from the map
+     * @return the complete list of the Person
+     */
     @Override
-    public void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonFromMap'");
+    public void getPersonFromMap(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords, final Integer strenght) {
+        personList = new ArrayList<>();
+        for(int i = 0; i < personlist.size(); i++) {
+            if(personlist.get(i) == 1 && coords.get(i) != null) {
+                Person person = new PersonImpl();
+
+                person.setX(coords.get(i).getX());
+                person.setY(coords.get(i).getY());
+                person.setIncrease(Math.round(strenght * 0.5f));
+                person.setId(i);
+
+                personList.add(i, person);
+            }else {
+                personList.add(i, null);
+            }
+        }
     }
 
+    /**
+     * Adds a Person into the Person list
+     * @param person the Person that needs to be added
+     */
     @Override
-    public void addPerson(Person person) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addPerson'");
+    public void addPerson( final Person person) {
+        if(person != null) {
+            personList.add(person);
+        }
     }
 
+    /**
+     * Method that allows to retrieve a Person by its X and Y coords
+     * @param x the X coordinate of the Person
+     * @param y the Y coordinate of the Person
+     * @return the Person
+     */
     @Override
-    public Person getPersonByCoordinates(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPersonByCoordinates'");
+    public Person getPersonByCoordinates(final int x, final int y) {
+        for (Person person : personList) {
+            if(person.getX() == x && person.getY() == y) {
+                return person;
+            }
+        }
+        return null;
     }
 
 }
