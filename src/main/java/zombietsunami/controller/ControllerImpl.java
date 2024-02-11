@@ -237,4 +237,9 @@ public final class ControllerImpl implements Controller {
         this.model.collisionZombieObstacle();
     }
 
+    @Override
+    public void removeObstacleListItem(int index) {
+        this.model.removeBombFromList(index);
+    }
+
 }

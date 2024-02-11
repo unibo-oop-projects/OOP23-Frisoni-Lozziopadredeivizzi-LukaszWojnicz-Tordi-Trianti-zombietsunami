@@ -17,4 +17,10 @@ public interface GameMap {
      * @return the list of Integer with the item's number of the obstacles
      */
     List<Integer> getLoadedObstacleList();
+
+    /**
+     * Removes an obstacle from the list.
+     * @param index
+     */
+    void removeObstacleListItem(int index);
 }
