@@ -135,7 +135,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
         breakableList = new ArrayList<>();
         for(int i = 0; i < breakablelist.size(); i++){
             if(breakablelist.get(i) == 2 && coords.get(i) != null){
-                Breakable breakable = new BreakableImpl(Math.round(strength * 0.8f));
+                Breakable breakable = new BreakableImpl(1);
 
                 breakable.setX(coords.get(i).getX());
                 breakable.setY(coords.get(i).getY());
