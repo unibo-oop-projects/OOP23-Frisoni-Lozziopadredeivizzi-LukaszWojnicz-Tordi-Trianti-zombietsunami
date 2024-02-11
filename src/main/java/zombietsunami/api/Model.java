@@ -174,4 +174,10 @@ public interface Model {
      * @return
      */
     void collisionZombieObstacle();
+
+    /**
+     * Checks if the game is over.
+     * @return true if the game is over, false otherwise.
+     */
+    public boolean isGameOver();
 }
