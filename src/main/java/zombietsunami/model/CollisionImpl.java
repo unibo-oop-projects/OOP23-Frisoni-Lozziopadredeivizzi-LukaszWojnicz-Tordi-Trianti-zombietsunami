@@ -2,7 +2,6 @@ package zombietsunami.model;
 
 import java.util.List;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.api.Collision;
 import zombietsunami.model.mapmodel.api.GameMap;
