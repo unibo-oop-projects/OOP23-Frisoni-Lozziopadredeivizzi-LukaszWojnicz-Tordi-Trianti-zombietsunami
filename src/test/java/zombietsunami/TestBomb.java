@@ -3,7 +3,6 @@ package zombietsunami;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;

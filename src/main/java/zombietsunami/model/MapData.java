@@ -26,7 +26,7 @@ public final class MapData {
     private static final int WORLD_WIDTH = TITLE_SIZE * MAX_WORLD_COL;
     private static final int WORLD_HIGHT = TITLE_SIZE * MAX_WORLD_ROW;
 
-    private MapData() {
+    public MapData() {
 
     }
 

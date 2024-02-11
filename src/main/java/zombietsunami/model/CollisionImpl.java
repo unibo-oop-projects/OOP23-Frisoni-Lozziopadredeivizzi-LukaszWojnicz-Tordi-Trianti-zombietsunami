@@ -10,7 +10,6 @@ import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 public class CollisionImpl implements Collision{
 
-    @SuppressFBWarnings
     private static final int THRESHOLD_1 = 60;
     private static final int THRESHOLD_2 = 104;
 
@@ -28,9 +27,9 @@ public class CollisionImpl implements Collision{
                             if(zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
                                 gameOver = true;
                             }
-                            gameMap.removeObstacleListItem(i);
-                            bombList.set(i, null);
                             zombie.setStrenght(zombie.getStrenght() - bombList.get(i).getDamage());
+                            bombList.set(i, null);
+                            gameMap.removeObstacleListItem(i);
                     } 
                 }
             }

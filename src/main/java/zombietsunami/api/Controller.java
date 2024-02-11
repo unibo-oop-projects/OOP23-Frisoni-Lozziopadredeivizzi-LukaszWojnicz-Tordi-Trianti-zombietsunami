@@ -202,12 +202,34 @@ public interface Controller {
    */
   boolean isWin();
 
+  /**
+   * Converts the bombs from the txt file to the Bomb object
+   * and puts them inside a list.
+   * @param bomblist txt bomb list.
+   * @param coords the coordinates for each bomb.
+   * @param strength the zombie strength.
+   */
   void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
+  /**
+   * Gets the bomb list.
+   * @return the bomb list.
+   */
   List<Bomb> getBombList();
 
+  /**
+   * Gets the breakable list.
+   * @return the breakable list.
+   */
   List<Breakable> getBreakableList();
 
+  /**
+   * Sets the X and Y coordinates for the "index" bomb
+   * of the list.
+   * @param index index of the bomb in the list.
+   * @param x X coordinate.
+   * @param y Y coordinate.
+   */
   void setCoordinatesOfBombInList(int index, int x, int y);
 
   /**
