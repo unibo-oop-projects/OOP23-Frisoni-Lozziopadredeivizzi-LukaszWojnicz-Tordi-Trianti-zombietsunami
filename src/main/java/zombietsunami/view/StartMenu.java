@@ -87,7 +87,7 @@ public final class StartMenu extends JPanel {
                     + //
                     "ATTENTION: if the zombie trys to break an obstacle with an insufficient strenght value, \r\n"
                     + //
-                    "you will loose, and the game will shut down automatically after 3 seconds; same thing \r\n"
+                    "you will lose, and the game will shut down automatically after 3 seconds; same thing \r\n"
                     + //
                     "if the zombie's strenght value will be equals to zero by hitting too many bombs.\r\n"
                     + //
