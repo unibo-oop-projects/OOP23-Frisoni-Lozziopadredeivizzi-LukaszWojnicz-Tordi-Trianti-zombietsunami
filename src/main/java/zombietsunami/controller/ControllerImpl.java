@@ -289,4 +289,14 @@ public final class ControllerImpl implements Controller {
         return this.model.isGameOver();
     }
 
+    @Override
+    public boolean isNotEnough() {
+        return this.model.isNotEnough();
+    }
+
+    @Override
+    public boolean isStrenghtZero() {
+        return this.model.isStrenghtZero();
+    }
+
 }

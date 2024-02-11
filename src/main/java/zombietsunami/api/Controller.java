@@ -303,4 +303,14 @@ public interface Controller {
      * @return true if the game is over, false otherwise.
      */
     public boolean isGameOver();
+
+    /**
+     * @return true if the zombie's strenght is not enough to break the breakable object in the map
+     */
+    boolean isNotEnough();
+
+    /**
+     * @return true if the zombie's strenght is zero
+     */
+    boolean isStrenghtZero();
 }

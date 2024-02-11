@@ -309,4 +309,14 @@ public final class VControllerImpl implements VController {
     public void collisionZombiePersonsC() {
         this.control.collisionZombiePersons();
     }
+
+    @Override
+    public boolean isNotEnoughC() {
+        return this.control.isNotEnough();
+    }
+
+    @Override
+    public boolean isStrenghtZeroC() {
+        return this.control.isStrenghtZero();
+    }
 }
