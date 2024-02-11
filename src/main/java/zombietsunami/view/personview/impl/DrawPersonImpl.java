@@ -21,8 +21,8 @@ public class DrawPersonImpl implements DrawPerson {
     private static final int FRAMESCHANGE = 15;
     private static final String SEP = "/";
     private static final String ROOT = SEP + "zombietsunami" + SEP + "person" + SEP;
-    private static final String PERSON_00 = ROOT + "person_00.png";
-    private static final String PERSON_01 = ROOT + "person_01.png";
+    private static final String PERSON_00 = ROOT + "Person_00.png";
+    private static final String PERSON_01 = ROOT + "Person_01.png";
 
     @Override
     public void drawPersonV(Graphics2D g2, List<Integer> personIndexList, List<Pair<Integer, Integer>> screenTilePos,
