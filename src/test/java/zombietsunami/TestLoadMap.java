@@ -14,7 +14,11 @@ import zombietsunami.model.mapmodel.impl.GameMapImpl;
  * correctly readden.
  */
 class TestLoadMap {
-
+    // CPD-OFF
+    /*
+     * CPD suppressed because tests are naturally repetitive and their purpose
+     * should be clear enough.
+     */
     private static final int FIVE = 5;
     private static final int SIX = 6;
     private static final int SEVEN = 7;
