@@ -73,21 +73,36 @@ public final class StartMenu extends JPanel {
      */
     private void addActionListenerToRuleButton() {
         this.rulesButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "The game starts with the zombie's stranght value seattled to 1.\r\n" + //
-                    "By catching the civilians you're going to be able to increase the strenght value by one, \r\n" + //
-                    "but be carefoul about the presence of bombs and obstacle in the game!\r\n" + //
-                    "\r\n" + //
-                    "If the zombie touches a bomb, its strenght will decrease by one, and to pass over the \r\n" + //
-                    "obstacles and breake them, you must have the strenght value greater or equals by 3.\r\n" + //
-                    "ATTENTION: if the zombie trys to break an obstacle with an insufficient strenght value, \r\n" + //
-                    "you will loose, and the game will shut down automatically after 3 seconds; same thing \r\n" + //
-                    "if the zombie's strenght value will be equals to zero by hitting too many bombs.\r\n" + //
-                    "If you successfully arrive at the flag put at the end of the map, you will win! \r\n" + //
-                    "\r\n" + //
-                    "COMMANDS: \r\n" + //
-                    "- ESCAPE to pause the game.\r\n" + //
-                    "- SPACE to jump\r\n" + //
-                    "\r\n" + //
+            JOptionPane.showMessageDialog(null, "The game starts with the zombie's stranght value seattled to 1.\r\n"
+                    + //
+                    "By catching the civilians you're going to be able to increase the strenght value by one, \r\n"
+                    + //
+                    "but be carefoul about the presence of bombs and obstacle in the game!\r\n"
+                    + //
+                    "\r\n"
+                    + //
+                    "If the zombie touches a bomb, its strenght will decrease by one, and to pass over the \r\n"
+                    + //
+                    "obstacles and breake them, you must have the strenght value greater or equals by 3.\r\n"
+                    + //
+                    "ATTENTION: if the zombie trys to break an obstacle with an insufficient strenght value, \r\n"
+                    + //
+                    "you will loose, and the game will shut down automatically after 3 seconds; same thing \r\n"
+                    + //
+                    "if the zombie's strenght value will be equals to zero by hitting too many bombs.\r\n"
+                    + //
+                    "If you successfully arrive at the flag put at the end of the map, you will win! \r\n"
+                    + //
+                    "\r\n"
+                    + //
+                    "COMMANDS: \r\n"
+                    + //
+                    "- ESCAPE to pause the game.\r\n"
+                    + //
+                    "- SPACE to jump\r\n"
+                    + //
+                    "\r\n"
+                    + //
                     "Good luck!", "Regole", JOptionPane.INFORMATION_MESSAGE);
         });
     }

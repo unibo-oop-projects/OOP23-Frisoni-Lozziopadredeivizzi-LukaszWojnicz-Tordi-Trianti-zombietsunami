@@ -26,7 +26,6 @@ public final class GameMapImpl implements GameMap {
     private final String filePathMap = ROOT + MAP1;
     private final String filePathObst = ROOT + OBST;
 
-
     private final List<Integer> mapOfNumberTile;
     private final List<Integer> mapOfNumberObstacle;
 
@@ -74,8 +73,6 @@ public final class GameMapImpl implements GameMap {
 
         return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
     }
-
-    
 
     @Override
     public List<Integer> getLoadedMapList() {
