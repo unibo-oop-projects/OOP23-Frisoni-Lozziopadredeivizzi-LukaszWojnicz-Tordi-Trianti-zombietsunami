@@ -54,7 +54,7 @@ public final class ModelImpl implements Model {
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
         this.personsManager = new PersonsManagerImpl();
-        this.breakable = new BreakableImpl(1); // 1 per test
+        this.breakable = new BreakableImpl(zombie.getSpeed());
         this.win = new MightWinImpl();
         this.obstacleManager = new ObstacleManagerImpl();
         this.collisionManager = new CollisionImpl();
