@@ -41,7 +41,7 @@ public class CollisionImpl implements Collision {
                             if (zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
                                 gameOver = true;
                             }
-                            zombie.setStrenght(zombie.getStrenght() - bombList.get(i).getDamage());
+                            zombie.setStrenght(zombie.getStrenght() - zombie.getSpeed());
                             bombList.set(i, null);
                             gameMap.removeObstacleListItem(i);
                     } 
