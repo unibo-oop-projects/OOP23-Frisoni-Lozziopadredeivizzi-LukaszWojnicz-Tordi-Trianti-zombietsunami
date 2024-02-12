@@ -50,17 +50,7 @@ public class PersonImpl implements Person {
             this.increase = increase ;
        }
     }
-
-    /**
-     * Method that allowsto continue the game if the Zombie
-     * touches the Person
-     * @param controller the controller
-     */
-    @Override
-    public void touch(Controller controller) {
-        controller.setStrenght(controller.getStrenght() + increase);
-    }
-
+   
     /**
      * Gets the X coordinate of the Person
      */

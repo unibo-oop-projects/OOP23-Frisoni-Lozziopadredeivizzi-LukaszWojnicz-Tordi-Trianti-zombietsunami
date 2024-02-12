@@ -1,7 +1,5 @@
 package zombietsunami.model.personmodel.api;
 
-import zombietsunami.api.Controller;
-
 /**
  * Defines the Person object
  */
@@ -18,12 +16,6 @@ public interface Person {
      * @param increase amount of increase that deals to the Zombie.
      */
     void setIncrease(int increase);
-
-    /**
-     * If the Person touches the zombie, it increase the Zombie's strenght.
-     * @param controller the controller.
-     */
-    void touch(Controller controller);
 
     /**
      * Gets the X coordinate of the Person.
