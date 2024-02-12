@@ -65,7 +65,7 @@ public interface Controller {
   void removeObstacleListItem(int index);
 
   /**
-   * Removes a Person from the list
+   * Removes a Person from the list.
    * @param index index of Person
    */
   void removePersonListItem(int index);
@@ -146,22 +146,22 @@ public interface Controller {
   int getPersonMapY();
 
   /**
-   * Updates the state of the Person
+   * Updates the state of the Person.
    */
   void updatePerson();
 
   /**
-   * Returns the list of Person from the map
+   * Returns the list of Person from the map.
    */
   void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
 
   /**
-   * @return the Person list
+   * @return the Person list.
    */
   List<Integer> getPersonList();
 
   /**
-   * Sets the coordinates of the "index" Person
+   * Sets the coordinates of the "index" Person.
    * @param index index of the Person in the list
    * @param x X coordinate
    * @param y Y coordinate
@@ -169,13 +169,13 @@ public interface Controller {
   void setCoordinatesOfPersonInList(int index, int x, int y);
 
   /**
-   * Removes the "index" Person from the list
+   * Removes the "index" Person from the list.
    * @param index the index of the Person in the list
    */
   void removePersonFromList(int index);
 
   /**
-   * List of Person
+   * List of Person.
    * @return the list of Person
    */
   List<Integer> personList();
@@ -189,6 +189,11 @@ public interface Controller {
    */
   void setStrenght(int strenght);
 
+  /**
+   * Checks if the breakable minimum force is less than the strength.
+   * @param zombieStrength the zombies strength.
+   * @return true if can break, false otherwise.
+   */
   boolean canBreakObstacle(int zombieStrength);
 
   /**
@@ -226,10 +231,21 @@ public interface Controller {
    */
   boolean isJumping();
 
+  /**
+   * Updates the breakable.
+   */
   void updateBreakable();
 
+  /**
+   * Updates the bomb.
+   */
   void updateBomb();
 
+  /**
+   * Returns the loaded obstacle list
+   * in {@link zombietsunami.model.mapmodel.api.GameMap}
+   * @return obstacle list.
+   */
   List<Integer> obstacleList();
 
   /**
@@ -302,7 +318,7 @@ public interface Controller {
      * Checks if the game is over.
      * @return true if the game is over, false otherwise.
      */
-    public boolean isGameOver();
+    boolean isGameOver();
 
     /**
      * @return true if the zombie's strenght is not enough to break the breakable object in the map

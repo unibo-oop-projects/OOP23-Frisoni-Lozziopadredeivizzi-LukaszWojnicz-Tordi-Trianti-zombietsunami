@@ -1,9 +1,7 @@
 package zombietsunami.model.obstaclemodel.impl;
 
-import zombietsunami.api.Controller;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Obstacle;
-import zombietsunami.model.zombiemodel.api.Zombie;
 
 /**
  * Class implementing the Bomb functionalities.
@@ -27,7 +25,6 @@ public class BombImpl implements Bomb, Obstacle {
 
     /**
      * Gets the bomb Id.
-     * @param bomb the bomb object.
      * @return the bomb's Id.
      */
     @Override
@@ -63,7 +60,7 @@ public class BombImpl implements Bomb, Obstacle {
      * Sets the X coordinate of the Bomb.
      */
     @Override
-    public void setX(int x) {
+    public void setX(final int x) {
         this.entity.setX(x);
     }
 
@@ -71,19 +68,27 @@ public class BombImpl implements Bomb, Obstacle {
      * Sets the Y coordinate of the Bomb.
      */
     @Override
-    public void setY(int y) {
+    public void setY(final int y) {
         this.entity.setY(y);
     }
 
+    /**
+     * Sets the damage of the bomb.
+     * @param damage the damage of the bomb.
+     */
     @Override
-    public void setDamage(int damage) {
-        if(damage > 0){
+    public void setDamage(final int damage) {
+        if (damage > 0) {
             this.damage = damage;
         }
     }
 
+    /**
+     * Sets the id of the bomb.
+     * @param id the id of the bomb.
+     */
     @Override
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 

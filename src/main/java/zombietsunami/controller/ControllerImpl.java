@@ -248,21 +248,41 @@ public final class ControllerImpl implements Controller {
         this.model.getBombsFromMap(bomblist, coords, strength);
     }
 
+    /**
+     * Gets the bomb list.
+     * @return the bomb list.
+     */
     @Override
     public List<Bomb> getBombList() {
         return this.model.getBombList();
     }
 
+    /**
+     * Gets the breakable list.
+     * @return the breakable list.
+     */
     @Override
     public List<Breakable> getBreakableList() {
         return this.model.getBreakableList();
     }
 
+     /**
+     * Sets the X and Y coordinates for the "index" bomb
+     * of the list.
+     * @param index index of the bomb in the list.
+     * @param x X coordinate.
+     * @param y Y coordinate.
+     */
     @Override
     public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
         this.model.setCoordinatesOfBombInList(index, x, y);
     }
 
+    /**
+     * Removes the "index" bomb inside the list.
+     * 
+     * @param index the index of the bomb.
+     */
     @Override
     public void removeBombFromList(final int index) {
         this.model.removeBombFromList(index);

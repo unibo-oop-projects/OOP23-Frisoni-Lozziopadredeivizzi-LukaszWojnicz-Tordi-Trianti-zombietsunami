@@ -7,11 +7,13 @@ public interface Breakable {
 
     /**
      * Sets the X coordinate of the breakable.
+     * @param x the X coordinate.
      */
     void setX(int x);
 
     /**
      * Sets the Y coordinate of the breakable.
+     * @param y the Y coordinate.
      */
     void setY(int y);
 

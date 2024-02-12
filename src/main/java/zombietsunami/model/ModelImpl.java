@@ -127,22 +127,23 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
+    public void getPersonFromMap(final List<Integer> personlist, 
+        final List<Pair<Integer, Integer>> coords, final Integer strenght) {
         this.personsManager.getPersonFromMap(personlist, coords, strenght);
     }
 
     @Override
-    public void setCoordinatesOfPersonInList(int index, int x, int y) {
+    public void setCoordinatesOfPersonInList(final int index, final int x, final int y) {
         this.personsManager.setCoordinatesOfPersonInList(index, x, y);
     }
 
     @Override
-    public void removePersonFromList(int index) {
+    public void removePersonFromList(final int index) {
        this.personsManager.removePersonFromList(index);
     }
 
     @Override
-    public void removePersonListItem(int index) {
+    public void removePersonListItem(final int index) {
         this.gameMap.removePersonListItem(index);
     }
 

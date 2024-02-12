@@ -1,8 +1,5 @@
 package zombietsunami.model.obstaclemodel.api;
 
-import zombietsunami.api.Controller;
-import zombietsunami.model.zombiemodel.api.Zombie;
-
 /**
  * Defines the Bomb object.
  */
@@ -22,6 +19,7 @@ public interface Bomb {
 
     /**
      * Gets the bombs damage.
+     * @return the damage of the bomb.
      */
     int getDamage();
 
@@ -39,11 +37,13 @@ public interface Bomb {
 
     /**
      * Sets the X coordinate of the Bomb.
+     * @param x the X coordinate of the bomb.
      */
     void setX(int x);
 
     /**
      * Sets the Y coordinate of the Bomb.
+     * @param y the Y coordinate of the bomb.
      */
     void setY(int y);
 
