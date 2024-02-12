@@ -25,6 +25,10 @@ class TestZombie {
      * (380, 450)
      * and its speed is set to 1.
      */
+    // CHECKSTYLE: MagicNumber OFF
+    // MagicNumber rule disabled because the numbers in the following code represent
+    // coordinates
+
     @Test
     void checkDefaultPosition() {
         assertEquals(zombie.getX(), 380);
@@ -69,7 +73,7 @@ class TestZombie {
         assertTrue(zombie.isJumping());
 
         for (int i = 450; i >= 360; i--) {
-            assertEquals(zombie.getX() , 380);
+            assertEquals(zombie.getX(), 380);
             zombie.updateJumpZombie();
         }
 
