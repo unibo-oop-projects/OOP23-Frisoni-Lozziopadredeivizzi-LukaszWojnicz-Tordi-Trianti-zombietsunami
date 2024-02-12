@@ -138,7 +138,7 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void removePersonListItem(int index) {
+    public void removePersonListItem(final int index) {
         this.model.removePersonListItem(index);
     }
 
@@ -148,7 +148,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
+    public void getPersonFromMap(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
+            final Integer strenght) {
         this.model.getPersonFromMap(personlist, coords, strenght);
     }
 
@@ -158,13 +159,13 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void setCoordinatesOfPersonInList(int index, int x, int y) {
+    public void setCoordinatesOfPersonInList(final int index, final int x, final int y) {
         this.model.setCoordinatesOfPersonInList(index, x, y);
     }
 
     @Override
-    public void removePersonFromList(int index) {
-       this.model.removePersonFromList(index);
+    public void removePersonFromList(final int index) {
+        this.model.removePersonFromList(index);
     }
 
     @Override
@@ -176,7 +177,7 @@ public final class ControllerImpl implements Controller {
     public void collisionZombiePersons() {
         this.model.collisionZombiePersons();
     }
-    
+
     @Override
     public void setStrenght(final int strenght) {
         this.model.setStrenght(strenght);
@@ -250,6 +251,7 @@ public final class ControllerImpl implements Controller {
 
     /**
      * Gets the bomb list.
+     * 
      * @return the bomb list.
      */
     @Override
@@ -259,6 +261,7 @@ public final class ControllerImpl implements Controller {
 
     /**
      * Gets the breakable list.
+     * 
      * @return the breakable list.
      */
     @Override
@@ -266,12 +269,13 @@ public final class ControllerImpl implements Controller {
         return this.model.getBreakableList();
     }
 
-     /**
+    /**
      * Sets the X and Y coordinates for the "index" bomb
      * of the list.
+     * 
      * @param index index of the bomb in the list.
-     * @param x X coordinate.
-     * @param y Y coordinate.
+     * @param x     X coordinate.
+     * @param y     Y coordinate.
      */
     @Override
     public void setCoordinatesOfBombInList(final int index, final int x, final int y) {

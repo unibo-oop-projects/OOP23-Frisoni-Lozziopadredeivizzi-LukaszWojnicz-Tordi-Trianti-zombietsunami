@@ -19,7 +19,7 @@ import zombietsunami.view.obstacleview.impl.DrawObstacleImpl;
 import zombietsunami.view.zombieview.api.DrawZombie;
 import zombietsunami.view.zombieview.impl.DrawZombieImpl;
 import zombietsunami.view.personview.api.DrawPerson;
-import zombietsunami.view.personview.impl.DrawPersonImpl;;
+import zombietsunami.view.personview.impl.DrawPersonImpl;
 
 /**
  * This class implements the Map interface
@@ -120,7 +120,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         if (isWin()) {
             TextScene.scene(g2, WIN);
         }
-        if(isGameOver()){
+        if (isGameOver()) {
             TextScene.scene(g2, GAMEOVER);
         }
         g2.dispose();
@@ -173,7 +173,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     /**
      * @return if is Game Over or not
      */
-    private boolean isGameOver(){
+    private boolean isGameOver() {
         return this.controller.isNotEnoughC() || this.controller.isStrenghtZeroC();
     }
 
