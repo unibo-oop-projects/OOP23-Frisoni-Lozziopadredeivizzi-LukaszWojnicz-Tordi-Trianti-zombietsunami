@@ -67,7 +67,7 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
      * Sets the X coordinate of the Breakable.
      */
     @Override
-    public void setX(int x) {
+    public void setX(final int x) {
         this.entity.setX(x);
     }
 
@@ -75,7 +75,7 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
      * Sets the Y coordinate of the Breakable.
      */
     @Override
-    public void setY(int y) {
+    public void setY(final int y) {
         this.entity.setY(y);
     }
 
@@ -88,8 +88,12 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
         return this.id;
     }
 
+    /**
+     * Sets the id of the breakable.
+     * @param id the id of the breakable.
+     */
     @Override
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 }

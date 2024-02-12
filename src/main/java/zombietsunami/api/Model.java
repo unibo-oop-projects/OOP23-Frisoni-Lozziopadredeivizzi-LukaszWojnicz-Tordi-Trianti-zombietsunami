@@ -178,10 +178,26 @@ public interface Model {
    */
   boolean isWin();
 
+  /**
+   * Returns the bomb list containing the current bombs
+   * displayed.
+   * @return the bomb list.
+   */
   List<Bomb> getBombList();
 
+  /**
+   * Returns the breakable list containing the current bombs
+   * displayed.
+   * @return the breakable list.
+   */
   List<Breakable> getBreakableList();
 
+  /**
+   * Sets the coordinates of the "index" bomb in the list.
+   * @param index index of the bomb inside the list.
+   * @param x X coordinate.
+   * @param y Y coordinate.
+   */
   void setCoordinatesOfBombInList(int index, int x, int y);
 
   /**
@@ -198,29 +214,19 @@ public interface Model {
 
     /**
      * Checks collision between zombie and obstacles.
-     * @param bombList
-     * @param breakableList
-     * @param tileSize
-     * @param screenZombieX
-     * @param screenZombieY
-     * @return
      */
     void collisionZombieObstacle();
 
     /**
-     * Checks when the zombie hit a Person
-     * @param personList  the Person list
-     * @param tileSize the size of one tile
-     * @param zombie the Zombie entity
-     * @param gameMap the game map
+     * Checks when the zombie hit a Person.
      */
-    public void collisionZombiePersons();
+    void collisionZombiePersons();
 
     /**
      * Checks if the game is over.
      * @return true if the game is over, false otherwise.
      */
-    public boolean isGameOver();
+    boolean isGameOver();
 
     /**
      * @return true if the zombie's strenght is not enough to break the breakable object in the map

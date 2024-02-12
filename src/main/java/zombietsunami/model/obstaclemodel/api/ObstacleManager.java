@@ -2,7 +2,6 @@ package zombietsunami.model.obstaclemodel.api;
 
 import java.util.List;
 
-import zombietsunami.api.Controller;
 import zombietsunami.api.Pair;
 
 /**
@@ -23,7 +22,7 @@ public interface ObstacleManager {
      * @param y Y coordinate.
      */
     void setCoordinatesOfBreakableInList(int index, int x, int y);
-    
+
     /**
      * Removes the "index" bomb from the list.
      * @param index the index of the bomb in the list.
@@ -51,14 +50,18 @@ public interface ObstacleManager {
     List<Breakable> getBreakableList();
 
     /**
-     * Returns the list of bombs from the map.
-     * @param controller the controller.
+     * Gets the list of bombs from the map.
+     * @param bomblist the list of the bombs.
+     * @param coords the list of the coordinates of every single bomb.
+     * @param strength the zombies strength.
      */
     void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
     /**
-     * Returns the list of breakables from the map.
-     * @param controller the controller.
+     * Gets the list of breakables from the map.
+     * @param breakablelist the list of the breakables.
+     * @param coords the list of the coordinates of every single breakable.
+     * @param strength the zombies strength.
      */
     void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
@@ -73,20 +76,20 @@ public interface ObstacleManager {
      * @param breakable the breakable that needs to be added.
      */
     void addBreakable(Breakable breakable);
-    
+
     /**
      * Method that allows to retrieve a bomb by its id.
      * @param id the bombs id.
      * @return the bomb.
      */
-    Bomb getBombById(final int id);
+    Bomb getBombById(int id);
 
     /**
      * Method that allows to retrieve a breakable by its id.
      * @param id the breakables id.
      * @return the breakable.
      */
-    Breakable getBreakableById(final int id);
+    Breakable getBreakableById(int id);
 
     /**
      * Method that allows to retrieve a bomb by its X and Y coords.
@@ -94,7 +97,7 @@ public interface ObstacleManager {
      * @param y the Y coordinate of the bomb.
      * @return the bomb.
      */
-    Bomb getBombByCoordinates(final int x, final int y);
+    Bomb getBombByCoordinates(int x, int y);
 
     /**
      * Method that allows to retrieve a breakable by its X and Y coords.
@@ -102,5 +105,5 @@ public interface ObstacleManager {
      * @param y the Y coordinate of the breakable.
      * @return the breakable.
      */
-    Breakable getBreakableByCoordinates(final int x, final int y);
+    Breakable getBreakableByCoordinates(int x, int y);
 }
