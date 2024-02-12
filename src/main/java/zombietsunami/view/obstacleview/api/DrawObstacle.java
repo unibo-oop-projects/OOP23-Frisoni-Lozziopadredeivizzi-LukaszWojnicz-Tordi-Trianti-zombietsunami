@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 
 import java.util.List;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
 
 /**

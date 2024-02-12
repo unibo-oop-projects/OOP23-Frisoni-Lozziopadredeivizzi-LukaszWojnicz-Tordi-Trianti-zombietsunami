@@ -1,6 +1,6 @@
 package zombietsunami.model;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.api.MightWin;
 
 /**

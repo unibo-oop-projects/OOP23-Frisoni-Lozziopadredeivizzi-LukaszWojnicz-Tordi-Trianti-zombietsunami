@@ -2,6 +2,7 @@ package zombietsunami.api;
 
 import java.util.List;
 
+import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 /**

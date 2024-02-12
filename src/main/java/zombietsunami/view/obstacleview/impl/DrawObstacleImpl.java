@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawObstacle;
 

@@ -3,7 +3,7 @@ package zombietsunami.model.obstaclemodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;

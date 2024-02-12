@@ -3,7 +3,7 @@ package zombietsunami.view;
 import java.util.List;
 
 import zombietsunami.api.Controller;
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.view.api.VController;

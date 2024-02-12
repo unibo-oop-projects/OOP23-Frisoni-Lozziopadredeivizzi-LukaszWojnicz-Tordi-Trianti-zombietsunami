@@ -6,7 +6,7 @@ import zombietsunami.api.Collision;
 import zombietsunami.api.MightWin;
 import zombietsunami.api.GameOver;
 import zombietsunami.api.Model;
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.mapmodel.api.MapPosList;
 import zombietsunami.model.mapmodel.api.TileElement;
