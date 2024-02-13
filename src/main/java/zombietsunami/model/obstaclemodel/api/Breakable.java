@@ -40,7 +40,6 @@ public interface Breakable {
      * @return true if the zombies force is greater than the obstacle one
      * false otherwise.
      * @param zombieForce the force of the zombie.
-     * @param index the index of the breakable in the list.
      */
-    boolean canBreakObstacle(final int zombieForce);
+    boolean canBreakObstacle(int zombieForce);
 }

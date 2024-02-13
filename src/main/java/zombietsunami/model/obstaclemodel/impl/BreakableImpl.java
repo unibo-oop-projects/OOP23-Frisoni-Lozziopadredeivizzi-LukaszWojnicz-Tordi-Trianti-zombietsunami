@@ -68,7 +68,6 @@ public class BreakableImpl extends ObstacleEntity implements Breakable {
      * @return true if the zombies force is greater than the obstacle one
      * false otherwise.
      * @param zombieForce the force of the zombie.
-     * @param index the index of the breakable in the list.
      */
     @Override
     public boolean canBreakObstacle(final int zombieForce) {
