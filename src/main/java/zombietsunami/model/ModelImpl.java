@@ -15,7 +15,6 @@ import zombietsunami.model.mapmodel.impl.MapPosListImpl;
 import zombietsunami.model.mapmodel.impl.TileElementImpl;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
-import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
@@ -36,10 +35,9 @@ public final class ModelImpl implements Model {
     private final TileElement tileElem;
     private final MapPosList mapPos;
     private final Zombie zombie;
-    private final Bomb bomb;
     private final Person person;
     private final PersonsManager personsManager;
-    private final Breakable breakable; // Giustamente non dovrebbe esserci solo UN breakable nel gioco, ma molteplici
+    private final Breakable breakable;
     private final MightWin win;
     private final GameOver gameOver;
     private final ObstacleManager obstacleManager;
@@ -52,11 +50,10 @@ public final class ModelImpl implements Model {
         this.gameMap = new GameMapImpl();
         this.tileElem = new TileElementImpl();
         this.zombie = new ZombieImpl();
-        this.bomb = new BombImpl();
         this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
         this.personsManager = new PersonsManagerImpl();
-        this.breakable = new BreakableImpl(zombie.getSpeed());
+        this.breakable = new BreakableImpl(3);
         this.win = new MightWinImpl();
         this.gameOver = new GameOverImpl();
         this.obstacleManager = new ObstacleManagerImpl();
@@ -178,8 +175,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public boolean canBreakObstacle(final int zombieStrength) {
-        return this.breakable.canBreakObstacle(zombieStrength);
+    public boolean canBreakObstacle(final int zombieStrength, final int index) {
+        return this.obstacleManager.canBreakObstacle(zombieStrength, index);
     }
 
     @Override
@@ -241,7 +238,7 @@ public final class ModelImpl implements Model {
     @Override
     public void collisionZombieObstacle() {
         this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(),
-                MapData.getTitSize(), this.zombie, gameMap);
+                MapData.getTitSize(), this.zombie, gameMap, obstacleManager);
     }
 
     @Override

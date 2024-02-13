@@ -183,8 +183,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public boolean canBreakObstacle(final int zombieStrength) {
-        return this.model.canBreakObstacle(zombieStrength);
+    public boolean canBreakObstacle(final int zombieStrength, final int index) {
+        return this.model.canBreakObstacle(zombieStrength, index);
     }
 
     @Override

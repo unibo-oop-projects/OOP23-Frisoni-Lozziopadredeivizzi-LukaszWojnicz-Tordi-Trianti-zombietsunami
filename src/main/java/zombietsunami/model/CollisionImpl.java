@@ -7,6 +7,7 @@ import zombietsunami.api.Collision;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.personmodel.api.Person;
 
 /**
@@ -30,7 +31,7 @@ public class CollisionImpl implements Collision {
      */
     @Override
     public void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList, 
-        final int tileSize, final Zombie zombie, final GameMap gameMap) {
+        final int tileSize, final Zombie zombie, final GameMap gameMap, final ObstacleManager obstacleManager) {
         for (int i = 0; i < bombList.size() - 1; i++) {
             if (bombList.size() != 0) {
                 if (bombList.get(i) != null) {
@@ -55,7 +56,7 @@ public class CollisionImpl implements Collision {
                         && breakableList.get(i).getX() < THRESHOLD_2 
                         && zombie.getScreenY() > breakableList.get(i).getY() - tileSize 
                         && zombie.getScreenY() < breakableList.get(i).getY() + tileSize) {
-                            if (breakableList.get(i).canBreakObstacle(zombie.getStrenght())) {
+                            if (obstacleManager.canBreakObstacle(zombie.getStrenght(), i)) {
                                 gameMap.removeObstacleListItem(i);
                                 breakableList.set(i, null);
                             } else {

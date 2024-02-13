@@ -134,7 +134,13 @@ public interface Model {
    */
   int getZombieScreenY();
 
-  boolean canBreakObstacle(int zombieStrength);
+  /**
+   * Checks if the zombie has enough strength to break the obstacle.
+   * @param zombieStrength the zombies strength.
+   * @param index the index of the breakable in the list.
+   * @return true if it can, false otherwise.
+   */
+  boolean canBreakObstacle(int zombieStrength, int index);
 
   /**
    * Calls the jumpPress method of the zombie
