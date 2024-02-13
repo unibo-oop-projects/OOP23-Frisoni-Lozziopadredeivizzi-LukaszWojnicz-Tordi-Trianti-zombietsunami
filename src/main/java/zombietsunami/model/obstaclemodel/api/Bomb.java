@@ -6,12 +6,6 @@ package zombietsunami.model.obstaclemodel.api;
 public interface Bomb {
 
     /**
-     * Sets the id of the bomb.
-     * @param id the id of the bomb.
-     */
-    void setId(int id);
-
-    /**
      * Sets the damage of the bomb.
      * @param damage amount of damage that deals to the zombie.
      */
@@ -46,15 +40,4 @@ public interface Bomb {
      * @param y the Y coordinate of the bomb.
      */
     void setY(int y);
-
-    /**
-     * Updates the state of the Bomb.
-     */
-    void update();
-
-    /**
-     * Gets the bombs id.
-     * @return the bomb id.
-     */
-    int getId();
 }

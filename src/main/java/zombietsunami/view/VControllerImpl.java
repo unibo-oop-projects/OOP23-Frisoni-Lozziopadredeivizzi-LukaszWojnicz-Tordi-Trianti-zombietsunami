@@ -287,16 +287,6 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void updateBreakable() {
-        this.control.updateBreakable();
-    }
-
-    @Override
-    public void updateBomb() {
-        this.control.updateBomb();
-    }
-
-    @Override
     public void collisionZombieOstacleC() {
         this.control.collisionZombieObstacle();
     }

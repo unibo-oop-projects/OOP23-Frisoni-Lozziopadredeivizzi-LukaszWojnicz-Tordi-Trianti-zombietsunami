@@ -35,16 +35,4 @@ public interface DrawObstacle {
      * @return the image of the bomb.
      */
     BufferedImage getBomb();
-
-    /**
-     * Updates the bomb.
-     * @param controller the controller.
-     */
-    void updateBomb(VController controller);
-
-    /**
-     * Updates the breakable.
-     * @param controller the controller.
-     */
-    void updateBreakable(VController controller);
 }

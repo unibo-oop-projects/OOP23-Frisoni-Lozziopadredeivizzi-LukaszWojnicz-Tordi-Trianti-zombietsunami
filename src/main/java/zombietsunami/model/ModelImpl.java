@@ -198,16 +198,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void updateBreakable() {
-        this.breakable.update();
-    }
-
-    @Override
-    public void updateBomb() {
-        this.bomb.update();
-    }
-
-    @Override
     public List<Integer> getObstacleList() {
         return this.gameMap.getLoadedObstacleList();
     }

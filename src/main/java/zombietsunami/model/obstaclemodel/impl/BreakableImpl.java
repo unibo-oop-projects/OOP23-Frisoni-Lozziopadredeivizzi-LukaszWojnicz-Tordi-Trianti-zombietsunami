@@ -1,7 +1,6 @@
 package zombietsunami.model.obstaclemodel.impl;
 
 import zombietsunami.model.obstaclemodel.api.Breakable;
-import zombietsunami.model.obstaclemodel.api.Obstacle;
 
 /**
  * Class implementing the Bomb functionalities.
@@ -9,11 +8,10 @@ import zombietsunami.model.obstaclemodel.api.Obstacle;
  * @see zombietsunami.model.obstaclemodel.api.Breakable
  * @see zombietsunami.model.obstaclemodel.api.Obstacle
  */
-public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle {
+public class BreakableImpl extends ObstacleEntity implements Breakable {
 
     private ObstacleEntity entity = new ObstacleEntity();
 
-    private int id;
     private final int minforce;
 
     /**
@@ -23,14 +21,6 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
      */
     public BreakableImpl(final int minforce) {
         this.minforce = minforce;
-    }
-
-    /**
-     * Updates the Breakable.
-     */
-    @Override
-    public void update() {
-        //if collides, checks if canBreakObstacle()
     }
 
     /**
@@ -77,23 +67,5 @@ public class BreakableImpl extends ObstacleEntity implements Breakable, Obstacle
     @Override
     public void setY(final int y) {
         this.entity.setY(y);
-    }
-
-    /**
-     * Returns the breakables id.
-     * @return the breakable id.
-     */
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     * Sets the id of the breakable.
-     * @param id the id of the breakable.
-     */
-    @Override
-    public void setId(final int id) {
-        this.id = id;
     }
 }
