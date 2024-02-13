@@ -22,8 +22,8 @@ public interface Collision {
      * @param zombie the zombie entity.
      * @param gameMap the game map.
      */
-    void collisionZombieObstacle(List<Bomb> bombList, List<Breakable> breakableList, 
-        int tileSize, Zombie zombie, GameMap gameMap, ObstacleManager obstacleManager);
+    void collisionZombieObstacle(int tileSize, Zombie zombie, GameMap gameMap, 
+        ObstacleManager obstacleManager);
 
     /**
      * Checks when the zombie hit a Person.

@@ -237,8 +237,8 @@ public final class ModelImpl implements Model {
 
     @Override
     public void collisionZombieObstacle() {
-        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(),
-                MapData.getTitSize(), this.zombie, gameMap, obstacleManager);
+        this.collisionManager.collisionZombieObstacle(MapData.getTitSize(), 
+            this.zombie, gameMap, obstacleManager);
     }
 
     @Override
