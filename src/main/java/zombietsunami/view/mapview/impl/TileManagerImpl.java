@@ -3,7 +3,7 @@ package zombietsunami.view.mapview.impl;
 import java.awt.Graphics2D;
 import java.util.List;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.mapview.api.TileImage;
 import zombietsunami.view.mapview.api.TileManager;

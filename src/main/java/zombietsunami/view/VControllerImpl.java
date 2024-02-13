@@ -3,7 +3,7 @@ package zombietsunami.view;
 import java.util.List;
 
 import zombietsunami.api.Controller;
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.view.api.VController;
@@ -142,17 +142,18 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void getPersonFromMapC(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght) {
+    public void getPersonFromMapC(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
+            final Integer strenght) {
         this.control.getPersonFromMap(personlist, coords, strenght);
     }
 
     @Override
-    public void setCoordinatesOfPersonInListC(int index, int x, int y) {
+    public void setCoordinatesOfPersonInListC(final int index, final int x, final int y) {
         this.control.setCoordinatesOfPersonInList(index, x, y);
     }
 
     @Override
-    public void removePersonFromListC(int index) {
+    public void removePersonFromListC(final int index) {
         this.control.removePersonFromList(index);
     }
 

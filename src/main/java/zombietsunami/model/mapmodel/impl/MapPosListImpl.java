@@ -3,7 +3,7 @@ package zombietsunami.model.mapmodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.model.mapmodel.api.MapPosList;
 
 /**

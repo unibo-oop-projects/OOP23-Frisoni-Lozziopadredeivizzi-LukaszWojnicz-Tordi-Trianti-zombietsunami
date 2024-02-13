@@ -3,7 +3,7 @@ package zombietsunami.view.api;
 import java.util.List;
 
 import zombietsunami.api.Controller;
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
 
@@ -124,28 +124,31 @@ public interface VController {
   int getPersonMapY();
 
   /**
-   * Updates teh state of Person
+   * Updates teh state of Person.
    */
   void updatePerson();
 
   /**
-   * Gets the list of Person from the map
+   * Gets the list of Person from the map.
+   * 
    * @param personlist list of Person
-   * @param coords coordinate of Person
-   * @param strenght strenght of Person
+   * @param coords     coordinate of Person
+   * @param strenght   strenght of Person
    */
   void getPersonFromMapC(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
 
   /**
-   * Sets the coordinates of the "index" Person
+   * Sets the coordinates of the "index" Person.
+   * 
    * @param index index of the Person in the list
-   * @param x X coordinate
-   * @param y Y coordinate
+   * @param x     X coordinate
+   * @param y     Y coordinate
    */
   void setCoordinatesOfPersonInListC(int index, int x, int y);
 
   /**
-   * Removes the "index" Person from the list
+   * Removes the "index" Person from the list.
+   * 
    * @param index the index of the Person in the list
    */
   void removePersonFromListC(int index);
@@ -158,7 +161,7 @@ public interface VController {
   /**
    * @return the list of integers in the person's map txt file
    */
-  List<Integer> personIndexListC(); 
+  List<Integer> personIndexListC();
 
   /**
    * Gets the current strength of the zombie character in the game.
@@ -265,7 +268,8 @@ public interface VController {
   boolean isGameOver();
 
   /**
-   * @return true if the zombie's strenght is not enough to break the breakable object in the map
+   * @return true if the zombie's strenght is not enough to break the breakable
+   *         object in the map
    */
   boolean isNotEnoughC();
 

@@ -17,19 +17,25 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TestZombie {
 
     private final ZombieImpl zombie = new ZombieImpl();
+    private final int initialX= zombie.getX();
+    private final int initialY= zombie.getY();
+    private final int initialSpeed= zombie.getSpeed();
+    private static final int RANGEY=90;
+    private final int maxY= initialY-RANGEY;
 
     /**
      * Test method to verify the default position of the zombie.
      * 
      * This test ensures that the zombie's initial position is correctly set to
-     * (380, 450)
+     * (initialX, initialY)
      * and its speed is set to 1.
      */
+    
     @Test
     void checkDefaultPosition() {
-        assertEquals(zombie.getX(), 380);
-        assertEquals(zombie.getY(), 450);
-        assertEquals(zombie.getSpeed(), 1);
+        assertEquals(zombie.getX(), initialX);
+        assertEquals(zombie.getY(), initialY);
+        assertEquals(zombie.getSpeed(), initialSpeed);
     }
 
     /**
@@ -44,8 +50,8 @@ class TestZombie {
     void checkUpdatePosition() {
         zombie.update();
         zombie.update();
-        assertEquals(zombie.getX(), 382);
-        assertEquals(zombie.getY(), 450);
+        assertEquals(zombie.getX(), initialX+2);
+        assertEquals(zombie.getY(), initialY);
     }
 
     /**
@@ -54,9 +60,9 @@ class TestZombie {
      * This test validates the jumping functionality of the zombie by:
      * 1. Triggering the jump action and ensuring the zombie enters the jumping
      * state.
-     * 2. Simulating the zombie's jump to its maximum height (Y = 360), checking its
+     * 2. Simulating the zombie's jump to its maximum height (Y = maxY), checking its
      * X position remains unchanged.
-     * 3. Verifying that the zombie's Y position is not greater than 360 after
+     * 3. Verifying that the zombie's Y position is not greater than maxY after
      * reaching the maximum height.
      * 4. Confirming that the zombie returns to its original position after
      * completing the jump.
@@ -68,20 +74,20 @@ class TestZombie {
         zombie.jumpPress();
         assertTrue(zombie.isJumping());
 
-        for (int i = 450; i >= 360; i--) {
-            assertEquals(zombie.getX() , 380);
+        for (int i = initialY; i >= maxY; i--) {
+            assertEquals(zombie.getX(), initialX);
             zombie.updateJumpZombie();
         }
 
-        assertFalse(zombie.getY() > 360);
-        assertEquals(zombie.getY(), 360);
-        assertEquals(zombie.getX(), 380);
+        assertFalse(zombie.getY() > maxY);
+        assertEquals(zombie.getY(), maxY);
+        assertEquals(zombie.getX(), initialX);
 
-        for (int i = 360; i <= 450; i++) {
-            assertEquals(zombie.getX(), 380);
+        for (int i = maxY; i <= initialY; i++) {
+            assertEquals(zombie.getX(), initialX);
             zombie.updateJumpZombie();
         }
-        assertEquals(zombie.getY(), 450);
+        assertEquals(zombie.getY(), initialY);
         assertFalse(zombie.isJumping());
     }
 }

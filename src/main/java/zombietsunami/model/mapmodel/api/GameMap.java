@@ -30,7 +30,7 @@ public interface GameMap {
     List<Integer> getLoadedPersonList();
 
     /**
-     * Removes a Person from the list
+     * Removes a Person from the list.
      * @param index index of Person
      */
     void removePersonListItem(int index);

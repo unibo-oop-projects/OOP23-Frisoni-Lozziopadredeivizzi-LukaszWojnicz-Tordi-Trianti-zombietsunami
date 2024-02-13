@@ -2,7 +2,7 @@ package zombietsunami.model.personmodel.api;
 
 import java.util.List;
 
-import zombietsunami.api.Pair;
+import zombietsunami.Pair;
 
 /**
  * Interface whose purpose is to manage all Persons
