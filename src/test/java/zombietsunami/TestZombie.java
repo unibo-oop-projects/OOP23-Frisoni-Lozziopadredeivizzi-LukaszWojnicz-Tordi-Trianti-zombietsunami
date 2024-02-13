@@ -88,4 +88,5 @@ class TestZombie {
         assertEquals(zombie.getY(), 450);
         assertFalse(zombie.isJumping());
     }
+        // CHECKSTYLE: MagicNumber ON
 }
