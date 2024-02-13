@@ -29,10 +29,10 @@ public class TestBreakable {
     @Test
     void checkIfCanBreak() {
         obstacleManager.addBreakable(breakable);
-        assertTrue(obstacleManager.canBreakObstacle(zombie.getStrenght(), 0));
+        assertTrue(breakable.canBreakObstacle(zombie.getStrenght()));
 
         zombie.setStrenght(-1); //Zombie Strenght = -1, Breakable Force = 1.
 
-        assertFalse(obstacleManager.canBreakObstacle(zombie.getStrenght(), 0));
+        assertFalse(breakable.canBreakObstacle(zombie.getStrenght()));
     }
 }

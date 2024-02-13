@@ -238,10 +238,24 @@ public interface VController {
    */
   void getBombsFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
+  /**
+   * Returns the bomb list.
+   * @return the bomb list.
+   */
   List<Bomb> getBombListC();
 
+  /**
+   * Returns the breakable list.
+   * @return the breakable list.
+   */
   List<Breakable> getBreakableListC();
 
+  /**
+   * Sets the coordinates for the "index" bomb in the list.
+   * @param index the index of the bomb in the list.
+   * @param x the X coordinate of the bomb.
+   * @param y the Y coordinate of the breakable.
+   */
   void setCoordinatesOfBombInListC(int index, int x, int y);
 
   /**
@@ -256,6 +270,9 @@ public interface VController {
    */
   void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
+  /**
+   * Checks whether the obstacle has collided with the zombie.
+   */
   void collisionZombieOstacleC();
 
   void collisionZombiePersonsC();

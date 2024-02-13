@@ -7,7 +7,6 @@ import zombietsunami.api.Collision;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
-import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.personmodel.api.Person;
 
 /**
@@ -30,35 +29,35 @@ public class CollisionImpl implements Collision {
      * @param gameMap the game map.
      */
     @Override
-    public void collisionZombieObstacle(final int tileSize, final Zombie zombie, 
-        final GameMap gameMap, final ObstacleManager obstacleManager) {
-        for (int i = 0; i < obstacleManager.getBombList().size() - 1; i++) {
-            if (obstacleManager.getBombList().size() != 0) {
-                if (obstacleManager.getBombList().get(i) != null) {
-                    if (obstacleManager.getBombList().get(i).getX() > THRESHOLD_1 
-                        && obstacleManager.getBombList().get(i).getX() < THRESHOLD_2 
-                        && zombie.getScreenY() > obstacleManager.getBombList().get(i).getY() - tileSize 
-                        && zombie.getScreenY() < obstacleManager.getBombList().get(i).getY() + tileSize) {
-                            if (zombie.getStrenght() - obstacleManager.getBombList().get(i).getDamage() < 0) {
+    public void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList, 
+        final int tileSize, final Zombie zombie, final GameMap gameMap) {
+        for (int i = 0; i < bombList.size() - 1; i++) {
+            if (bombList.size() != 0) {
+                if (bombList.get(i) != null) {
+                    if (bombList.get(i).getX() > THRESHOLD_1 
+                        && bombList.get(i).getX() < THRESHOLD_2 
+                        && zombie.getScreenY() > bombList.get(i).getY() - tileSize 
+                        && zombie.getScreenY() < bombList.get(i).getY() + tileSize) {
+                            if (zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
                                 gameOver = true;
                             }
                             zombie.setStrenght(zombie.getStrenght() - zombie.getSpeed());
-                            obstacleManager.getBombList().set(i, null);
+                            bombList.set(i, null);
                             gameMap.removeObstacleListItem(i);
                     } 
                 }
             }
         }
-        for (int i = 0; i < obstacleManager.getBreakableList().size(); i++)  {
-            if (obstacleManager.getBreakableList().size() != 0) {
-                if (obstacleManager.getBreakableList().get(i) != null) {
-                    if (obstacleManager.getBreakableList().get(i).getX() > THRESHOLD_1 
-                        && obstacleManager.getBreakableList().get(i).getX() < THRESHOLD_2 
-                        && zombie.getScreenY() > obstacleManager.getBreakableList().get(i).getY() - tileSize 
-                        && zombie.getScreenY() < obstacleManager.getBreakableList().get(i).getY() + tileSize) {
-                            if (obstacleManager.canBreakObstacle(zombie.getStrenght(), i)) {
+        for (int i = 0; i < breakableList.size(); i++)  {
+            if (breakableList.size() != 0) {
+                if (breakableList.get(i) != null) {
+                    if (breakableList.get(i).getX() > THRESHOLD_1 
+                        && breakableList.get(i).getX() < THRESHOLD_2 
+                        && zombie.getScreenY() > breakableList.get(i).getY() - tileSize 
+                        && zombie.getScreenY() < breakableList.get(i).getY() + tileSize) {
+                            if (breakableList.get(i).canBreakObstacle(zombie.getStrenght())) {
                                 gameMap.removeObstacleListItem(i);
-                                obstacleManager.getBreakableList().set(i, null);
+                                breakableList.set(i, null);
                             } else {
                                 gameOver = true;
                             }

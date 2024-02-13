@@ -14,6 +14,9 @@ public interface Model {
 
   /**
    * Returns the list of bombs from the map.
+   * @param bomblist the bomb list.
+   * @param coords the coordinates of every bomb in the list.
+   * @param strength the strength of the zombie.
    */
   void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
@@ -138,10 +141,9 @@ public interface Model {
   /**
    * Checks if the zombie has enough strength to break the obstacle.
    * @param zombieStrength the zombies strength.
-   * @param index the index of the breakable in the list.
    * @return true if it can, false otherwise.
    */
-  boolean canBreakObstacle(int zombieStrength, int index);
+  boolean canBreakObstacle(int zombieStrength);
 
   /**
    * Calls the jumpPress method of the zombie
@@ -211,7 +213,9 @@ public interface Model {
 
     /**
      * Returns the list of breakables from the map.
-     * @param controller the controller.
+     * @param breakablelist the breakable list.
+     * @param coords the coordinates of every breakable inside the list.
+     * @param strength the strength of the zombie.
      */
     void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
