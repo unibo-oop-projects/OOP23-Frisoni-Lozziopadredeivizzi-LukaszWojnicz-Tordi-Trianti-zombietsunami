@@ -9,8 +9,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.logging.Logger;
 
+import zombietsunami.Pair;
 import zombietsunami.model.MapData;
 import zombietsunami.model.mapmodel.api.GameMap;
+import zombietsunami.model.mapmodel.api.MapPosList;
+import zombietsunami.model.mapmodel.api.TileElement;
 
 /**
  * This class implements the GameMap interface
@@ -28,15 +31,20 @@ public final class GameMapImpl implements GameMap {
     private final String filePathObst = ROOT + OBST;
     private final String filePathPrsn = ROOT + PRSN;
 
-
     private final List<Integer> mapOfNumberTile;
     private final List<Integer> mapOfNumberObstacle;
     private final List<Integer> mapOfNumberPersons;
+
+    private final MapPosList mapPos;
+    private final TileElement tileElement;
 
     /**
      * Assigns the List of Integers with the map values at a new List.
      */
     public GameMapImpl() {
+        this.mapPos = new MapPosListImpl();
+        this.tileElement = new TileElementImpl();
+
         this.mapOfNumberTile = loadMap(this.filePathMap);
         this.mapOfNumberObstacle = loadMap(filePathObst);
         this.mapOfNumberPersons = loadMap(this.filePathPrsn);
@@ -102,5 +110,18 @@ public final class GameMapImpl implements GameMap {
     @Override
     public void removePersonListItem(final int index) {
         this.mapOfNumberPersons.set(index, 0);
+    }
+
+    @Override
+    public List<Pair<Integer, Integer>> getScreenTilePos(final int maxWorldRow, final int maxWorldCol,
+            final int titleSize, final int zombieWorldX, final int zombieWorldY, final int zombieScreenX,
+            final int zombieScreenY) {
+        return this.mapPos.getScreenTilePosition(maxWorldRow, maxWorldCol, titleSize, zombieWorldX, zombieWorldY,
+                zombieScreenX, zombieScreenY);
+    }
+
+    @Override
+    public List<String> getTileElem() {
+        return this.tileElement.getTileElement();
     }
 }

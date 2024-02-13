@@ -8,14 +8,9 @@ import zombietsunami.api.GameOver;
 import zombietsunami.api.Model;
 import zombietsunami.Pair;
 import zombietsunami.model.mapmodel.api.GameMap;
-import zombietsunami.model.mapmodel.api.MapPosList;
-import zombietsunami.model.mapmodel.api.TileElement;
 import zombietsunami.model.mapmodel.impl.GameMapImpl;
-import zombietsunami.model.mapmodel.impl.MapPosListImpl;
-import zombietsunami.model.mapmodel.impl.TileElementImpl;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
-import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
@@ -32,12 +27,9 @@ import zombietsunami.model.personmodel.impl.PersonsManagerImpl;
 public final class ModelImpl implements Model {
 
     private final GameMap gameMap;
-    private final TileElement tileElem;
-    private final MapPosList mapPos;
     private final Zombie zombie;
     private final Person person;
     private final PersonsManager personsManager;
-    private final Breakable breakable;
     private final MightWin win;
     private final GameOver gameOver;
     private final ObstacleManager obstacleManager;
@@ -48,12 +40,9 @@ public final class ModelImpl implements Model {
      */
     public ModelImpl() {
         this.gameMap = new GameMapImpl();
-        this.tileElem = new TileElementImpl();
         this.zombie = new ZombieImpl();
-        this.mapPos = new MapPosListImpl();
         this.person = new PersonImpl();
         this.personsManager = new PersonsManagerImpl();
-        this.breakable = new BreakableImpl(3);
         this.win = new MightWinImpl();
         this.gameOver = new GameOverImpl();
         this.obstacleManager = new ObstacleManagerImpl();
@@ -78,12 +67,12 @@ public final class ModelImpl implements Model {
 
     @Override
     public List<String> getTileElem() {
-        return this.tileElem.getTileElement();
+        return this.gameMap.getTileElem();
     }
 
     @Override
     public List<Pair<Integer, Integer>> getScreenTilePos() {
-        return this.mapPos.getScreenTilePosition(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
+        return this.gameMap.getScreenTilePos(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
                 MapData.getTitSize(),
                 getZombieMapX(), getZombieMapY(), this.zombie.getScreenX(), this.zombie.getScreenY());
     }
