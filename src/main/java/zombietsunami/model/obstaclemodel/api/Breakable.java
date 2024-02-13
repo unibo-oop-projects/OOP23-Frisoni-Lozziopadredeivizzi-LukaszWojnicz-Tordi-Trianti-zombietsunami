@@ -30,10 +30,8 @@ public interface Breakable {
     int getY();
 
     /**
-     * Checks if the zombie can break the obstacle.
-     * @return true if the zombies force is greater than the obstacle one
-     * false otherwise.
-     * @param zombieForce the force of the zombie.
+     * Returns the minimum force to break the obstacle.
+     * @return the minimum force to break it the breakable.
      */
-    boolean canBreakObstacle(int zombieForce);
+    int getMinForce();
 }

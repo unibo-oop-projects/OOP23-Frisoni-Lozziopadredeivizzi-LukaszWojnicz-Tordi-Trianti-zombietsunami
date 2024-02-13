@@ -24,20 +24,6 @@ public class BreakableImpl extends ObstacleEntity implements Breakable {
     }
 
     /**
-     * Method that checks if the zombie can break the obstacle.
-     * @return true if the zombies force is greater than the obstacle one
-     * false otherwise.
-     * @param zombieForce the force of the zombie.
-     */
-    @Override
-    public boolean canBreakObstacle(final int zombieForce) {
-        if (this.minforce <= zombieForce) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
      * Gets the X coordinate of the Breakable.
      */
     @Override
@@ -67,5 +53,13 @@ public class BreakableImpl extends ObstacleEntity implements Breakable {
     @Override
     public void setY(final int y) {
         this.entity.setY(y);
+    }
+
+    /**
+     * 
+     */
+    @Override
+    public int getMinForce() {
+        return this.minforce;
     }
 }

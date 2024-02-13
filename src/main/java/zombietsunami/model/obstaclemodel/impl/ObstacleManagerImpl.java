@@ -146,4 +146,19 @@ public class ObstacleManagerImpl implements ObstacleManager {
         breakableList.get(index).setX(x);
         breakableList.get(index).setY(y);
     }
+
+    /**
+     * Method that checks if the zombie can break the obstacle.
+     * @return true if the zombies force is greater than the obstacle one
+     * false otherwise.
+     * @param zombieForce the force of the zombie.
+     * @param index the index of the breakable in the list.
+     */
+    @Override
+    public boolean canBreakObstacle(final int zombieForce, final int index) {
+        if (breakableList.get(index).getMinForce() <= zombieForce) {
+            return true;
+        }
+        return false;
+    }
 }

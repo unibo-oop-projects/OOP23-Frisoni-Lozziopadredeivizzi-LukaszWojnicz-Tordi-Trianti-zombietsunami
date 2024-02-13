@@ -195,7 +195,7 @@ public interface Controller {
    * @param zombieStrength the zombies strength.
    * @return true if can break, false otherwise.
    */
-  boolean canBreakObstacle(int zombieStrength);
+  boolean canBreakObstacle(int zombieStrength, int index);
 
   /**
    * @return the zombie's screen X coordiante

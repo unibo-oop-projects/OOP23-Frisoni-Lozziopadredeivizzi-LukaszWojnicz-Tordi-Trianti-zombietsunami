@@ -6,7 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
+import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 
@@ -17,7 +19,7 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
  * class.
  */
 public class TestBreakable {
-    
+    private ObstacleManager obstacleManager = new ObstacleManagerImpl();
     private Breakable breakable = new BreakableImpl(1);
     private Zombie zombie = new ZombieImpl();
 
@@ -26,10 +28,11 @@ public class TestBreakable {
      */
     @Test
     void checkIfCanBreak() {
-        assertTrue(breakable.canBreakObstacle(zombie.getStrenght()));
+        obstacleManager.addBreakable(breakable);
+        assertTrue(obstacleManager.canBreakObstacle(zombie.getStrenght(), 0));
 
         zombie.setStrenght(-1); //Zombie Strenght = -1, Breakable Force = 1.
 
-        assertFalse(breakable.canBreakObstacle(zombie.getStrenght()));
+        assertFalse(obstacleManager.canBreakObstacle(zombie.getStrenght(), 0));
     }
 }

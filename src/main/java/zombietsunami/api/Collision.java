@@ -5,6 +5,7 @@ import java.util.List;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.model.zombiemodel.api.Zombie;
 
@@ -21,8 +22,8 @@ public interface Collision {
      * @param zombie the zombie entity.
      * @param gameMap the game map.
      */
-    void collisionZombieObstacle(List<Bomb> bombList, List<Breakable> breakableList, 
-        int tileSize, Zombie zombie, GameMap gameMap);
+    void collisionZombieObstacle(int tileSize, Zombie zombie, GameMap gameMap, 
+        ObstacleManager obstacleManager);
 
     /**
      * Checks when the zombie hit a Person.
