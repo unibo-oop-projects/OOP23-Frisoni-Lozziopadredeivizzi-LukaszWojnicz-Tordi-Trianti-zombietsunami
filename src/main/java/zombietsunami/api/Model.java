@@ -156,10 +156,6 @@ public interface Model {
    */
   boolean isJumping();
 
-  void updateBreakable();
-
-  void updateBomb();
-
   /**
    * @return the List of Integers that contains all the values of the obstacle
    *         map's txt file

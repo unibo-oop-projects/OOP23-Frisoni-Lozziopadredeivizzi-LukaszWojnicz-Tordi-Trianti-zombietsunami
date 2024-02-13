@@ -18,12 +18,6 @@ public interface Breakable {
     void setY(int y);
 
     /**
-     * Sets the id of the breakable.
-     * @param id the id of the breakable.
-     */
-    void setId(int id);
-
-    /**
      * Gets the X coordinate of the Breakable.
      * @return the X coordinate of the Breakable.
      */
@@ -42,15 +36,4 @@ public interface Breakable {
      * @param zombieForce the force of the zombie.
      */
     boolean canBreakObstacle(int zombieForce);
-
-    /**
-     * Gets the breakables id.
-     * @return the breakable id.
-     */
-    int getId();
-
-    /**
-     * Updates the state of the Breakable.
-     */
-    void update();
 }

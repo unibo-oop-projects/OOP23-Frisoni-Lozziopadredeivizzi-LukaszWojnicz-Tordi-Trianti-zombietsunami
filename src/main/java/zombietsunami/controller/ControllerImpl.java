@@ -213,16 +213,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void updateBomb() {
-        this.model.updateBomb();
-    }
-
-    @Override
-    public void updateBreakable() {
-        this.model.updateBreakable();
-    }
-
-    @Override
     public List<Integer> obstacleList() {
         return this.model.getObstacleList();
     }

@@ -1,7 +1,6 @@
 package zombietsunami.model.obstaclemodel.impl;
 
 import zombietsunami.model.obstaclemodel.api.Bomb;
-import zombietsunami.model.obstaclemodel.api.Obstacle;
 
 /**
  * Class implementing the Bomb functionalities.
@@ -9,34 +8,16 @@ import zombietsunami.model.obstaclemodel.api.Obstacle;
  * @see zombietsunami.model.obstaclemodel.api.Bomb
  * @see zombietsunami.model.obstaclemodel.api.Obstacle
  */
-public class BombImpl implements Bomb, Obstacle {
+public class BombImpl implements Bomb {
 
     private ObstacleEntity entity = new ObstacleEntity();
 
-    private int id;
     private int damage = 1;
 
     /**
      * Constructor that sets the default values for the Bomb.
      */
     public BombImpl() {
-
-    }
-
-    /**
-     * Gets the bomb Id.
-     * @return the bomb's Id.
-     */
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     * Updates the Bomb.
-     */
-    @Override
-    public void update() {
 
     }
 
@@ -81,15 +62,6 @@ public class BombImpl implements Bomb, Obstacle {
         if (damage > 0) {
             this.damage = damage;
         }
-    }
-
-    /**
-     * Sets the id of the bomb.
-     * @param id the id of the bomb.
-     */
-    @Override
-    public void setId(final int id) {
-        this.id = id;
     }
 
     /**

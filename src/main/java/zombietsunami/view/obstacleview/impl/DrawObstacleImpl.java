@@ -96,24 +96,4 @@ public class DrawObstacleImpl implements DrawObstacle {
         }
         return image;
     }
-
-    /**
-     * Updates the bomb's visual representation based on the same controller.
-     * 
-     * @param controller The controller providing game-related information.
-     */
-    @Override
-    public void updateBomb(final VController controller) {
-        controller.updateBomb();
-    }
-
-    /**
-     * Updates the breakable's visual representation based on the same controller.
-     * 
-     * @param controller The controller providing game-related information.
-     */
-    @Override
-    public void updateBreakable(final VController controller) {
-        controller.updateBreakable();
-    }
 }

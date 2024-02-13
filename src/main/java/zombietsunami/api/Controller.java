@@ -232,16 +232,6 @@ public interface Controller {
   boolean isJumping();
 
   /**
-   * Updates the breakable.
-   */
-  void updateBreakable();
-
-  /**
-   * Updates the bomb.
-   */
-  void updateBomb();
-
-  /**
    * Returns the loaded obstacle list
    * in {@link zombietsunami.model.mapmodel.api.GameMap}
    * @return obstacle list.

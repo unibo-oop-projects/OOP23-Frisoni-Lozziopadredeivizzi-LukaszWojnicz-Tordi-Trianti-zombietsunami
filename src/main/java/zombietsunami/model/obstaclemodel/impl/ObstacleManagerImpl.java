@@ -17,68 +17,6 @@ public class ObstacleManagerImpl implements ObstacleManager {
     private List<Breakable> breakableList = new ArrayList<Breakable>();
 
     /**
-     * Method that allows to retrieve a bomb by its id.
-     * @param id the bombs id.
-     * @return the bomb.
-     */
-    @Override
-    public Bomb getBombById(final int id) {
-        for (Bomb bomb : bombList) {
-            if (bomb.getId() == id) {
-                return bomb;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Method that allows to retrieve a breakable by its id.
-     * @param id the breakables id.
-     * @return the breakable.
-     */
-    @Override
-    public Breakable getBreakableById(final int id) {
-        for (Breakable breakable : breakableList) {
-            if (breakable.getId() == id) {
-                return breakable;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Method that allows to retrieve a bomb by its X and Y coords.
-     * @param x the X coordinate of the bomb.
-     * @param y the Y coordinate of the bomb.
-     * @return the bomb.
-     */
-    @Override
-    public Bomb getBombByCoordinates(final int x, final int y) {
-        for (Bomb bomb : bombList) {
-            if (bomb.getX() == x && bomb.getY() == y) {
-                return bomb;
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Method that allows to retrieve a breakable by its X and Y coords.
-     * @param x the X coordinate of the breakable.
-     * @param y the Y coordinate of the breakable.
-     * @return the breakable.
-     */
-    @Override
-    public Breakable getBreakableByCoordinates(final int x, final int y) {
-        for (Breakable breakable : breakableList) {
-            if (breakable.getX() == x && breakable.getY() == y) {
-                return breakable;
-            }
-        }
-        return null;
-    }
-
-    /**
      * Adds a bomb into the bomb list.
      * @param bomb the bomb that needs to be added.
      */
@@ -117,7 +55,6 @@ public class ObstacleManagerImpl implements ObstacleManager {
                 bomb.setX(coords.get(i).getX());
                 bomb.setY(coords.get(i).getY());
                 bomb.setDamage(Math.round(strength * 0.5f));
-                bomb.setId(i);
 
                 bombList.add(i, bomb);
             } else {
@@ -142,7 +79,6 @@ public class ObstacleManagerImpl implements ObstacleManager {
 
                 breakable.setX(coords.get(i).getX());
                 breakable.setY(coords.get(i).getY());
-                breakable.setId(i);
 
                 breakableList.add(i, breakable);
             } else {

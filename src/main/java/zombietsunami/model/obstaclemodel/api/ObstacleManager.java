@@ -76,34 +76,4 @@ public interface ObstacleManager {
      * @param breakable the breakable that needs to be added.
      */
     void addBreakable(Breakable breakable);
-
-    /**
-     * Method that allows to retrieve a bomb by its id.
-     * @param id the bombs id.
-     * @return the bomb.
-     */
-    Bomb getBombById(int id);
-
-    /**
-     * Method that allows to retrieve a breakable by its id.
-     * @param id the breakables id.
-     * @return the breakable.
-     */
-    Breakable getBreakableById(int id);
-
-    /**
-     * Method that allows to retrieve a bomb by its X and Y coords.
-     * @param x the X coordinate of the bomb.
-     * @param y the Y coordinate of the bomb.
-     * @return the bomb.
-     */
-    Bomb getBombByCoordinates(int x, int y);
-
-    /**
-     * Method that allows to retrieve a breakable by its X and Y coords.
-     * @param x the X coordinate of the breakable.
-     * @param y the Y coordinate of the breakable.
-     * @return the breakable.
-     */
-    Breakable getBreakableByCoordinates(int x, int y);
 }

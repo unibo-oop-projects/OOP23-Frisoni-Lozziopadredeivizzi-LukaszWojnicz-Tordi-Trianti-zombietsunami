@@ -212,10 +212,6 @@ public interface VController {
    */
   boolean isJumping();
 
-  void updateBomb();
-
-  void updateBreakable();
-
   /**
    * @return the List of Integers with all the values in the obstacle map's txt
    *         file
