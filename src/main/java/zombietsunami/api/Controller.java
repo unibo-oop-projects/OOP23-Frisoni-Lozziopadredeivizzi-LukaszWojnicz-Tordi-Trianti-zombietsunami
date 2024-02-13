@@ -195,7 +195,7 @@ public interface Controller {
    * @param zombieStrength the zombies strength.
    * @return true if can break, false otherwise.
    */
-  boolean canBreakObstacle(int zombieStrength, int index);
+  boolean canBreakObstacle(int zombieStrength);
 
   /**
    * @return the zombie's screen X coordiante
@@ -289,7 +289,9 @@ public interface Controller {
 
     /**
      * Returns the list of breakables from the map.
-     * @param controller the controller.
+     * @param breakablelist the list of breakables.
+     * @param coords the coordinates of every breakable inside the list.
+     * @param strength the strength of the zombie.
      */
     void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 

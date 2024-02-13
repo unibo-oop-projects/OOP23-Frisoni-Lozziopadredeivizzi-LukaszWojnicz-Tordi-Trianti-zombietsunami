@@ -15,15 +15,15 @@ import zombietsunami.model.zombiemodel.api.Zombie;
 public interface Collision {
 
     /**
-     * Checks whether the zombie has hit an obstacle.
+     * Checks if the zombie hits an obstacle.
      * @param bombList the bomb list.
-     * @param breakableList the bomb list.
+     * @param breakableList the breakable list.
      * @param tileSize the size of one tile.
      * @param zombie the zombie entity.
      * @param gameMap the game map.
      */
-    void collisionZombieObstacle(int tileSize, Zombie zombie, GameMap gameMap, 
-        ObstacleManager obstacleManager);
+    void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList, 
+        int tileSize, Zombie zombie, GameMap gameMap);
 
     /**
      * Checks when the zombie hit a Person.

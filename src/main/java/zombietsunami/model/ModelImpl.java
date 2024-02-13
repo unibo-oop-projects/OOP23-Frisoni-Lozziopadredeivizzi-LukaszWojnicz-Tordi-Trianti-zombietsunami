@@ -175,8 +175,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public boolean canBreakObstacle(final int zombieStrength, final int index) {
-        return this.obstacleManager.canBreakObstacle(zombieStrength, index);
+    public boolean canBreakObstacle(final int zombieStrength) {
+        return this.breakable.canBreakObstacle(zombieStrength);
     }
 
     @Override
@@ -237,8 +237,8 @@ public final class ModelImpl implements Model {
 
     @Override
     public void collisionZombieObstacle() {
-        this.collisionManager.collisionZombieObstacle(MapData.getTitSize(), 
-            this.zombie, gameMap, obstacleManager);
+        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), 
+            obstacleManager.getBreakableList(), MapData.getTitSize(), this.zombie, gameMap);
     }
 
     @Override
