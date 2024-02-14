@@ -59,7 +59,7 @@ public interface Zombie {
     /**
      * Sets the strength of the zombie.
      * 
-     * @param strenght The new strength value for the zombie.
+     * @param strength The new strength value for the zombie.
      */
     void setStrength(int strength);
 

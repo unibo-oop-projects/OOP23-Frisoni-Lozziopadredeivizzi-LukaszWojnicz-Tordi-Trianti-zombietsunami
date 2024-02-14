@@ -128,7 +128,7 @@ public class ZombieImpl implements Zombie {
     /**
      * Sets the strength of the zombie.
      *
-     * @param strenght the new strength of the zombie.
+     * @param strength the new strength of the zombie.
      */
     @Override
     public void setStrength(final int strength) {
@@ -169,5 +169,4 @@ public class ZombieImpl implements Zombie {
         this.entity.decreaseStrength();
     }
 
-    
 }
