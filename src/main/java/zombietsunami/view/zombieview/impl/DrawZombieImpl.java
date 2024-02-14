@@ -3,13 +3,11 @@ package zombietsunami.view.zombieview.impl;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
-import zombietsunami.view.obstacleview.impl.DrawObstacleImpl;
 import zombietsunami.view.zombieview.api.DrawZombie;
 
 /**
