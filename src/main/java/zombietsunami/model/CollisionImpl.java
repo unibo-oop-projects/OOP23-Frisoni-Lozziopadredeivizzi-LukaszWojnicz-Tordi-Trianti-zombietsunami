@@ -15,53 +15,48 @@ import zombietsunami.model.personmodel.api.Person;
  */
 public class CollisionImpl implements Collision {
 
-    private static final int THRESHOLD_1 = 60;
-    private static final int THRESHOLD_2 = 104;
+    private static final int THRESHOLD_1 = 70;
+    private static final int THRESHOLD_2 = 95;
 
-    private boolean gameOver = false;
+    private boolean gameOver;
 
     /**
      * Checks whether the zombie has hit an obstacle.
-     * @param bombList the bomb list.
+     * 
+     * @param bombList      the bomb list.
      * @param breakableList the bomb list.
-     * @param tileSize the size of one tile.
-     * @param zombie the zombie entity.
-     * @param gameMap the game map.
+     * @param tileSize      the size of one tile.
+     * @param zombie        the zombie entity.
+     * @param gameMap       the game map.
      */
     @Override
-    public void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList, 
-        final int tileSize, final Zombie zombie, final GameMap gameMap) {
+    public void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList,
+            final int tileSize, final Zombie zombie, final GameMap gameMap) {
         for (int i = 0; i < bombList.size() - 1; i++) {
-            if (bombList.size() != 0) {
-                if (bombList.get(i) != null) {
-                    if (bombList.get(i).getX() > THRESHOLD_1 
-                        && bombList.get(i).getX() < THRESHOLD_2 
-                        && zombie.getScreenY() > bombList.get(i).getY() - tileSize 
-                        && zombie.getScreenY() < bombList.get(i).getY() + tileSize) {
-                            if (zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
-                                gameOver = true;
-                            }
-                            zombie.setStrenght(zombie.getStrenght() - zombie.getSpeed());
-                            bombList.set(i, null);
-                            gameMap.removeObstacleListItem(i);
-                    } 
+            if ((!bombList.isEmpty() && bombList.get(i) != null)
+                    && bombList.get(i).getX() > THRESHOLD_1
+                    && bombList.get(i).getX() < THRESHOLD_2
+                    && zombie.getScreenY() > bombList.get(i).getY() - tileSize
+                    && zombie.getScreenY() < bombList.get(i).getY() + tileSize) {
+                if (zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
+                    gameOver = true;
                 }
+                zombie.setStrenght(zombie.getStrenght() - zombie.getSpeed());
+                bombList.set(i, null);
+                gameMap.removeObstacleListItem(i);
             }
         }
-        for (int i = 0; i < breakableList.size(); i++)  {
-            if (breakableList.size() != 0) {
-                if (breakableList.get(i) != null) {
-                    if (breakableList.get(i).getX() > THRESHOLD_1 
-                        && breakableList.get(i).getX() < THRESHOLD_2 
-                        && zombie.getScreenY() > breakableList.get(i).getY() - tileSize 
-                        && zombie.getScreenY() < breakableList.get(i).getY() + tileSize) {
-                            if (breakableList.get(i).canBreakObstacle(zombie.getStrenght())) {
-                                gameMap.removeObstacleListItem(i);
-                                breakableList.set(i, null);
-                            } else {
-                                gameOver = true;
-                            }
-                    } 
+        for (int i = 0; i < breakableList.size(); i++) {
+            if ((!breakableList.isEmpty() && breakableList.get(i) != null)
+                    && breakableList.get(i).getX() > THRESHOLD_1
+                    && breakableList.get(i).getX() < THRESHOLD_2
+                    && zombie.getScreenY() > breakableList.get(i).getY() - tileSize
+                    && zombie.getScreenY() < breakableList.get(i).getY() + tileSize) {
+                if (breakableList.get(i).canBreakObstacle(zombie.getStrenght())) {
+                    gameMap.removeObstacleListItem(i);
+                    breakableList.set(i, null);
+                } else {
+                    gameOver = true;
                 }
             }
         }
@@ -78,24 +73,24 @@ public class CollisionImpl implements Collision {
         return gameOver;
     }
 
-
     /**
      * Checks when the zombie hit a Person.
-     * @param personList  the Person list
-     * @param tileSize the size of one tile
-     * @param zombie the Zombie entity
-     * @param gameMap the game map
+     * 
+     * @param personList the Person list
+     * @param tileSize   the size of one tile
+     * @param zombie     the Zombie entity
+     * @param gameMap    the game map
      */
     @Override
-    public void collisionZombiePersons(final List<Person> personList, final int tileSize, 
-        final Zombie zombie, final GameMap gameMap) {
+    public void collisionZombiePersons(final List<Person> personList, final int tileSize,
+            final Zombie zombie, final GameMap gameMap) {
         for (int i = 0; i < personList.size() - 1; i++) {
             if (personList.size() != 0) {
                 if (personList.get(i) != null) {
-                    if (personList.get(i).getX() > THRESHOLD_1 
-                        && personList.get(i).getX() < THRESHOLD_2 
-                        && zombie.getScreenY() > personList.get(i).getY() - tileSize 
-                        && zombie.getScreenY() < personList.get(i).getY() + tileSize) {
+                    if (personList.get(i).getX() > THRESHOLD_1
+                            && personList.get(i).getX() < THRESHOLD_2
+                            && zombie.getScreenY() > personList.get(i).getY() - tileSize
+                            && zombie.getScreenY() < personList.get(i).getY() + tileSize) {
                         gameMap.removePersonListItem(i);
                         personList.set(i, null);
                         zombie.setStrenght(zombie.getStrenght() + zombie.getSpeed());

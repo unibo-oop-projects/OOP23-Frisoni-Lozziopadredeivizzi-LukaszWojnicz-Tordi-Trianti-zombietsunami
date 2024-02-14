@@ -235,9 +235,9 @@ public final class ControllerImpl implements Controller {
      * @param strength the zombies strength.
      */
     @Override
-    public void getBombsFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
+    public void fillBombListFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
             final Integer strength) {
-        this.model.getBombsFromMap(bomblist, coords, strength);
+        this.model.fillBombListFromMap(bomblist, coords, strength);
     }
 
     /**
@@ -284,9 +284,9 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void getBreakablesFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
+    public void fillBreakableListFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
             final Integer strength) {
-        this.model.getBreakablesFromMap(breakablelist, coords, strength);
+        this.model.fillBreakableListFromMap(breakablelist, coords, strength);
     }
 
     @Override
