@@ -89,12 +89,12 @@ public final class GameMapImpl implements GameMap {
 
     @Override
     public List<Integer> getLoadedMapList() {
-        return this.mapOfNumberTile;
+        return new ArrayList<>(this.mapOfNumberTile);
     }
 
     @Override
     public List<Integer> getLoadedObstacleList() {
-        return this.mapOfNumberObstacle;
+        return new ArrayList<>(this.mapOfNumberObstacle);
     }
 
     @Override
@@ -104,7 +104,7 @@ public final class GameMapImpl implements GameMap {
 
     @Override
     public List<Integer> getLoadedPersonList() {
-        return this.mapOfNumberPersons;
+        return new ArrayList<>(this.mapOfNumberPersons);
     }
 
     @Override

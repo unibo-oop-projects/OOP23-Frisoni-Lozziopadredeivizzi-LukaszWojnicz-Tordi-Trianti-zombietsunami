@@ -55,7 +55,7 @@ public final class TileElementImpl implements TileElement {
 
     @Override
     public List<String> getTileElement() {
-        return this.element;
+        return new ArrayList<>(this.element);
     }
 
 }

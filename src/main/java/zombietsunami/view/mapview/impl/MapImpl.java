@@ -30,7 +30,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private static final long serialVersionUID = 123456788L;
 
-    private static final long NANOSEC = 1_000_000_000;
+    private static final double NANOSEC = 1_000_000_000.0;
     private static final long MILLISEC = 1_000;
     private static final int FONT_SIZE = 20;
     private static final int RECT_WIDTH = 130;
@@ -184,7 +184,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         final Logger logger = Logger.getLogger(MapImpl.class.getName());
         try {
             Thread.sleep(MILLISEC * 3);
-            System.exit(0);
+            logger.severe("Exit Game");
         } catch (InterruptedException e) {
             logger.severe("Error: " + e.getMessage());
         }
