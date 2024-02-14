@@ -13,44 +13,6 @@ public class PersonImpl implements Person {
 
     private final EntityImpl entity = new EntityImpl();
 
-    private int id;
-    private int increase = 1;
-
-    /**
-     * Constructor that sets the default values for the Person.
-     */
-    public PersonImpl() {
-
-    }
-
-    /**
-     * Gets the Person Id.
-     * 
-     * @return the Person's Id.
-     */
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     * Updates the Person.
-     */
-    @Override
-    public void update() {
-
-    }
-
-    /**
-     * Sets the Increase of the Person.
-     */
-    @Override
-    public void setIncrease(int increase) {
-        if (increase > 0) {
-            this.increase = increase;
-        }
-    }
-
     /**
      * Gets the X coordinate of the Person.
      */
@@ -81,13 +43,5 @@ public class PersonImpl implements Person {
     @Override
     public void setY(final int y) {
         this.entity.setY(y);
-    }
-
-    /**
-     * Sets the id.
-     */
-    @Override
-    public void setId(final int id) {
-        this.id = id;
     }
 }

@@ -48,14 +48,6 @@ public interface PersonsManager {
     void addPerson(Person person);
 
     /**
-     * Method that allows to retrieve a Person by its id.
-     * 
-     * @param id the Person id.
-     * @return the Person.
-     */
-    Person getPersonById(int id);
-
-    /**
      * Method that allows to retrieve a Person by its X and Y coords.
      * 
      * @param x the X coordinate of the Person.

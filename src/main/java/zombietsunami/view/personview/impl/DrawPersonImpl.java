@@ -91,12 +91,4 @@ public class DrawPersonImpl implements DrawPerson {
         }
         return image;
     }
-
-    /**
-     * Updates the Person.
-     */
-    @Override
-    public void updatePerson(final VController controller) {
-        controller.updatePerson();
-    }
 }

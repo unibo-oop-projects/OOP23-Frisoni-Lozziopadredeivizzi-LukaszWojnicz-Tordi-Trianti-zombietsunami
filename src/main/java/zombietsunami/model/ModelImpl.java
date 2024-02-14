@@ -13,8 +13,6 @@ import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
-import zombietsunami.model.personmodel.api.Person;
-import zombietsunami.model.personmodel.impl.PersonImpl;
 import zombietsunami.model.personmodel.api.PersonsManager;
 import zombietsunami.model.personmodel.impl.PersonsManagerImpl;
 
@@ -26,7 +24,6 @@ public final class ModelImpl implements Model {
 
     private final GameMap gameMap;
     private final Zombie zombie;
-    private final Person person;
     private final PersonsManager personsManager;
     private final MightWin win;
     private final GameOver gameOver;
@@ -39,7 +36,6 @@ public final class ModelImpl implements Model {
     public ModelImpl() {
         this.gameMap = new GameMapImpl();
         this.zombie = new ZombieImpl();
-        this.person = new PersonImpl();
         this.personsManager = new PersonsManagerImpl();
         this.win = new MightWinImpl();
         this.gameOver = new GameOverImpl();
@@ -87,11 +83,6 @@ public final class ModelImpl implements Model {
     @Override
     public int getSpeed() {
         return this.zombie.getSpeed();
-    }
-
-    @Override
-    public void updatePerson() {
-        this.person.update();
     }
 
     @Override
