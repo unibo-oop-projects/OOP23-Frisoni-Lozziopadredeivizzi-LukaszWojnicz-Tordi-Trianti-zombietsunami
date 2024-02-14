@@ -12,7 +12,6 @@ import javax.imageio.ImageIO;
 import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawObstacle;
-import zombietsunami.view.zombieview.impl.DrawZombieImpl;
 
 /**
  * Class definining how an obstacle should be printed

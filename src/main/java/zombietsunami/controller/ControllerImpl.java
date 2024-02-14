@@ -7,8 +7,6 @@ import zombietsunami.api.Model;
 import zombietsunami.Pair;
 import zombietsunami.model.MapData;
 import zombietsunami.model.ModelImpl;
-import zombietsunami.model.obstaclemodel.api.Bomb;
-import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.view.VControllerImpl;
 import zombietsunami.view.api.VController;
 
