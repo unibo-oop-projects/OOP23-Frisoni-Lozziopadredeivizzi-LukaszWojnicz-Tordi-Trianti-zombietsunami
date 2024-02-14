@@ -1,9 +1,12 @@
 package zombietsunami.model.zombiemodel.impl;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.model.EntityImpl;
 import zombietsunami.model.zombiemodel.api.JumpZombie;
+
 /**
- * Implementation of the JumpZombie interface representing the behavior of a jumping zombie in the game.
+ * Implementation of the JumpZombie interface representing the behavior of a
+ * jumping zombie in the game.
  */
 public class JumpZombieImpl implements JumpZombie {
     private boolean jumping;
@@ -17,8 +20,11 @@ public class JumpZombieImpl implements JumpZombie {
     /**
      * Constructs a jumpZombieImpl with the specified EntityImpl as the underlying
      * entity.
+     * 
      * @param entity the underlying entity for the jumpZombie behavior.
      */
+    @SuppressFBWarnings(justification = "entity must be"
+            + "passed an object to another class , otherwise the code won't work.")
     public JumpZombieImpl(final EntityImpl entity) {
         this.entity = entity;
     }
@@ -76,6 +82,7 @@ public class JumpZombieImpl implements JumpZombie {
 
     /**
      * Gets the current jumping state of the zombie.
+     * 
      * @return true if the zombie is currently jumping.
      */
     @Override
