@@ -59,7 +59,8 @@ public final class MapImpl extends JPanel implements Map, Runnable {
      * @param keyH sets the key listener for the class
      */
     @SuppressFBWarnings(justification = "VController and KeyHandleer must be"
-            + "passed , otherwise the code won't work.")
+            + "passed in this way because the relative changes in these objects"
+            + "are strongly necessary for the correct execution of the game.")
     public MapImpl(final VController c, final KeyHandler keyH) {
         this.controller = c;
         this.keyH = keyH;
