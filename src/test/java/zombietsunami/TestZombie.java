@@ -17,20 +17,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class TestZombie {
 
     private final ZombieImpl zombie = new ZombieImpl();
-    private final int initialX= zombie.getX();
-    private final int initialY= zombie.getY();
-    private final int initialSpeed= zombie.getSpeed();
-    private static final int RANGEY=90;
-    private final int maxY= initialY-RANGEY;
+    private final int initialX = zombie.getX();
+    private final int initialY = zombie.getY();
+    private final int initialSpeed = zombie.getSpeed();
+    private static final int RANGEY = 90;
+    private final int maxY = initialY - RANGEY;
 
     /**
      * Test method to verify the default position of the zombie.
      * 
      * This test ensures that the zombie's initial position is correctly set to
      * (initialX, initialY)
-     * and its speed is set to 1.
+     * and its speed is set to initialSpeed.
      */
-    
+
     @Test
     void checkDefaultPosition() {
         assertEquals(zombie.getX(), initialX);
@@ -50,7 +50,7 @@ class TestZombie {
     void checkUpdatePosition() {
         zombie.update();
         zombie.update();
-        assertEquals(zombie.getX(), initialX+2);
+        assertEquals(zombie.getX(), initialX + 2);
         assertEquals(zombie.getY(), initialY);
     }
 
@@ -60,7 +60,8 @@ class TestZombie {
      * This test validates the jumping functionality of the zombie by:
      * 1. Triggering the jump action and ensuring the zombie enters the jumping
      * state.
-     * 2. Simulating the zombie's jump to its maximum height (Y = maxY), checking its
+     * 2. Simulating the zombie's jump to its maximum height (Y = maxY), checking
+     * its
      * X position remains unchanged.
      * 3. Verifying that the zombie's Y position is not greater than maxY after
      * reaching the maximum height.
@@ -90,4 +91,22 @@ class TestZombie {
         assertEquals(zombie.getY(), initialY);
         assertFalse(zombie.isJumping());
     }
+
+    /**
+     * Test method to verify that a zombie cannot start another jump while already
+     * in mid-air.
+     * 
+     * This test ensures that when a zombie is already in the jumping state,
+     * attempting to initiate
+     * another jump does not change its jumping state.
+     */
+    @Test
+    void checkCannotJumpWhileAlreadyJumping() {
+        zombie.jumpPress();
+        assertTrue(zombie.isJumping());
+
+        zombie.jumpPress();
+        assertTrue(zombie.isJumping());
+    }
+
 }
