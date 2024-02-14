@@ -71,6 +71,6 @@ public class BreakableImpl extends ObstacleEntity implements Breakable {
      */
     @Override
     public boolean canBreakObstacle(final int zombieForce) {
-        return (this.getMinForce() <= zombieForce) ? true : false;
+        return this.getMinForce() <= zombieForce;
     }
 }

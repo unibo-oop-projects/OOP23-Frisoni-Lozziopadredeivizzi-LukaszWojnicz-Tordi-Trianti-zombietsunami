@@ -3,8 +3,6 @@ package zombietsunami.api;
 import java.util.List;
 
 import zombietsunami.Pair;
-import zombietsunami.model.obstaclemodel.api.Bomb;
-import zombietsunami.model.obstaclemodel.api.Breakable;
 
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
