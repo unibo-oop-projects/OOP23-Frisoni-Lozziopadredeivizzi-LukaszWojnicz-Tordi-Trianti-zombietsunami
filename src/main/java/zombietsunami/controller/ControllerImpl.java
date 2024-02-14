@@ -111,8 +111,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public int getStrenght() {
-        return this.model.getStrenght();
+    public int getStrength() {
+        return this.model.getStrength();
     }
 
     @Override

@@ -158,7 +158,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         g2.fillRect(0, 0, RECT_WIDTH, RECT_HEIGHT);
         g2.setFont(new Font("Arial", Font.BOLD, FONT_SIZE));
         g2.setColor(Color.WHITE);
-        g2.drawString("Strenght x " + controller.getStrenght(), INFO_POS_X, INFO_POS_Y);
+        g2.drawString("Strenght x " + controller.getStrength(), INFO_POS_X, INFO_POS_Y);
     }
 
     /**

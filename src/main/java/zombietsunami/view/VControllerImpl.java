@@ -145,8 +145,8 @@ public final class VControllerImpl implements VController {
      * @return The strength of the zombie.
      */
     @Override
-    public int getStrenght() {
-        return this.control.getStrenght();
+    public int getStrength() {
+        return this.control.getStrength();
     }
 
     /**

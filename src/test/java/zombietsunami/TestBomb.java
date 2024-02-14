@@ -24,7 +24,7 @@ public class TestBomb {
      */
     @Test
     void checkDamageReduction() {
-        zombie.setStrenght(zombie.getStrenght() - bomb.getDamage());
-        assertTrue(zombie.getStrenght() == 0);
+        zombie.setStrength(zombie.getStrength() - bomb.getDamage());
+        assertTrue(zombie.getStrength() == 0);
     }
 }

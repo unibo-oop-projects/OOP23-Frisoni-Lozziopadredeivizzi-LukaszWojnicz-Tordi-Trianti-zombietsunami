@@ -140,7 +140,7 @@ public interface VController {
    *
    * @return The strength of the zombie character.
    */
-  int getStrenght();
+  int getStrength();
 
   /**
    * Gets the current X-coordinate of the zombie on the screen.
@@ -221,13 +221,13 @@ public interface VController {
   boolean isGameOver();
 
   /**
-   * @return true if the zombie's strenght is not enough to break the breakable
+   * @return true if the zombie's strength is not enough to break the breakable
    *         object in the map
    */
   boolean isNotEnoughC();
 
   /**
-   * @return true if the zombie's strenght is zero
+   * @return true if the zombie's strength is zero
    */
   boolean isStrenghtZeroC();
 }

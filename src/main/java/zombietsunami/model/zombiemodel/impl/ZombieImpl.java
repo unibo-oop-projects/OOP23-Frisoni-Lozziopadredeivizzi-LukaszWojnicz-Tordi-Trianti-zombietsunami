@@ -113,16 +113,16 @@ public class ZombieImpl implements Zombie {
      * @return the strength of the zombie.
      */
     @Override
-    public int getStrenght() {
-        return this.entity.getStrenght();
+    public int getStrength() {
+        return this.entity.getStrength();
     }
 
     /**
      * Increases the strength of the zombie by one.
      */
     @Override
-    public void increaseStrenght() {
-        this.entity.increaseStrenght();
+    public void increaseStrength() {
+        this.entity.increaseStrength();
     }
 
     /**
@@ -131,8 +131,8 @@ public class ZombieImpl implements Zombie {
      * @param strenght the new strength of the zombie.
      */
     @Override
-    public void setStrenght(final int strenght) {
-        this.entity.setStrenght(strenght);
+    public void setStrength(final int strength) {
+        this.entity.setStrength(strength);
     }
 
     /**
