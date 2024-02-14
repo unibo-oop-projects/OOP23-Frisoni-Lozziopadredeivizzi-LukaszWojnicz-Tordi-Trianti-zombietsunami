@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.view.TextScene;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
@@ -57,6 +58,8 @@ public final class MapImpl extends JPanel implements Map, Runnable {
      * @param c    sets the view controller
      * @param keyH sets the key listener for the class
      */
+    @SuppressFBWarnings(justification = "VController and KeyHandleer must be"
+            + "passed , otherwise the code won't work.")
     public MapImpl(final VController c, final KeyHandler keyH) {
         this.controller = c;
         this.keyH = keyH;
@@ -105,25 +108,27 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     @Override
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
-        final Graphics2D g2 = (Graphics2D) g;
-        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
-                controller.screenTilePosC(), this.controller);
-        this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(),
-                controller.titleSizeC(), this.controller);
-        this.drawPerson.drawPersonV(g2, controller.personIndexListC(), controller.screenTilePosC(),
-                controller.titleSizeC(), this.controller);
-        this.drawZombie.drawZombieV(g2, controller);
-        drawInfo(g2);
-        if (isPause()) {
-            TextScene.scene(g2, PAUSE);
+        if (g instanceof Graphics2D) {
+            final Graphics2D g2 = (Graphics2D) g;
+            this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
+                    controller.screenTilePosC(), this.controller);
+            this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(),
+                    controller.titleSizeC(), this.controller);
+            this.drawPerson.drawPersonV(g2, controller.personIndexListC(), controller.screenTilePosC(),
+                    controller.titleSizeC(), this.controller);
+            this.drawZombie.drawZombieV(g2, controller);
+            drawInfo(g2);
+            if (isPause()) {
+                TextScene.scene(g2, PAUSE);
+            }
+            if (isWin()) {
+                TextScene.scene(g2, WIN);
+            }
+            if (isGameOver()) {
+                TextScene.scene(g2, GAMEOVER);
+            }
+            g2.dispose();
         }
-        if (isWin()) {
-            TextScene.scene(g2, WIN);
-        }
-        if (isGameOver()) {
-            TextScene.scene(g2, GAMEOVER);
-        }
-        g2.dispose();
     }
 
     @Override
