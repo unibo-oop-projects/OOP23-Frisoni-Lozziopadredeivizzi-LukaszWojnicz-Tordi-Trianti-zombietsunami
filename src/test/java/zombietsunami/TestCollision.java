@@ -1,7 +1,5 @@
 package zombietsunami;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import zombietsunami.model.obstaclemodel.api.Bomb;
@@ -10,7 +8,6 @@ import zombietsunami.model.obstaclemodel.api.ObstacleManager;
 import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
-import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 import zombietsunami.model.CollisionImpl;
 import zombietsunami.model.MapData;
@@ -33,7 +30,7 @@ public class TestCollision {
     private CollisionImpl collision = new CollisionImpl();
     private GameMap gameMap = new GameMapImpl();
     
-
+    //CHECKSTYLE: MagicNumber OFF
     @Test
     void checkIfCollides() {
         bomb.setX(70);
