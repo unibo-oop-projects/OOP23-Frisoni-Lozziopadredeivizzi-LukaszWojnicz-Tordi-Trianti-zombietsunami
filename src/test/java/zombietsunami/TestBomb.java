@@ -24,6 +24,6 @@ class TestBomb {
     @Test
     void checkDamageReduction() {
         zombie.setStrength(zombie.getStrength() - bomb.getDamage());
-        assertEquals(zombie.getStrength(),0);
+        assertEquals(zombie.getStrength(), 0);
     }
 }
