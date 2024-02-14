@@ -15,7 +15,11 @@ import zombietsunami.model.mapmodel.impl.TileElementImpl;
  * names are right and in the right index.
  */
 class TestTileElements {
-
+    // CPD-OFF
+    /*
+     * CPD suppressed because tests are naturally repetitive and their purpose
+     * should be clear enough.
+     */
     private final TileElement tileElement = new TileElementImpl();
     private List<String> elements = new ArrayList<>();
 
@@ -24,17 +28,18 @@ class TestTileElements {
      */
     @Test
     void checkAllElements() {
-        checkElement(0, "dirt.png");
-        checkElement(1, "street.png");
-        checkElement(2, "sky.png");
-        checkElement(3, "buldingLeft.png");
-        checkElement(4, "buldingNorthLeft.png");
-        checkElement(5, "buldingNorth.png");
-        checkElement(6, "buldingNorthRight.png");
-        checkElement(7, "buldingRight.png");
-        checkElement(8, "buldingDoor.png");
-        checkElement(9, "buldingWindow.png");
-        checkElement(10, "flag.png");
+        int pos = 0;
+        checkElement(pos++, "dirt.png");
+        checkElement(pos++, "street.png");
+        checkElement(pos++, "sky.png");
+        checkElement(pos++, "buldingLeft.png");
+        checkElement(pos++, "buldingNorthLeft.png");
+        checkElement(pos++, "buldingNorth.png");
+        checkElement(pos++, "buldingNorthRight.png");
+        checkElement(pos++, "buldingRight.png");
+        checkElement(pos++, "buldingDoor.png");
+        checkElement(pos++, "buldingWindow.png");
+        checkElement(pos, "flag.png");
     }
 
     /**
