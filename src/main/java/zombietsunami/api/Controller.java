@@ -119,11 +119,8 @@ public interface Controller {
 
   /**
    * Gets the Person list from the map.
-   * @param personlist The list of Person.
-   * @param coords The coordinates of Person.
-   * @param strenght The strenght of Person.
    */
-  void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
+  void getPersonFromMap();
 
   /**
    * @return the Person list.
