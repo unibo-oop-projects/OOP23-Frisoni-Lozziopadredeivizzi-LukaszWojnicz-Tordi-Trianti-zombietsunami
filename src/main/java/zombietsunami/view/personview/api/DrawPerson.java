@@ -31,11 +31,4 @@ public interface DrawPerson {
      * @return The BufferedImage representing the Person.
      */
     BufferedImage getPerson();
-
-    /**
-     * Updates the Person.
-     * 
-     * @param controller Controller.
-     */
-    void updatePerson(VController controller);
 }

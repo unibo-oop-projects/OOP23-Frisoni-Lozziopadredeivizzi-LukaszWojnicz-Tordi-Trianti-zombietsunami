@@ -15,22 +15,6 @@ public class PersonsManagerImpl implements PersonsManager {
     private List<Person> personList = new ArrayList<Person>();
 
     /**
-     * Method that allows to retrieve a Person by its id.
-     * 
-     * @param id the Person id.
-     * @return the Person.
-     */
-    @Override
-    public Person getPersonById(final int id) {
-        for (Person person : personList) {
-            if (person.getId() == id) {
-                return person;
-            }
-        }
-        return null;
-    }
-
-    /**
      * Method that allows to remove a Person from the list.
      * 
      * @param index index of the Person.
@@ -76,8 +60,6 @@ public class PersonsManagerImpl implements PersonsManager {
 
                 person.setX(coords.get(i).getX());
                 person.setY(coords.get(i).getY());
-                person.setIncrease(Math.round(strenght * 0.5f));
-                person.setId(i);
 
                 personList.add(i, person);
             } else {

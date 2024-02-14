@@ -76,11 +76,6 @@ public interface Model {
   void setCoordinatesOfPersonInList(int index, int x, int y);
 
   /**
-   * Updates the state of Person.
-   */
-  void updatePerson();
-
-  /**
    * Removes the "index" Person from the list
    * @param index the index of the Person in the list
    */

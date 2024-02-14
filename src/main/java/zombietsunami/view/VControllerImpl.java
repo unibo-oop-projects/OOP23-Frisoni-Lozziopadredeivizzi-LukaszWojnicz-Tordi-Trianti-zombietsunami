@@ -115,11 +115,6 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void updatePerson() {
-        this.control.updatePerson();
-    }
-
-    @Override
     public void getPersonFromMapC(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
             final Integer strenght) {
         this.control.getPersonFromMap(personlist, coords, strenght);

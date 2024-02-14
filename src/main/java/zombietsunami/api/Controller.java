@@ -118,11 +118,6 @@ public interface Controller {
   int getStrenght();
 
   /**
-   * Updates the state of the Person.
-   */
-  void updatePerson();
-
-  /**
    * Gets the Person list from the map.
    * @param personlist The list of Person.
    * @param coords The coordinates of Person.

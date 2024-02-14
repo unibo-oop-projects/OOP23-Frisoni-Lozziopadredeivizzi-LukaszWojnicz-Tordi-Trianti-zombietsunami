@@ -105,11 +105,6 @@ public interface VController {
   int getWorldHightC();
 
   /**
-   * Updates teh state of Person.
-   */
-  void updatePerson();
-
-  /**
    * Gets the list of Person from the map.
    * 
    * @param personlist list of Person

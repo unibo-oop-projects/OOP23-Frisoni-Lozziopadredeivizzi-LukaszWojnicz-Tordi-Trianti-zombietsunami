@@ -121,11 +121,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void updatePerson() {
-        this.model.updatePerson();
-    }
-
-    @Override
     public void getPersonFromMap(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
             final Integer strenght) {
         this.model.getPersonFromMap(personlist, coords, strenght);
