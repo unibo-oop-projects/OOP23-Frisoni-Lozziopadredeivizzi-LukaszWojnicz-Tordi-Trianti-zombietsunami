@@ -64,7 +64,7 @@ public final class GameMapImpl implements GameMap {
         final Logger logger = Logger.getLogger(GameMapImpl.class.getName());
         try {
             final InputStream is = getClass().getResourceAsStream(filePath);
-            final BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            final BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
 
             for (int row = 0; row < MapData.getMaxWorldRow(); row++) {
                 final String line = br.readLine();
