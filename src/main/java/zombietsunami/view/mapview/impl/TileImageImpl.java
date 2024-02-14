@@ -19,7 +19,7 @@ public final class TileImageImpl implements TileImage {
         for (int i = 0; i < element.size(); i++) {
             setSingleTile(i, element.get(i));
         }
-        return itemMap;
+        return new ArrayList<>(itemMap);
 
     }
 
