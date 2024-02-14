@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
+import zombietsunami.view.obstacleview.impl.DrawObstacleImpl;
 import zombietsunami.view.zombieview.api.DrawZombie;
 
 /**
@@ -74,12 +75,14 @@ public class DrawZombieImpl implements DrawZombie {
     }
 
     private BufferedImage loadImage(final String imagePath) throws IOException {
-        try (InputStream stream = getClass().getResourceAsStream(imagePath)) {
-            if (stream == null) {
-                throw new IOException("Image not found: " + imagePath);
-            }
-            return ImageIO.read(stream);
+       final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(DrawZombieImpl.class.getResource(imagePath));
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine della bomba: " + e.getMessage());
         }
+        return image;
     }
 
     /**
