@@ -5,6 +5,7 @@ import java.util.List;
 import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
  * all their useful methods that has to comunicate with the controller
@@ -14,8 +15,9 @@ public interface Model {
 
   /**
    * Returns the list of bombs from the map.
+   * 
    * @param bomblist the bomb list.
-   * @param coords the coordinates of every bomb in the list.
+   * @param coords   the coordinates of every bomb in the list.
    * @param strength the strength of the zombie.
    */
   void fillBombListFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
@@ -33,10 +35,11 @@ public interface Model {
   List<Integer> getMapList();
 
   /**
-     * Removes an obstacle from the list.
-     * @param index
-     */
-    void removeObstacleListItem(int index);
+   * Removes an obstacle from the list.
+   * 
+   * @param index
+   */
+  void removeObstacleListItem(int index);
 
   /**
    * @return the List that contains the tile's elements file name of the game map
@@ -86,9 +89,10 @@ public interface Model {
 
   /**
    * Sets the coordinates of the "index" Person
+   * 
    * @param index index of the Person in the list
-   * @param x X coordinate
-   * @param y Y coordinate
+   * @param x     X coordinate
+   * @param y     Y coordinate
    */
   void setCoordinatesOfPersonInList(int index, int x, int y);
 
@@ -99,12 +103,14 @@ public interface Model {
 
   /**
    * Removes the "index" Person from the list
+   * 
    * @param index the index of the Person in the list
    */
   void removePersonFromList(int index);
 
   /**
    * Removes a Person from the list
+   * 
    * @param index index of Person
    */
   void removePersonListItem(int index);
@@ -114,13 +120,6 @@ public interface Model {
    */
   int getStrenght();
 
-  /**
-   * Calls the set strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   * 
-   * @param strenght is the strenght that will be setted
-   */
-  void setStrenght(int strenght);
 
   /**
    * @return the zombie's screen X coordinate
@@ -134,6 +133,7 @@ public interface Model {
 
   /**
    * Checks if the zombie has enough strength to break the obstacle.
+   * 
    * @param zombieStrength the zombies strength.
    * @return true if it can, false otherwise.
    */
@@ -180,6 +180,7 @@ public interface Model {
   /**
    * Returns the bomb list containing the current bombs
    * displayed.
+   * 
    * @return the bomb list.
    */
   List<Bomb> getBombList();
@@ -187,55 +188,61 @@ public interface Model {
   /**
    * Returns the breakable list containing the current bombs
    * displayed.
+   * 
    * @return the breakable list.
    */
   List<Breakable> getBreakableList();
 
   /**
    * Sets the coordinates of the "index" bomb in the list.
+   * 
    * @param index index of the bomb inside the list.
-   * @param x X coordinate.
-   * @param y Y coordinate.
+   * @param x     X coordinate.
+   * @param y     Y coordinate.
    */
   void setCoordinatesOfBombInList(int index, int x, int y);
 
   /**
-     * Removes the "index" bomb from the list.
-     * @param index the index of the bomb in the list.
-     */
-    void removeBombFromList(int index);
+   * Removes the "index" bomb from the list.
+   * 
+   * @param index the index of the bomb in the list.
+   */
+  void removeBombFromList(int index);
 
-    /**
-     * Returns the list of breakables from the map.
-     * @param breakablelist the breakable list.
-     * @param coords the coordinates of every breakable inside the list.
-     * @param strength the strength of the zombie.
-     */
-    void fillBreakableListFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+  /**
+   * Returns the list of breakables from the map.
+   * 
+   * @param breakablelist the breakable list.
+   * @param coords        the coordinates of every breakable inside the list.
+   * @param strength      the strength of the zombie.
+   */
+  void fillBreakableListFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
-    /**
-     * Checks collision between zombie and obstacles.
-     */
-    void collisionZombieObstacle();
+  /**
+   * Checks collision between zombie and obstacles.
+   */
+  void collisionZombieObstacle();
 
-    /**
-     * Checks when the zombie hit a Person.
-     */
-    void collisionZombiePersons();
+  /**
+   * Checks when the zombie hit a Person.
+   */
+  void collisionZombiePersons();
 
-    /**
-     * Checks if the game is over.
-     * @return true if the game is over, false otherwise.
-     */
-    boolean isGameOver();
+  /**
+   * Checks if the game is over.
+   * 
+   * @return true if the game is over, false otherwise.
+   */
+  boolean isGameOver();
 
-    /**
-     * @return true if the zombie's strenght is not enough to break the breakable object in the map
-     */
-    boolean isNotEnough();
+  /**
+   * @return true if the zombie's strenght is not enough to break the breakable
+   *         object in the map
+   */
+  boolean isNotEnough();
 
-    /**
-     * @return true if the zombie's strenght is zero
-     */
-    boolean isStrenghtZero();
+  /**
+   * @return true if the zombie's strenght is zero
+   */
+  boolean isStrenghtZero();
 }

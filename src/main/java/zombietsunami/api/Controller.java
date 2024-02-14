@@ -181,14 +181,6 @@ public interface Controller {
   List<Integer> personList();
 
   /**
-   * Calls the set strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   * 
-   * @param strenght is the strenght that wants to be setted
-   */
-  void setStrenght(int strenght);
-
-  /**
    * Checks if the breakable minimum force is less than the strength.
    * 
    * @param zombieStrength the zombies strength.

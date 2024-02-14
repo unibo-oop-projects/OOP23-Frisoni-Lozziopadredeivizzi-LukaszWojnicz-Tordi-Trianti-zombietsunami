@@ -172,18 +172,13 @@ public final class VControllerImpl implements VController {
      *
      * @return The strength of the zombie.
      */
-    @Override
+   @Override
     public int getStrenght() {
         return this.control.getStrenght();
     }
 
-    /**
-     * Sets the strength of the zombie to the specified value.
-     */
-    @Override
-    public void setStrenght(final int strenght) {
-        this.control.setStrenght(strenght);
-    }
+  
+   
 
     /**
      * Gets the x-coordinate of the zombie on the screen.

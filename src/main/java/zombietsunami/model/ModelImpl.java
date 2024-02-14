@@ -147,10 +147,7 @@ public final class ModelImpl implements Model {
         return this.zombie.getStrenght();
     }
 
-    @Override
-    public void setStrenght(final int strenght) {
-        this.zombie.setStrenght(strenght);
-    }
+
 
     @Override
     public int getZombieScreenX() {

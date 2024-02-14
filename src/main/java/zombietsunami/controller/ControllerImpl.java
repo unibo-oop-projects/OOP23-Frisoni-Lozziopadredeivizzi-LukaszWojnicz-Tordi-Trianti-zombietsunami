@@ -174,11 +174,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void setStrenght(final int strenght) {
-        this.model.setStrenght(strenght);
-    }
-
-    @Override
     public boolean canBreakObstacle(final int zombieStrength) {
         return this.model.canBreakObstacle(zombieStrength);
     }
