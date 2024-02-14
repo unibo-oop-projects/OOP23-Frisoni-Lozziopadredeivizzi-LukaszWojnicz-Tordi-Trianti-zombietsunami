@@ -3,6 +3,7 @@ package zombietsunami.model.personmodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.Pair;
 import zombietsunami.model.personmodel.api.Person;
 import zombietsunami.model.personmodel.api.PersonsManager;
@@ -42,6 +43,8 @@ public class PersonsManagerImpl implements PersonsManager {
      * 
      * @return the Person list.
      */
+    @SuppressFBWarnings(justification = "Persons inside personList must be" 
+        + " set null when colliding in CollisionImpl, otherwise the code won't work.")
     @Override
     public List<Person> getPersonList() {
         return personList;

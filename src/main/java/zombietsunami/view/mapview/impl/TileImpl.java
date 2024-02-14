@@ -6,9 +6,12 @@ import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.view.mapview.api.Tile;
+
 /**
- * This class implements the Tile interface {@link zombietsunami.view.mapview.api.Tile}.
+ * This class implements the Tile interface
+ * {@link zombietsunami.view.mapview.api.Tile}.
  */
 public final class TileImpl implements Tile {
 
@@ -25,6 +28,9 @@ public final class TileImpl implements Tile {
     }
 
     @Override
+    @SuppressFBWarnings(justification = "I directly need to get the BufferedImage fild"
+    + " from this class because if i create a new BufferedImage that is a clone of the"
+    + " one i need, this will slow the game down")
     public BufferedImage getImage() {
         return this.image;
     }

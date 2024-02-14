@@ -62,28 +62,25 @@ public final class GameMapImpl implements GameMap {
     private List<Integer> loadMap(final String filePath) {
         final List<List<Integer>> mapTileNum = new ArrayList<>();
         final Logger logger = Logger.getLogger(GameMapImpl.class.getName());
-        try {
-            final InputStream is = getClass().getResourceAsStream(filePath);
-            final BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-
+        try (InputStream is = getClass().getResourceAsStream(filePath);
+             BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
+            
             for (int row = 0; row < MapData.getMaxWorldRow(); row++) {
                 final String line = br.readLine();
                 final List<Integer> list = new ArrayList<>();
-
+    
                 for (int col = 0; col < MapData.getMaxWorldCol(); col++) {
                     final List<String> numbers = List.of(line.split(" "));
                     list.add(Integer.parseInt(numbers.get(col)));
                 }
-
+    
                 mapTileNum.add(row, list);
             }
-
-            br.close();
-
+    
         } catch (IOException e) {
             logger.severe("Error reading the input file: " + e.getMessage());
         }
-
+    
         return mapTileNum.stream().flatMap(List::stream).collect(Collectors.toList());
     }
 
