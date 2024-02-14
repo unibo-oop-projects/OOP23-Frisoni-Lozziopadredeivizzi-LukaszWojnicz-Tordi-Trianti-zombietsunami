@@ -42,14 +42,14 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final String WIN = "WINNER";
     private static final String GAMEOVER = "LOSE";
 
-    private Thread gameThread;
-    private final VController controller;
+    private transient Thread gameThread;
+    private final transient VController controller;
 
-    private final TileManager drowMap;
-    private final DrawZombie drawZombie;
-    private transient DrawObstacle drawObstacle;
-    private final DrawPerson drawPerson;
-    private final KeyHandler keyH;
+    private final transient TileManager drowMap;
+    private final transient DrawZombie drawZombie;
+    private final transient DrawObstacle drawObstacle;
+    private final transient DrawPerson drawPerson;
+    private final transient KeyHandler keyH;
 
     /**
      * Sets the objects in the map like the zombie and the obstacles.
