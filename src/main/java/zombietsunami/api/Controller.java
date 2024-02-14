@@ -88,11 +88,6 @@ public interface Controller {
   int getZombieMapY();
 
   /**
-   * @return the zombie's speed value
-   */
-  int getSpeed();
-
-  /**
    * Calls the update method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.
    */
@@ -123,12 +118,6 @@ public interface Controller {
    *         {@link zombietsunami.model.zombiemodel.api.Zombie}.
    */
   int getStrenght();
-
-  /**
-   * Calls the increases strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   */
-  void increaseStrenght();
 
   /**
    * @return the person's map X coordinate
@@ -174,15 +163,6 @@ public interface Controller {
    * @return the list of Person
    */
   List<Integer> personList();
-
-
-  /**
-   * Calls the set strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   * 
-   * @param strenght is the strenght that wants to be setted
-   */
-  void setStrenght(int strenght);
 
   /**
    * @return the zombie's screen X coordiante

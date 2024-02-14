@@ -244,5 +244,4 @@ public final class ControllerImpl implements Controller {
     public void collisionZombieObstacle() {
         this.model.collisionZombieObstacle();
     }
-
 }
