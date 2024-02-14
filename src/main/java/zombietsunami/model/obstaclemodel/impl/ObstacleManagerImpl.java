@@ -93,7 +93,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      */
     @Override
     public List<Bomb> getBombList() {
-        return bombList;
+        return this.bombList;
     }
 
     /**
@@ -102,7 +102,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      */
     @Override
     public List<Breakable> getBreakableList() {
-        return breakableList;
+        return this.breakableList;
     }
 
     /**
