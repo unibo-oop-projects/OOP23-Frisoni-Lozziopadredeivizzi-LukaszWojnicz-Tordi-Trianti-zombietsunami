@@ -3,6 +3,7 @@ package zombietsunami.model.obstaclemodel.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
@@ -92,6 +93,8 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @return the bomb list.
      */
     @Override
+    @SuppressFBWarnings(justification = "Bombs inside bombList must be" 
+        + " set null when colliding in CollisionImpl, otherwise the code won't work.")
     public List<Bomb> getBombList() {
         return this.bombList;
     }
@@ -100,6 +103,8 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * Returns the breakable list.
      * @return the breakable list.
      */
+    @SuppressFBWarnings(justification = "Breakables inside breakableList must be" 
+        + " set null when colliding in CollisionImpl, otherwise the code won't work.")
     @Override
     public List<Breakable> getBreakableList() {
         return this.breakableList;
