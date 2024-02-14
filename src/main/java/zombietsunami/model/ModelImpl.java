@@ -91,9 +91,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getPersonFromMap(final List<Integer> personlist,
-            final List<Pair<Integer, Integer>> coords, final Integer strenght) {
-        this.personsManager.getPersonFromMap(personlist, coords, strenght);
+    public void getPersonFromMap() {
+        this.personsManager.getPersonFromMap(gameMap.getLoadedPersonList(), getScreenTilePos(), zombie.getStrenght());
     }
 
     @Override

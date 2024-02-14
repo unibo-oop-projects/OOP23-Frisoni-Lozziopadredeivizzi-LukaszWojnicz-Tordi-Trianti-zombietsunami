@@ -121,9 +121,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void getPersonFromMap(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
-            final Integer strenght) {
-        this.model.getPersonFromMap(personlist, coords, strenght);
+    public void getPersonFromMap() {
+        this.model.getPersonFromMap();
     }
 
     @Override

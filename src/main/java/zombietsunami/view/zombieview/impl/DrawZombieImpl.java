@@ -3,7 +3,6 @@ package zombietsunami.view.zombieview.impl;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
@@ -74,12 +73,14 @@ public class DrawZombieImpl implements DrawZombie {
     }
 
     private BufferedImage loadImage(final String imagePath) throws IOException {
-        try (InputStream stream = getClass().getResourceAsStream(imagePath)) {
-            if (stream == null) {
-                throw new IOException("Image not found: " + imagePath);
-            }
-            return ImageIO.read(stream);
+       final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(DrawZombieImpl.class.getResource(imagePath));
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine della bomba: " + e.getMessage());
         }
+        return image;
     }
 
     /**
