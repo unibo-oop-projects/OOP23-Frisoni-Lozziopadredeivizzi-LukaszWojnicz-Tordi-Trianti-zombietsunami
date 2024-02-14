@@ -112,10 +112,10 @@ public interface Controller {
   int getWorldHight();
 
   /**
-   * @return the strenght of the zombie
+   * @return the strength of the zombie
    *         {@link zombietsunami.model.zombiemodel.api.Zombie}.
    */
-  int getStrenght();
+  int getStrength();
 
   /**
    * Sets the Person list from the map.

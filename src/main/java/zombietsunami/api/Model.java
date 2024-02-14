@@ -87,7 +87,7 @@ public interface Model {
   /**
    * @return the strenght of the zombie
    */
-  int getStrenght();
+  int getStrength();
 
   /**
    * @return the zombie's screen X coordinate

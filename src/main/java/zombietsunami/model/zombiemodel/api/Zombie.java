@@ -44,18 +44,24 @@ public interface Zombie {
     /**
      * @return The strength of the zombie.
      */
-    int getStrenght();
+    int getStrength();
 
     /**
-     * Increases the strength of the zombie.
+     * Increase the strength of the zombie.
      */
-    void increaseStrenght();
+    void increaseStrength();
+
+    /**
+     * Decrease the strength of the zombie.
+     */
+    void decreaseStrength();
 
     /**
      * Sets the strength of the zombie.
+     * 
      * @param strenght The new strength value for the zombie.
      */
-    void setStrenght(int strenght);
+    void setStrength(int strength);
 
     /**
      * Signals that the jump action has been initiated for the zombie.
@@ -69,6 +75,7 @@ public interface Zombie {
 
     /**
      * Checks if the zombie is currently jumping.
+     * 
      * @return True if the zombie is jumping, false otherwise.
      */
     boolean isJumping();

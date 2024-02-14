@@ -45,7 +45,7 @@ public final class ModelImpl implements Model {
 
     @Override
     public void fillBombListFromMap() {
-        this.obstacleManager.fillBombListFromMap(gameMap.getLoadedObstacleList(), getScreenTilePos(), zombie.getStrenght());
+        this.obstacleManager.fillBombListFromMap(gameMap.getLoadedObstacleList(), getScreenTilePos(), zombie.getStrength());
     }
 
     @Override
@@ -92,7 +92,7 @@ public final class ModelImpl implements Model {
 
     @Override
     public void setPersonFromMap() {
-        this.personsManager.setPersonFromMap(gameMap.getLoadedPersonList(), getScreenTilePos(), zombie.getStrenght());
+        this.personsManager.setPersonFromMap(gameMap.getLoadedPersonList(), getScreenTilePos(), zombie.getStrength());
     }
 
     @Override
@@ -117,8 +117,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public int getStrenght() {
-        return this.zombie.getStrenght();
+    public int getStrength() {
+        return this.zombie.getStrength();
     }
 
     @Override
@@ -163,7 +163,7 @@ public final class ModelImpl implements Model {
 
     @Override
     public void fillBreakableListFromMap() {
-        this.obstacleManager.fillBreakableListFromMap(gameMap.getLoadedObstacleList(), getScreenTilePos(), zombie.getStrenght());
+        this.obstacleManager.fillBreakableListFromMap(gameMap.getLoadedObstacleList(), getScreenTilePos(), zombie.getStrength());
     }
 
     @Override
@@ -178,7 +178,7 @@ public final class ModelImpl implements Model {
 
     @Override
     public boolean isStrenghtZero() {
-        return this.gameOver.isStrenghtZero(getStrenght());
+        return this.gameOver.isStrenghtZero(getStrength());
     }
 
     @Override
@@ -186,4 +186,5 @@ public final class ModelImpl implements Model {
         this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), 
             obstacleManager.getBreakableList(), MapData.getTitSize(), zombie, gameMap);
     }
+
 }

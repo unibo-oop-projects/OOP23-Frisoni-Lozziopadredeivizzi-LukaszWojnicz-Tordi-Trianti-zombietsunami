@@ -58,6 +58,8 @@ public final class MapImpl extends JPanel implements Map, Runnable {
      * @param c    sets the view controller
      * @param keyH sets the key listener for the class
      */
+    @SuppressFBWarnings(justification = "VController and KeyHandleer must be"
+            + "passed , otherwise the code won't work.")
     public MapImpl(final VController c, final KeyHandler keyH) {
         this.controller = c;
         this.keyH = keyH;
@@ -106,25 +108,27 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     @Override
     public void paintComponent(final Graphics g) {
         super.paintComponent(g);
-        final Graphics2D g2 = (Graphics2D) g;
-        this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
-                controller.screenTilePosC(), this.controller);
-        this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(),
-                controller.titleSizeC(), this.controller);
-        this.drawPerson.drawPersonV(g2, controller.personIndexListC(), controller.screenTilePosC(),
-                controller.titleSizeC(), this.controller);
-        this.drawZombie.drawZombieV(g2, controller);
-        drawInfo(g2);
-        if (isPause()) {
-            TextScene.scene(g2, PAUSE);
+        if (g instanceof Graphics2D) {
+            final Graphics2D g2 = (Graphics2D) g;
+            this.drowMap.drawMap(g2, controller.titleSizeC(), controller.tileElementsC(), controller.mapIndexListC(),
+                    controller.screenTilePosC(), this.controller);
+            this.drawObstacle.drawObstacleV(g2, controller.obstacleIndexListC(), controller.screenTilePosC(),
+                    controller.titleSizeC(), this.controller);
+            this.drawPerson.drawPersonV(g2, controller.personIndexListC(), controller.screenTilePosC(),
+                    controller.titleSizeC(), this.controller);
+            this.drawZombie.drawZombieV(g2, controller);
+            drawInfo(g2);
+            if (isPause()) {
+                TextScene.scene(g2, PAUSE);
+            }
+            if (isWin()) {
+                TextScene.scene(g2, WIN);
+            }
+            if (isGameOver()) {
+                TextScene.scene(g2, GAMEOVER);
+            }
+            g2.dispose();
         }
-        if (isWin()) {
-            TextScene.scene(g2, WIN);
-        }
-        if (isGameOver()) {
-            TextScene.scene(g2, GAMEOVER);
-        }
-        g2.dispose();
     }
 
     @Override
@@ -154,7 +158,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         g2.fillRect(0, 0, RECT_WIDTH, RECT_HEIGHT);
         g2.setFont(new Font("Arial", Font.BOLD, FONT_SIZE));
         g2.setColor(Color.WHITE);
-        g2.drawString("Strenght x " + controller.getStrenght(), INFO_POS_X, INFO_POS_Y);
+        g2.drawString("Strenght x " + controller.getStrength(), INFO_POS_X, INFO_POS_Y);
     }
 
     /**

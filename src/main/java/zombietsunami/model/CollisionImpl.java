@@ -38,10 +38,10 @@ public class CollisionImpl implements Collision {
                     && bombList.get(i).getX() < THRESHOLD_2
                     && zombie.getScreenY() > bombList.get(i).getY() - tileSize
                     && zombie.getScreenY() < bombList.get(i).getY() + tileSize) {
-                if (zombie.getStrenght() - bombList.get(i).getDamage() < 0) {
+                if (zombie.getStrength() - bombList.get(i).getDamage() < 0) {
                     gameOver = true;
                 }
-                zombie.setStrenght(zombie.getStrenght() - zombie.getSpeed());
+                zombie.decreaseStrength();
                 bombList.set(i, null);
                 gameMap.removeObstacleListItem(i);
             }
@@ -52,7 +52,7 @@ public class CollisionImpl implements Collision {
                     && breakableList.get(i).getX() < THRESHOLD_2
                     && zombie.getScreenY() > breakableList.get(i).getY() - tileSize
                     && zombie.getScreenY() < breakableList.get(i).getY() + tileSize) {
-                if (breakableList.get(i).canBreakObstacle(zombie.getStrenght())) {
+                if (breakableList.get(i).canBreakObstacle(zombie.getStrength())) {
                     gameMap.removeObstacleListItem(i);
                     breakableList.set(i, null);
                 } else {
@@ -91,7 +91,7 @@ public class CollisionImpl implements Collision {
                     && zombie.getScreenY() < personList.get(i).getY() + tileSize) {
                 gameMap.removePersonListItem(i);
                 personList.set(i, null);
-                zombie.setStrenght(zombie.getStrenght() + zombie.getSpeed());
+                zombie.increaseStrength();
             }
         }
     }
