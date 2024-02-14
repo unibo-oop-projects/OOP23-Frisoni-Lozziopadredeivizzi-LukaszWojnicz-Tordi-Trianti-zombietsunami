@@ -15,7 +15,6 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
  * class.
  */
 public class TestBomb {
-    
     private Bomb bomb = new BombImpl();
     private Zombie zombie = new ZombieImpl();
 

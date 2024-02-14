@@ -1,6 +1,5 @@
 package zombietsunami;
 
-
 import org.junit.jupiter.api.Test;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
@@ -14,6 +13,7 @@ import zombietsunami.model.MapData;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.mapmodel.impl.GameMapImpl;
 
+// CHECKSTYLE: MagicNumber OFF
 /**
  * Test class for CollisionImpl.
  * 
@@ -21,16 +21,15 @@ import zombietsunami.model.mapmodel.impl.GameMapImpl;
  * CollisionImpl
  * class.
  */
-public class TestCollision {
+class TestCollision {
 
-    private ZombieImpl zombie = new ZombieImpl();
-    private Bomb bomb = new BombImpl();
-    private Breakable breakable = new BreakableImpl(1);
-    private ObstacleManager obstacleManager = new ObstacleManagerImpl();
-    private CollisionImpl collision = new CollisionImpl();
-    private GameMap gameMap = new GameMapImpl();
-    
-    //CHECKSTYLE: MagicNumber OFF
+    private final  ZombieImpl zombie = new ZombieImpl();
+    private final Bomb bomb = new BombImpl();
+    private final Breakable breakable = new BreakableImpl(1);
+    private final ObstacleManager obstacleManager = new ObstacleManagerImpl();
+    private final CollisionImpl collision = new CollisionImpl();
+    private final GameMap gameMap = new GameMapImpl();
+
     @Test
     void checkIfCollides() {
         bomb.setX(70);
@@ -43,7 +42,7 @@ public class TestCollision {
         obstacleManager.addBreakable(breakable);
         obstacleManager.addBomb(bomb);
         zombie.setStrength(5);
-        collision.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(), 
-            MapData.getTitSize(), zombie, gameMap);
+        collision.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(),
+                MapData.getTitSize(), zombie, gameMap);
     }
 }
