@@ -1,6 +1,6 @@
 package zombietsunami;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import zombietsunami.model.obstaclemodel.api.Bomb;
@@ -14,9 +14,9 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
  * This class contains unit tests for various functionalities of the BombImpl
  * class.
  */
-public class TestBomb {
-    private Bomb bomb = new BombImpl();
-    private Zombie zombie = new ZombieImpl();
+class TestBomb {
+    private final Bomb bomb = new BombImpl();
+    private final Zombie zombie = new ZombieImpl();
 
     /**
      * Checks if the damage has been dealt correctly to the zombie.
@@ -24,6 +24,6 @@ public class TestBomb {
     @Test
     void checkDamageReduction() {
         zombie.setStrength(zombie.getStrength() - bomb.getDamage());
-        assertTrue(zombie.getStrength() == 0);
+        assertEquals(zombie.getStrength(),0);
     }
 }
