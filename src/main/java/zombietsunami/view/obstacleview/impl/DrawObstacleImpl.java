@@ -1,15 +1,18 @@
 package zombietsunami.view.obstacleview.impl;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.awt.Graphics2D;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
 import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawObstacle;
+import zombietsunami.view.zombieview.impl.DrawZombieImpl;
 
 /**
  * Class definining how an obstacle should be printed
@@ -71,11 +74,12 @@ public class DrawObstacleImpl implements DrawObstacle {
      */
     @Override
     public BufferedImage getBreakable() {
-       BufferedImage image = null;
+        final Logger logger = Logger.getLogger(DrawObstacleImpl.class.getName());
+        BufferedImage image = null;
         try {
             image = ImageIO.read(getClass().getResource(BREAKABLE));
-        } catch (Exception e) {
-                e.printStackTrace();
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine del breakable: " + e.getMessage());
         }
         return image;
     }
@@ -87,11 +91,12 @@ public class DrawObstacleImpl implements DrawObstacle {
      */
     @Override
     public BufferedImage getBomb() {
+        final Logger logger = Logger.getLogger(DrawObstacleImpl.class.getName());
         BufferedImage image = null;
         try {
             image = ImageIO.read(getClass().getResource(BOMB_1));
-        } catch (Exception e) {
-                e.printStackTrace();
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine della bomba: " + e.getMessage());
         }
         return image;
     }
