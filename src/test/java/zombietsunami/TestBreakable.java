@@ -18,10 +18,10 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
  * This class contains unit tests for various functionalities of the BreakableImpl
  * class.
  */
-public class TestBreakable {
-    private ObstacleManager obstacleManager = new ObstacleManagerImpl();
-    private Breakable breakable = new BreakableImpl(1);
-    private Zombie zombie = new ZombieImpl();
+class TestBreakable {
+    private final ObstacleManager obstacleManager = new ObstacleManagerImpl();
+    private final Breakable breakable = new BreakableImpl(1);
+    private final Zombie zombie = new ZombieImpl();
 
     /**
      * Checks if the zombie can break the obstacle.
