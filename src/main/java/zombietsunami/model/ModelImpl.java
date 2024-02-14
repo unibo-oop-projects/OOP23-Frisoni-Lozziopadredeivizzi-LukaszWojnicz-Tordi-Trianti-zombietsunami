@@ -53,9 +53,9 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getBombsFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
+    public void fillBombListFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
             final Integer strength) {
-        this.obstacleManager.getBombsFromMap(bomblist, coords, strength);
+        this.obstacleManager.fillBombListFromMap(bomblist, coords, strength);
     }
 
     @Override
@@ -222,9 +222,9 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getBreakablesFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
+    public void fillBreakableListFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
             final Integer strength) {
-        this.obstacleManager.getBreakablesFromMap(breakablelist, coords, strength);
+        this.obstacleManager.fillBreakableListFromMap(breakablelist, coords, strength);
     }
 
     @Override

@@ -45,7 +45,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @param strength the zombies strength.
      */
     @Override
-    public void getBombsFromMap(final List<Integer> bomblist, 
+    public void fillBombListFromMap(final List<Integer> bomblist, 
         final List<Pair<Integer, Integer>> coords, final Integer strength) {
         bombList = new ArrayList<>();
         for (int i = 0; i < bomblist.size(); i++) {
@@ -70,7 +70,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
      * @param strength the zombies strength.
      */
     @Override
-    public void getBreakablesFromMap(final List<Integer> breakablelist, 
+    public void fillBreakableListFromMap(final List<Integer> breakablelist, 
         final List<Pair<Integer, Integer>> coords, final Integer strength) {
         breakableList = new ArrayList<>();
         for (int i = 0; i < breakablelist.size(); i++) {

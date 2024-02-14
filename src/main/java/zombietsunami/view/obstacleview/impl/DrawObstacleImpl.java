@@ -36,11 +36,11 @@ public class DrawObstacleImpl implements DrawObstacle {
         final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final VController controller) {
         for (int i = 0; i < obstacleIndexList.size(); i++) {
             if (obstacleIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
-                controller.getBombsFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
+                controller.fillBombListFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
                 draw(getBomb(), g2, obstacleIndexList, screenTilePos, titleSize, i);
             }
             if (obstacleIndexList.get(i) == 2 && screenTilePos.get(i) != null) {
-                controller.getBreakablesFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
+                controller.fillBreakableListFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
                 draw(getBreakable(), g2, obstacleIndexList, screenTilePos, titleSize, i);
             }
         }

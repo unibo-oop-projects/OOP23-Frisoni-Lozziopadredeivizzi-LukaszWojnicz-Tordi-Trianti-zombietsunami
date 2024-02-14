@@ -55,7 +55,7 @@ public interface ObstacleManager {
      * @param coords the list of the coordinates of every single bomb.
      * @param strength the zombies strength.
      */
-    void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+    void fillBombListFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
     /**
      * Gets the list of breakables from the map.
@@ -63,7 +63,7 @@ public interface ObstacleManager {
      * @param coords the list of the coordinates of every single breakable.
      * @param strength the zombies strength.
      */
-    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+    void fillBreakableListFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
     /**
      * Adds a bomb into the bomb list.

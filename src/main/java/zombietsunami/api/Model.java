@@ -18,7 +18,7 @@ public interface Model {
    * @param coords the coordinates of every bomb in the list.
    * @param strength the strength of the zombie.
    */
-  void getBombsFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+  void fillBombListFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
   /**
    * Calls the zombie's update method
@@ -217,7 +217,7 @@ public interface Model {
      * @param coords the coordinates of every breakable inside the list.
      * @param strength the strength of the zombie.
      */
-    void getBreakablesFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+    void fillBreakableListFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
     /**
      * Checks collision between zombie and obstacles.

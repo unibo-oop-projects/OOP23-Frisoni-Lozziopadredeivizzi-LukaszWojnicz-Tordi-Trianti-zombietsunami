@@ -239,7 +239,7 @@ public interface VController {
    * @param coords the coordinates for each bomb in the list.
    * @param strength the zombie strength.
    */
-  void getBombsFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+  void fillBombListFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
 
   /**
    * Returns the bomb list.
@@ -274,7 +274,7 @@ public interface VController {
    * @param coords the coordinates for each bomb in the list.
    * @param strength the zombie strength.
    */
-  void getBreakablesFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+  void fillBreakableListFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
 
   /**
    * Checks whether the obstacle has collided with the zombie.
