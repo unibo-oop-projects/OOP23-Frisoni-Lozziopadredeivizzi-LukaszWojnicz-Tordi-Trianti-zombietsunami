@@ -13,8 +13,8 @@ import zombietsunami.model.obstaclemodel.api.ObstacleManager;
  */
 public class ObstacleManagerImpl implements ObstacleManager {
 
-    private List<Bomb> bombList = new ArrayList<Bomb>();
-    private List<Breakable> breakableList = new ArrayList<Breakable>();
+    private List<Bomb> bombList = new ArrayList<>();
+    private List<Breakable> breakableList = new ArrayList<>();
 
     /**
      * Adds a bomb into the bomb list.
@@ -50,7 +50,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
         bombList = new ArrayList<>();
         for (int i = 0; i < bomblist.size(); i++) {
             if (bomblist.get(i) == 1 && coords.get(i) != null) {
-                Bomb bomb = new BombImpl();
+                final Bomb bomb = new BombImpl();
 
                 bomb.setX(coords.get(i).getX());
                 bomb.setY(coords.get(i).getY());
@@ -75,7 +75,7 @@ public class ObstacleManagerImpl implements ObstacleManager {
         breakableList = new ArrayList<>();
         for (int i = 0; i < breakablelist.size(); i++) {
             if (breakablelist.get(i) == 2 && coords.get(i) != null) {
-                Breakable breakable = new BreakableImpl(3);
+                final Breakable breakable = new BreakableImpl(3);
 
                 breakable.setX(coords.get(i).getX());
                 breakable.setY(coords.get(i).getY());

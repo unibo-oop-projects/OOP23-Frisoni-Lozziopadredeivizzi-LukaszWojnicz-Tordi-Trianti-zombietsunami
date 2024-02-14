@@ -36,12 +36,12 @@ public class DrawObstacleImpl implements DrawObstacle {
         final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final VController controller) {
         for (int i = 0; i < obstacleIndexList.size(); i++) {
             if (obstacleIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
-                controller.fillBombListFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
-                draw(getBomb(), g2, obstacleIndexList, screenTilePos, titleSize, i);
+                controller.fillBombListFromMapC();
+                draw(getBomb(), g2, screenTilePos, titleSize, i);
             }
             if (obstacleIndexList.get(i) == 2 && screenTilePos.get(i) != null) {
-                controller.fillBreakableListFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
-                draw(getBreakable(), g2, obstacleIndexList, screenTilePos, titleSize, i);
+                controller.fillBreakableListFromMapC();
+                draw(getBreakable(), g2, screenTilePos, titleSize, i);
             }
         }
     }
@@ -50,13 +50,12 @@ public class DrawObstacleImpl implements DrawObstacle {
      * Draws the exact object in the i position of the list.
      * @param image the image.
      * @param g2 graphics.
-     * @param obstacleIndexList the obstacle list.
      * @param screenTilePos the coordinates.
      * @param titleSize tile size.
      * @param i index of the item in the list.
      */
-    private void draw(final BufferedImage image, final Graphics2D g2, final List<Integer> obstacleIndexList,
-    final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final int i) {
+    private void draw(final BufferedImage image, final Graphics2D g2,
+        final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final int i) {
         g2.drawImage(image, 
                 screenTilePos.get(i).getX(), 
                 screenTilePos.get(i).getY(),

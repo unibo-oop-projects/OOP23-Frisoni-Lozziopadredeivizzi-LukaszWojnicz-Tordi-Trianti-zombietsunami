@@ -10,16 +10,9 @@ import zombietsunami.model.obstaclemodel.api.Bomb;
  */
 public class BombImpl implements Bomb {
 
-    private ObstacleEntity entity = new ObstacleEntity();
+    private final ObstacleEntity entity = new ObstacleEntity();
 
     private int damage = 1;
-
-    /**
-     * Constructor that sets the default values for the Bomb.
-     */
-    public BombImpl() {
-
-    }
 
     /**
      * Gets the X coordinate of the Bomb.

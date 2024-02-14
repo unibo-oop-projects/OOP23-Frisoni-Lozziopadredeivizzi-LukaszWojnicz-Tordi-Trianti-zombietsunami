@@ -60,12 +60,6 @@ public interface Controller {
   List<Integer> mapList();
 
   /**
-   * Removes an obstacle from the list.
-   * @param index
-   */
-  void removeObstacleListItem(int index);
-
-  /**
    * Removes a Person from the list.
    * @param index index of Person
    */
@@ -191,13 +185,6 @@ public interface Controller {
   void setStrenght(int strenght);
 
   /**
-   * Checks if the breakable minimum force is less than the strength.
-   * @param zombieStrength the zombies strength.
-   * @return true if can break, false otherwise.
-   */
-  boolean canBreakObstacle(int zombieStrength);
-
-  /**
    * @return the zombie's screen X coordiante
    *         {@link zombietsunami.model.zombiemodel.api.Zombie}
    */
@@ -254,52 +241,13 @@ public interface Controller {
   /**
    * Converts the bombs from the txt file to the Bomb object
    * and puts them inside a list.
-   * @param bomblist txt bomb list.
-   * @param coords the coordinates for each bomb.
-   * @param strength the zombie strength.
    */
-  void fillBombListFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
-
-  /**
-   * Gets the bomb list.
-   * @return the bomb list.
-   */
-  List<Bomb> getBombList();
-
-  /**
-   * Gets the breakable list.
-   * @return the breakable list.
-   */
-  List<Breakable> getBreakableList();
-
-  /**
-   * Sets the X and Y coordinates for the "index" bomb
-   * of the list.
-   * @param index index of the bomb in the list.
-   * @param x X coordinate.
-   * @param y Y coordinate.
-   */
-  void setCoordinatesOfBombInList(int index, int x, int y);
-
-  /**
-     * Removes the "index" bomb from the list.
-     * @param index the index of the bomb in the list.
-     */
-    void removeBombFromList(int index);
+  void fillBombListFromMap();
 
     /**
      * Returns the list of breakables from the map.
-     * @param breakablelist the list of breakables.
-     * @param coords the coordinates of every breakable inside the list.
-     * @param strength the strength of the zombie.
      */
-    void fillBreakableListFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
-
-    /**
-     * Checks collision between zombie and obstacles.
-     * @return true if collides, false otherwise.
-     */
-    void collisionZombieObstacle();
+    void fillBreakableListFromMap();
 
     /**
      * Checks collision between zombie and Person
@@ -322,4 +270,9 @@ public interface Controller {
      * @return true if the zombie's strenght is zero
      */
     boolean isStrenghtZero();
+
+    /**
+     * Checks if the zombie collides with the Obstascle.
+     */
+    void collisionZombieObstacle();
 }
