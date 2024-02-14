@@ -20,10 +20,7 @@ public class JumpZombieImpl implements JumpZombie {
      * @param entity the underlying entity for the jumpZombie behavior.
      */
     public JumpZombieImpl(final EntityImpl entity) {
-        this.entity = new EntityImpl();  
-        this.entity.setX(entity.getX());  
-        this.entity.setY(entity.getY());
-        this.entity.setSpeed(entity.getSpeed());
+        this.entity = entity;
     }
 
     private void decreaseZombieMapY() {
