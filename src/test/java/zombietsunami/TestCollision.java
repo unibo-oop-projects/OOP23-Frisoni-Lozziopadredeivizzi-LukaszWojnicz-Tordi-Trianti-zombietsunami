@@ -26,7 +26,7 @@ import zombietsunami.model.mapmodel.impl.GameMapImpl;
  */
 public class TestCollision {
 
-    private final static ZombieImpl zombie = new ZombieImpl();
+    private ZombieImpl zombie = new ZombieImpl();
     private Bomb bomb = new BombImpl();
     private Breakable breakable = new BreakableImpl(1);
     private ObstacleManager obstacleManager = new ObstacleManagerImpl();
