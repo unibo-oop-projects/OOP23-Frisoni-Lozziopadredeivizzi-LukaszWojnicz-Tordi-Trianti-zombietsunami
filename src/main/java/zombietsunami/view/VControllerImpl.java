@@ -58,16 +58,6 @@ public final class VControllerImpl implements VController {
         return this.control.getZombieMapY();
     }
 
-    /**
-     * Gets the speed of the zombie.
-     *
-     * @return The speed of the zombie.
-     */
-    @Override
-    public int getSpeed() {
-        return this.control.getSpeed();
-    }
-
     @Override
     public List<String> tileElementsC() {
         return this.control.tileElements();
@@ -168,14 +158,6 @@ public final class VControllerImpl implements VController {
     }
 
     /**
-     * Sets the strength of the zombie to the specified value.
-     */
-    @Override
-    public void setStrenght(final int strenght) {
-        this.control.setStrenght(strenght);
-    }
-
-    /**
      * Gets the x-coordinate of the zombie on the screen.
      *
      * @return The x-coordinate of the zombie on the screen.
@@ -237,35 +219,13 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void fillBombListFromMapC(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
-            final Integer strength) {
-        this.control.fillBombListFromMap(bomblist, coords, strength);
+    public void fillBombListFromMapC() {
+        this.control.fillBombListFromMap();
     }
 
     @Override
-    public List<Bomb> getBombListC() {
-        return this.control.getBombList();
-    }
-
-    @Override
-    public List<Breakable> getBreakableListC() {
-        return this.control.getBreakableList();
-    }
-
-    @Override
-    public void setCoordinatesOfBombInListC(final int index, final int x, final int y) {
-        this.control.setCoordinatesOfBombInList(index, x, y);
-    }
-
-    @Override
-    public void removeBombFromListC(final int index) {
-        this.control.removeBombFromList(index);
-    }
-
-    @Override
-    public void fillBreakableListFromMapC(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
-            final Integer strength) {
-        this.control.fillBreakableListFromMap(breakablelist, coords, strength);
+    public void fillBreakableListFromMapC() {
+        this.control.fillBreakableListFromMap();
     }
 
     @Override

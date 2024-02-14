@@ -82,13 +82,6 @@ public interface VController {
   int getZombieMapY();
 
   /**
-   * Gets the speed of the zombie in the game.
-   *
-   * @return The speed of the zombie.
-   */
-  int getSpeed();
-
-  /**
    * Updates the position and state of the zombie in the game.
    */
   void updateZombie();
@@ -161,13 +154,6 @@ public interface VController {
   int getStrenght();
 
   /**
-   * Sets the strength of the player character to the specified value.
-   *
-   * @param strenght The new strength value.
-   */
-  void setStrenght(int strenght);
-
-  /**
    * Gets the current X-coordinate of the zombie on the screen.
    *
    * @return The X-coordinate of the zombie on the screen.
@@ -220,46 +206,13 @@ public interface VController {
 
   /**
    * Returns the list of bombs from the map.
-   * @param bomblist the bomb list.
-   * @param coords the coordinates for each bomb in the list.
-   * @param strength the zombie strength.
    */
-  void fillBombListFromMapC(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
-
-  /**
-   * Returns the bomb list.
-   * @return the bomb list.
-   */
-  List<Bomb> getBombListC();
-
-  /**
-   * Returns the breakable list.
-   * @return the breakable list.
-   */
-  List<Breakable> getBreakableListC();
-
-  /**
-   * Sets the coordinates for the "index" bomb in the list.
-   * @param index the index of the bomb in the list.
-   * @param x the X coordinate of the bomb.
-   * @param y the Y coordinate of the breakable.
-   */
-  void setCoordinatesOfBombInListC(int index, int x, int y);
-
-  /**
-   * Removes the "index" bomb from the list.
-   * 
-   * @param index the index of the bomb in the list.
-   */
-  void removeBombFromListC(int index);
+  void fillBombListFromMapC();
 
   /**
    * Returns the list of breakables from the map.
-   * @param breakablelist the breakable list.
-   * @param coords the coordinates for each bomb in the list.
-   * @param strength the zombie strength.
    */
-  void fillBreakableListFromMapC(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+  void fillBreakableListFromMapC();
 
   /**
    * Checks whether the obstacle has collided with the zombie.
