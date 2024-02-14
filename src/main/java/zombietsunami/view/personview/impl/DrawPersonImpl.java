@@ -2,8 +2,10 @@ package zombietsunami.view.personview.impl;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
@@ -39,8 +41,8 @@ public class DrawPersonImpl implements DrawPerson {
             final int tileSize, final VController controller) {
         for (int i = 0; i < personIndexList.size(); i++) {
             if (personIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
-                controller.getPersonFromMapC();
-                drawPerson(getPerson(), g2, personIndexList, screenTilePos, tileSize, i);
+                controller.setPersonFromMapC();
+                drawPerson(getPerson(), g2, screenTilePos, tileSize, i);
             }
         }
     }
@@ -48,16 +50,14 @@ public class DrawPersonImpl implements DrawPerson {
     /**
      * Draws the Person.
      * 
-     * @param image           Image of Person.
-     * @param g2              Graphics.
-     * @param personIndexList List of Person.
-     * @param screenTilePos   Coordinates of Person.
-     * @param tileSize        Tile size.
-     * @param i               Index of the Person in the list.
+     * @param image         Image of Person.
+     * @param g2            Graphics.
+     * @param screenTilePos Coordinates of Person.
+     * @param tileSize      Tile size.
+     * @param i             Index of the Person in the list.
      */
     private void drawPerson(final BufferedImage image, final Graphics2D g2,
-            final List<Integer> personIndexList, final List<Pair<Integer, Integer>> screenTilePos, final int tileSize,
-            final int i) {
+            final List<Pair<Integer, Integer>> screenTilePos, final int tileSize, final int i) {
         g2.drawImage(image, screenTilePos.get(i).getX(), screenTilePos.get(i).getY(), tileSize, tileSize, null);
     }
 
@@ -74,20 +74,21 @@ public class DrawPersonImpl implements DrawPerson {
      */
     @Override
     public BufferedImage getPerson() {
+        final Logger logger = Logger.getLogger(DrawPersonImpl.class.getName());
         BufferedImage image = null;
         try {
             if (change) {
-                image = ImageIO.read(getClass().getResource(PERSON_00));
+                image = ImageIO.read(DrawPersonImpl.class.getResource(PERSON_00));
             } else {
-                image = ImageIO.read(getClass().getResource(PERSON_01));
+                image = ImageIO.read(DrawPersonImpl.class.getResource(PERSON_01));
             }
             increaseChange();
             if (getChange() > FRAMESCHANGE) {
                 change = !change;
                 changeCounter = 0;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine della persona: " + e.getMessage());
         }
         return image;
     }

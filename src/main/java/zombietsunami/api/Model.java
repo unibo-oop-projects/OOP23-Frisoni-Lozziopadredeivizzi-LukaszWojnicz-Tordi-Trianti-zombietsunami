@@ -60,9 +60,9 @@ public interface Model {
   List<Integer> getPersonList();
 
   /**
-   * Gets the Person list from the map.
+   * Sets the Person list from the map.
    */
-  void getPersonFromMap();
+  void setPersonFromMap();
 
   /**
    * Sets the coordinates of the "index" Person.

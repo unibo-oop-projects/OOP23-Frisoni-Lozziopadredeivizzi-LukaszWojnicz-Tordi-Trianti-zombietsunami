@@ -115,8 +115,8 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void getPersonFromMapC() {
-        this.control.getPersonFromMap();
+    public void setPersonFromMapC() {
+        this.control.setPersonFromMap();
     }
 
     @Override
