@@ -160,4 +160,14 @@ public class ZombieImpl implements Zombie {
     public boolean isJumping() {
         return jumpZombie.isJumping();
     }
+
+    /**
+     * Decreases the strength of the zombie by one.
+     */
+    @Override
+    public void decreaseStrength() {
+        this.entity.decreaseStrength();
+    }
+
+    
 }

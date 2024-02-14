@@ -41,7 +41,7 @@ public class CollisionImpl implements Collision {
                 if (zombie.getStrength() - bombList.get(i).getDamage() < 0) {
                     gameOver = true;
                 }
-                zombie.setStrength(zombie.getStrength() - zombie.getSpeed());
+                zombie.decreaseStrength();
                 bombList.set(i, null);
                 gameMap.removeObstacleListItem(i);
             }
@@ -91,7 +91,7 @@ public class CollisionImpl implements Collision {
                     && zombie.getScreenY() < personList.get(i).getY() + tileSize) {
                 gameMap.removePersonListItem(i);
                 personList.set(i, null);
-                zombie.setStrength(zombie.getStrength() + zombie.getSpeed());
+                zombie.decreaseStrength();;
             }
         }
     }
