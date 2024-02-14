@@ -184,7 +184,6 @@ public final class MapImpl extends JPanel implements Map, Runnable {
         final Logger logger = Logger.getLogger(MapImpl.class.getName());
         try {
             Thread.sleep(MILLISEC * 3);
-            logger.severe("Exit Game");
         } catch (InterruptedException e) {
             logger.severe("Error: " + e.getMessage());
         }
