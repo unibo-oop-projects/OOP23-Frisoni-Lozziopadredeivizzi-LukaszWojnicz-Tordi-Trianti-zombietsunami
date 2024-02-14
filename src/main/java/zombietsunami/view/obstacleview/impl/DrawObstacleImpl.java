@@ -76,7 +76,7 @@ public class DrawObstacleImpl implements DrawObstacle {
         final Logger logger = Logger.getLogger(DrawObstacleImpl.class.getName());
         BufferedImage image = null;
         try {
-            image = ImageIO.read(getClass().getResource(BREAKABLE));
+            image = ImageIO.read(DrawObstacleImpl.class.getResource(BREAKABLE));
         } catch (IOException e) {
             logger.severe("Errore durante il caricamento dell'immagine del breakable: " + e.getMessage());
         }
@@ -93,7 +93,7 @@ public class DrawObstacleImpl implements DrawObstacle {
         final Logger logger = Logger.getLogger(DrawObstacleImpl.class.getName());
         BufferedImage image = null;
         try {
-            image = ImageIO.read(getClass().getResource(BOMB_1));
+            image = ImageIO.read(DrawObstacleImpl.class.getResource(BOMB_1));
         } catch (IOException e) {
             logger.severe("Errore durante il caricamento dell'immagine della bomba: " + e.getMessage());
         }
