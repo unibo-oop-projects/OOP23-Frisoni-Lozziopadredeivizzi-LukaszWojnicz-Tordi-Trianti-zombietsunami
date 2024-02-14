@@ -15,13 +15,14 @@ public class JumpZombieImpl implements JumpZombie {
     private static final int MAX_Y_VALUE = 90;
     private final EntityImpl entity;
 
-    @SuppressFBWarnings(justification = "entity must be"
-            + "passed an object to another class , otherwise the code won't work.")
+    
     /**
      * Constructs a jumpZombieImpl with the specified EntityImpl as the underlying
      * entity.
      * @param entity the underlying entity for the jumpZombie behavior.
      */
+    @SuppressFBWarnings(justification = "entity must be"
+            + "passed an object to another class , otherwise the code won't work.")
     public JumpZombieImpl(final EntityImpl entity) {
         this.entity = entity;
     }
