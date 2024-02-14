@@ -194,9 +194,6 @@ public final class ControllerImpl implements Controller {
     /**
      * Returns the list of bombs from the map.
      * 
-     * @param bomblist the bomb list.
-     * @param coords   the coordinates for each bomb in the list.
-     * @param strength the zombies strength.
      */
     @Override
     public void fillBombListFromMap() {
