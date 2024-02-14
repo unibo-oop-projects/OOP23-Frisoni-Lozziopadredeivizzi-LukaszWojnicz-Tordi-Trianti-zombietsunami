@@ -20,15 +20,18 @@ public class JumpZombieImpl implements JumpZombie {
      * @param entity the underlying entity for the jumpZombie behavior.
      */
     public JumpZombieImpl(final EntityImpl entity) {
-        this.entity = entity;
+        this.entity = new EntityImpl();  
+        this.entity.setX(entity.getX());  
+        this.entity.setY(entity.getY());
+        this.entity.setSpeed(entity.getSpeed());
     }
 
     private void decreaseZombieMapY() {
-        entity.setY(entity.getY() - entity.getSpeed());
+        this.entity.setY(this.entity.getY() - this.entity.getSpeed());
     }
 
     private void increaseZombieMapY() {
-        entity.setY(entity.getY() + entity.getSpeed());
+        this.entity.setY(this.entity.getY() + this.entity.getSpeed());
     }
 
     /**
@@ -38,7 +41,7 @@ public class JumpZombieImpl implements JumpZombie {
     public void jumpPress() {
         jumping = true;
         jumpUp = true;
-        initialY = entity.getY();
+        initialY = this.entity.getY();
         maxY = initialY - MAX_Y_VALUE;
     }
 
@@ -57,7 +60,7 @@ public class JumpZombieImpl implements JumpZombie {
     }
 
     private void jumpDown() {
-        if (entity.getY() < initialY) {
+        if (this.entity.getY() < initialY) {
             increaseZombieMapY();
         } else {
             jumping = false;
@@ -66,7 +69,7 @@ public class JumpZombieImpl implements JumpZombie {
     }
 
     private void jumpUp() {
-        if (entity.getY() > maxY) {
+        if (this.entity.getY() > maxY) {
             decreaseZombieMapY();
         } else {
             jumpingDown = true;
