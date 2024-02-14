@@ -186,7 +186,7 @@ public interface Controller {
   boolean isJumping();
 
   /**
-   * Returns the loaded obstacle list
+   * Returns the loaded obstacle list.
    * in {@link zombietsunami.model.mapmodel.api.GameMap}
    * @return obstacle list.
    */
@@ -216,8 +216,7 @@ public interface Controller {
     void fillBreakableListFromMap();
 
     /**
-     * Checks collision between zombie and Person
-     * @return true if collides, false otherwise
+     * Checks collision between zombie and Person.
      */
     void collisionZombiePersons();
 
