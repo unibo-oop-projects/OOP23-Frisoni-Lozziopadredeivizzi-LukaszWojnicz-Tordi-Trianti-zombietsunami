@@ -21,7 +21,7 @@ class TestTileElements {
      * should be clear enough.
      */
     private final TileElement tileElement = new TileElementImpl();
-    private List<String> elements = new ArrayList<>();
+    private final List<String> elements = new ArrayList<>();
 
     /**
      * Checks all the elements and their indexes.
