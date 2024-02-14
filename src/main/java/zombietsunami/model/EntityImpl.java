@@ -82,7 +82,7 @@ public class EntityImpl implements Entity {
     }
 
     /**
-     * Increases the strength of the entity by one.
+     * Increase the strength of the entity by one.
      */
     @Override
     public void increaseStrength() {
@@ -97,5 +97,13 @@ public class EntityImpl implements Entity {
     @Override
     public void setStrength(final int strength) {
         this.strength = strength;
+    }
+
+    /**
+     * Decrease the strength of the entity by one.
+     */
+    @Override
+    public void decreaseStrength() {
+        this.strength--;
     }
 }

@@ -25,7 +25,7 @@ public interface Entity {
     int getStrength();
 
     /**
-     * Increases the strength of the zombie with the speed value.
+     * Increase the strength of the zombie with the speed value.
      */
     void increaseStrength();
 
@@ -49,4 +49,9 @@ public interface Entity {
      * @param y The new Y-coordinate value for the zombie.
      */
     void setY(int y);
+
+    /**
+     * Decrease the strength of the zombie with the speed value.
+     */
+    void decreaseStrength();
 }
