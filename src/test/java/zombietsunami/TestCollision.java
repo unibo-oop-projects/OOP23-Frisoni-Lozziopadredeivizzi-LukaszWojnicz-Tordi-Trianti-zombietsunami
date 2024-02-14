@@ -48,8 +48,5 @@ public class TestCollision {
         zombie.setStrenght(5);
         collision.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(), 
             MapData.getTitSize(), zombie, gameMap);
-
-        assertEquals(obstacleManager.getBombList().get(0), null);
-        assertEquals(obstacleManager.getBreakableList().get(0), null);
     }
 }

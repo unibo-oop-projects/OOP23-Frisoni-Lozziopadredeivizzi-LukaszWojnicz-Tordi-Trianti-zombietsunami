@@ -192,7 +192,6 @@ public final class ControllerImpl implements Controller {
 
     /**
      * Returns the list of bombs from the map.
-     * 
      */
     @Override
     public void fillBombListFromMap() {
