@@ -1,15 +1,18 @@
 package zombietsunami.view.obstacleview.impl;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.awt.Graphics2D;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
 import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
 import zombietsunami.view.obstacleview.api.DrawObstacle;
+import zombietsunami.view.zombieview.impl.DrawZombieImpl;
 
 /**
  * Class definining how an obstacle should be printed
@@ -36,12 +39,12 @@ public class DrawObstacleImpl implements DrawObstacle {
         final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final VController controller) {
         for (int i = 0; i < obstacleIndexList.size(); i++) {
             if (obstacleIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
-                controller.fillBombListFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
-                draw(getBomb(), g2, obstacleIndexList, screenTilePos, titleSize, i);
+                controller.fillBombListFromMapC();
+                draw(getBomb(), g2, screenTilePos, titleSize, i);
             }
             if (obstacleIndexList.get(i) == 2 && screenTilePos.get(i) != null) {
-                controller.fillBreakableListFromMapC(obstacleIndexList, screenTilePos, controller.getStrenght());
-                draw(getBreakable(), g2, obstacleIndexList, screenTilePos, titleSize, i);
+                controller.fillBreakableListFromMapC();
+                draw(getBreakable(), g2, screenTilePos, titleSize, i);
             }
         }
     }
@@ -50,13 +53,12 @@ public class DrawObstacleImpl implements DrawObstacle {
      * Draws the exact object in the i position of the list.
      * @param image the image.
      * @param g2 graphics.
-     * @param obstacleIndexList the obstacle list.
      * @param screenTilePos the coordinates.
      * @param titleSize tile size.
      * @param i index of the item in the list.
      */
-    private void draw(final BufferedImage image, final Graphics2D g2, final List<Integer> obstacleIndexList,
-    final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final int i) {
+    private void draw(final BufferedImage image, final Graphics2D g2,
+        final List<Pair<Integer, Integer>> screenTilePos, final int titleSize, final int i) {
         g2.drawImage(image, 
                 screenTilePos.get(i).getX(), 
                 screenTilePos.get(i).getY(),
@@ -72,11 +74,12 @@ public class DrawObstacleImpl implements DrawObstacle {
      */
     @Override
     public BufferedImage getBreakable() {
-       BufferedImage image = null;
+        final Logger logger = Logger.getLogger(DrawObstacleImpl.class.getName());
+        BufferedImage image = null;
         try {
             image = ImageIO.read(getClass().getResource(BREAKABLE));
-        } catch (Exception e) {
-                e.printStackTrace();
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine del breakable: " + e.getMessage());
         }
         return image;
     }
@@ -88,11 +91,12 @@ public class DrawObstacleImpl implements DrawObstacle {
      */
     @Override
     public BufferedImage getBomb() {
+        final Logger logger = Logger.getLogger(DrawObstacleImpl.class.getName());
         BufferedImage image = null;
         try {
             image = ImageIO.read(getClass().getResource(BOMB_1));
-        } catch (Exception e) {
-                e.printStackTrace();
+        } catch (IOException e) {
+            logger.severe("Errore durante il caricamento dell'immagine della bomba: " + e.getMessage());
         }
         return image;
     }

@@ -33,7 +33,7 @@ public class CollisionImpl implements Collision {
     public void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList,
             final int tileSize, final Zombie zombie, final GameMap gameMap) {
         for (int i = 0; i < bombList.size() - 1; i++) {
-            if ((!bombList.isEmpty() && bombList.get(i) != null)
+            if (!bombList.isEmpty() && bombList.get(i) != null
                     && bombList.get(i).getX() > THRESHOLD_1
                     && bombList.get(i).getX() < THRESHOLD_2
                     && zombie.getScreenY() > bombList.get(i).getY() - tileSize
@@ -47,7 +47,7 @@ public class CollisionImpl implements Collision {
             }
         }
         for (int i = 0; i < breakableList.size(); i++) {
-            if ((!breakableList.isEmpty() && breakableList.get(i) != null)
+            if (!breakableList.isEmpty() && breakableList.get(i) != null
                     && breakableList.get(i).getX() > THRESHOLD_1
                     && breakableList.get(i).getX() < THRESHOLD_2
                     && zombie.getScreenY() > breakableList.get(i).getY() - tileSize

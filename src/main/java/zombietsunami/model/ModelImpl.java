@@ -53,9 +53,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void fillBombListFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
-            final Integer strength) {
-        this.obstacleManager.fillBombListFromMap(bomblist, coords, strength);
+    public void fillBombListFromMap() {
+        this.obstacleManager.fillBombListFromMap(gameMap.getLoadedObstacleList(), getScreenTilePos(), zombie.getStrenght());
     }
 
     @Override
@@ -153,11 +152,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public boolean canBreakObstacle(final int zombieStrength) {
-        return this.breakable.canBreakObstacle(zombieStrength);
-    }
-
-    @Override
     public void jumpPress() {
         this.zombie.jumpPress();
     }
@@ -188,40 +182,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public List<Bomb> getBombList() {
-        return this.obstacleManager.getBombList();
-    }
-
-    @Override
-    public List<Breakable> getBreakableList() {
-        return this.obstacleManager.getBreakableList();
-    }
-
-    @Override
-    public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
-        this.obstacleManager.setCoordinatesOfBombInList(index, x, y);
-    }
-
-    @Override
-    public void removeBombFromList(final int index) {
-        this.obstacleManager.removeBombFromList(index);
-    }
-
-    @Override
-    public void fillBreakableListFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
-            final Integer strength) {
-        this.obstacleManager.fillBreakableListFromMap(breakablelist, coords, strength);
-    }
-
-    @Override
-    public void collisionZombieObstacle() {
-        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(),
-                obstacleManager.getBreakableList(), MapData.getTitSize(), this.zombie, gameMap);
-    }
-
-    @Override
-    public void removeObstacleListItem(final int index) {
-        this.gameMap.removeObstacleListItem(index);
+    public void fillBreakableListFromMap() {
+        this.obstacleManager.fillBreakableListFromMap(gameMap.getLoadedObstacleList(), getScreenTilePos(), zombie.getStrenght());
     }
 
     @Override
@@ -237,5 +199,11 @@ public final class ModelImpl implements Model {
     @Override
     public boolean isStrenghtZero() {
         return this.gameOver.isStrenghtZero(getStrenght());
+    }
+
+    @Override
+    public void collisionZombieObstacle() {
+        this.collisionManager.collisionZombieObstacle(obstacleManager.getBombList(), 
+            obstacleManager.getBreakableList(), MapData.getTitSize(), zombie, gameMap);
     }
 }

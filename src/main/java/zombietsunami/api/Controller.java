@@ -60,15 +60,7 @@ public interface Controller {
   List<Integer> mapList();
 
   /**
-   * Removes an obstacle from the list.
-   * 
-   * @param index
-   */
-  void removeObstacleListItem(int index);
-
-  /**
    * Removes a Person from the list.
-   * 
    * @param index index of Person
    */
   void removePersonListItem(int index);
@@ -154,34 +146,23 @@ public interface Controller {
 
   /**
    * Sets the coordinates of the "index" Person.
-   * 
    * @param index index of the Person in the list
-   * @param x     X coordinate
-   * @param y     Y coordinate
+   * @param x X coordinate
+   * @param y Y coordinate
    */
   void setCoordinatesOfPersonInList(int index, int x, int y);
 
   /**
    * Removes the "index" Person from the list.
-   * 
    * @param index the index of the Person in the list
    */
   void removePersonFromList(int index);
 
   /**
    * List of Person.
-   * 
    * @return the list of Person
    */
   List<Integer> personList();
-
-  /**
-   * Checks if the breakable minimum force is less than the strength.
-   * 
-   * @param zombieStrength the zombies strength.
-   * @return true if can break, false otherwise.
-   */
-  boolean canBreakObstacle(int zombieStrength);
 
   /**
    * @return the zombie's screen X coordiante
@@ -221,7 +202,6 @@ public interface Controller {
   /**
    * Returns the loaded obstacle list
    * in {@link zombietsunami.model.mapmodel.api.GameMap}
-   * 
    * @return obstacle list.
    */
   List<Integer> obstacleList();
@@ -241,82 +221,38 @@ public interface Controller {
   /**
    * Converts the bombs from the txt file to the Bomb object
    * and puts them inside a list.
-   * 
-   * @param bomblist txt bomb list.
-   * @param coords   the coordinates for each bomb.
-   * @param strength the zombie strength.
    */
-  void fillBombListFromMap(List<Integer> bomblist, List<Pair<Integer, Integer>> coords, Integer strength);
+  void fillBombListFromMap();
 
-  /**
-   * Gets the bomb list.
-   * 
-   * @return the bomb list.
-   */
-  List<Bomb> getBombList();
+    /**
+     * Returns the list of breakables from the map.
+     */
+    void fillBreakableListFromMap();
 
-  /**
-   * Gets the breakable list.
-   * 
-   * @return the breakable list.
-   */
-  List<Breakable> getBreakableList();
+    /**
+     * Checks collision between zombie and Person
+     * @return true if collides, false otherwise
+     */
+    void collisionZombiePersons();
 
-  /**
-   * Sets the X and Y coordinates for the "index" bomb
-   * of the list.
-   * 
-   * @param index index of the bomb in the list.
-   * @param x     X coordinate.
-   * @param y     Y coordinate.
-   */
-  void setCoordinatesOfBombInList(int index, int x, int y);
+    /**
+     * Checks if the game is over.
+     * @return true if the game is over, false otherwise.
+     */
+    boolean isGameOver();
 
-  /**
-   * Removes the "index" bomb from the list.
-   * 
-   * @param index the index of the bomb in the list.
-   */
-  void removeBombFromList(int index);
+    /**
+     * @return true if the zombie's strenght is not enough to break the breakable object in the map
+     */
+    boolean isNotEnough();
 
-  /**
-   * Returns the list of breakables from the map.
-   * 
-   * @param breakablelist the list of breakables.
-   * @param coords        the coordinates of every breakable inside the list.
-   * @param strength      the strength of the zombie.
-   */
-  void fillBreakableListFromMap(List<Integer> breakablelist, List<Pair<Integer, Integer>> coords, Integer strength);
+    /**
+     * @return true if the zombie's strenght is zero
+     */
+    boolean isStrenghtZero();
 
-  /**
-   * Checks collision between zombie and obstacles.
-   * 
-   * @return true if collides, false otherwise.
-   */
-  void collisionZombieObstacle();
-
-  /**
-   * Checks collision between zombie and Person
-   * 
-   * @return true if collides, false otherwise
-   */
-  void collisionZombiePersons();
-
-  /**
-   * Checks if the game is over.
-   * 
-   * @return true if the game is over, false otherwise.
-   */
-  boolean isGameOver();
-
-  /**
-   * @return true if the zombie's strenght is not enough to break the breakable
-   *         object in the map
-   */
-  boolean isNotEnough();
-
-  /**
-   * @return true if the zombie's strenght is zero
-   */
-  boolean isStrenghtZero();
+    /**
+     * Checks if the zombie collides with the Obstascle.
+     */
+    void collisionZombieObstacle();
 }

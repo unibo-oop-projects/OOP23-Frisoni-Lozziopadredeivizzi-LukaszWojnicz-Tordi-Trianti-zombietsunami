@@ -169,11 +169,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public boolean canBreakObstacle(final int zombieStrength) {
-        return this.model.canBreakObstacle(zombieStrength);
-    }
-
-    @Override
     public int getZombieScreenX() {
         return this.model.getZombieScreenX();
     }
@@ -221,68 +216,13 @@ public final class ControllerImpl implements Controller {
      * @param strength the zombies strength.
      */
     @Override
-    public void fillBombListFromMap(final List<Integer> bomblist, final List<Pair<Integer, Integer>> coords,
-            final Integer strength) {
-        this.model.fillBombListFromMap(bomblist, coords, strength);
-    }
-
-    /**
-     * Gets the bomb list.
-     * 
-     * @return the bomb list.
-     */
-    @Override
-    public List<Bomb> getBombList() {
-        return this.model.getBombList();
-    }
-
-    /**
-     * Gets the breakable list.
-     * 
-     * @return the breakable list.
-     */
-    @Override
-    public List<Breakable> getBreakableList() {
-        return this.model.getBreakableList();
-    }
-
-    /**
-     * Sets the X and Y coordinates for the "index" bomb
-     * of the list.
-     * 
-     * @param index index of the bomb in the list.
-     * @param x     X coordinate.
-     * @param y     Y coordinate.
-     */
-    @Override
-    public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
-        this.model.setCoordinatesOfBombInList(index, x, y);
-    }
-
-    /**
-     * Removes the "index" bomb inside the list.
-     * 
-     * @param index the index of the bomb.
-     */
-    @Override
-    public void removeBombFromList(final int index) {
-        this.model.removeBombFromList(index);
+    public void fillBombListFromMap() {
+        this.model.fillBombListFromMap();
     }
 
     @Override
-    public void fillBreakableListFromMap(final List<Integer> breakablelist, final List<Pair<Integer, Integer>> coords,
-            final Integer strength) {
-        this.model.fillBreakableListFromMap(breakablelist, coords, strength);
-    }
-
-    @Override
-    public void collisionZombieObstacle() {
-        this.model.collisionZombieObstacle();
-    }
-
-    @Override
-    public void removeObstacleListItem(final int index) {
-        this.model.removeBombFromList(index);
+    public void fillBreakableListFromMap() {
+        this.model.fillBreakableListFromMap();
     }
 
     @Override
@@ -300,4 +240,8 @@ public final class ControllerImpl implements Controller {
         return this.model.isStrenghtZero();
     }
 
+    @Override
+    public void collisionZombieObstacle() {
+        this.model.collisionZombieObstacle();
+    }
 }
