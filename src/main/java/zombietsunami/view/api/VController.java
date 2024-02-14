@@ -4,8 +4,6 @@ import java.util.List;
 
 import zombietsunami.api.Controller;
 import zombietsunami.Pair;
-import zombietsunami.model.obstaclemodel.api.Bomb;
-import zombietsunami.model.obstaclemodel.api.Breakable;
 
 /**
  * Interface representing the View Controller in the Zombie Tsunami game.

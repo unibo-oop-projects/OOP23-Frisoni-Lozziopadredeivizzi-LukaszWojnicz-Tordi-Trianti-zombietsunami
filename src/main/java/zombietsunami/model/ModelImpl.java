@@ -9,10 +9,7 @@ import zombietsunami.api.Model;
 import zombietsunami.Pair;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.mapmodel.impl.GameMapImpl;
-import zombietsunami.model.obstaclemodel.api.Bomb;
-import zombietsunami.model.obstaclemodel.api.Breakable;
 import zombietsunami.model.obstaclemodel.api.ObstacleManager;
-import zombietsunami.model.obstaclemodel.impl.BreakableImpl;
 import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
@@ -31,7 +28,6 @@ public final class ModelImpl implements Model {
     private final Zombie zombie;
     private final Person person;
     private final PersonsManager personsManager;
-    private final Breakable breakable;
     private final MightWin win;
     private final GameOver gameOver;
     private final ObstacleManager obstacleManager;
@@ -45,7 +41,6 @@ public final class ModelImpl implements Model {
         this.zombie = new ZombieImpl();
         this.person = new PersonImpl();
         this.personsManager = new PersonsManagerImpl();
-        this.breakable = new BreakableImpl(3);
         this.win = new MightWinImpl();
         this.gameOver = new GameOverImpl();
         this.obstacleManager = new ObstacleManagerImpl();
