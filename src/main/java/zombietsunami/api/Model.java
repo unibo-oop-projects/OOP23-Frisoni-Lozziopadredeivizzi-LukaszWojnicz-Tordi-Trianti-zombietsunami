@@ -115,12 +115,6 @@ public interface Model {
   int getStrenght();
 
   /**
-   * Calls the increese strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   */
-  void increaseStrenght();
-
-  /**
    * Calls the set strenght method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.
    * 

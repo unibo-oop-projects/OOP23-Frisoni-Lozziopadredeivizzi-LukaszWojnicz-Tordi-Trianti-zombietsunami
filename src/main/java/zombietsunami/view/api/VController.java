@@ -171,11 +171,6 @@ public interface VController {
   int getStrenght();
 
   /**
-   * Increases the strength of the player character by one.
-   */
-  void increaseStrenght();
-
-  /**
    * Sets the strength of the player character to the specified value.
    *
    * @param strenght The new strength value.

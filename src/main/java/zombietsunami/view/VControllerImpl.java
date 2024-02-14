@@ -178,14 +178,6 @@ public final class VControllerImpl implements VController {
     }
 
     /**
-     * Increases the strength of the zombie with its speed.
-     */
-    @Override
-    public void increaseStrenght() {
-        this.control.increaseStrenght();
-    }
-
-    /**
      * Sets the strength of the zombie to the specified value.
      */
     @Override
