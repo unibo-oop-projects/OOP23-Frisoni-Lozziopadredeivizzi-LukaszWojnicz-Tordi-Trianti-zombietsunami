@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.view.TextScene;
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
@@ -180,10 +181,15 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     /**
      * This method end the game after 3 seconds.
      */
+    @SuppressFBWarnings(justification = "After we interrupt the thread, the use"
+     + " of System.out() is a wanted choice of design for this game, that will" 
+     + "shut down the entire virtual machine")
     private void isOver() {
         final Logger logger = Logger.getLogger(MapImpl.class.getName());
         try {
             Thread.sleep(MILLISEC * 3);
+            Thread.currentThread().interrupt();
+            System.exit(0);
         } catch (InterruptedException e) {
             logger.severe("Error: " + e.getMessage());
         }
