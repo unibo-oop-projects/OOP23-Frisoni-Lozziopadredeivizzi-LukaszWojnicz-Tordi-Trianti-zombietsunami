@@ -27,9 +27,9 @@ public final class GameMapImpl implements GameMap {
     private static final String PRSN = "personmap/personsMap.txt";
     private static final String ROOT = SEP + "zombietsunami" + SEP;
 
-    private final String filePathMap = ROOT + MAP1;
-    private final String filePathObst = ROOT + OBST;
-    private final String filePathPrsn = ROOT + PRSN;
+    private static final String FILE_PATH_MAP = ROOT + MAP1;
+    private static final String FILE_PATH_OBST = ROOT + OBST;
+    private static final String FILE_PATH_PRSN = ROOT + PRSN;
 
     private final List<Integer> mapOfNumberTile;
     private final List<Integer> mapOfNumberObstacle;
@@ -45,9 +45,9 @@ public final class GameMapImpl implements GameMap {
         this.mapPos = new MapPosListImpl();
         this.tileElement = new TileElementImpl();
 
-        this.mapOfNumberTile = loadMap(this.filePathMap);
-        this.mapOfNumberObstacle = loadMap(filePathObst);
-        this.mapOfNumberPersons = loadMap(this.filePathPrsn);
+        this.mapOfNumberTile = loadMap(FILE_PATH_MAP);
+        this.mapOfNumberObstacle = loadMap(FILE_PATH_OBST);
+        this.mapOfNumberPersons = loadMap(FILE_PATH_PRSN);
     }
 
     /**

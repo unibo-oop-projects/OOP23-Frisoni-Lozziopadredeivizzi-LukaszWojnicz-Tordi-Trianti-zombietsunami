@@ -50,14 +50,9 @@ public interface Model {
   int getZombieMapY();
 
   /**
-   * @return the Person's map X coordinate
+   * @return the speed fo the zombie
    */
-  int getPersonMapX();
-
-  /**
-   * @return the Person's map Y coordinate
-   */
-  int getPersonMapY();
+  int getSpeed();
 
   /**
    * @return the Person list
@@ -65,35 +60,30 @@ public interface Model {
   List<Integer> getPersonList();
 
   /**
-   * Returns the list of Person from the map
+   * Gets the Person list from the map.
+   * @param personlist The list of Person.
+   * @param coords The coordinates of Person.
+   * @param strenght The strenght of Person.
    */
   void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
 
   /**
-   * Sets the coordinates of the "index" Person
-   * 
-   * @param index index of the Person in the list
-   * @param x     X coordinate
-   * @param y     Y coordinate
+   * Sets the coordinates of the "index" Person.
+   * @param index index of the Person in the list.
+   * @param x X coordinate.
+   * @param y Y coordinate.
    */
   void setCoordinatesOfPersonInList(int index, int x, int y);
 
   /**
-   * Updates the state of Person
-   */
-  void updatePerson();
-
-  /**
-   * Removes the "index" Person from the list
-   * 
-   * @param index the index of the Person in the list
+   * Removes the "index" Person from the list.
+   * @param index the index of the Person in the list.
    */
   void removePersonFromList(int index);
 
   /**
-   * Removes a Person from the list
-   * 
-   * @param index index of Person
+   * Removes a Person from the list.
+   * @param index index of Person.
    */
   void removePersonListItem(int index);
 

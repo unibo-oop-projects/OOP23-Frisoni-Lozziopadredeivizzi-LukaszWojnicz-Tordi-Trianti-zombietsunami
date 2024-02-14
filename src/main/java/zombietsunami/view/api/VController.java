@@ -105,21 +105,6 @@ public interface VController {
   int getWorldHightC();
 
   /**
-   * @return the Person's map X coordinate
-   */
-  int getPersonMapX();
-
-  /**
-   * @return the Person's map Y coordinate
-   */
-  int getPersonMapY();
-
-  /**
-   * Updates teh state of Person.
-   */
-  void updatePerson();
-
-  /**
    * Gets the list of Person from the map.
    * 
    * @param personlist list of Person
@@ -227,6 +212,9 @@ public interface VController {
    */
   void collisionZombieOstacleC();
 
+  /**
+   * Checks when the Zombie collided with the Person.
+   */
   void collisionZombiePersonsC();
 
   /**
