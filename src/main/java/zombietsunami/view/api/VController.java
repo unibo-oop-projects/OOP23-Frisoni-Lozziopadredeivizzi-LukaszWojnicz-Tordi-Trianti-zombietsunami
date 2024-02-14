@@ -106,12 +106,8 @@ public interface VController {
 
   /**
    * Gets the list of Person from the map.
-   * 
-   * @param personlist list of Person
-   * @param coords     coordinate of Person
-   * @param strenght   strenght of Person
    */
-  void getPersonFromMapC(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
+  void getPersonFromMapC();
 
   /**
    * Sets the coordinates of the "index" Person.

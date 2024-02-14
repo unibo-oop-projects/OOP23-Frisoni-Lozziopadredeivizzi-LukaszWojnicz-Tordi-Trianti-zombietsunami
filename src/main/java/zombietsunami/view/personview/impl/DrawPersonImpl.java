@@ -39,7 +39,7 @@ public class DrawPersonImpl implements DrawPerson {
             final int tileSize, final VController controller) {
         for (int i = 0; i < personIndexList.size(); i++) {
             if (personIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
-                controller.getPersonFromMapC(personIndexList, screenTilePos, controller.getStrenght());
+                controller.getPersonFromMapC();
                 drawPerson(getPerson(), g2, personIndexList, screenTilePos, tileSize, i);
             }
         }
