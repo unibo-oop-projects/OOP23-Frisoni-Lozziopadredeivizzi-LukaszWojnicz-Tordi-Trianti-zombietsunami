@@ -82,13 +82,6 @@ public interface VController {
   int getZombieMapY();
 
   /**
-   * Gets the speed of the zombie in the game.
-   *
-   * @return The speed of the zombie.
-   */
-  int getSpeed();
-
-  /**
    * Updates the position and state of the zombie in the game.
    */
   void updateZombie();
@@ -169,18 +162,6 @@ public interface VController {
    * @return The strength of the zombie character.
    */
   int getStrenght();
-
-  /**
-   * Increases the strength of the player character by one.
-   */
-  void increaseStrenght();
-
-  /**
-   * Sets the strength of the player character to the specified value.
-   *
-   * @param strenght The new strength value.
-   */
-  void setStrenght(int strenght);
 
   /**
    * Gets the current X-coordinate of the zombie on the screen.

@@ -90,11 +90,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public int getSpeed() {
-        return this.zombie.getSpeed();
-    }
-
-    @Override
     public int getPersonMapX() {
         return this.person.getX();
     }
@@ -115,8 +110,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getPersonFromMap(final List<Integer> personlist, 
-        final List<Pair<Integer, Integer>> coords, final Integer strenght) {
+    public void getPersonFromMap(final List<Integer> personlist,
+            final List<Pair<Integer, Integer>> coords, final Integer strenght) {
         this.personsManager.getPersonFromMap(personlist, coords, strenght);
     }
 
@@ -127,7 +122,7 @@ public final class ModelImpl implements Model {
 
     @Override
     public void removePersonFromList(final int index) {
-       this.personsManager.removePersonFromList(index);
+        this.personsManager.removePersonFromList(index);
     }
 
     @Override
@@ -137,22 +132,13 @@ public final class ModelImpl implements Model {
 
     @Override
     public void collisionZombiePersons() {
-        this.collisionManager.collisionZombiePersons(personsManager.getPersonList(), MapData.getTitSize(), this.zombie, gameMap);
+        this.collisionManager.collisionZombiePersons(personsManager.getPersonList(), MapData.getTitSize(), this.zombie,
+                gameMap);
     }
 
     @Override
     public int getStrenght() {
         return this.zombie.getStrenght();
-    }
-
-    @Override
-    public void increaseStrenght() {
-        this.zombie.increaseStrenght();
-    }
-
-    @Override
-    public void setStrenght(final int strenght) {
-        this.zombie.setStrenght(strenght);
     }
 
     @Override

@@ -5,6 +5,7 @@ import java.util.List;
 import zombietsunami.Pair;
 import zombietsunami.model.obstaclemodel.api.Bomb;
 import zombietsunami.model.obstaclemodel.api.Breakable;
+
 /**
  * This interface unify the elements of the model in the MVC pattern, by calling
  * all their useful methods that has to comunicate with the controller
@@ -51,11 +52,6 @@ public interface Model {
   int getZombieMapY();
 
   /**
-   * @return the speed fo the zombie
-   */
-  int getSpeed();
-
-  /**
    * @return the Person's map X coordinate
    */
   int getPersonMapX();
@@ -77,9 +73,10 @@ public interface Model {
 
   /**
    * Sets the coordinates of the "index" Person
+   * 
    * @param index index of the Person in the list
-   * @param x X coordinate
-   * @param y Y coordinate
+   * @param x     X coordinate
+   * @param y     Y coordinate
    */
   void setCoordinatesOfPersonInList(int index, int x, int y);
 
@@ -90,12 +87,14 @@ public interface Model {
 
   /**
    * Removes the "index" Person from the list
+   * 
    * @param index the index of the Person in the list
    */
   void removePersonFromList(int index);
 
   /**
    * Removes a Person from the list
+   * 
    * @param index index of Person
    */
   void removePersonListItem(int index);
@@ -104,20 +103,6 @@ public interface Model {
    * @return the strenght of the zombie
    */
   int getStrenght();
-
-  /**
-   * Calls the increese strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   */
-  void increaseStrenght();
-
-  /**
-   * Calls the set strenght method of the zombie
-   * {@link zombietsunami.model.zombiemodel.api.Zombie}.
-   * 
-   * @param strenght is the strenght that will be setted
-   */
-  void setStrenght(int strenght);
 
   /**
    * @return the zombie's screen X coordinate
@@ -172,21 +157,23 @@ public interface Model {
      */
     void fillBreakableListFromMap();
 
-    /**
-     * Checks when the zombie hit a Person.
-     */
-    void collisionZombiePersons();
+  /**
+   * Checks when the zombie hit a Person.
+   */
+  void collisionZombiePersons();
 
-    /**
-     * Checks if the game is over.
-     * @return true if the game is over, false otherwise.
-     */
-    boolean isGameOver();
+  /**
+   * Checks if the game is over.
+   * 
+   * @return true if the game is over, false otherwise.
+   */
+  boolean isGameOver();
 
-    /**
-     * @return true if the zombie's strenght is not enough to break the breakable object in the map
-     */
-    boolean isNotEnough();
+  /**
+   * @return true if the zombie's strenght is not enough to break the breakable
+   *         object in the map
+   */
+  boolean isNotEnough();
 
     /**
      * @return true if the zombie's strenght is zero

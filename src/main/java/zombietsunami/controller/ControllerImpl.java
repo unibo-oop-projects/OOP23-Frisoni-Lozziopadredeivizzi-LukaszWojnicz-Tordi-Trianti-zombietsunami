@@ -88,11 +88,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public int getSpeed() {
-        return this.model.getSpeed();
-    }
-
-    @Override
     public void updateZombie() {
         this.model.updateZombie();
     }
@@ -120,11 +115,6 @@ public final class ControllerImpl implements Controller {
     @Override
     public int getStrenght() {
         return this.model.getStrenght();
-    }
-
-    @Override
-    public void increaseStrenght() {
-        this.model.increaseStrenght();
     }
 
     @Override
@@ -179,11 +169,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void setStrenght(final int strenght) {
-        this.model.setStrenght(strenght);
-    }
-
-    @Override
     public int getZombieScreenX() {
         return this.model.getZombieScreenX();
     }
@@ -225,8 +210,9 @@ public final class ControllerImpl implements Controller {
 
     /**
      * Returns the list of bombs from the map.
+     * 
      * @param bomblist the bomb list.
-     * @param coords the coordinates for each bomb in the list.
+     * @param coords   the coordinates for each bomb in the list.
      * @param strength the zombies strength.
      */
     @Override
