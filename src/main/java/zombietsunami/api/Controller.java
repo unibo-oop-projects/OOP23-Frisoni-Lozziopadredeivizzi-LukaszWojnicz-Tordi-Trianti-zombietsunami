@@ -118,9 +118,9 @@ public interface Controller {
   int getStrenght();
 
   /**
-   * Gets the Person list from the map.
+   * Sets the Person list from the map.
    */
-  void getPersonFromMap();
+  void setPersonFromMap();
 
   /**
    * @return the Person list.

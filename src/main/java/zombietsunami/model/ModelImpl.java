@@ -91,8 +91,8 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void getPersonFromMap() {
-        this.personsManager.getPersonFromMap(gameMap.getLoadedPersonList(), getScreenTilePos(), zombie.getStrenght());
+    public void setPersonFromMap() {
+        this.personsManager.setPersonFromMap(gameMap.getLoadedPersonList(), getScreenTilePos(), zombie.getStrenght());
     }
 
     @Override

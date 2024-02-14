@@ -121,8 +121,8 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void getPersonFromMap() {
-        this.model.getPersonFromMap();
+    public void setPersonFromMap() {
+        this.model.setPersonFromMap();
     }
 
     @Override

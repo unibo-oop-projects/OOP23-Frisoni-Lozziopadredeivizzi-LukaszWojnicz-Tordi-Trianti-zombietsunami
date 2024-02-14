@@ -105,9 +105,9 @@ public interface VController {
   int getWorldHightC();
 
   /**
-   * Gets the list of Person from the map.
+   * Sets the list of Person from the map.
    */
-  void getPersonFromMapC();
+  void setPersonFromMapC();
 
   /**
    * Sets the coordinates of the "index" Person.

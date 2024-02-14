@@ -12,7 +12,7 @@ import zombietsunami.model.personmodel.api.PersonsManager;
  */
 public class PersonsManagerImpl implements PersonsManager {
 
-    private List<Person> personList = new ArrayList<Person>();
+    private List<Person> personList = new ArrayList<>();
 
     /**
      * Method that allows to remove a Person from the list.
@@ -51,12 +51,12 @@ public class PersonsManagerImpl implements PersonsManager {
      * Returns the list of Person from the map.
      */
     @Override
-    public void getPersonFromMap(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
+    public void setPersonFromMap(final List<Integer> personlist, final List<Pair<Integer, Integer>> coords,
             final Integer strenght) {
         personList = new ArrayList<>();
         for (int i = 0; i < personlist.size(); i++) {
             if (personlist.get(i) == 1 && coords.get(i) != null) {
-                Person person = new PersonImpl();
+                final Person person = new PersonImpl();
 
                 person.setX(coords.get(i).getX());
                 person.setY(coords.get(i).getY());
@@ -89,7 +89,7 @@ public class PersonsManagerImpl implements PersonsManager {
      */
     @Override
     public Person getPersonByCoordinates(final int x, final int y) {
-        for (Person person : personList) {
+        for (final Person person : personList) {
             if (person.getX() == x && person.getY() == y) {
                 return person;
             }
