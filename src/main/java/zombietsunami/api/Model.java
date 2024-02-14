@@ -63,11 +63,6 @@ public interface Model {
   int getZombieMapY();
 
   /**
-   * @return the speed fo the zombie
-   */
-  int getSpeed();
-
-  /**
    * @return the Person's map X coordinate
    */
   int getPersonMapX();
@@ -119,7 +114,6 @@ public interface Model {
    * @return the strenght of the zombie
    */
   int getStrenght();
-
 
   /**
    * @return the zombie's screen X coordinate

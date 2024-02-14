@@ -82,13 +82,6 @@ public interface VController {
   int getZombieMapY();
 
   /**
-   * Gets the speed of the zombie in the game.
-   *
-   * @return The speed of the zombie.
-   */
-  int getSpeed();
-
-  /**
    * Updates the position and state of the zombie in the game.
    */
   void updateZombie();

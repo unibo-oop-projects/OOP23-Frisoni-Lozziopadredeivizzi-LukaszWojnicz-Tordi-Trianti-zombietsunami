@@ -88,11 +88,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public int getSpeed() {
-        return this.model.getSpeed();
-    }
-
-    @Override
     public void updateZombie() {
         this.model.updateZombie();
     }

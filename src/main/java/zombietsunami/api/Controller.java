@@ -96,11 +96,6 @@ public interface Controller {
   int getZombieMapY();
 
   /**
-   * @return the zombie's speed value
-   */
-  int getSpeed();
-
-  /**
    * Calls the update method of the zombie
    * {@link zombietsunami.model.zombiemodel.api.Zombie}.
    */

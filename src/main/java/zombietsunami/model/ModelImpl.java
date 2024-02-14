@@ -91,11 +91,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public int getSpeed() {
-        return this.zombie.getSpeed();
-    }
-
-    @Override
     public int getPersonMapX() {
         return this.person.getX();
     }
@@ -146,8 +141,6 @@ public final class ModelImpl implements Model {
     public int getStrenght() {
         return this.zombie.getStrenght();
     }
-
-
 
     @Override
     public int getZombieScreenX() {

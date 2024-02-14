@@ -58,16 +58,6 @@ public final class VControllerImpl implements VController {
         return this.control.getZombieMapY();
     }
 
-    /**
-     * Gets the speed of the zombie.
-     *
-     * @return The speed of the zombie.
-     */
-    @Override
-    public int getSpeed() {
-        return this.control.getSpeed();
-    }
-
     @Override
     public List<String> tileElementsC() {
         return this.control.tileElements();
@@ -172,13 +162,10 @@ public final class VControllerImpl implements VController {
      *
      * @return The strength of the zombie.
      */
-   @Override
+    @Override
     public int getStrenght() {
         return this.control.getStrenght();
     }
-
-  
-   
 
     /**
      * Gets the x-coordinate of the zombie on the screen.
