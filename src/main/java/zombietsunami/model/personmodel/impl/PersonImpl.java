@@ -1,15 +1,14 @@
 package zombietsunami.model.personmodel.impl;
 
-import zombietsunami.api.Controller;
 import zombietsunami.model.EntityImpl;
 import zombietsunami.model.personmodel.api.Person;
 
-/** 
+/**
  * Class implementing the Person functionalities.
  * 
  * @see zombietsunami.model.personmodel.api.Person
  * @see zombietsunami.model.EntityImpl
-*/
+ */
 public class PersonImpl implements Person {
 
     private final EntityImpl entity = new EntityImpl();
@@ -18,15 +17,16 @@ public class PersonImpl implements Person {
     private int increase = 1;
 
     /**
-     * Constructor that sets the default values for the Person
+     * Constructor that sets the default values for the Person.
      */
     public PersonImpl() {
 
     }
 
     /**
-     * Gets the Person Id
-     * @return the Person's Id
+     * Gets the Person Id.
+     * 
+     * @return the Person's Id.
      */
     @Override
     public int getId() {
@@ -34,7 +34,7 @@ public class PersonImpl implements Person {
     }
 
     /**
-     * Updates the Person
+     * Updates the Person.
      */
     @Override
     public void update() {
@@ -42,17 +42,17 @@ public class PersonImpl implements Person {
     }
 
     /**
-     * Sets the Increase of the Person
+     * Sets the Increase of the Person.
      */
     @Override
     public void setIncrease(int increase) {
-       if(increase > 0){
-            this.increase = increase ;
-       }
+        if (increase > 0) {
+            this.increase = increase;
+        }
     }
-   
+
     /**
-     * Gets the X coordinate of the Person
+     * Gets the X coordinate of the Person.
      */
     @Override
     public int getX() {
@@ -60,34 +60,34 @@ public class PersonImpl implements Person {
     }
 
     /**
-     * Gets the Y coordinate of the Person
+     * Gets the Y coordinate of the Person.
      */
     @Override
     public int getY() {
-       return this.entity.getY();
+        return this.entity.getY();
     }
 
     /**
-     * Sets the X coordinate of the Person
+     * Sets the X coordinate of the Person.
      */
     @Override
-    public void setX(int x) {
+    public void setX(final int x) {
         this.entity.setX(x);
     }
 
     /**
-     * Sets the Y coordinate of the Person
+     * Sets the Y coordinate of the Person.
      */
     @Override
-    public void setY(int y) {
+    public void setY(final int y) {
         this.entity.setY(y);
     }
 
     /**
-     * Sets the id
+     * Sets the id.
      */
     @Override
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 }

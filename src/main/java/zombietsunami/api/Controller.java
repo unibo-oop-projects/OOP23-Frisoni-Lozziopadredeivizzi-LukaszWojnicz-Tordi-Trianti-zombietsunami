@@ -133,22 +133,15 @@ public interface Controller {
   int getStrenght();
 
   /**
-   * @return the person's map X coordinate
-   */
-  int getPersonMapX();
-
-  /**
-   * @return the person's map Y coordinate
-   */
-  int getPersonMapY();
-
-  /**
    * Updates the state of the Person.
    */
   void updatePerson();
 
   /**
-   * Returns the list of Person from the map.
+   * Gets the Person list from the map.
+   * @param personlist The list of Person.
+   * @param coords The coordinates of Person.
+   * @param strenght The strenght of Person.
    */
   void getPersonFromMap(List<Integer> personlist, List<Pair<Integer, Integer>> coords, Integer strenght);
 
@@ -309,9 +302,7 @@ public interface Controller {
   void collisionZombieObstacle();
 
   /**
-   * Checks collision between zombie and Person
-   * 
-   * @return true if collides, false otherwise
+   * Checks collision between zombie and Person.
    */
   void collisionZombiePersons();
 

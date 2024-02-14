@@ -96,16 +96,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public int getPersonMapX() {
-        return this.person.getX();
-    }
-
-    @Override
-    public int getPersonMapY() {
-        return this.person.getY();
-    }
-
-    @Override
     public void updatePerson() {
         this.person.update();
     }

@@ -24,19 +24,41 @@ public class DrawPersonImpl implements DrawPerson {
     private static final String PERSON_00 = ROOT + "Person_00.png";
     private static final String PERSON_01 = ROOT + "Person_01.png";
 
+    /**
+     * Draws the Person on the graphics context based on the same controller.
+     * 
+     * @param g2              The graphics context.
+     * @param personIndexList List of Person.
+     * @param screenTilePos   Coordinates of the Person.
+     * @param tileSize        Tile size.
+     * @param controller      The controller with the game-related information.
+     */
     @Override
-    public void drawPersonV(Graphics2D g2, List<Integer> personIndexList, List<Pair<Integer, Integer>> screenTilePos,
-            int titleSize, VController controller) {
-                for (int i = 0; i < personIndexList.size(); i++) {
-                    if (personIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
-                        controller.getPersonFromMapC(personIndexList, screenTilePos, controller.getStrenght());
-                        drawPerson(getPerson(), g2, personIndexList, screenTilePos, titleSize, i);
-                    }
-                }
+    public void drawPersonV(final Graphics2D g2, final List<Integer> personIndexList,
+            final List<Pair<Integer, Integer>> screenTilePos,
+            final int tileSize, final VController controller) {
+        for (int i = 0; i < personIndexList.size(); i++) {
+            if (personIndexList.get(i) == 1 && screenTilePos.get(i) != null) {
+                controller.getPersonFromMapC(personIndexList, screenTilePos, controller.getStrenght());
+                drawPerson(getPerson(), g2, personIndexList, screenTilePos, tileSize, i);
+            }
+        }
     }
 
-    private void drawPerson(BufferedImage image, Graphics2D g2, List<Integer> personIndexList, List<Pair<Integer, Integer>> screenTilePos, int titleSize, int i) {
-        g2.drawImage(image, screenTilePos.get(i).getX(), screenTilePos.get(i).getY(), titleSize, titleSize, null);
+    /**
+     * Draws the Person.
+     * 
+     * @param image           Image of Person.
+     * @param g2              Graphics.
+     * @param personIndexList List of Person.
+     * @param screenTilePos   Coordinates of Person.
+     * @param tileSize        Tile size.
+     * @param i               Index of the Person in the list.
+     */
+    private void drawPerson(final BufferedImage image, final Graphics2D g2,
+            final List<Integer> personIndexList, final List<Pair<Integer, Integer>> screenTilePos, final int tileSize,
+            final int i) {
+        g2.drawImage(image, screenTilePos.get(i).getX(), screenTilePos.get(i).getY(), tileSize, tileSize, null);
     }
 
     private int getChange() {
@@ -48,7 +70,7 @@ public class DrawPersonImpl implements DrawPerson {
     }
 
     /**
-     * Gets the image of the Person
+     * Gets the image of the Person.
      */
     @Override
     public BufferedImage getPerson() {
@@ -70,6 +92,9 @@ public class DrawPersonImpl implements DrawPerson {
         return image;
     }
 
+    /**
+     * Updates the Person.
+     */
     @Override
     public void updatePerson(final VController controller) {
         controller.updatePerson();

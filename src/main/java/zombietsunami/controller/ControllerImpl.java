@@ -123,16 +123,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public int getPersonMapX() {
-        return this.model.getPersonMapX();
-    }
-
-    @Override
-    public int getPersonMapY() {
-        return this.model.getPersonMapY();
-    }
-
-    @Override
     public void removePersonListItem(final int index) {
         this.model.removePersonListItem(index);
     }

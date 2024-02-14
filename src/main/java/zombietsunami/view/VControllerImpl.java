@@ -127,16 +127,6 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public int getPersonMapX() {
-        return this.control.getPersonMapX();
-    }
-
-    @Override
-    public int getPersonMapY() {
-        return this.control.getPersonMapY();
-    }
-
-    @Override
     public void updatePerson() {
         this.control.updatePerson();
     }
