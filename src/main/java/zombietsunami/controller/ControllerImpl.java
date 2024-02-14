@@ -116,11 +116,6 @@ public final class ControllerImpl implements Controller {
     }
 
     @Override
-    public void removePersonListItem(final int index) {
-        this.model.removePersonListItem(index);
-    }
-
-    @Override
     public void setPersonFromMap() {
         this.model.setPersonFromMap();
     }
@@ -128,16 +123,6 @@ public final class ControllerImpl implements Controller {
     @Override
     public List<Integer> getPersonList() {
         return this.model.getPersonList();
-    }
-
-    @Override
-    public void setCoordinatesOfPersonInList(final int index, final int x, final int y) {
-        this.model.setCoordinatesOfPersonInList(index, x, y);
-    }
-
-    @Override
-    public void removePersonFromList(final int index) {
-        this.model.removePersonFromList(index);
     }
 
     @Override

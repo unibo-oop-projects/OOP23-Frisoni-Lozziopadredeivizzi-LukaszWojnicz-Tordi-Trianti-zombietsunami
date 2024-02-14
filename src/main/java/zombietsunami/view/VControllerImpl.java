@@ -124,16 +124,6 @@ public final class VControllerImpl implements VController {
     }
 
     @Override
-    public void setCoordinatesOfPersonInListC(final int index, final int x, final int y) {
-        this.control.setCoordinatesOfPersonInList(index, x, y);
-    }
-
-    @Override
-    public void removePersonFromListC(final int index) {
-        this.control.removePersonFromList(index);
-    }
-
-    @Override
     public List<Integer> getPersonListC() {
         return this.control.getPersonList();
     }

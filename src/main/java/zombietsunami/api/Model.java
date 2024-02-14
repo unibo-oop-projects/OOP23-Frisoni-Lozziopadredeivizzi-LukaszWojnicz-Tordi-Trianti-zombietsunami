@@ -65,26 +65,6 @@ public interface Model {
   void setPersonFromMap();
 
   /**
-   * Sets the coordinates of the "index" Person.
-   * @param index index of the Person in the list.
-   * @param x X coordinate.
-   * @param y Y coordinate.
-   */
-  void setCoordinatesOfPersonInList(int index, int x, int y);
-
-  /**
-   * Removes the "index" Person from the list.
-   * @param index the index of the Person in the list.
-   */
-  void removePersonFromList(int index);
-
-  /**
-   * Removes a Person from the list.
-   * @param index index of Person.
-   */
-  void removePersonListItem(int index);
-
-  /**
    * @return the strenght of the zombie
    */
   int getStrength();

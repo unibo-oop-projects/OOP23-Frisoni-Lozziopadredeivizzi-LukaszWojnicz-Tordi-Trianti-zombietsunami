@@ -96,21 +96,6 @@ public final class ModelImpl implements Model {
     }
 
     @Override
-    public void setCoordinatesOfPersonInList(final int index, final int x, final int y) {
-        this.personsManager.setCoordinatesOfPersonInList(index, x, y);
-    }
-
-    @Override
-    public void removePersonFromList(final int index) {
-        this.personsManager.removePersonFromList(index);
-    }
-
-    @Override
-    public void removePersonListItem(final int index) {
-        this.gameMap.removePersonListItem(index);
-    }
-
-    @Override
     public void collisionZombiePersons() {
         this.collisionManager.collisionZombiePersons(personsManager.getPersonList(), MapData.getTitSize(), this.zombie,
                 gameMap);
