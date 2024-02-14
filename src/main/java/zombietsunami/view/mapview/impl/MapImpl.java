@@ -47,7 +47,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
 
     private final TileManager drowMap;
     private final DrawZombie drawZombie;
-    private final DrawObstacle drawObstacle;
+    private transient DrawObstacle drawObstacle;
     private final DrawPerson drawPerson;
     private final KeyHandler keyH;
 
