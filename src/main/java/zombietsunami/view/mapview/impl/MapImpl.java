@@ -46,10 +46,10 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private final VController controller;
 
     private final TileManager drowMap;
-    private final DrawZombie drawZombie;
+    private transient DrawZombie drawZombie;
     private transient DrawObstacle drawObstacle;
     private final DrawPerson drawPerson;
-    private final KeyHandler keyH;
+    private transient KeyHandler keyH;
 
     /**
      * Sets the objects in the map like the zombie and the obstacles.
