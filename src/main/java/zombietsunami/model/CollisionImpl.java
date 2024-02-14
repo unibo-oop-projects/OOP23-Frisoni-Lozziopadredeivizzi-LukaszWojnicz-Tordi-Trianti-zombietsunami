@@ -91,7 +91,7 @@ public class CollisionImpl implements Collision {
                     && zombie.getScreenY() < personList.get(i).getY() + tileSize) {
                 gameMap.removePersonListItem(i);
                 personList.set(i, null);
-                zombie.decreaseStrength();;
+                zombie.increaseStrength();
             }
         }
     }
