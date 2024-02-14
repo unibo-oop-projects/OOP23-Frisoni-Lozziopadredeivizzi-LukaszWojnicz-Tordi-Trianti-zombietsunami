@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.plaf.DimensionUIResource;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * This class is the start menu panel for the game.
  */
@@ -119,6 +121,8 @@ public final class StartMenu extends JPanel {
     /**
      * @return the 'start game' button
      */
+    @SuppressFBWarnings(justification = "the returning button must be the one"
+    + "seattled for this class, because it will be used to set its action listener.")
     public JButton getStartButton() {
         return this.startButtonGame;
     }

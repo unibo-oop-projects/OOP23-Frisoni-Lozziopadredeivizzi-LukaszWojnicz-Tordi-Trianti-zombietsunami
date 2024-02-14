@@ -2,6 +2,7 @@ package zombietsunami.view;
 
 import java.util.List;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import zombietsunami.api.Controller;
 import zombietsunami.Pair;
 import zombietsunami.view.api.VController;
@@ -15,6 +16,9 @@ public final class VControllerImpl implements VController {
     private Controller control;
 
     @Override
+    @SuppressFBWarnings(justification = "The controller fild of this class"
+    + "must be the same as the one passed in the method, that will "
+    + "change and get different results.")
     public void set(final Controller c) {
         this.control = c;
 
@@ -117,16 +121,6 @@ public final class VControllerImpl implements VController {
     @Override
     public void setPersonFromMapC() {
         this.control.setPersonFromMap();
-    }
-
-    @Override
-    public void setCoordinatesOfPersonInListC(final int index, final int x, final int y) {
-        this.control.setCoordinatesOfPersonInList(index, x, y);
-    }
-
-    @Override
-    public void removePersonFromListC(final int index) {
-        this.control.removePersonFromList(index);
     }
 
     @Override

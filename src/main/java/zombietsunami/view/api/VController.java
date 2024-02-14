@@ -110,22 +110,6 @@ public interface VController {
   void setPersonFromMapC();
 
   /**
-   * Sets the coordinates of the "index" Person.
-   * 
-   * @param index index of the Person in the list
-   * @param x     X coordinate
-   * @param y     Y coordinate
-   */
-  void setCoordinatesOfPersonInListC(int index, int x, int y);
-
-  /**
-   * Removes the "index" Person from the list.
-   * 
-   * @param index the index of the Person in the list
-   */
-  void removePersonFromListC(int index);
-
-  /**
    * @return the Person list
    */
   List<Integer> getPersonListC();
