@@ -34,7 +34,7 @@ public final class MapImpl extends JPanel implements Map, Runnable {
     private static final double NANOSEC = 1_000_000_000.0;
     private static final long MILLISEC = 1_000;
     private static final int FONT_SIZE = 20;
-    private static final int RECT_WIDTH = 130;
+    private static final int RECT_WIDTH = 160;
     private static final int RECT_HEIGHT = 40;
     private static final int INFO_POS_X = 5;
     private static final int INFO_POS_Y = 25;
