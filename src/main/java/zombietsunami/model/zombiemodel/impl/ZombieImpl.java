@@ -16,7 +16,6 @@ public class ZombieImpl implements Zombie {
     private final JumpZombieImpl jumpZombie = new JumpZombieImpl(this.entity);
     private final int screenX;
     private final int screenY;
-    private static final int NUM = 4;
     private static final int INITIALZOMBIE_X = 380;
     private static final int INITIALZOMBIE_Y = 450;
     private static final int INITIALZOMBIE_SPEED = 1;
