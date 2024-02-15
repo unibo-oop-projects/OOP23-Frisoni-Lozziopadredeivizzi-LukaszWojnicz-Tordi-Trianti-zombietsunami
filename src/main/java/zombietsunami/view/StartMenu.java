@@ -75,25 +75,27 @@ public final class StartMenu extends JPanel {
      */
     private void addActionListenerToRuleButton() {
         this.rulesButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "The game starts with the zombie's stranght value seattled to 1.\r\n"
+            JOptionPane.showMessageDialog(null, "The game starts with the zombie's strenght value set to one.\r\n"
                     + //
-                    "By catching the civilians you're going to be able to increase the strenght value by one, \r\n"
+                    "If you catch the civilians, your strenght value will increase by one, \r\n"
                     + //
-                    "but be carefoul about the presence of bombs and obstacle in the game!\r\n"
+                    "but be careful: during the game, you will bump into bombs and obstacles!\r\n"
                     + //
                     "\r\n"
                     + //
-                    "If the zombie touches a bomb, its strenght will decrease by one, and to pass over the \r\n"
+                    "If you touch a bomb, the strenght of your zombie will decrease by one. To hit the \r\n"
                     + //
-                    "obstacles and breake them, you must have the strenght value greater or equals by 3.\r\n"
+                    "obstacles and break them, your strenght value must be greater or equal by three.\r\n"
                     + //
-                    "ATTENTION: if the zombie trys to break an obstacle with an insufficient strenght value, \r\n"
+                    "\r\n"
                     + //
-                    "you will lose, and the game will shut down automatically after 3 seconds; same thing \r\n"
+                    "ATTENTION: if you try to break an obstacle with insufficient strenght value, \r\n"
                     + //
-                    "if the zombie's strenght value will be equals to zero by hitting too many bombs.\r\n"
+                    "you will lose, and the game will shut down automatically after three seconds; same thing \r\n"
                     + //
-                    "If you successfully arrive at the flag put at the end of the map, you will win! \r\n"
+                    "happens if your strenght value reaches to zero by hitting too many bombs.\r\n"
+                    + //
+                    "If you successfully get to the flag placed at the end of the map, you will win! \r\n"
                     + //
                     "\r\n"
                     + //
@@ -122,7 +124,7 @@ public final class StartMenu extends JPanel {
      * @return the 'start game' button
      */
     @SuppressFBWarnings(justification = "the returning button must be the one"
-    + "seattled for this class, because it will be used to set its action listener.")
+            + "seattled for this class, because it will be used to set its action listener.")
     public JButton getStartButton() {
         return this.startButtonGame;
     }
