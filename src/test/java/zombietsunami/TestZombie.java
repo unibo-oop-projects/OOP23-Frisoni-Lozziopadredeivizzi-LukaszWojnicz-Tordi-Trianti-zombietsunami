@@ -19,6 +19,8 @@ class TestZombie {
     private final ZombieImpl zombie = new ZombieImpl();
     private final int initialX = zombie.getX();
     private final int initialY = zombie.getY();
+    private final int screenX = zombie.getScreenX();
+    private final int screenY = zombie.getScreenY();
     private final int initialSpeed = zombie.getSpeed();
     private static final int RANGEY = 90;
     private final int maxY = initialY - RANGEY;
@@ -36,6 +38,9 @@ class TestZombie {
         assertEquals(zombie.getX(), initialX);
         assertEquals(zombie.getY(), initialY);
         assertEquals(zombie.getSpeed(), initialSpeed);
+        assertEquals(zombie.getScreenX(), screenX);
+        assertEquals(zombie.getScreenY(), screenY);
+
     }
 
     /**
