@@ -2,6 +2,8 @@
 package zombietsunami;
 
 import org.junit.jupiter.api.Test;
+
+import zombietsunami.model.ModelImpl;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * class.
  */
 class TestZombie {
-
+    private final ModelImpl model = new ModelImpl();
     private final ZombieImpl zombie = new ZombieImpl();
     private final int initialX = zombie.getX();
     private final int initialY = zombie.getY();
@@ -114,11 +116,48 @@ class TestZombie {
         assertTrue(zombie.isJumping());
     }
 
+    /**
+     * This method checks the strength of the zombie.
+     * It verifies that the zombie's initial strength is 1,
+     * then increases its strength and verifies it has been incremented to 2.
+     */
     @Test
     void checkStregth() {
         zombie.getStrength();
         assertEquals(zombie.getStrength(), 1);
         zombie.increaseStrength();
         assertEquals(zombie.getStrength(), 2);
+    }
+
+    /**
+     * This method checks the model with the zombie.
+     * It compares various attributes between the zombie and the model,
+     * ensuring they match appropriately.
+     * It also tests the update and jump functionality of both the zombie and the
+     * model.
+     */
+    @Test
+    void checkModelWithZombie() {
+        assertEquals(zombie.getStrength(), model.getStrength());
+        assertEquals(zombie.getScreenX(), model.getZombieScreenX());
+        assertEquals(zombie.getScreenY(), model.getZombieScreenY());
+        assertEquals(zombie.getSpeed(), model.getSpeed());
+        assertEquals(zombie.getX(), model.getZombieMapX());
+        assertEquals(zombie.getY(), model.getZombieMapY());
+        assertEquals(zombie.isJumping(), zombie.isJumping());
+
+        model.updateZombie();
+        zombie.update();
+        assertEquals(zombie.getX(), model.getZombieMapX());
+
+        model.jumpPress();
+        zombie.jumpPress();
+        assertTrue(model.isJumping());
+        assertTrue(zombie.isJumping());
+        assertEquals(zombie.isJumping(), model.isJumping());
+
+        model.updateJumpZombie();
+        zombie.updateJumpZombie();
+        assertEquals(zombie.getY(), model.getZombieMapY());
     }
 }
