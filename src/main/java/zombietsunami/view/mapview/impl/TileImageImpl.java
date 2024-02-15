@@ -3,6 +3,7 @@ package zombietsunami.view.mapview.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import zombietsunami.view.mapview.api.Tile;
 import zombietsunami.view.mapview.api.TileImage;
 /**
  * This class implements the TielImage interface {@link zombietsunami.view.mapview.api.TileImage}.
@@ -12,10 +13,10 @@ public final class TileImageImpl implements TileImage {
     private static final String SEP = "/";
     private static final String ROOT = SEP + "zombietsunami" + SEP + "tile" + SEP;
 
-    private final List<TileImpl> itemMap = new ArrayList<>();
+    private final List<Tile> itemMap = new ArrayList<>();
 
     @Override
-    public List<TileImpl> getTileImage(final List<String> element) {
+    public List<Tile> getTileImage(final List<String> element) {
         for (int i = 0; i < element.size(); i++) {
             setSingleTile(i, element.get(i));
         }
