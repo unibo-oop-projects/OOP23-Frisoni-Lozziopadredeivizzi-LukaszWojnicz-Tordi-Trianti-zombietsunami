@@ -75,23 +75,23 @@ public final class StartMenu extends JPanel {
      */
     private void addActionListenerToRuleButton() {
         this.rulesButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "The game starts with the zombie's strenght value set to one.\r\n"
+            JOptionPane.showMessageDialog(null, "The game starts with your zombie's strenght value set to one.\r\n"
                     + //
-                    "If you catch the civilians, your strenght value will increase by one, \r\n"
+                    "For every civilian caught, your strenght value will increase by one, \r\n"
                     + //
                     "but be careful: during the game, you will bump into bombs and obstacles!\r\n"
                     + //
-                    "If you touch a bomb, the strenght of your zombie will decrease by one. To hit the \r\n"
+                    "If you touch a bomb, the strenght of your zombie will decrease by one. \r\n"
                     + //
-                    "obstacles and break them, your strenght value must be greater or equal by three.\r\n"
+                    "To break the obstacles, your strenght value must be greater or equal by three.\r\n"
                     + //
                     "\r\n"
                     + //
                     "ATTENTION: if you try to break an obstacle with insufficient strenght value, \r\n"
                     + //
-                    "you will lose, and the game will shut down automatically after three seconds; same thing \r\n"
+                    "you will lose, and the game will shut down automatically after three seconds; the same thing \r\n"
                     + //
-                    "happens if your strenght value reaches to zero by hitting too many bombs.\r\n"
+                    "will happen if your strenght value reaches zero after hitting too many bombs.\r\n"
                     + //
                     "If you successfully get to the flag placed at the end of the map, you will win! \r\n"
                     + //
@@ -105,7 +105,7 @@ public final class StartMenu extends JPanel {
                     + //
                     "\r\n"
                     + //
-                    "Good luck!", "Regole", JOptionPane.INFORMATION_MESSAGE);
+                    "Good luck!", "Rules", JOptionPane.INFORMATION_MESSAGE);
         });
     }
 
