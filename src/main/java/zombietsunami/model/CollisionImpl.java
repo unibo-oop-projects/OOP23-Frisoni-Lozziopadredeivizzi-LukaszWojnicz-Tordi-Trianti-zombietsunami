@@ -32,7 +32,7 @@ public class CollisionImpl implements Collision {
     @Override
     public void collisionZombieObstacle(final List<Bomb> bombList, final List<Breakable> breakableList,
             final int tileSize, final Zombie zombie, final GameMap gameMap) {
-        for (int i = 0; i < bombList.size() - 1; i++) {
+        for (int i = bombList.size() - 1; i >= 0; i--) {
             if (!bombList.isEmpty() && bombList.get(i) != null
                     && bombList.get(i).getX() > THRESHOLD_1
                     && bombList.get(i).getX() < THRESHOLD_2
@@ -46,7 +46,7 @@ public class CollisionImpl implements Collision {
                 gameMap.removeObstacleListItem(i);
             }
         }
-        for (int i = 0; i < breakableList.size(); i++) {
+        for (int i = breakableList.size() - 1; i >= 0; i--) {
             if (!breakableList.isEmpty() && breakableList.get(i) != null
                     && breakableList.get(i).getX() > THRESHOLD_1
                     && breakableList.get(i).getX() < THRESHOLD_2
