@@ -27,11 +27,6 @@ public interface Zombie {
     int getSpeed();
 
     /**
-     * @return The number to divide the x-screen.
-     */
-    int getNumX();
-
-    /**
      * @return The x-coordinate of the zombie on the screen.
      */
     int getScreenX();

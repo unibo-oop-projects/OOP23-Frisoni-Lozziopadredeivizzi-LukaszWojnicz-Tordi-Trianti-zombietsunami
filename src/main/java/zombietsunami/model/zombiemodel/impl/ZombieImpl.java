@@ -76,16 +76,6 @@ public class ZombieImpl implements Zombie {
     }
 
     /**
-     * Gets the constant NUM.
-     *
-     * @return the constant NUM.
-     */
-    @Override
-    public int getNumX() {
-        return NUM;
-    }
-
-    /**
      * Gets the screen X-coordinate where the zombie is initially placed on the
      * screen.
      *
