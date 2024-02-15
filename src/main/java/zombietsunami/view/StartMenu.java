@@ -81,8 +81,6 @@ public final class StartMenu extends JPanel {
                     + //
                     "but be careful: during the game, you will bump into bombs and obstacles!\r\n"
                     + //
-                    "\r\n"
-                    + //
                     "If you touch a bomb, the strenght of your zombie will decrease by one. To hit the \r\n"
                     + //
                     "obstacles and break them, your strenght value must be greater or equal by three.\r\n"
