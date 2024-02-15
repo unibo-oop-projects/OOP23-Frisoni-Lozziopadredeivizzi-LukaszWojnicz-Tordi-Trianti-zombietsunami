@@ -109,4 +109,11 @@ class TestZombie {
         assertTrue(zombie.isJumping());
     }
 
+    @Test
+    void checkStregth() {
+        zombie.getStrength();
+        assertEquals(zombie.getStrength(), 1);
+        zombie.increaseStrength();
+        assertEquals(zombie.getStrength(), 2);
+    }
 }
