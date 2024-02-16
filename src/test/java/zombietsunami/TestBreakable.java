@@ -31,7 +31,7 @@ class TestBreakable {
         obstacleManager.addBreakable(breakable);
         assertTrue(breakable.canBreakObstacle(zombie.getStrength()));
 
-        zombie.setStrength(-1); //Zombie Strenght = -1, Breakable Force = 1.
+        zombie.decreaseStrength(); //Zombie Strenght = -1, Breakable Force = 1.
 
         assertFalse(breakable.canBreakObstacle(zombie.getStrength()));
     }

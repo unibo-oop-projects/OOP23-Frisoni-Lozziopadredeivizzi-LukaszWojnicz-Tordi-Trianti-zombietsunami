@@ -53,7 +53,11 @@ class TestCollision {
 
         obstacleManager.getBreakableList().add(0, breakable);
         obstacleManager.getBombList().add(0, bomb);
-        zombie.setStrength(5);
+        zombie.increaseStrength();
+        zombie.increaseStrength();
+        zombie.increaseStrength();
+        zombie.increaseStrength();
+        zombie.increaseStrength();
         collision.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(),
                 MapData.getTitSize(), zombie, gameMap);
 
