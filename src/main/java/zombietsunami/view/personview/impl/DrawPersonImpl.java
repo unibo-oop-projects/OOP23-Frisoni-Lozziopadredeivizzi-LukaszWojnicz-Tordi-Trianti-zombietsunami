@@ -23,8 +23,8 @@ public class DrawPersonImpl implements DrawPerson {
     private static final int FRAMESCHANGE = 15;
     private static final String SEP = "/";
     private static final String ROOT = SEP + "zombietsunami" + SEP + "person" + SEP;
-    private static final String PERSON_00 = ROOT + "Person_00.png";
-    private static final String PERSON_01 = ROOT + "Person_01.png";
+    private static final String PERSON_00 = ROOT + "person_10.png";
+    private static final String PERSON_01 = ROOT + "person_11.png";
 
     /**
      * Draws the Person on the graphics context based on the same controller.
