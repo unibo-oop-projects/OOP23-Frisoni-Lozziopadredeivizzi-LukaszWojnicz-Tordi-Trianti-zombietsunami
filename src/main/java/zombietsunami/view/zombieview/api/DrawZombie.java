@@ -1,8 +1,6 @@
 package zombietsunami.view.zombieview.api;
 
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-
 import zombietsunami.view.api.KeyHandler;
 import zombietsunami.view.api.VController;
 
@@ -18,13 +16,6 @@ public interface DrawZombie {
      * @param controller The controller with the game-related information.
      */
     void drawZombieV(Graphics2D g2, VController controller);
-
-    /**
-     * Gets the image representation of the zombie.
-     * 
-     * @return The BufferedImage representing the zombie.
-     */
-    BufferedImage getZombie();
 
     /**
      * Updates the zombie's visual representation based on the same controller.

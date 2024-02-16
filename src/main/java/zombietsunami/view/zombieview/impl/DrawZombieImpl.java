@@ -45,14 +45,7 @@ public class DrawZombieImpl implements DrawZombie {
         return spriteCounter++;
     }
 
-    /**
-     * Gets the image representation of the zombie.
-     * 
-     * @return The BufferedImage representing the zombie.
-     */
-
-    @Override
-    public BufferedImage getZombie() {
+    private BufferedImage getZombie() {
         final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
         BufferedImage image = null;
         try {
@@ -73,7 +66,7 @@ public class DrawZombieImpl implements DrawZombie {
     }
 
     private BufferedImage loadImage(final String imagePath) throws IOException {
-       final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
+        final Logger logger = Logger.getLogger(DrawZombieImpl.class.getName());
         BufferedImage image = null;
         try {
             image = ImageIO.read(DrawZombieImpl.class.getResource(imagePath));
