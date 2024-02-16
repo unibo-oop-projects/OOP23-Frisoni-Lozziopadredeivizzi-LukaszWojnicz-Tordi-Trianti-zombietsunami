@@ -76,13 +76,7 @@ public class DrawZombieImpl implements DrawZombie {
         return image;
     }
 
-    /**
-     * Updates the zombie's visual representation based on the same controller.
-     * 
-     * @param controller The controller providing game-related information.
-     */
-    @Override
-    public void updateZombie(final VController controller) {
+    private void updateZombie(final VController controller) {
         controller.updateZombie();
     }
 

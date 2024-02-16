@@ -18,13 +18,6 @@ public interface DrawZombie {
     void drawZombieV(Graphics2D g2, VController controller);
 
     /**
-     * Updates the zombie's visual representation based on the same controller.
-     * 
-     * @param controller The controller with the game-related information.
-     */
-    void updateZombie(VController controller);
-
-    /**
      * Handles key presses related to the zombie in the game view.
      * 
      * @param controller The controller with the game-related information.
