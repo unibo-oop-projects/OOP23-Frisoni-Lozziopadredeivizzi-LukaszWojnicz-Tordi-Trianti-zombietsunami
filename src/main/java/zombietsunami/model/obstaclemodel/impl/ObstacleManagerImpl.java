@@ -111,18 +111,6 @@ public class ObstacleManagerImpl implements ObstacleManager {
     }
 
     /**
-     * Sets the coordinates of the "index" bomb.
-     * @param index index of the bomb in the list.
-     * @param x X coordinate.
-     * @param y Y coordinate.
-     */
-    @Override
-    public void setCoordinatesOfBombInList(final int index, final int x, final int y) {
-        bombList.get(index).setX(x);
-        bombList.get(index).setY(y);
-    }
-
-    /**
      * Removes the "index" bomb from the list.
      * @param index the index of the bomb in the list.
      */
@@ -138,17 +126,5 @@ public class ObstacleManagerImpl implements ObstacleManager {
     @Override
     public void removeBreakableFromList(final int index) {
         breakableList.set(index, null);
-    }
-
-    /**
-     * Sets the coordinates of the "index" breakable.
-     * @param index index of the breakable in the list.
-     * @param x X coordinate.
-     * @param y Y coordinate.
-     */
-    @Override
-    public void setCoordinatesOfBreakableInList(final int index, final int x, final int y) {
-        breakableList.get(index).setX(x);
-        breakableList.get(index).setY(y);
     }
 }

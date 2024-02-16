@@ -16,26 +16,10 @@ public interface ObstacleManager {
     void removeBreakableFromList(int index);
 
     /**
-     * Sets the coordinates of the "index" breakable.
-     * @param index index of the breakable in the list.
-     * @param x X coordinate.
-     * @param y Y coordinate.
-     */
-    void setCoordinatesOfBreakableInList(int index, int x, int y);
-
-    /**
      * Removes the "index" bomb from the list.
      * @param index the index of the bomb in the list.
      */
     void removeBombFromList(int index);
-
-    /**
-     * Sets the coordinates of the "index" bomb.
-     * @param index index of the bomb in the list.
-     * @param x X coordinate.
-     * @param y Y coordinate.
-     */
-    void setCoordinatesOfBombInList(int index, int x, int y);
 
     /**
      * Returns the bomb list.
