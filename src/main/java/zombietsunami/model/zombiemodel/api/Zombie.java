@@ -52,13 +52,6 @@ public interface Zombie {
     void decreaseStrength();
 
     /**
-     * Sets the strength of the zombie.
-     * 
-     * @param strength The new strength value for the zombie.
-     */
-    void setStrength(int strength);
-
-    /**
      * Signals that the jump action has been initiated for the zombie.
      */
     void jumpPress();

@@ -115,16 +115,6 @@ public class ZombieImpl implements Zombie {
     }
 
     /**
-     * Sets the strength of the zombie.
-     *
-     * @param strength the new strength of the zombie.
-     */
-    @Override
-    public void setStrength(final int strength) {
-        this.entity.setStrength(strength);
-    }
-
-    /**
      * Initiates a jump action for the zombie.
      */
     @Override
