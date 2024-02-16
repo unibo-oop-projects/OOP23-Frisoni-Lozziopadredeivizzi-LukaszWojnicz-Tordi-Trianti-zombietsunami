@@ -88,7 +88,7 @@ public class EntityImpl implements Entity {
     public void increaseStrength() {
         this.strength++;
     }
-    
+
     /**
      * Decrease the strength of the entity by one.
      */
