@@ -3,8 +3,6 @@ package zombietsunami;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import zombietsunami.model.obstaclemodel.api.Bomb;
-import zombietsunami.model.obstaclemodel.impl.BombImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 
@@ -15,7 +13,6 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
  * class.
  */
 class TestBomb {
-    private final Bomb bomb = new BombImpl();
     private final Zombie zombie = new ZombieImpl();
 
     /**
