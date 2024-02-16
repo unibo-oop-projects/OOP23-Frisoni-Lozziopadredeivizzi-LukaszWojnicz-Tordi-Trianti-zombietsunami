@@ -28,14 +28,7 @@ public interface Entity {
      * Increase the strength of the zombie with the speed value.
      */
     void increaseStrength();
-
-    /**
-     * Sets the strength of the zombie.
-     * 
-     * @param strength The new strength value for the zombie.
-     */
-    void setStrength(int strength);
-
+    
     /**
      * Sets the X-coordinate of zombie.
      * 

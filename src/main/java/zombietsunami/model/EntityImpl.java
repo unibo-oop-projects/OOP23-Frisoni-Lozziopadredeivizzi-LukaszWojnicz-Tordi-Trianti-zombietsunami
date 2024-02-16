@@ -88,17 +88,7 @@ public class EntityImpl implements Entity {
     public void increaseStrength() {
         this.strength++;
     }
-
-    /**
-     * Sets the strength of the entity.
-     * 
-     * @param strength the new strength.
-     */
-    @Override
-    public void setStrength(final int strength) {
-        this.strength = strength;
-    }
-
+    
     /**
      * Decrease the strength of the entity by one.
      */
