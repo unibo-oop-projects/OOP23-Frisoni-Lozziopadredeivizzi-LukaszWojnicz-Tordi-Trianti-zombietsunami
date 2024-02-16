@@ -19,6 +19,7 @@ public class ZombieImpl implements Zombie {
     private static final int INITIALZOMBIE_X = 380;
     private static final int INITIALZOMBIE_Y = 450;
     private static final int INITIALZOMBIE_SPEED = 1;
+    private static final int STRENGTH = 1;
 
     /**
      * Updates the zombie's position based on its speed.
@@ -26,13 +27,14 @@ public class ZombieImpl implements Zombie {
     public ZombieImpl() {
         this.screenX = MapData.getScreenW() / 2 - MapData.getTitSize() / 2;
         this.screenY = MapData.getScreenH() - (MapData.getTitSize() * 3);
-        setDefaultValue();
+        setDefaultValues();
     }
 
-    private void setDefaultValue() {
+    private void setDefaultValues() {
         entity.setX(INITIALZOMBIE_X);
         entity.setY(INITIALZOMBIE_Y);
         entity.setSpeed(INITIALZOMBIE_SPEED);
+        entity.setStrength(STRENGTH);
     }
 
     /**

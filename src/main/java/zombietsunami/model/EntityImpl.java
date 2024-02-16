@@ -8,7 +8,7 @@ import zombietsunami.api.Entity;
  * for getting and setting values, hashCode, equals, and toString.
  */
 public class EntityImpl implements Entity {
-    private int strength = 1;
+    private int strength;
     private int mapX, mapY;
     private int speed;
 
@@ -87,6 +87,16 @@ public class EntityImpl implements Entity {
     @Override
     public void increaseStrength() {
         this.strength++;
+    }
+
+    /**
+     * Sets the strength of the entity.
+     * 
+     * @param strength the new strength.
+     */
+    @Override
+    public void setStrength(final int strength) {
+        this.strength = strength;
     }
 
     /**
