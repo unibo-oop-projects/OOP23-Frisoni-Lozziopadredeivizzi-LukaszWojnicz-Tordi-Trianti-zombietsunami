@@ -1,5 +1,6 @@
 package zombietsunami;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -34,5 +35,23 @@ class TestBreakable {
         zombie.decreaseStrength(); //Zombie Strenght = -1, Breakable Force = 1.
 
         assertFalse(breakable.canBreakObstacle(zombie.getStrength()));
+    }
+
+    /**
+     * Checks if the X coordinate is set properly.
+     */
+    @Test
+    void testX() {
+        breakable.setX(10);
+        assertEquals(10, breakable.getX());
+    }
+
+    /**
+     * Checks if the Y coordinate is set properly.
+     */
+    @Test
+    void testY() {
+        breakable.setY(10);
+        assertEquals(10, breakable.getY());
     }
 }

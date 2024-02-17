@@ -1,10 +1,10 @@
 package zombietsunami;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
-import zombietsunami.model.zombiemodel.api.Zombie;
-import zombietsunami.model.zombiemodel.impl.ZombieImpl;
+
+import zombietsunami.model.obstaclemodel.api.Bomb;
+import zombietsunami.model.obstaclemodel.impl.BombImpl;
 
 /**
  * Test class for TestBomb.
@@ -13,14 +13,23 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
  * class.
  */
 class TestBomb {
-    private final Zombie zombie = new ZombieImpl();
+    private final Bomb bomb = new BombImpl();
 
     /**
-     * Checks if the damage has been dealt correctly to the zombie.
+     * Checks if the X coordinate is set properly.
      */
     @Test
-    void checkDamageReduction() {
-        zombie.decreaseStrength();
-        assertEquals(zombie.getStrength(), 0);
+    void testX() {
+        bomb.setX(10);
+        assertEquals(10, bomb.getX());
+    }
+
+    /**
+     * Checks if the Y coordinate is set properly.
+     */
+    @Test
+    void testY() {
+        bomb.setY(10);
+        assertEquals(10, bomb.getY());
     }
 }
