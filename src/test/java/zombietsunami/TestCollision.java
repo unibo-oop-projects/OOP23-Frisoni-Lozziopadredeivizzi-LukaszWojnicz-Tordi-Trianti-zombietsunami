@@ -1,5 +1,6 @@
 package zombietsunami;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,6 +14,7 @@ import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 import zombietsunami.model.CollisionImpl;
 import zombietsunami.model.MapData;
+import zombietsunami.model.ModelImpl;
 import zombietsunami.model.mapmodel.api.GameMap;
 import zombietsunami.model.mapmodel.impl.GameMapImpl;
 
@@ -26,6 +28,7 @@ import zombietsunami.model.mapmodel.impl.GameMapImpl;
  */
 class TestCollision {
 
+    private final ModelImpl model = new ModelImpl();
     private final ZombieImpl zombie = new ZombieImpl();
     private final Bomb bomb = new BombImpl();
     private final Breakable breakable = new BreakableImpl(1);
@@ -89,5 +92,14 @@ class TestCollision {
                 MapData.getTitSize(), zombie, gameMap);
 
         assertTrue(collision.isGameOver());
+    }
+
+    /**
+     * Assures that the model functions behave correctly
+     * compared to the Collision interface.
+     */
+    @Test
+    void testCollisionWithModel() {
+        assertEquals(collision.isGameOver(), model.isGameOver());
     }
 }
