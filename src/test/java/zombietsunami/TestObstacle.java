@@ -24,7 +24,7 @@ public class TestObstacle {
     private final ObstacleManager obstacleManager = new ObstacleManagerImpl();
     private final GameMap gamemap = new GameMapImpl();
     private final Zombie zombie = new ZombieImpl();
-    
+
     /**
      * Assures that the lists are correctly filled.
      */
