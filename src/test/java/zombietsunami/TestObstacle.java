@@ -16,12 +16,18 @@ import zombietsunami.model.obstaclemodel.impl.ObstacleManagerImpl;
 import zombietsunami.model.zombiemodel.api.Zombie;
 import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 
+/**
+ * Class which tests ObstacleManager's functions.
+ */
 public class TestObstacle {
 
     private final ObstacleManager obstacleManager = new ObstacleManagerImpl();
     private final GameMap gamemap = new GameMapImpl();
     private final Zombie zombie = new ZombieImpl();
     
+    /**
+     * Assures that the lists are correctly filled.
+     */
     @Test
     void checkIfListsAreFilled() {
         obstacleManager.fillBombListFromMap(gamemap.getLoadedObstacleList(), 
@@ -40,6 +46,10 @@ public class TestObstacle {
         assertFalse(obstacleManager.getBombList().size() == 0);
     }
 
+    /**
+     * Checks if the bomb and breakable are correctly
+     * added into the list.
+     */
     @Test
     void testAddObstacle() {
 
@@ -53,6 +63,10 @@ public class TestObstacle {
         assertNotEquals(breakableListSize, obstacleManager.getBreakableList());
     }
 
+    /**
+     * Checks if the bomb and breakable are correctly
+     * removed out of the list.
+     */
     @Test
     void testRemoveObstacle() {
         obstacleManager.addBomb(new BombImpl());
@@ -65,6 +79,10 @@ public class TestObstacle {
         assertEquals(obstacleManager.getBreakableList().get(0), null);
     }
 
+    /**
+     * Checks if getBombList() and getBreakableList()
+     * are correctly returned.
+     */
     @Test
     void testGetObstacleList() {
         assertNotEquals(obstacleManager.getBombList(), null);
