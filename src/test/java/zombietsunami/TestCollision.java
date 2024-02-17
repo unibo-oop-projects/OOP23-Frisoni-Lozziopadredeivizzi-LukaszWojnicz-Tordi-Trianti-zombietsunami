@@ -1,6 +1,7 @@
 package zombietsunami;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import zombietsunami.model.obstaclemodel.api.Bomb;
@@ -63,5 +64,30 @@ class TestCollision {
 
         assertNull(obstacleManager.getBombList().get(0));
         assertNull(obstacleManager.getBreakableList().get(0));
+    }
+
+    /**
+     * This function decreases the strength of the zombies 
+     * to 0, and upon collision with an obstacle, it is 
+     * intended to transition the game to a game-over state.
+     */
+    @Test
+    void checkIfGameover() {
+        zombie.decreaseStrength();
+
+        bomb.setX(75);
+        bomb.setY(288);
+        bomb.setDamage(1);
+
+        breakable.setX(75);
+        breakable.setY(288);
+
+        obstacleManager.getBreakableList().add(0, breakable);
+        obstacleManager.getBombList().add(0, bomb);
+
+        collision.collisionZombieObstacle(obstacleManager.getBombList(), obstacleManager.getBreakableList(),
+                MapData.getTitSize(), zombie, gameMap);
+
+        assertTrue(collision.isGameOver());
     }
 }
