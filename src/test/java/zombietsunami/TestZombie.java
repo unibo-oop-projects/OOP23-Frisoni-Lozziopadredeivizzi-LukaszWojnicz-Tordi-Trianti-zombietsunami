@@ -127,6 +127,8 @@ class TestZombie {
         assertEquals(zombie.getStrength(), 1);
         zombie.increaseStrength();
         assertEquals(zombie.getStrength(), 2);
+        zombie.decreaseStrength();
+        assertEquals(zombie.getStrength(), 1);
     }
 
     /**
