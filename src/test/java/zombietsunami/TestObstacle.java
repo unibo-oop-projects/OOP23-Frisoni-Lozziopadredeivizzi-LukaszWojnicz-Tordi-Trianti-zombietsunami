@@ -1,7 +1,6 @@
 package zombietsunami;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ import zombietsunami.model.zombiemodel.impl.ZombieImpl;
 /**
  * Class which tests ObstacleManager's functions.
  */
-public class TestObstacle {
+class TestObstacle {
 
     private final ObstacleManager obstacleManager = new ObstacleManagerImpl();
     private final GameMap gamemap = new GameMapImpl();
@@ -30,20 +29,20 @@ public class TestObstacle {
      */
     @Test
     void checkIfListsAreFilled() {
-        obstacleManager.fillBombListFromMap(gamemap.getLoadedObstacleList(), 
-            gamemap.getScreenTilePos(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
-                MapData.getTitSize(),
-                zombie.getX(), zombie.getY(), this.zombie.getScreenX(), this.zombie.getScreenY()), 
-            zombie.getStrength());
+        obstacleManager.fillBombListFromMap(gamemap.getLoadedObstacleList(),
+                gamemap.getScreenTilePos(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
+                        MapData.getTitSize(),
+                        zombie.getX(), zombie.getY(), this.zombie.getScreenX(), this.zombie.getScreenY()),
+                zombie.getStrength());
 
-            obstacleManager.fillBreakableListFromMap(gamemap.getLoadedObstacleList(), 
-            gamemap.getScreenTilePos(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
-                MapData.getTitSize(),
-                zombie.getX(), zombie.getY(), this.zombie.getScreenX(), this.zombie.getScreenY()), 
-            zombie.getStrength());
+        obstacleManager.fillBreakableListFromMap(gamemap.getLoadedObstacleList(),
+                gamemap.getScreenTilePos(MapData.getMaxWorldRow(), MapData.getMaxWorldCol(),
+                        MapData.getTitSize(),
+                        zombie.getX(), zombie.getY(), this.zombie.getScreenX(), this.zombie.getScreenY()),
+                zombie.getStrength());
 
-        assertFalse(obstacleManager.getBreakableList().size() == 0);
-        assertFalse(obstacleManager.getBombList().size() == 0);
+        assertNotEquals(obstacleManager.getBreakableList().size(), 0);
+        assertNotEquals(obstacleManager.getBombList().size(), 0);
     }
 
     /**
@@ -53,8 +52,8 @@ public class TestObstacle {
     @Test
     void testAddObstacle() {
 
-        int bombListSize = obstacleManager.getBombList().size();
-        int breakableListSize = obstacleManager.getBreakableList().size();
+        final int bombListSize = obstacleManager.getBombList().size();
+        final int breakableListSize = obstacleManager.getBreakableList().size();
 
         obstacleManager.addBomb(new BombImpl());
         obstacleManager.addBreakable(new BreakableImpl(3));
