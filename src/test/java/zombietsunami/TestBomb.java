@@ -19,7 +19,7 @@ class TestBomb {
      * Checks if the X coordinate is set properly.
      */
     @Test
-    void testX(){
+    void testX() {
         bomb.setX(10);
         assertEquals(10, bomb.getX());
     }
@@ -28,7 +28,7 @@ class TestBomb {
      * Checks if the Y coordinate is set properly.
      */
     @Test
-    void testY(){
+    void testY() {
         bomb.setY(10);
         assertEquals(10, bomb.getY());
     }

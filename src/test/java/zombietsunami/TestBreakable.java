@@ -41,7 +41,7 @@ class TestBreakable {
      * Checks if the X coordinate is set properly.
      */
     @Test
-    void testX(){
+    void testX() {
         breakable.setX(10);
         assertEquals(10, breakable.getX());
     }
@@ -50,7 +50,7 @@ class TestBreakable {
      * Checks if the Y coordinate is set properly.
      */
     @Test
-    void testY(){
+    void testY() {
         breakable.setY(10);
         assertEquals(10, breakable.getY());
     }
