@@ -17,15 +17,6 @@ public interface PersonsManager {
     void removePersonFromList(int index);
 
     /**
-     * Sets the coordinates of the "index" Person.
-     * 
-     * @param index index of the Person in the list.
-     * @param x     X coordinate.
-     * @param y     Y coordinate.
-     */
-    void setCoordinatesOfPersonInList(int index, int x, int y);
-
-    /**
      * Returns the Person list.
      * 
      * @return the Person list.
@@ -46,13 +37,4 @@ public interface PersonsManager {
      * @param person the Person that needs to be added.
      */
     void addPerson(Person person);
-
-    /**
-     * Method that allows to retrieve a Person by its X and Y coords.
-     * 
-     * @param x the X coordinate of the Person.
-     * @param y the Y coordinate of the Person.
-     * @return the Person.
-     */
-    Person getPersonByCoordinates(int x, int y);
 }

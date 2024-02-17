@@ -26,19 +26,6 @@ public class PersonsManagerImpl implements PersonsManager {
     }
 
     /**
-     * Sets the coordinates of the Person.
-     * 
-     * @param index index of the Person in the list.
-     * @param x     X coordinate.
-     * @param y     Y coordinate.
-     */
-    @Override
-    public void setCoordinatesOfPersonInList(final int index, final int x, final int y) {
-        personList.get(index).setX(x);
-        personList.get(index).setY(y);
-    }
-
-    /**
      * Returns the Person list.
      * 
      * @return the Person list.
@@ -81,23 +68,6 @@ public class PersonsManagerImpl implements PersonsManager {
         if (person != null) {
             personList.add(person);
         }
-    }
-
-    /**
-     * Method that allows to retrieve a Person by its X and Y coords.
-     * 
-     * @param x the X coordinate of the Person.
-     * @param y the Y coordinate of the Person.
-     * @return the Person.
-     */
-    @Override
-    public Person getPersonByCoordinates(final int x, final int y) {
-        for (final Person person : personList) {
-            if (person.getX() == x && person.getY() == y) {
-                return person;
-            }
-        }
-        return null;
     }
 
 }
