@@ -84,14 +84,14 @@ public class CollisionImpl implements Collision {
     @Override
     public void collisionZombiePersons(final List<Person> personList, final int tileSize,
             final Zombie zombie, final GameMap gameMap) {
-        for (int i = 0; i < personList.size() - 1; i++) {
+        for (int i = personList.size() - 1; i >= 0; i--) {
             if (!personList.isEmpty() && personList.get(i) != null && personList.get(i).getX() > THRESHOLD_1
                     && personList.get(i).getX() < THRESHOLD_2
                     && zombie.getScreenY() > personList.get(i).getY() - tileSize
                     && zombie.getScreenY() < personList.get(i).getY() + tileSize) {
-                gameMap.removePersonListItem(i);
-                personList.set(i, null);
                 zombie.increaseStrength();
+                personList.set(i, null);
+                gameMap.removePersonListItem(i);
             }
         }
     }
